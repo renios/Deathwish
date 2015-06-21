@@ -21,4 +21,12 @@ public class ESCMenu : MonoBehaviour {
 			PopupMenu.SetActive(false);
 		}
 	}
+	
+	public void ClosePopup()
+	{
+		if (PopupMenu.activeInHierarchy == true)
+		{
+			PopupMenu.SetActive(false);
+		}
+	}
 }
