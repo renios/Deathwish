@@ -248,6 +248,54 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 323204120}
+--- !u!1001 &433043439
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 406904, guid: fc9029619a5774b9c83b8cbfb6a06d92, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 300.894257
+      objectReference: {fileID: 0}
+    - target: {fileID: 406904, guid: fc9029619a5774b9c83b8cbfb6a06d92, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 263.377502
+      objectReference: {fileID: 0}
+    - target: {fileID: 406904, guid: fc9029619a5774b9c83b8cbfb6a06d92, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 406904, guid: fc9029619a5774b9c83b8cbfb6a06d92, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 406904, guid: fc9029619a5774b9c83b8cbfb6a06d92, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 406904, guid: fc9029619a5774b9c83b8cbfb6a06d92, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 406904, guid: fc9029619a5774b9c83b8cbfb6a06d92, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 406904, guid: fc9029619a5774b9c83b8cbfb6a06d92, type: 2}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: fc9029619a5774b9c83b8cbfb6a06d92, type: 2}
+  m_IsPrefabParent: 0
+--- !u!114 &433043440 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 11431376, guid: fc9029619a5774b9c83b8cbfb6a06d92,
+    type: 2}
+  m_PrefabInternal: {fileID: 433043439}
+  m_Script: {fileID: 11500000, guid: dbf0cc98f83824fe1a965867219df400, type: 3}
 --- !u!1 &647777877
 GameObject:
   m_ObjectHideFlags: 0
@@ -984,6 +1032,7 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: .0219999999
+  m_StereoMirrorMode: 0
 --- !u!4 &1380703118
 Transform:
   m_ObjectHideFlags: 0
@@ -1202,6 +1251,7 @@ MonoBehaviour:
   m_SubmitButton: Submit
   m_CancelButton: Cancel
   m_InputActionsPerSecond: 10
+  m_RepeatDelay: .5
   m_AllowActivationOnMobileDevice: 0
 --- !u!114 &1625087836
 MonoBehaviour:
@@ -1313,45 +1363,6 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.Slider+SliderEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
---- !u!1 &1731962124
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 1731962126}
-  - 114: {fileID: 1731962125}
-  m_Layer: 0
-  m_Name: UIButtonEventManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1731962125
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1731962124}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dbf0cc98f83824fe1a965867219df400, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!4 &1731962126
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1731962124}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 300.894257, y: 263.377502, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 3
 --- !u!1 &1757129271
 GameObject:
   m_ObjectHideFlags: 0
@@ -1424,7 +1435,7 @@ GameObject:
   - 222: {fileID: 1911802088}
   - 114: {fileID: 1911802087}
   m_Layer: 5
-  m_Name: Option
+  m_Name: Title
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1554,7 +1565,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1731962125}
+      - m_Target: {fileID: 433043440}
         m_MethodName: ToTitle
         m_Mode: 1
         m_Arguments:
