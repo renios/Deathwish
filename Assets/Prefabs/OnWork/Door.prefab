@@ -11,6 +11,7 @@ GameObject:
   - 212: {fileID: 21295708}
   - 61: {fileID: 6151162}
   - 114: {fileID: 11435136}
+  - 114: {fileID: 11487152}
   m_Layer: 0
   m_Name: Door
   m_TagString: Untagged
@@ -54,6 +55,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c13c3aa1528a30d418ed68105acb920e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &11487152
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 164678}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 870dfea6228011d4cbbf86c95172aad2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  light: {fileID: 21300000, guid: cb5ba7b51e0c48443bade43ae82047be, type: 3}
+  dark: {fileID: 21300000, guid: cb5ba7b51e0c48443bade43ae82047be, type: 3}
 --- !u!212 &21295708
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -95,6 +109,16 @@ Prefab:
       propertyPath: m_LocalPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: light
+      value: 
+      objectReference: {fileID: 21300000, guid: cb5ba7b51e0c48443bade43ae82047be,
+        type: 3}
+    - target: {fileID: 0}
+      propertyPath: dark
+      value: 
+      objectReference: {fileID: 21300000, guid: cb5ba7b51e0c48443bade43ae82047be,
+        type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 164678}

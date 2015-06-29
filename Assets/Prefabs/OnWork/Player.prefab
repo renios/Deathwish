@@ -12,6 +12,7 @@ GameObject:
   - 61: {fileID: 6108640}
   - 50: {fileID: 5022094}
   - 114: {fileID: 11484958}
+  - 114: {fileID: 11481792}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -60,6 +61,19 @@ BoxCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Size: {x: 1.20000005, y: 3}
+--- !u!114 &11481792
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 141626}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 870dfea6228011d4cbbf86c95172aad2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  light: {fileID: 21300000, guid: fa6600b249cd15242afbda82fc119f13, type: 3}
+  dark: {fileID: 21300000, guid: e353116d29b6814478d49c9c97b0937f, type: 3}
 --- !u!114 &11484958
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -73,7 +87,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 400
   jumpPower: 300
-  controller: {fileID: 0}
 --- !u!212 &21269668
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -111,6 +124,16 @@ Prefab:
       propertyPath: jumpPower
       value: 300
       objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: light
+      value: 
+      objectReference: {fileID: 21300000, guid: fa6600b249cd15242afbda82fc119f13,
+        type: 3}
+    - target: {fileID: 0}
+      propertyPath: dark
+      value: 
+      objectReference: {fileID: 21300000, guid: e353116d29b6814478d49c9c97b0937f,
+        type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 141626}

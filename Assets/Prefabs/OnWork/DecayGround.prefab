@@ -11,6 +11,7 @@ GameObject:
   - 212: {fileID: 21297596}
   - 61: {fileID: 6106002}
   - 114: {fileID: 11422882}
+  - 114: {fileID: 11459188}
   m_Layer: 0
   m_Name: DecayGround
   m_TagString: Ground
@@ -55,6 +56,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   delay: 1
+--- !u!114 &11459188
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 112420}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 870dfea6228011d4cbbf86c95172aad2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  light: {fileID: 21300000, guid: d548397fc1510ba4ea696fc7c0ce2c0a, type: 3}
+  dark: {fileID: 21300000, guid: d548397fc1510ba4ea696fc7c0ce2c0a, type: 3}
 --- !u!212 &21297596
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -92,6 +106,16 @@ Prefab:
       propertyPath: delay
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: light
+      value: 
+      objectReference: {fileID: 21300000, guid: d548397fc1510ba4ea696fc7c0ce2c0a,
+        type: 3}
+    - target: {fileID: 0}
+      propertyPath: dark
+      value: 
+      objectReference: {fileID: 21300000, guid: d548397fc1510ba4ea696fc7c0ce2c0a,
+        type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 112420}

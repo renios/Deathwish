@@ -11,6 +11,7 @@ GameObject:
   - 212: {fileID: 21248568}
   - 61: {fileID: 6199596}
   - 114: {fileID: 11454432}
+  - 114: {fileID: 11447116}
   m_Layer: 0
   m_Name: Mirror
   m_TagString: Untagged
@@ -43,6 +44,19 @@ BoxCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Size: {x: 2, y: 4}
+--- !u!114 &11447116
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 125542}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 870dfea6228011d4cbbf86c95172aad2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  light: {fileID: 21300000, guid: cd95c3f901135624688ff6749847a5d5, type: 3}
+  dark: {fileID: 21300000, guid: 6c556d6116be82748b5aa1b70b02fa7d, type: 3}
 --- !u!114 &11454432
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -54,7 +68,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55316bbb797293547aaaf84c70d78c3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  controller: {fileID: 0}
 --- !u!212 &21248568
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -96,6 +109,16 @@ Prefab:
       propertyPath: m_LocalPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: dark
+      value: 
+      objectReference: {fileID: 21300000, guid: 6c556d6116be82748b5aa1b70b02fa7d,
+        type: 3}
+    - target: {fileID: 0}
+      propertyPath: light
+      value: 
+      objectReference: {fileID: 21300000, guid: cd95c3f901135624688ff6749847a5d5,
+        type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 125542}

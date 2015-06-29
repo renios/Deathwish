@@ -10,6 +10,7 @@ GameObject:
   - 4: {fileID: 407646}
   - 212: {fileID: 21287536}
   - 61: {fileID: 6173618}
+  - 114: {fileID: 11432406}
   m_Layer: 0
   m_Name: Wall
   m_TagString: Wall
@@ -42,6 +43,19 @@ BoxCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
+--- !u!114 &11432406
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 122268}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 870dfea6228011d4cbbf86c95172aad2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  light: {fileID: 21300000, guid: 98b1762d2c4128e48a1cdc7e37666394, type: 3}
+  dark: {fileID: 21300000, guid: 98b1762d2c4128e48a1cdc7e37666394, type: 3}
 --- !u!212 &21287536
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -74,7 +88,17 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: light
+      value: 
+      objectReference: {fileID: 21300000, guid: 98b1762d2c4128e48a1cdc7e37666394,
+        type: 3}
+    - target: {fileID: 0}
+      propertyPath: dark
+      value: 
+      objectReference: {fileID: 21300000, guid: 98b1762d2c4128e48a1cdc7e37666394,
+        type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 122268}
