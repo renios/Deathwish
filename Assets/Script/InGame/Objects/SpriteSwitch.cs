@@ -5,9 +5,8 @@ using Enums;
 public class SpriteSwitch : MonoBehaviour
 {
 
-	public Sprite Light;
-	public Sprite Dark;
-	public InGame controller;
+	public Sprite light;
+	public Sprite dark;
 
 	private SpriteRenderer sr;
 
@@ -20,11 +19,11 @@ public class SpriteSwitch : MonoBehaviour
 	{
 		if(Global.ingame.isDark == IsDark.Light)
 		{
-			sr.sprite = Light;
+			sr.sprite = light;
 		}
 		else if(Global.ingame.isDark == IsDark.Dark)
 		{
-			sr.sprite = Dark;
+			sr.sprite = dark;
 		}
 	}
 }
