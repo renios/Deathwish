@@ -2,7 +2,7 @@
 using System.Collections;
 using Enums;
 
-public class WorldSwitch : MonoBehaviour
+public class SwitchDarkLight : MonoBehaviour
 {
 	void OnCollisionEnter2D(Collision2D collision)
 	{
