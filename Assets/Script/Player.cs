@@ -7,7 +7,6 @@ public class Player : MonoBehaviour
 {
 	public float moveSpeed;
 	public float jumpPower;
-	public WorldControl controller;
 
 	private characterLocation Hover;
 	private Rigidbody2D rg;
@@ -15,7 +14,6 @@ public class Player : MonoBehaviour
 	void Start ()
 	{
 		rg = gameObject.GetComponent<Rigidbody2D> ();
-		controller = FindObjectOfType (typeof(WorldControl)) as WorldControl;
 	}
 
 	void Update ()

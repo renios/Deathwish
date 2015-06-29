@@ -2,9 +2,9 @@
 using System.Collections;
 using Enums;
 
-public class WorldControl : MonoBehaviour
+public class WorldControl
 {
-	public isDark World;
+	public isDark World = isDark.Light;
 
 	public void WorldChange()
 	{
@@ -17,5 +17,6 @@ public class WorldControl : MonoBehaviour
 		{
 			World = isDark.Light;
 		}
+		Debug.Log ("Current World is " + World.ToString ());
 	}
 }
