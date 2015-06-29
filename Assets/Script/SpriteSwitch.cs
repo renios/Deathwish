@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
-using Commons;
+using Enums;
 
 public class SpriteSwitch : MonoBehaviour
 {
@@ -18,11 +18,11 @@ public class SpriteSwitch : MonoBehaviour
 
 	void Update ()
 	{
-		if(controller.World == Commons.isDark.Light)
+		if(controller.World == isDark.Light)
 		{
 			sr.sprite = Light;
 		}
-		else if(controller.World == Commons.isDark.Dark)
+		else if(controller.World == isDark.Dark)
 		{
 			sr.sprite = Dark;
 		}

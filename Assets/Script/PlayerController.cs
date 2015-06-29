@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
-using Commons;
+using Enums;
 
 public class PlayerController : MonoBehaviour
 {
@@ -27,7 +27,7 @@ public class PlayerController : MonoBehaviour
 	{
 		if(collision.gameObject.tag == "Ground")
 		{
-			Hover = Commons.characterLocation.OnBlock;
+			Hover = characterLocation.OnBlock;
 		}
 	}
 
@@ -39,10 +39,10 @@ public class PlayerController : MonoBehaviour
 
 	void Jump ()
 	{
-		if (Hover == Commons.characterLocation.OnBlock && Input.GetKeyDown (KeyCode.Space))
+		if (Hover == characterLocation.OnBlock && Input.GetKeyDown (KeyCode.Space))
 		{
 			rg.AddForce (new Vector2 (0, jumpPower));
-			Hover = Commons.characterLocation.OnAir;
+			Hover = characterLocation.OnAir;
 		}
 	}
 }

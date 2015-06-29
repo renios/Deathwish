@@ -2,7 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 
-namespace Commons
+namespace Enums
 {
 	public enum characterLocation
 	{
