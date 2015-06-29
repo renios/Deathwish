@@ -3,7 +3,7 @@ using System.Collections;
 
 public class Global
 {
-	public static WorldControl world;
+	public static InGame ingame;
 
 	//FIXME: when start from stage scene, scene class is not initialized.
 	// intiialize before use global value.

@@ -11,6 +11,7 @@ namespace Enums
 		OnRadder
 	}
 
+	//FIXME : need better name
 	public enum isDark
 	{
 		Light,

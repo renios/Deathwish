@@ -34,7 +34,7 @@ public class Scene
 		Debug.Log ("Before load " + currentSceneName + ", type is " + currentSceneType.ToString());
 		if(currentSceneType == SceneType.Stage)
 		{
-			Global.world = null;
+			Global.ingame = null;
 		}
 	}
 
@@ -43,7 +43,7 @@ public class Scene
 		Debug.Log ("After load " + currentSceneName + ", type is " + currentSceneType.ToString());
 		if(currentSceneType == SceneType.Stage)
 		{
-			Global.world = new WorldControl ();
+			Global.ingame = new InGame ();
 		}
 	}
 }

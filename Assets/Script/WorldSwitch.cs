@@ -8,7 +8,7 @@ public class WorldSwitch : MonoBehaviour
 	{
 		if(collision.gameObject.tag == "Player")
 		{
-			Global.world.WorldChange();
+			Global.ingame.ChangeDarkLight();
 		}
 	}
 }
