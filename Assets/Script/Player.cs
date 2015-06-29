@@ -8,12 +8,12 @@ public class Player : MonoBehaviour
 	public float moveSpeed;
 	public float jumpPower;
 
-	private characterLocation Hover;
-	private Rigidbody2D rg;
+	private CharacterLocation characterLocation;
+	new private Rigidbody2D rigidbody2D;
 
 	void Start ()
 	{
-		rg = gameObject.GetComponent<Rigidbody2D> ();
+		rigidbody2D = gameObject.GetComponent<Rigidbody2D> ();
 	}
 
 	void Update ()
@@ -26,22 +26,22 @@ public class Player : MonoBehaviour
 	{
 		if(collision.gameObject.tag == "Ground")
 		{
-			Hover = characterLocation.OnBlock;
+			characterLocation = CharacterLocation.OnBlock;
 		}
 	}
 
 	void Move ()
 	{
 		float speed = Input.GetAxis ("Horizontal") * moveSpeed * Time.deltaTime;
-		rg.AddForce (new Vector2 (speed, 0));
+		rigidbody2D.AddForce (new Vector2 (speed, 0));
 	}
 
 	void Jump ()
 	{
-		if (Hover == characterLocation.OnBlock && Input.GetKeyDown (KeyCode.Space))
+		if (characterLocation == CharacterLocation.OnBlock && Input.GetKeyDown (KeyCode.Space))
 		{
-			rg.AddForce (new Vector2 (0, jumpPower));
-			Hover = characterLocation.OnAir;
+			rigidbody2D.AddForce (new Vector2 (0, jumpPower));
+			characterLocation = CharacterLocation.OnAir;
 		}
 	}
 }

@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace Enums
 {
-	public enum characterLocation
+	public enum CharacterLocation
 	{
 		OnBlock,
 		OnAir,
@@ -12,7 +12,7 @@ namespace Enums
 	}
 
 	//FIXME : need better name
-	public enum isDark
+	public enum IsDark
 	{
 		Light,
 		Dark

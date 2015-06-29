@@ -4,19 +4,19 @@ using Enums;
 
 public class InGame
 {
-	public isDark isdark = isDark.Light;
+	public IsDark isDark = IsDark.Light;
 
 	public void ChangeDarkLight()
 	{
-		if(isdark == isDark.Light)
+		if(isDark == IsDark.Light)
 		{
-			isdark = isDark.Dark;
+			isDark = IsDark.Dark;
 		}
 
-		else if(isdark == isDark.Dark)
+		else if(isDark == IsDark.Dark)
 		{
-			isdark = isDark.Light;
+			isDark = IsDark.Light;
 		}
-		Debug.Log ("Current World is " + isdark.ToString ());
+		Debug.Log ("Current World is " + isDark.ToString ());
 	}
 }

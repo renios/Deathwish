@@ -18,11 +18,11 @@ public class SpriteSwitch : MonoBehaviour
 
 	void Update ()
 	{
-		if(Global.ingame.isdark == isDark.Light)
+		if(Global.ingame.isDark == IsDark.Light)
 		{
 			sr.sprite = Light;
 		}
-		else if(Global.ingame.isdark == isDark.Dark)
+		else if(Global.ingame.isDark == IsDark.Dark)
 		{
 			sr.sprite = Dark;
 		}
