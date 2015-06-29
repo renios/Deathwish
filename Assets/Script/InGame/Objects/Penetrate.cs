@@ -1,7 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
+using Enums;
 
-public class Glass : MonoBehaviour
+public class Penetrate : MonoBehaviour
 {
 	private BoxCollider2D coll;
 
@@ -12,11 +13,11 @@ public class Glass : MonoBehaviour
 
 	void Update()
 	{
-		if(Global.ingame.isDark == Enums.IsDark.Light)
+		if(Global.ingame.isDark == IsDark.Light)
 		{
 			coll.enabled = true;
 		}
-		else if(Global.ingame.isDark == Enums.IsDark.Dark)
+		else if(Global.ingame.isDark == IsDark.Dark)
 		{
 			coll.enabled = false;
 		}

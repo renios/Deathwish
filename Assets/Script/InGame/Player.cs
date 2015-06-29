@@ -8,18 +8,23 @@ public class Player : MonoBehaviour
 	public float moveSpeed;
 	public float jumpPower;
 
+	private IsAlive isAlive;
 	private CharacterLocation characterLocation;
 	new private Rigidbody2D rigidbody2D;
 
 	void Start ()
 	{
 		rigidbody2D = gameObject.GetComponent<Rigidbody2D> ();
+		isAlive = IsAlive.Alive;
 	}
 
 	void Update ()
 	{
-		Move ();
-		Jump ();
+		if(isAlive == IsAlive.Alive)
+		{
+			Move ();
+			Jump ();
+		}
 	}
 
 	void OnCollisionEnter2D (Collision2D collision)
@@ -27,6 +32,11 @@ public class Player : MonoBehaviour
 		if(collision.gameObject.tag == "Ground")
 		{
 			characterLocation = CharacterLocation.OnBlock;
+		}
+
+		if(collision.gameObject.tag == "Fire" && Global.ingame.isDark == IsDark.Light)
+		{
+			isAlive = IsAlive.Dead;
 		}
 	}
 
