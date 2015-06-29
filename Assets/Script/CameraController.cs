@@ -1,9 +1,9 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class CameraController : MonoBehaviour
 {
-	public PlayerController player;
+	public Player player;
 	private Vector3 fromPlayerToCamera;
 
 	void Start ()

@@ -13,7 +13,7 @@ GameObject:
   - 50: {fileID: 5022094}
   - 114: {fileID: 11484958}
   m_Layer: 0
-  m_Name: Character
+  m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -73,7 +73,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 400
   jumpPower: 300
-  Hover: 0
   controller: {fileID: 0}
 --- !u!212 &21269668
 SpriteRenderer:

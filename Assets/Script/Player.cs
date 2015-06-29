@@ -3,13 +3,14 @@ using System.Collections;
 using System.Collections.Generic;
 using Enums;
 
-public class PlayerController : MonoBehaviour
+public class Player : MonoBehaviour
 {
 	public float moveSpeed;
 	public float jumpPower;
-	public characterLocation Hover;
 	public WorldControl controller;
-	Rigidbody2D rg;
+
+	private characterLocation Hover;
+	private Rigidbody2D rg;
 
 	void Start ()
 	{
