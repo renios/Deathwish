@@ -65,7 +65,7 @@ public class Player : MonoBehaviour
 		{
 			characterLocation = CharacterLocation.OnAir;
 			rigidbody2D.isKinematic = false;
-			rigidbody2D.constraints = RigidbodyConstraints2D.FreezeRotation;
+			SetDefaultConstraints();
 			rigidbody2D.AddForce(new Vector2(0,jumpPower));
 		}
 	}
@@ -76,11 +76,8 @@ public class Player : MonoBehaviour
 		{
 			characterLocation = CharacterLocation.OnLadder;
 			rigidbody2D.isKinematic = true;
-			float a = coll.gameObject.transform.position.x;
-			Vector3 b = gameObject.transform.position;
-			b.x = a;
-			gameObject.transform.position = b;
-			rigidbody2D.constraints = RigidbodyConstraints2D.FreezePositionX;
+			SetPositionAtCenterOfLadder(coll);
+			SetConstraintsforLadder();
 		}
 	}
 
@@ -111,7 +108,25 @@ public class Player : MonoBehaviour
 		rigidbody2D.isKinematic = true;
 		gameObject.transform.position = startPoint;
 		rigidbody2D.isKinematic = false;
-		rigidbody2D.constraints = RigidbodyConstraints2D.FreezeRotation;
+		SetDefaultConstraints ();
 		characterLocation = CharacterLocation.OnAir;
+	}
+
+	void SetPositionAtCenterOfLadder(Collider2D coll)
+	{
+		float a = coll.gameObject.transform.position.x;
+		Vector3 b = gameObject.transform.position;
+		b.x = a;
+		gameObject.transform.position = b;
+	}
+
+	void SetDefaultConstraints()
+	{
+		rigidbody2D.constraints = RigidbodyConstraints2D.FreezeRotation;
+	}
+
+	void SetConstraintsforLadder()
+	{
+		rigidbody2D.constraints = RigidbodyConstraints2D.FreezePositionX;
 	}
 }
