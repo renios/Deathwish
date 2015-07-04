@@ -17,6 +17,5 @@ public class InGame
 		{
 			isDark = IsDark.Light;
 		}
-		Debug.Log ("Current World is " + isDark.ToString ());
 	}
 }

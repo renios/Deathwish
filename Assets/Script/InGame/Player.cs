@@ -38,7 +38,7 @@ public class Player : MonoBehaviour
 
 		if(gameObject.transform.position.y <= -10 || Input.GetKeyDown(KeyCode.R))
 		{
-			Restart();
+			SettingForRestart();
 		}
 	}
 
@@ -74,7 +74,7 @@ public class Player : MonoBehaviour
 
 		if(collision.gameObject.tag == "Fire" && Global.ingame.isDark == IsDark.Light)
 		{
-			Restart();
+			SettingForRestart();
 		}
 	}
 
@@ -120,9 +120,8 @@ public class Player : MonoBehaviour
 		gameObject.transform.Translate(new Vector2 (0, speed2));
 	}
 
-	void Restart ()
+	void SettingForRestart ()
 	{
-		Debug.Log ("You Died");
 		rigidbody2D.isKinematic = true;
 		gameObject.transform.position = startPoint;
 		rigidbody2D.isKinematic = false;

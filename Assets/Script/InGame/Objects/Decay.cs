@@ -1,9 +1,22 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class Decay : MonoBehaviour
 {
 	public float delay;
+	public Sprite normal;
+	public Sprite transparent;
+	new private Collider2D collider2D;
+	new private SpriteRenderer renderer;
+	private SpriteSwitch spriteSwitch;
+
+	void Start()
+	{
+		collider2D = GetComponent<Collider2D> ();
+		renderer = GetComponent<SpriteRenderer> ();
+		spriteSwitch = GetComponent<SpriteSwitch> ();
+	}
 
 	void OnCollisionEnter2D(Collision2D collision)
 	{
@@ -15,6 +28,16 @@ public class Decay : MonoBehaviour
 
 	void DestroySelf()
 	{
-		Destroy (gameObject);
+		collider2D.enabled = false;
+		renderer.sprite = transparent;
+		spriteSwitch.enabled = false;
+	}
+
+	//Need Global Restart
+	void RestoreSelf()
+	{
+		collider2D.enabled = true;
+		renderer.sprite = normal;
+		spriteSwitch.enabled = true;
 	}
 }
