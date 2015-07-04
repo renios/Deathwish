@@ -86,6 +86,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 400
+  climbSpeed: 400
   jumpPower: 300
 --- !u!212 &21269668
 SpriteRenderer:
@@ -134,6 +135,10 @@ Prefab:
       value: 
       objectReference: {fileID: 21300000, guid: e353116d29b6814478d49c9c97b0937f,
         type: 3}
+    - target: {fileID: 0}
+      propertyPath: climbSpeed
+      value: 400
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 141626}

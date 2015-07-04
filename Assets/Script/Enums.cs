@@ -8,7 +8,7 @@ namespace Enums
 	{
 		OnBlock,
 		OnAir,
-		OnRadder
+		OnLadder
 	}
 
 	//FIXME : need better name
@@ -16,11 +16,5 @@ namespace Enums
 	{
 		Light,
 		Dark
-	}
-
-	public enum IsAlive
-	{
-		Alive,
-		Dead
 	}
 }
