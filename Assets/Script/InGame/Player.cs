@@ -36,6 +36,7 @@ public class Player : MonoBehaviour
 			Climb ();
 		}
 
+		//Restart by R Key is not needed. It should be replaced by restart button in menu.
 		if(gameObject.transform.position.y <= -10 || Input.GetKeyDown(KeyCode.R))
 		{
 			SettingForRestart();
@@ -72,6 +73,7 @@ public class Player : MonoBehaviour
 			}
 		}
 
+		//
 		if(collision.gameObject.tag == "Fire" && Global.ingame.isDark == IsDark.Light)
 		{
 			SettingForRestart();
@@ -119,7 +121,7 @@ public class Player : MonoBehaviour
 		float speed2 = Input.GetAxis ("Vertical") * climbSpeed * Time.deltaTime;
 		gameObject.transform.Translate(new Vector2 (0, speed2));
 	}
-
+	
 	void SettingForRestart ()
 	{
 		rigidbody2D.isKinematic = true;
