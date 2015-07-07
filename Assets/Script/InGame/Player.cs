@@ -97,7 +97,7 @@ public class Player : MonoBehaviour, IRestartable
 			characterLocation = CharacterLocation.OnLadder;
 			rigidbody2D.gravityScale = 0;
 			coll.gameObject.GetComponent<CeilingColliderController>().DisableCeiling();
-			SetPositionAtCenterOfLadder(coll);
+			SetPositionXAtCenterOfLadder(coll);
 			SetConstraintsforLadder();
 			ladderCollider = coll;
 		}
@@ -131,12 +131,12 @@ public class Player : MonoBehaviour, IRestartable
 		ladderCollider = null;
 	}
 
-	void SetPositionAtCenterOfLadder(Collider2D coll)
+	void SetPositionXAtCenterOfLadder(Collider2D coll)
 	{
-		float a = coll.gameObject.transform.position.x;
-		Vector3 b = gameObject.transform.position;
-		b.x = a;
-		gameObject.transform.position = b;
+		float ladderX = coll.gameObject.transform.position.x;
+		Vector3 playerPosition = gameObject.transform.position;
+		playerPosition.x = ladderX;
+		gameObject.transform.position = playerPosition;
 	}
 
 	void SetDefaultConstraints()
