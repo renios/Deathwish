@@ -48,11 +48,11 @@ public class Player : MonoBehaviour, IRestartable
 		StartClimbingLadder (coll);
 	}
 
-	//아래쪽에서 벗어나는 문제를 해결하다 보니 coll == ladderCollider인데도 중복되게 써버렸네요. 일단은 이 형태로 하겠습니다.
 	void OnTriggerExit2D (Collider2D coll)
 	{
 		if(characterLocation == CharacterLocation.OnLadder)
 		{
+			Debug.Assert(coll == ladderCollider, "Ladder collider should be same with coll");
 			EscapeFromLadder (ladderCollider);
 			characterLocation = CharacterLocation.OnAir;
 		}
