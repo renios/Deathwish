@@ -84,7 +84,7 @@ public class Player : MonoBehaviour, IRestartable
 		if(characterLocation == CharacterLocation.OnLadder)
 		{
 			rigidbody2D.gravityScale = 1;
-			coll.gameObject.GetComponent<ColliderController>().EnableCeiling();
+			coll.gameObject.GetComponent<CeilingColliderController>().EnableCeiling();
 			SetDefaultConstraints();
 			ladderCollider = null;
 		}
@@ -96,7 +96,7 @@ public class Player : MonoBehaviour, IRestartable
 		{
 			characterLocation = CharacterLocation.OnLadder;
 			rigidbody2D.gravityScale = 0;
-			coll.gameObject.GetComponent<ColliderController>().DisableCeiling();
+			coll.gameObject.GetComponent<CeilingColliderController>().DisableCeiling();
 			SetPositionAtCenterOfLadder(coll);
 			SetConstraintsforLadder();
 			ladderCollider = coll;

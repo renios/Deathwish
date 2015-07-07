@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class ColliderController : MonoBehaviour
+public class CeilingColliderController : MonoBehaviour
 {
 	public GameObject Ground;
 	new Collider2D collider2D;
