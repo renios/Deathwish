@@ -139,11 +139,13 @@ public class Player : MonoBehaviour, IRestartable
 		gameObject.transform.position = playerPosition;
 	}
 
+	//This is necessary since character may tumble when colliding.
 	void SetDefaultConstraints()
 	{
 		rigidbody2D.constraints = RigidbodyConstraints2D.FreezeRotation;
 	}
 
+	//FreezePositionX is chosen since FreezeRotation and FreezePositionX can't be chosen at the same time.
 	void SetConstraintsforLadder()
 	{
 		rigidbody2D.constraints = RigidbodyConstraints2D.FreezePositionX;
