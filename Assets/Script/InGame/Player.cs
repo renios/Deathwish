@@ -105,8 +105,8 @@ public class Player : MonoBehaviour, IRestartable
 
 	void Move ()
 	{
-		float speed1 = Input.GetAxis ("Horizontal") * moveSpeed * Time.deltaTime;
-		rigidbody2D.AddForce (new Vector2 (speed1, 0));
+		float horizontalSpeed = Input.GetAxis ("Horizontal") * moveSpeed * Time.deltaTime;
+		rigidbody2D.AddForce (new Vector2 (horizontalSpeed, 0));
 	}
 
 	void Jump ()
@@ -117,8 +117,8 @@ public class Player : MonoBehaviour, IRestartable
 
 	void Climb ()
 	{
-		float speed2 = Input.GetAxis ("Vertical") * climbSpeed * Time.deltaTime;
-		gameObject.transform.Translate(new Vector2 (0, speed2));
+		float verticalSpeed = Input.GetAxis ("Vertical") * climbSpeed * Time.deltaTime;
+		gameObject.transform.Translate(new Vector2 (0, verticalSpeed));
 	}
 
 	void IRestartable.Restart()
