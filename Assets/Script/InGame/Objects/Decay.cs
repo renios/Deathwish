@@ -2,7 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 
-public class Decay : MonoBehaviour
+public class Decay : MonoBehaviour, IRestartable
 {
 	public float delay;
 	public Sprite normal;
@@ -33,8 +33,7 @@ public class Decay : MonoBehaviour
 		spriteSwitch.enabled = false;
 	}
 
-	//Need Global Restart
-	void RestoreSelf()
+	void IRestartable.Restart()
 	{
 		collider2D.enabled = true;
 		renderer.sprite = normal;

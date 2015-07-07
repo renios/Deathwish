@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Enums;
 
-public class Player : MonoBehaviour
+public class Player : MonoBehaviour, IRestartable
 {
 	public float moveSpeed;
 	public float climbSpeed;
@@ -39,7 +39,7 @@ public class Player : MonoBehaviour
 		//Restart by R Key is not needed. It should be replaced by restart button in menu.
 		if(gameObject.transform.position.y <= -10 || Input.GetKeyDown(KeyCode.R))
 		{
-			SettingForRestart();
+			Restarter.RestartAll();
 		}
 	}
 
@@ -76,7 +76,7 @@ public class Player : MonoBehaviour
 		//
 		if(collision.gameObject.tag == "Fire" && Global.ingame.isDark == IsDark.Light)
 		{
-			SettingForRestart();
+			Restarter.RestartAll();
 		}
 	}
 
@@ -121,8 +121,8 @@ public class Player : MonoBehaviour
 		float speed2 = Input.GetAxis ("Vertical") * climbSpeed * Time.deltaTime;
 		gameObject.transform.Translate(new Vector2 (0, speed2));
 	}
-	
-	void SettingForRestart ()
+
+	void IRestartable.Restart()
 	{
 		rigidbody2D.isKinematic = true;
 		gameObject.transform.position = startPoint;
