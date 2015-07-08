@@ -129,6 +129,8 @@ public class Player : MonoBehaviour, IRestartable
 		SetDefaultConstraints ();
 		characterLocation = CharacterLocation.OnAir;
 		ladderCollider = null;
+		//Temporarily reset isDark in Player.cs, but it should be moved to other script.
+		Global.ingame.isDark = IsDark.Light;
 	}
 
 	void SetPositionXAtCenterOfLadder(Collider2D coll)
