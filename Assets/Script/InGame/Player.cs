@@ -92,7 +92,7 @@ public class Player : MonoBehaviour, IRestartable
 
 	void StartClimbingLadder(Collider2D coll)
 	{
-		if((Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.DownArrow)) && characterLocation != CharacterLocation.OnLadder)
+		if((Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.DownArrow)) && characterLocation != CharacterLocation.OnLadder)
 		{
 			characterLocation = CharacterLocation.OnLadder;
 			rigidbody2D.gravityScale = 0;
