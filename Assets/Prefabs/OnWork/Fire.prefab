@@ -41,9 +41,9 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: .0117282867, y: .0117297173}
   serializedVersion: 2
-  m_Size: {x: 2, y: 4}
+  m_Size: {x: 1.55427825, y: 1.63063955}
 --- !u!114 &11424422
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -55,8 +55,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 870dfea6228011d4cbbf86c95172aad2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  light: {fileID: 21300000, guid: 2a39f99a235f1034aa3adb2eae378be7, type: 3}
-  dark: {fileID: 21300000, guid: e90ea4b0cdf82bb41be285b61b89ea57, type: 3}
+  light: {fileID: 21300000, guid: aef29b135d35adb479d8ce080d1de0f8, type: 3}
+  dark: {fileID: 21300000, guid: 515e954e896a9004da19124dcd1dd753, type: 3}
 --- !u!114 &11454280
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -68,6 +68,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e86a90e201e412c4d9a9aff1f2385128, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  normal: {fileID: 21300000, guid: aef29b135d35adb479d8ce080d1de0f8, type: 3}
+  transparent: {fileID: 21300000, guid: e90ea4b0cdf82bb41be285b61b89ea57, type: 3}
 --- !u!212 &21271986
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -92,7 +94,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 2a39f99a235f1034aa3adb2eae378be7, type: 3}
+  m_Sprite: {fileID: 21300000, guid: aef29b135d35adb479d8ce080d1de0f8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &100100000
 Prefab:
@@ -109,6 +111,31 @@ Prefab:
       propertyPath: m_LocalPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: aef29b135d35adb479d8ce080d1de0f8,
+        type: 3}
+    - target: {fileID: 0}
+      propertyPath: light
+      value: 
+      objectReference: {fileID: 21300000, guid: aef29b135d35adb479d8ce080d1de0f8,
+        type: 3}
+    - target: {fileID: 0}
+      propertyPath: normal
+      value: 
+      objectReference: {fileID: 21300000, guid: aef29b135d35adb479d8ce080d1de0f8,
+        type: 3}
+    - target: {fileID: 0}
+      propertyPath: dark
+      value: 
+      objectReference: {fileID: 21300000, guid: 515e954e896a9004da19124dcd1dd753,
+        type: 3}
+    - target: {fileID: 0}
+      propertyPath: transparent
+      value: 
+      objectReference: {fileID: 21300000, guid: e90ea4b0cdf82bb41be285b61b89ea57,
+        type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 162870}
