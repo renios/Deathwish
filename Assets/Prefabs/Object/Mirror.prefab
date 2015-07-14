@@ -66,8 +66,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 870dfea6228011d4cbbf86c95172aad2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  light: {fileID: 21300000, guid: 036992304202370429b912bc89bbe908, type: 3}
-  dark: {fileID: 21300000, guid: 88c4a54053e5e1b4eb1713405d1386a2, type: 3}
+  light: {fileID: 21300000, guid: 0d3ec46761fa661419d673a7dd90cf0c, type: 3}
+  dark: {fileID: 21300000, guid: 0d3ec46761fa661419d673a7dd90cf0c, type: 3}
 --- !u!212 &21214670
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -109,6 +109,16 @@ Prefab:
       propertyPath: m_LocalPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: light
+      value: 
+      objectReference: {fileID: 21300000, guid: 0d3ec46761fa661419d673a7dd90cf0c,
+        type: 3}
+    - target: {fileID: 0}
+      propertyPath: dark
+      value: 
+      objectReference: {fileID: 21300000, guid: 0d3ec46761fa661419d673a7dd90cf0c,
+        type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 147872}
