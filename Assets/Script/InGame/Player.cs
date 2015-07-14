@@ -77,6 +77,11 @@ public class Player : MonoBehaviour, IRestartable
 		{
 			Restarter.RestartAll();
 		}
+
+		if(collision.gameObject.tag == "Grass" && Global.ingame.isDark == IsDark.Dark)
+		{
+			Restarter.RestartAll();
+		}
 	}
 
 	void EscapeFromLadder(Collider2D coll)
