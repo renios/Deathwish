@@ -10,7 +10,6 @@ GameObject:
   - 4: {fileID: 483920}
   - 212: {fileID: 21277314}
   - 61: {fileID: 6103632}
-  - 114: {fileID: 11499880}
   - 114: {fileID: 11440192}
   m_Layer: 0
   m_Name: GlassGround
@@ -57,19 +56,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   normal: {fileID: 21300000, guid: 50e0133243a356245b7107ad1224c1f3, type: 3}
   transparent: {fileID: 21300000, guid: e90ea4b0cdf82bb41be285b61b89ea57, type: 3}
---- !u!114 &11499880
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 178374}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 870dfea6228011d4cbbf86c95172aad2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  light: {fileID: 21300000, guid: 50e0133243a356245b7107ad1224c1f3, type: 3}
-  dark: {fileID: 21300000, guid: 50e0133243a356245b7107ad1224c1f3, type: 3}
 --- !u!212 &21277314
 SpriteRenderer:
   m_ObjectHideFlags: 1
