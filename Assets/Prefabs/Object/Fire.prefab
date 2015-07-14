@@ -11,6 +11,7 @@ GameObject:
   - 212: {fileID: 21271986}
   - 61: {fileID: 6154298}
   - 114: {fileID: 11454280}
+  - 114: {fileID: 11484692}
   m_Layer: 0
   m_Name: Fire
   m_TagString: Fire
@@ -25,7 +26,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 162870}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -11.613081, y: -1.16818523, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -56,6 +57,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   normal: {fileID: 21300000, guid: aef29b135d35adb479d8ce080d1de0f8, type: 3}
   transparent: {fileID: 21300000, guid: 515e954e896a9004da19124dcd1dd753, type: 3}
+--- !u!114 &11484692
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 162870}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69f1c059a3889f8449c6dfe6f4f74db4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeBetweenAttacks: .699999988
+  attackDamage: 20
+  playerInRange: 0
 --- !u!212 &21271986
 SpriteRenderer:
   m_ObjectHideFlags: 1

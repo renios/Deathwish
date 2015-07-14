@@ -73,15 +73,10 @@ public class Player : MonoBehaviour, IRestartable
 			}
 		}
 
-		if(collision.gameObject.tag == "Fire" && Global.ingame.isDark == IsDark.Light)
-		{
-			Restarter.RestartAll();
-		}
-
-		if(collision.gameObject.tag == "Grass" && Global.ingame.isDark == IsDark.Dark)
-		{
-			Restarter.RestartAll();
-		}
+//		if(collision.gameObject.tag == "Fire" && Global.ingame.isDark == IsDark.Light)
+//		{
+//			Restarter.RestartAll();
+//		}
 	}
 
 	void EscapeFromLadder(Collider2D coll)
