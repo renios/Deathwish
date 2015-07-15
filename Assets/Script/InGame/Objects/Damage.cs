@@ -3,6 +3,7 @@ using System.Collections;
 
 public class Damage : MonoBehaviour
 {
+	/*
 	public float timeBetweenAttacks = 1f;
 	public int attackDamage = 10;
 
@@ -63,4 +64,5 @@ public class Damage : MonoBehaviour
 			playerHealth.TakeDamage (attackDamage);
 		}
 	}
+	*/
 }
