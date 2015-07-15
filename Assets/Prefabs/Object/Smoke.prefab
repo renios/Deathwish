@@ -51,11 +51,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 108592}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6f40c48d6526e0f4089b8bd3519a4d7c, type: 3}
+  m_Script: {fileID: 11500000, guid: e86a90e201e412c4d9a9aff1f2385128, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inlight: {fileID: 21300000, guid: 6e034dc07de05114fb1c14a9acb41685, type: 3}
-  indark: {fileID: 21300000, guid: 6e034dc07de05114fb1c14a9acb41685, type: 3}
+  inLight: {fileID: 21300000, guid: 6e034dc07de05114fb1c14a9acb41685, type: 3}
+  inDark: {fileID: 21300000, guid: 6e034dc07de05114fb1c14a9acb41685, type: 3}
+  isTransparentIn: 0
 --- !u!212 &21246064
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -93,6 +94,16 @@ Prefab:
       propertyPath: m_TagString
       value: Smoke
       objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: inLight
+      value: 
+      objectReference: {fileID: 21300000, guid: 6e034dc07de05114fb1c14a9acb41685,
+        type: 3}
+    - target: {fileID: 0}
+      propertyPath: inDark
+      value: 
+      objectReference: {fileID: 21300000, guid: 6e034dc07de05114fb1c14a9acb41685,
+        type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 108592}
