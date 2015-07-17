@@ -1,0 +1,644 @@
+[33mcommit 759a3d977ebaa423c99a7ef062260e862a93a344[m
+Author: EQwon <bluetwintail0906@gmail.com>
+Date:   Fri Jul 17 13:39:20 2015 +0900
+
+    commitcommit!
+
+[33mcommit f5203a2556a227c1ad9991e8ee5525ca09777d90[m
+Author: EQwon <bluetwintail0906@gmail.com>
+Date:   Fri Jul 17 13:31:48 2015 +0900
+
+    test
+
+[33mcommit a166c303880038e6ff1aae90611129cb549e3fd4[m
+Author: EQwon <bluetwintail0906@gmail.com>
+Date:   Fri Jul 17 13:14:12 2015 +0900
+
+    commitcommit!
+
+[33mcommit 5e3ecd22e1a057f0d1950875d16c4932197d489c[m
+Author: EQwon <bluetwintail0906@gmail.com>
+Date:   Fri Jul 17 13:04:12 2015 +0900
+
+    sync
+
+[33mcommit 32a229f91a299d9ee428a331b99fd93f2a1bb0bb[m
+Author: gityomee <iyomee@icloud.com>
+Date:   Thu Jul 16 19:09:57 2015 +0900
+
+    캐릭터 bone
+    
+    뼈대 올립니다. ani_walking 파일 참조하셔서 애니메이팅 부탁드려요~
+
+[33mcommit eded4361a3555c3835f8d2c9662a18e9ff654bd0[m
+Merge: f114e52 9683c84
+Author: EQwon <bluetwintail0906@gmail.com>
+Date:   Wed Jul 15 22:49:46 2015 +0900
+
+    Merge branch 'master' of https://github.com/SNUGDC/Deathwish
+
+[33mcommit f114e52e4532964f4d9ef5dd5411fc0f61fc02ac[m
+Author: EQwon <bluetwintail0906@gmail.com>
+Date:   Wed Jul 15 22:49:03 2015 +0900
+
+    Apply 'penetrate' to prefaps
+    
+    Apply 'penetrate script' to 'Fire, Glass, Grass, Smoke' prefaps
+
+[33mcommit 9683c84cf2000315539a11bf0c4e17d1bbc61d23[m
+Author: JYPark1101 <jypark921101@gmail.com>
+Date:   Wed Jul 15 22:48:05 2015 +0900
+
+    Added SFXs
+    
+    발자국 소리 넣었습니다.
+
+[33mcommit c313749551687250da8e3d3156b2afa5bf3aed5f[m
+Author: EQwon <bluetwintail0906@gmail.com>
+Date:   Wed Jul 15 22:27:17 2015 +0900
+
+    Merge penetrate and unpenetrate to penetrate.
+    
+    Remove duplicated code.
+
+[33mcommit bafa6d92b7906f3be72207d46e245e6ecab49849[m
+Author: EQwon <bluetwintail0906@gmail.com>
+Date:   Wed Jul 15 22:22:55 2015 +0900
+
+    Rename sprite field name.
+    
+    For easy using.
+
+[33mcommit 98f9a4676dbde7d37fcccc63715629f1409153ea[m
+Author: JYPark1101 <jypark921101@gmail.com>
+Date:   Wed Jul 15 21:26:27 2015 +0900
+
+    Made changes to the Sounds folder
+    
+    Made BGM/SFX Folder, and added 1 BGM
+
+[33mcommit fdab0ee25472d0aa965f334c853d9a23fec4478e[m
+Author: EQwon <bluetwintail0906@gmail.com>
+Date:   Wed Jul 15 17:28:13 2015 +0900
+
+    실수 수정
+    
+    풀은 기존의 불과 같이 부딪치면 리스타트 하도록 했습니다.
+
+[33mcommit ac8e52d4d6d69485fd1e0ed3da6b34031ca8dbf7[m
+Author: EQwon <bluetwintail0906@gmail.com>
+Date:   Wed Jul 15 04:42:53 2015 +0900
+
+    readme!
+
+[33mcommit 205f3e37535721a2010dd388db5e0fdec3557ee2[m
+Author: EQwon <bluetwintail0906@gmail.com>
+Date:   Wed Jul 15 04:33:53 2015 +0900
+
+    Health 시스템 도입
+    
+    Player의 전체 체력을 100으로 두고 불은 부딪칠 때마다 20씩, 풀은 10씩 깍이도록 했습니다.
+    체력이 0이되서 restart 할 때 여전히 풀이나 불과 접촉해있다고 인식하는 버그가 하나 있는데 RestartAll 코드가
+    이해가 안되서 그냥 놔뒀습니다.
+
+[33mcommit f46b6bddc618b281a801c3561203f04c133fa7cd[m
+Author: EQwon <bluetwintail0906@gmail.com>
+Date:   Wed Jul 15 02:42:20 2015 +0900
+
+    Smoke 크기 수정 + Grass 오브젝트 제작
+    
+    Smoke의 콜라이더 크기 : 1*2
+    Grass의 콜라이더 크기 : 1*1
+    Grass와 Fire의 반응은 같습니다.
+
+[33mcommit 4f75604c559c5068032b63a8dbd324cb581fd475[m
+Author: EQwon <bluetwintail0906@gmail.com>
+Date:   Wed Jul 15 02:00:22 2015 +0900
+
+    거울 배경 제거하다 실수......
+    
+    거울 배경 제거하다 실수한거 다시 수정
+
+[33mcommit 1280987a22f4d7e5aff1308f0ae9bfa48704e2a7[m
+Author: EQwon <bluetwintail0906@gmail.com>
+Date:   Wed Jul 15 01:56:04 2015 +0900
+
+    Smoke 제작 + Mirror 수정
+    
+    연기 오브젝트 제작했습니다.
+    거울 배경 제거했습니다.
+
+[33mcommit b4caf1e79abc1b50c27b7057a75bc2a260240d17[m
+Author: noisum <seomated@naver.com>
+Date:   Tue Jul 14 22:49:50 2015 +0900
+
+    Rename Prefabs/OnWork folder to Prefabs/Object.
+
+[33mcommit 79a66ab5f8af3847879644217bce012daa3bca26[m
+Author: noisum <seomated@naver.com>
+Date:   Tue Jul 14 22:48:20 2015 +0900
+
+    Some changes were not committed. Recommit them.
+
+[33mcommit 10edf9d6778b9a84b763c93891caf3da74f98ce5[m
+Author: noisum <seomated@naver.com>
+Date:   Tue Jul 14 22:45:38 2015 +0900
+
+    Remove some redundant scripts.
+
+[33mcommit 3f2090318819720e67efb0435d84e7a0559d1aeb[m
+Author: noisum <seomated@naver.com>
+Date:   Tue Jul 14 22:41:36 2015 +0900
+
+    Apply new images to prefabs, and do some file rearrangement.
+
+[33mcommit abeccd0b4b9fcff4c12761ec1a3071049ce921c6[m
+Author: Minjung Kim <Reny.atkins@gmail.com>
+Date:   Sun Jul 12 22:21:15 2015 +0900
+
+    Make test scene
+
+[33mcommit 72bcf351ad015981d16a35a6f4d804b4a3f402fb[m
+Author: Minjung Kim <Reny.atkins@gmail.com>
+Date:   Sun Jul 12 22:21:03 2015 +0900
+
+    Make player can start climing ladder while jumping.
+
+[33mcommit 7caa5d3a9c9e0d53ae7a2bcc9fc4a49ca8702460[m
+Merge: 38159f3 7670c1d
+Author: Minjung Kim <Reny.atkins@gmail.com>
+Date:   Sun Jul 12 21:15:37 2015 +0900
+
+    Merge branch 'master' of https://github.com/SNUGDC/Deathwish
+
+[33mcommit 38159f39813493de5b7214d90081b2b1eb52ebae[m
+Author: Minjung Kim <Reny.atkins@gmail.com>
+Date:   Sun Jul 12 21:14:39 2015 +0900
+
+    Change ratio setting
+
+[33mcommit e60c24bc721c0d85eb279fd84a79533281ba112b[m
+Author: Minjung Kim <Reny.atkins@gmail.com>
+Date:   Sun Jul 12 21:14:10 2015 +0900
+
+    Change glass -> glass ground
+
+[33mcommit 1dedee4c4f96af2cff7805484c8c8946b426eff8[m
+Author: Minjung Kim <Reny.atkins@gmail.com>
+Date:   Sun Jul 12 21:13:44 2015 +0900
+
+    Divide glass wall / ground
+
+[33mcommit 7670c1d7d06d10ebe5d3ca65a0a2613df5916640[m
+Author: EQwon <bluetwintail0906@gmail.com>
+Date:   Sun Jul 12 00:53:53 2015 +0900
+
+    readme
+    
+    readme
+
+[33mcommit e3bced1d813edd4a47e434af662f17eb3bc12e94[m
+Author: gityomee <iyomee@icloud.com>
+Date:   Sat Jul 11 19:48:04 2015 +0900
+
+    배경_2
+    
+    배경올립니다~ 빛버전은 캐릭터작업이 먼저인 것 같아 캐릭터작업후 올리겠습니다.
+
+[33mcommit a2cf15b2668f182ac5517d4e589d4a0bfc00dccc[m
+Author: noisum <seomated@naver.com>
+Date:   Fri Jul 10 18:11:35 2015 +0900
+
+    Fix Character Collider Size.
+
+[33mcommit 0deebb41b90a363dbee3e1ca1d8e20a27adb0b37[m
+Merge: d69cbe8 9cb8e2b
+Author: ParkJuhyeong <majecty@gmail.com>
+Date:   Thu Jul 9 21:02:11 2015 +0900
+
+    Merge branch 'master' of github.com:SNUGDC/Deathwish
+
+[33mcommit d69cbe800f812c51f144f8fbdfab9061097ca14c[m
+Author: ParkJuhyeong <majecty@gmail.com>
+Date:   Thu Jul 9 21:01:35 2015 +0900
+
+    Fix ladder climbing speed bug.
+
+[33mcommit 9cb8e2b126d712240497c187f86f03ce63c91a41[m
+Merge: 0d10b9f 4cd1fd8
+Author: Zannetic <suzannepark4@gmail.com>
+Date:   Thu Jul 9 20:59:22 2015 +0900
+
+    Merge branch 'master' of https://github.com/SNUGDC/Deathwish
+
+[33mcommit 0d10b9f241aebab74b674df58042cd9bf2de97c9[m
+Author: Zannetic <suzannepark4@gmail.com>
+Date:   Thu Jul 9 20:59:11 2015 +0900
+
+    Bug (점프)
+    
+    거울위에서 점프가 되었다가 안되었다 하는 버그를 발견하였습니다. (쉐도우일때는 어쩔때 점프가 되지만 다시 오리지널로 돌아오면
+    점프가 안됨,)
+
+[33mcommit 4cd1fd849d76220aab2eec04896f941594b51984[m
+Author: ParkJuhyeong <majecty@gmail.com>
+Date:   Thu Jul 9 20:20:16 2015 +0900
+
+    Make my map.
+    
+    need description.
+
+[33mcommit c7a43e14803145a7d4dbe96c792a3b10e3664cfc[m
+Author: lovelyxox <lovelyxox@naver.com>
+Date:   Wed Jul 8 22:04:05 2015 +0900
+
+    지윤 art resource
+    
+    지윤 아트리소스 올려용
+
+[33mcommit 1b97138f5f0fe9ca20c5eaa010101c0a26f6a284[m
+Merge: 0dd7fa3 a1ba28c
+Author: EQwon <bluetwintail0906@gmail.com>
+Date:   Wed Jul 8 21:57:07 2015 +0900
+
+    Merge branch 'master' of https://github.com/SNUGDC/Deathwish
+
+[33mcommit a1ba28c82fe2fbd33e564d0c759ff328c2e011d7[m
+Merge: f522aff a64f863
+Author: lovelyxox <lovelyxox@naver.com>
+Date:   Wed Jul 8 21:57:05 2015 +0900
+
+    Merge branch 'master' of https://github.com/SNUGDC/Deathwish
+
+[33mcommit 0dd7fa32e00af27b9b573069cba514a43998fc1d[m
+Merge: e77e3a3 a64f863
+Author: EQwon <bluetwintail0906@gmail.com>
+Date:   Wed Jul 8 21:55:28 2015 +0900
+
+    Merge branch 'master' of https://github.com/SNUGDC/Deathwish
+
+[33mcommit a64f863a4251b80331a615bfb27c61b67eaa0061[m
+Merge: a733269 c135ade
+Author: JeongMunKyu <amigojmk@naver.com>
+Date:   Wed Jul 8 21:54:14 2015 +0900
+
+    Merge branch 'master' of https://github.com/SNUGDC/Deathwish
+
+[33mcommit f522aff2106101db548d23b976402866976fd88e[m
+Merge: 98b3a53 68378de
+Author: lovelyxox <lovelyxox@naver.com>
+Date:   Wed Jul 8 21:53:12 2015 +0900
+
+    Merge branch 'master' of https://github.com/SNUGDC/Deathwish
+
+[33mcommit a733269106b5f68d9d627ce1743b474feb71fed9[m
+Author: JeongMunKyu <amigojmk@naver.com>
+Date:   Wed Jul 8 21:51:07 2015 +0900
+
+    Munkyu Scene
+    
+    Practice
+
+[33mcommit e77e3a3b988938b79fe30e3b4609a24395c01678[m
+Author: EQwon <bluetwintail0906@gmail.com>
+Date:   Wed Jul 8 21:48:56 2015 +0900
+
+    Just_test
+    
+    gyuwon e ga github test ham
+
+[33mcommit 98b3a53d933ac37f105af34209442c64ffb05f64[m
+Author: lovelyxox <lovelyxox@naver.com>
+Date:   Wed Jul 8 21:45:54 2015 +0900
+
+    practice
+    
+    연습
+
+[33mcommit c135ade4c628149f5085d0f96ed1ae5575c44ed6[m
+Author: gityomee <iyomee@icloud.com>
+Date:   Wed Jul 8 21:43:29 2015 +0900
+
+    깃헙 테스
+
+[33mcommit 68378de3b15bfd39b22510841866a45b814d6dab[m
+Author: Juhyeong <majecty@gmail.com>
+Date:   Wed Jul 8 21:39:26 2015 +0900
+
+    Remove Juhyeong Scene.
+    
+    For example.
+
+[33mcommit 0804fef26f51dc8ab7634a8b2724a7ab67cf3b3c[m
+Author: ParkJuhyeong <majecty@gmail.com>
+Date:   Wed Jul 8 21:19:42 2015 +0900
+
+    Make map by juhyeong.
+
+[33mcommit 46fc5dd7af1e3aff5d62a90ded3b15229bef684b[m
+Author: noisum <seomated@naver.com>
+Date:   Wed Jul 8 17:10:17 2015 +0900
+
+    Camera became child of Player, and make example scene.
+
+[33mcommit 80ee30c27d2418b2ccd0ee3589f898889e2f7d7d[m
+Author: noisum <seomated@naver.com>
+Date:   Wed Jul 8 16:35:11 2015 +0900
+
+    isDark was not resetted when restart. Solved This Problem.
+
+[33mcommit 63a07eaac35a7f682220279feffa10095958c686[m
+Author: noisum <seomated@naver.com>
+Date:   Wed Jul 8 16:27:26 2015 +0900
+
+    Change current temporary image to proper images.
+
+[33mcommit 6cb3b91ee587513f6c4a68674cbcbb1a8665eadc[m
+Author: noisum <seomated@naver.com>
+Date:   Tue Jul 7 23:25:26 2015 +0900
+
+    Add DefaultScene
+
+[33mcommit 11c9255bf88eea74957ddcc1e7dbe571947cf5ad[m
+Author: noisum <seomated@naver.com>
+Date:   Tue Jul 7 23:21:28 2015 +0900
+
+    Rename variables in Move and Climb in Player.cs
+
+[33mcommit bd813e78e7ac3c67b1ae86c151ac1590c5faadd2[m
+Author: noisum <seomated@naver.com>
+Date:   Tue Jul 7 23:19:16 2015 +0900
+
+    Add comments about SetDefaultConstraints and SetConstraintsforLadder.
+
+[33mcommit 65b6b55bbe4713fc41e13779ade4b7836f16724b[m
+Author: noisum <seomated@naver.com>
+Date:   Tue Jul 7 23:07:58 2015 +0900
+
+    Rename SetPositionAtCenterOfLadder to SetPositionXAtCenterOfLadder and
+    related values' name.
+
+[33mcommit f02142bbe89c1f20cfe952de0db6b73426e85754[m
+Author: noisum <seomated@naver.com>
+Date:   Tue Jul 7 23:05:05 2015 +0900
+
+    Rename ColliderController to CeilColliderController.
+
+[33mcommit 44103ced33c5c1b3c1c429d79fb90f5a224058fa[m
+Author: noisum <seomated@naver.com>
+Date:   Tue Jul 7 23:04:18 2015 +0900
+
+    Remove empty comment.
+
+[33mcommit 465ed117b46649384371d425d6fd8b8b522fc0ea[m
+Author: noisum <seomated@naver.com>
+Date:   Tue Jul 7 23:04:00 2015 +0900
+
+    Use assert that checking ladderCollider.
+
+[33mcommit d82eb12e11cb691dd109474c0541a0399691a93c[m
+Author: noisum <seomated@naver.com>
+Date:   Tue Jul 7 22:44:12 2015 +0900
+
+    Implement restart. Add IRestartable Interface and Restarter class.
+    
+    For minimized management cost of restarting every object.
+
+[33mcommit 19f22c49e782fa07987a4ed17344b210a0ea634c[m
+Author: noisum <seomated@naver.com>
+Date:   Tue Jul 7 22:08:46 2015 +0900
+
+    Add a comment about Restart by R key.
+
+[33mcommit 6047a25b332afd6ecae1008d6ca252058ea04846[m
+Author: noisum <seomated@naver.com>
+Date:   Tue Jul 7 21:51:31 2015 +0900
+
+    Move ColliderController from Script folder to Script/Ingame folder.
+
+[33mcommit e5dba44fd71829d014d09d66d8e38bfbd287e1ca[m
+Author: noisum <seomated@naver.com>
+Date:   Sun Jul 5 00:36:21 2015 +0900
+
+    change in transform component of groundwithladder prefab.
+
+[33mcommit 5186b9de64ef091a46c00a528b96952d63b9c9db[m
+Author: noisum <seomated@naver.com>
+Date:   Sun Jul 5 00:32:43 2015 +0900
+
+    Change in decay, and some renaming in player
+    
+    destroy to disable collider in decay
+    restart to SettingForRestart
+
+[33mcommit 75b567f40f32b650864ee56f521424ce6569acc6[m
+Author: noisum <seomated@naver.com>
+Date:   Sat Jul 4 23:12:56 2015 +0900
+
+    Implemented ladder completely.
+
+[33mcommit ea9fc3d20f23cfdf1b6d3ec8add6e9a4ab928f8d[m
+Author: noisum <seomated@naver.com>
+Date:   Sat Jul 4 19:23:58 2015 +0900
+
+    Extract functions about ladder.
+    
+    For better readability
+
+[33mcommit 5da87747a208519bd7942ca729942b7e796c58b8[m
+Merge: f94fa7d b4113ec
+Author: noisum <seomated@naver.com>
+Date:   Sat Jul 4 19:03:42 2015 +0900
+
+    Merge remote-tracking branch 'deathwish'
+
+[33mcommit f94fa7dcf77ed78c11ab2d87320cc325be935eec[m
+Author: noisum <seomated@naver.com>
+Date:   Sat Jul 4 19:00:26 2015 +0900
+
+    Implemented Ladder, Restart. Rename some function such as climb.
+
+[33mcommit b4113ec6f03a70d9a48e4e9c603aefc6dca2995f[m
+Author: Minjung Kim <Reny.atkins@gmail.com>
+Date:   Sat Jul 4 18:22:42 2015 +0900
+
+    ui - temp commit
+
+[33mcommit a90b36485484cf6f9e7b0370da16cf3fed3992b9[m
+Author: Minjung Kim <Reny.atkins@gmail.com>
+Date:   Sat Jul 4 17:30:56 2015 +0900
+
+    temp commit
+
+[33mcommit 783eb554d43741e002c9f78de73224beb12b900b[m
+Author: noisum <seomated@naver.com>
+Date:   Mon Jun 29 23:11:47 2015 +0900
+
+    Implemented Fire
+
+[33mcommit 25227b54cbb5af0b1fadd29d23219f91267b59b2[m
+Author: noisum <seomated@naver.com>
+Date:   Mon Jun 29 22:18:29 2015 +0900
+
+    implemented glass
+
+[33mcommit 220daece52411afbb276cc191d4bde791a8ec55d[m
+Author: noisum <seomated@naver.com>
+Date:   Mon Jun 29 22:08:03 2015 +0900
+
+    implemented sprite change
+
+[33mcommit d1aecafb92240b56d9d6e6e425e6be8c28bc198a[m
+Author: noisum <seomated@naver.com>
+Date:   Mon Jun 29 21:56:46 2015 +0900
+
+    implemented decaying ground&wall
+
+[33mcommit 0a7f7125b3de24f6c2b280bf8e1bf981cb24aa36[m
+Author: noisum <seomated@naver.com>
+Date:   Mon Jun 29 21:48:07 2015 +0900
+
+    Some folder rearrangement
+
+[33mcommit cd5915d687b4322eabdc3a3737d883a614c6f0d8[m
+Author: noisum <seomated@naver.com>
+Date:   Mon Jun 29 21:42:26 2015 +0900
+
+    Move some script.
+
+[33mcommit 0f4b56446c89fa45e08ba994b052e6ebfe81e9aa[m
+Author: noisum <seomated@naver.com>
+Date:   Mon Jun 29 21:39:50 2015 +0900
+
+    Some Renaming Done.
+
+[33mcommit 9e00adc735c87775bea05b0763c03e246574834d[m
+Author: noisum <seomated@naver.com>
+Date:   Mon Jun 29 21:35:42 2015 +0900
+
+    Move some scripts to Scirpt/Objects folder and some renaming done.
+
+[33mcommit 9e3b28cd60a63ac16fc493ea58f2770b3525a3e3[m
+Author: noisum <seomated@naver.com>
+Date:   Mon Jun 29 21:29:54 2015 +0900
+
+    Rename enums and related variables
+
+[33mcommit d46d4cc315c0399b86398a18820f196efcec0e2a[m
+Author: noisum <seomated@naver.com>
+Date:   Mon Jun 29 21:24:55 2015 +0900
+
+    Rename WorldContorl to Ingame and related variables.
+
+[33mcommit a33255dcded50aaabbb214a5c96ac821250a26dd[m
+Author: noisum <seomated@naver.com>
+Date:   Mon Jun 29 21:19:31 2015 +0900
+
+    Change of WorldControl to Global and implemented initialization of Global
+
+[33mcommit 0bff4541c3c6801476095f4c67b0cca95c619b03[m
+Author: noisum <seomated@naver.com>
+Date:   Mon Jun 29 20:12:13 2015 +0900
+
+    Rename PlayerController.cs to Player.cs
+
+[33mcommit b015b84ffd3c52c667e1af74430b64f3eb9b6555[m
+Author: noisum <seomated@naver.com>
+Date:   Mon Jun 29 20:02:33 2015 +0900
+
+    Rename Commons.cs to Enums.cs
+
+[33mcommit ecf8166c878cbb66f731641b45ba7d1c437a4db9[m
+Author: noisum <seomated@naver.com>
+Date:   Mon Jun 29 19:30:14 2015 +0900
+
+    implemented character movement and feature importance 1
+    
+    Wall, Ground, Door, Mirror, and decaying Wall
+
+[33mcommit 22dabf33ec6b94865dbf3e91eef9d24929fe284e[m
+Author: Minjung Kim <Reny.atkins@gmail.com>
+Date:   Tue Jun 23 00:37:31 2015 +0900
+
+    Fix resolution setting - only 16:10
+
+[33mcommit 866f321bb0039a55d6635e816fb904883961266a[m
+Author: ParkJuhyeong <majecty@gmail.com>
+Date:   Mon Jun 22 21:31:24 2015 +0900
+
+    Rename title ui object.
+
+[33mcommit cc4af9238d25961296b9a17fd20aa97fa1c6e72e[m
+Author: ParkJuhyeong <majecty@gmail.com>
+Date:   Mon Jun 22 18:40:37 2015 +0900
+
+    Version up.
+
+[33mcommit 2d26c4d854232cb19febf3110fed3785b574c2e3[m
+Author: ParkJuhyeong <majecty@gmail.com>
+Date:   Mon Jun 22 17:31:43 2015 +0900
+
+    Change project settings about "Version Control" and "Asset Serialization".
+    
+    When using external version control system, should use Visible meta files option and
+    Force text seriailzation option.
+    
+    * Visible Meta Files : we should manually manage metafiles, so it should be visible.
+    * Force Text : We can merge only text formats, cannot merge binary format.
+
+[33mcommit 29ddcc5f4985d17f9e89249b4e408bf9d37b5cb7[m
+Author: ParkJuhyeong <majecty@gmail.com>
+Date:   Mon Jun 22 17:26:00 2015 +0900
+
+    Add dummy file for empty folder.
+    
+    Git does not handle empty folder.
+    So add dummy text file for managing folder.
+
+[33mcommit a0f894f41afee260aeb70e3b0ba3ff5852f460f8[m
+Author: noisum <seomated@naver.com>
+Date:   Mon Jun 22 15:21:50 2015 +0900
+
+    folder arrangement
+
+[33mcommit 144eb526d21fafd92b4024d854cb1f5a9525948c[m
+Author: Minjung Kim <Reny.atkins@gmail.com>
+Date:   Sun Jun 21 22:15:27 2015 +0900
+
+    Minor fix
+
+[33mcommit 98d8d5c7fe450a28766ac018be55c7f1c623fb40[m
+Author: Minjung Kim <Reny.atkins@gmail.com>
+Date:   Sun Jun 21 21:50:04 2015 +0900
+
+    Implement UI Button event manager
+
+[33mcommit 80a65ac172390162a08059c05e62269dc10fbf63[m
+Author: Minjung Kim <Reny.atkins@gmail.com>
+Date:   Sun Jun 21 21:03:26 2015 +0900
+
+    Implement ESC popup menu
+
+[33mcommit 3865dc02a29b8a6ca771d7c6f1b7c088589621a0[m
+Author: Minjung Kim <Reny.atkins@gmail.com>
+Date:   Sun Jun 21 05:10:06 2015 +0900
+
+    Add scenes in projectSetting
+
+[33mcommit c1d9944043fdd5ae51deafe99dc562c0710c1bd3[m
+Author: Minjung Kim <Reny.atkins@gmail.com>
+Date:   Sun Jun 21 03:04:11 2015 +0900
+
+    Add option scene
+
+[33mcommit ee00cc792dcaabffd17c90a218c9ee2f85c18719[m
+Author: Minjung Kim <Reny.atkins@gmail.com>
+Date:   Sun Jun 21 00:21:27 2015 +0900
+
+    Add Scenes
+
+[33mcommit ebdef69146e776cbbf2c1b9895eb06c22b66a47c[m
+Author: Minjung Kim <Reny.atkins@gmail.com>
+Date:   Tue Jun 16 19:45:37 2015 +0900
+
+    Initial commit
