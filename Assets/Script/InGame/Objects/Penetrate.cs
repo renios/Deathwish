@@ -4,9 +4,11 @@ using Enums;
 
 public class Penetrate : MonoBehaviour
 {
-	public Sprite normal;
-	public Sprite transparent;
+	public Sprite inLight;
+	public Sprite inDark;
+
 	private BoxCollider2D coll;
+	public IsDark isTransparentIn;
 
 	void Start()
 	{
@@ -17,13 +19,20 @@ public class Penetrate : MonoBehaviour
 	{
 		if(Global.ingame.isDark == IsDark.Light)
 		{
-			coll.enabled = true;
-			gameObject.GetComponent<SpriteRenderer>().sprite = normal;
+			gameObject.GetComponent<SpriteRenderer>().sprite = inLight;
 		}
 		else if(Global.ingame.isDark == IsDark.Dark)
 		{
+			gameObject.GetComponent<SpriteRenderer>().sprite = inDark;
+		}
+
+		if (Global.ingame.isDark == isTransparentIn)
+		{
 			coll.enabled = false;
-			gameObject.GetComponent<SpriteRenderer>().sprite = transparent;
+		}
+		else
+		{
+			coll.enabled = true;
 		}
 	}
 }

@@ -3,6 +3,7 @@ using System.Collections;
 
 public class PlayerHealth : MonoBehaviour
 {
+	/*
 	public int startingHealth = 100;
 	public int currentHealth;
 
@@ -26,4 +27,5 @@ public class PlayerHealth : MonoBehaviour
 			Restarter.RestartAll();
 		}
 	}
+	*/
 }
