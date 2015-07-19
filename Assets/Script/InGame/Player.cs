@@ -154,6 +154,6 @@ public class Player : MonoBehaviour, IRestartable
 	//FreezePositionX is chosen since FreezeRotation and FreezePositionX can't be chosen at the same time.
 	void SetConstraintsforLadder()
 	{
-		rigidbody2D.constraints = RigidbodyConstraints2D.FreezePositionX;
+		rigidbody2D.constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezeRotation;
 	}
 }
