@@ -13,11 +13,14 @@ public class Player : MonoBehaviour, IRestartable
 	private Collider2D ladderCollider;
 	new private Rigidbody2D rigidbody2D;
 
+	public PlayerLocationChecker locationChecker;
+
 	void Start ()
 	{
 		ladderCollider = null;
 		startPoint = gameObject.transform.position;
 		rigidbody2D = gameObject.GetComponent<Rigidbody2D> ();
+		locationChecker.SetCallback(OnTriggerEnterWithGround);
 	}
 
 	void Update ()
@@ -60,19 +63,6 @@ public class Player : MonoBehaviour, IRestartable
 
 	void OnCollisionEnter2D (Collision2D collision)
 	{
-		if(collision.gameObject.tag == "Ground")
-		{
-			if(characterLocation != CharacterLocation.OnLadder)
-			{
-				characterLocation = CharacterLocation.OnBlock;
-			}
-			else
-			{
-				EscapeFromLadder(ladderCollider);
-				characterLocation = CharacterLocation.OnBlock;
-			}
-		}
-
 		if(collision.gameObject.tag == "Fire" && Global.ingame.isDark == IsDark.Light)
 		{
 			Restarter.RestartAll();
@@ -81,6 +71,19 @@ public class Player : MonoBehaviour, IRestartable
 		if(collision.gameObject.tag == "Grass" && Global.ingame.isDark == IsDark.Dark)
 		{
 			Restarter.RestartAll();
+		}
+	}
+
+	private void OnTriggerEnterWithGround(Collider2D collision)
+	{
+		if(characterLocation != CharacterLocation.OnLadder)
+		{
+			characterLocation = CharacterLocation.OnBlock;
+		}
+		else
+		{
+			EscapeFromLadder(gameObject.GetComponentInParent<Player>().ladderCollider);
+			characterLocation = CharacterLocation.OnBlock;
 		}
 	}
 
