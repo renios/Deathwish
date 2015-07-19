@@ -13,7 +13,7 @@ GameObject:
   - 114: {fileID: 11427462}
   m_Layer: 0
   m_Name: Ladder
-  m_TagString: Untagged
+  m_TagString: Ladder
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -175,6 +175,10 @@ Prefab:
       propertyPath: Ground
       value: 
       objectReference: {fileID: 131686}
+    - target: {fileID: 0}
+      propertyPath: m_TagString
+      value: Ladder
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 131686}

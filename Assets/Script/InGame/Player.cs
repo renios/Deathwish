@@ -48,6 +48,11 @@ public class Player : MonoBehaviour, IRestartable
 
 	void OnTriggerStay2D (Collider2D coll)
 	{
+		if (coll.gameObject.tag != "Ladder")
+		{
+			return;
+		}
+		
 		StartClimbingLadder (coll);
 	}
 
@@ -55,7 +60,11 @@ public class Player : MonoBehaviour, IRestartable
 	{
 		if(characterLocation == CharacterLocation.OnLadder)
 		{
-			Debug.Assert(coll == ladderCollider, "Ladder collider should be same with coll");
+			if (coll.gameObject.tag != "Ladder")
+			{
+				return;
+			}
+			
 			EscapeFromLadder (ladderCollider);
 			characterLocation = CharacterLocation.OnAir;
 		}
