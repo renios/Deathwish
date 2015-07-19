@@ -70,19 +70,6 @@ public class Player : MonoBehaviour, IRestartable
 		}
 	}
 
-	void OnCollisionEnter2D (Collision2D collision)
-	{
-		if(collision.gameObject.tag == "Fire" && Global.ingame.isDark == IsDark.Light)
-		{
-			Restarter.RestartAll();
-		}
-
-		if(collision.gameObject.tag == "Grass" && Global.ingame.isDark == IsDark.Dark)
-		{
-			Restarter.RestartAll();
-		}
-	}
-
 	private void OnTriggerEnterWithGround(Collider2D collision)
 	{
 		if(characterLocation != CharacterLocation.OnLadder)
