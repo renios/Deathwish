@@ -56,7 +56,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inLight: {fileID: 21300000, guid: aef29b135d35adb479d8ce080d1de0f8, type: 3}
-  inDark: {fileID: 21300000, guid: 515e954e896a9004da19124dcd1dd753, type: 3}
+  inDark: {fileID: 0}
   isTransparentIn: 1
 --- !u!114 &11484692
 MonoBehaviour:
@@ -140,6 +140,10 @@ Prefab:
       value: 
       objectReference: {fileID: 21300000, guid: 2a39f99a235f1034aa3adb2eae378be7,
         type: 3}
+    - target: {fileID: 0}
+      propertyPath: inDark
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 162870}
