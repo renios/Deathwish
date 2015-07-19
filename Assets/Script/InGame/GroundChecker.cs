@@ -3,7 +3,7 @@ using System;
 using System.Collections;
 using Enums;
 
-public class PlayerLocationChecker : MonoBehaviour {
+public class GroundChecker : MonoBehaviour {
 
 	private Action<Collider2D> onTriggerEnterWithGround;
 

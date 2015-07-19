@@ -13,7 +13,7 @@ public class Player : MonoBehaviour, IRestartable
 	private Collider2D ladderCollider;
 	new private Rigidbody2D rigidbody2D;
 
-	public PlayerLocationChecker locationChecker;
+	public GroundChecker locationChecker;
 
 	void Start ()
 	{
