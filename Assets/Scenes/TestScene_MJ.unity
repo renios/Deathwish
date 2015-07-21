@@ -316,19 +316,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 414702, guid: b510a595ceb3e8f45a951a21ee48a8bc, type: 2}
       propertyPath: m_RootOrder
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 106734, guid: b510a595ceb3e8f45a951a21ee48a8bc, type: 2}
-      propertyPath: m_Name
-      value: GroundChecker
-      objectReference: {fileID: 0}
-    - target: {fileID: 2098470, guid: b510a595ceb3e8f45a951a21ee48a8bc, type: 2}
-      propertyPath: orthographic size
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 11484958, guid: b510a595ceb3e8f45a951a21ee48a8bc, type: 2}
-      propertyPath: jumpPower
-      value: 23
+      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b510a595ceb3e8f45a951a21ee48a8bc, type: 2}
@@ -962,7 +950,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 402076, guid: 106dfdd9246753842b549281a246645a, type: 2}
       propertyPath: m_RootOrder
-      value: 13
+      value: 28
       objectReference: {fileID: 0}
     - target: {fileID: 112420, guid: 106dfdd9246753842b549281a246645a, type: 2}
       propertyPath: m_Name
@@ -2016,7 +2004,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 402076, guid: 106dfdd9246753842b549281a246645a, type: 2}
       propertyPath: m_RootOrder
-      value: 0
+      value: 22
       objectReference: {fileID: 0}
     - target: {fileID: 402076, guid: 106dfdd9246753842b549281a246645a, type: 2}
       propertyPath: m_LocalScale.x
