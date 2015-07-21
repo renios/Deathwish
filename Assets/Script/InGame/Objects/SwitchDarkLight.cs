@@ -4,9 +4,9 @@ using Enums;
 
 public class SwitchDarkLight : MonoBehaviour
 {
-	void OnCollisionEnter2D(Collision2D collision)
+	void OnTriggerStay2D(Collider2D collision)
 	{
-		if(collision.gameObject.tag == "Player")
+		if ((collision.gameObject.tag == "Player") && (Input.GetKeyDown(KeyCode.UpArrow)))
 		{
 			Global.ingame.ChangeDarkLight();
 		}
