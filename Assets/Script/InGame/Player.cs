@@ -20,7 +20,7 @@ public class Player : MonoBehaviour, IRestartable
 	public Transform ladderCheck5;
 	public float ladderCheckRadius;
 	public LayerMask whatIsLadder;
-	public GameObject Ladder;
+	public GameObject bottomChecker;
 
 	private Vector3 startPoint;
 	private bool grounded;
@@ -41,7 +41,7 @@ public class Player : MonoBehaviour, IRestartable
 	
 	void Update ()
 	{
-		if(gameObject.transform.position.y <= -100 || Input.GetKeyDown(KeyCode.R))
+		if(gameObject.transform.position.y - bottomChecker.transform.position.y <= -10 || Input.GetKeyDown(KeyCode.R))
 		{
 			Restarter.RestartAll();
 		}
