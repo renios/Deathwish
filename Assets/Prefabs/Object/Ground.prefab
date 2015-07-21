@@ -54,8 +54,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 870dfea6228011d4cbbf86c95172aad2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  light: {fileID: 21300000, guid: 98b1762d2c4128e48a1cdc7e37666394, type: 3}
-  dark: {fileID: 21300000, guid: 98b1762d2c4128e48a1cdc7e37666394, type: 3}
+  light: {fileID: 21300000, guid: 8eea289af589250468fb5259c7643c65, type: 3}
+  dark: {fileID: 21300000, guid: b34c2090af7020742b2ff09dab0a7d07, type: 3}
 --- !u!212 &21250388
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -80,7 +80,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 98b1762d2c4128e48a1cdc7e37666394, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 8eea289af589250468fb5259c7643c65, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &100100000
 Prefab:
@@ -92,12 +92,17 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: light
       value: 
-      objectReference: {fileID: 21300000, guid: 98b1762d2c4128e48a1cdc7e37666394,
+      objectReference: {fileID: 21300000, guid: 8eea289af589250468fb5259c7643c65,
         type: 3}
     - target: {fileID: 0}
       propertyPath: dark
       value: 
-      objectReference: {fileID: 21300000, guid: 98b1762d2c4128e48a1cdc7e37666394,
+      objectReference: {fileID: 21300000, guid: b34c2090af7020742b2ff09dab0a7d07,
+        type: 3}
+    - target: {fileID: 0}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 8eea289af589250468fb5259c7643c65,
         type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
