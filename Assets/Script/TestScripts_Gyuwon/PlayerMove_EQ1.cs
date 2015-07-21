@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Enums;
 
-public class Player : MonoBehaviour, IRestartable
+public class PlayerMove_EQ1 : MonoBehaviour
 {
 	public float moveSpeed;
 	public float jumpPower;
@@ -19,7 +19,7 @@ public class Player : MonoBehaviour, IRestartable
 	public float ladderCheckRadius;
 	public LayerMask whatIsLadder;
 	public GameObject Ladder;
-
+	
 	private Vector3 startPoint;
 	private bool grounded;
 	private bool laddered;
@@ -148,11 +148,11 @@ public class Player : MonoBehaviour, IRestartable
 		gameObject.transform.position = playerPosition;
 	}
 	
-	void IRestartable.Restart()
-	{
-		gameObject.transform.position = startPoint;
-		ladderToClimb = null;
+	//void IRestartable.Restart()
+	//{
+	//	gameObject.transform.position = startPoint;
+	//	ladderToClimb = null;
 		//Temporarily reset isDark in Player.cs, but it should be moved to other script.
-		Global.ingame.isDark = IsDark.Light;
-	}
+	//	Global.ingame.isDark = IsDark.Light;
+	//}
 }

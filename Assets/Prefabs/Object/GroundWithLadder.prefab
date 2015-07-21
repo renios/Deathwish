@@ -11,7 +11,7 @@ GameObject:
   - 212: {fileID: 21249236}
   - 61: {fileID: 6147010}
   - 114: {fileID: 11427462}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Ladder
   m_TagString: Ladder
   m_Icon: {fileID: 0}
@@ -29,7 +29,7 @@ GameObject:
   - 212: {fileID: 21217744}
   - 61: {fileID: 6144990}
   - 114: {fileID: 11495282}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: GroundWithLadder
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -43,7 +43,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 104434}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -2.29999995, z: 0}
+  m_LocalPosition: {x: 0, y: -2.0999999, z: 0}
   m_LocalScale: {x: .785094142, y: 2.62207222, z: 1}
   m_Children: []
   m_Father: {fileID: 462406}
@@ -55,8 +55,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 131686}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -4, y: 2.99000001, z: 0}
+  m_LocalScale: {x: 1, y: .974142075, z: 1}
   m_Children:
   - {fileID: 459940}
   m_Father: {fileID: 0}
