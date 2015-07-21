@@ -11,7 +11,7 @@ GameObject:
   - 212: {fileID: 21277314}
   - 61: {fileID: 6103632}
   - 114: {fileID: 11440192}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: GlassGround
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -131,6 +131,10 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: isTransparentIn
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

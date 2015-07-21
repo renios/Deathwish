@@ -8,7 +8,9 @@ public class Player : MonoBehaviour, IRestartable
 	public float moveSpeed;
 	public float jumpPower;
 	public float climbSpeed;
-	public Transform groundCheck;
+	public Transform groundCheck1;
+	public Transform groundCheck2;
+	public Transform groundCheck3;
 	public float groundCheckRadius;
 	public LayerMask whatIsGround;
 	public Transform ladderCheck1;
@@ -23,6 +25,7 @@ public class Player : MonoBehaviour, IRestartable
 	private Vector3 startPoint;
 	private bool grounded;
 	private bool laddered;
+	private bool moving;
 	private bool climbing;
 	
 	new Collider2D ladderToClimb;
@@ -48,7 +51,9 @@ public class Player : MonoBehaviour, IRestartable
 	{
 		GetComponent<Rigidbody2D> ().gravityScale = gravityScale;
 		
-		grounded = Physics2D.OverlapCircle (groundCheck.position, groundCheckRadius, whatIsGround);
+		grounded = (Physics2D.OverlapCircle (groundCheck1.position, groundCheckRadius, whatIsGround)
+		            || Physics2D.OverlapCircle (groundCheck2.position, groundCheckRadius, whatIsGround)
+		            || Physics2D.OverlapCircle (groundCheck3.position, groundCheckRadius, whatIsGround));
 		laddered = (Physics2D.OverlapCircle (ladderCheck1.position, ladderCheckRadius, whatIsLadder)
 		            || Physics2D.OverlapCircle (ladderCheck2.position, ladderCheckRadius, whatIsLadder)
 		            || Physics2D.OverlapCircle (ladderCheck3.position, ladderCheckRadius, whatIsLadder)
@@ -62,14 +67,21 @@ public class Player : MonoBehaviour, IRestartable
 	
 	void Move ()
 	{
+		moving = false;
+
 		if (Input.GetKey (KeyCode.RightArrow))
 		{
+			moving = true;
 			GetComponent<Rigidbody2D>().velocity = new Vector2(moveSpeed, GetComponent<Rigidbody2D>().velocity.y);
 		}
-		
-		if (Input.GetKey (KeyCode.LeftArrow))
+		else if (Input.GetKey (KeyCode.LeftArrow))
 		{
+			moving = true;
 			GetComponent<Rigidbody2D>().velocity = new Vector2(-moveSpeed, GetComponent<Rigidbody2D>().velocity.y);
+		}
+		else if (moving == false)
+		{
+			GetComponent<Rigidbody2D>().velocity = new Vector2(0, GetComponent<Rigidbody2D>().velocity.y);
 		}
 	}
 	
