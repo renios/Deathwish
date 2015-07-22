@@ -149,6 +149,11 @@ public class Player : MonoBehaviour, IRestartable
 		{
 			Restarter.RestartAll();
 		}
+		
+		if(collision.gameObject.tag == "Spike")
+		{
+			Restarter.RestartAll();
+		}
 	}
 	
 	void SetPositionXAtCenterOfLadder(Collider2D coll)
