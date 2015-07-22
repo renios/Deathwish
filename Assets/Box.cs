@@ -2,11 +2,13 @@
 using System.Collections;
 using Enums;
 
-public class Box : MonoBehaviour {
+public class Box : MonoBehaviour, IRestartable {
 
+	private Vector3 originalPosition;
+	
 	// Use this for initialization
 	void Start () {
-	
+		originalPosition = gameObject.transform.position;
 	}
 	
 	// Update is called once per frame
@@ -19,5 +21,12 @@ public class Box : MonoBehaviour {
 		{
 			gameObject.GetComponent<Rigidbody2D>().isKinematic = true;
 		}
+	}
+	
+	void IRestartable.Restart()
+	{
+		gameObject.transform.position = originalPosition;
+		gameObject.GetComponent<Rigidbody2D>().isKinematic = false;		
+		gameObject.GetComponent<SpriteRenderer>().sprite = gameObject.GetComponent<SpriteSwitch>().light;
 	}
 }

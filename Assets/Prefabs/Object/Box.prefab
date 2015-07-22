@@ -13,9 +13,9 @@ GameObject:
   - 61: {fileID: 6194888}
   - 114: {fileID: 11419358}
   - 114: {fileID: 11436648}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Box
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -40,9 +40,9 @@ Rigidbody2D:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 114812}
   m_Mass: 1
-  m_LinearDrag: 0
+  m_LinearDrag: 100
   m_AngularDrag: 0
-  m_GravityScale: 1
+  m_GravityScale: 100
   m_IsKinematic: 0
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -120,7 +120,19 @@ Prefab:
     m_Modifications:
     - target: {fileID: 0}
       propertyPath: m_GravityScale
-      value: 1
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_LinearDrag
+      value: 100
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
