@@ -400,8 +400,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 870dfea6228011d4cbbf86c95172aad2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  light: {fileID: 21300000, guid: fa6600b249cd15242afbda82fc119f13, type: 3}
-  dark: {fileID: 21300000, guid: e353116d29b6814478d49c9c97b0937f, type: 3}
+  light: {fileID: 21300000, guid: 34f41337b69344c7da20b4878281dcc7, type: 3}
+  dark: {fileID: 21300000, guid: 23e4f480d2bc74303aa1dfa0ebc67606, type: 3}
 --- !u!114 &11484958
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -464,7 +464,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: fa6600b249cd15242afbda82fc119f13, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 34f41337b69344c7da20b4878281dcc7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &100100000
 Prefab:
@@ -480,12 +480,12 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: light
       value: 
-      objectReference: {fileID: 21300000, guid: fa6600b249cd15242afbda82fc119f13,
+      objectReference: {fileID: 21300000, guid: 34f41337b69344c7da20b4878281dcc7,
         type: 3}
     - target: {fileID: 0}
       propertyPath: dark
       value: 
-      objectReference: {fileID: 21300000, guid: e353116d29b6814478d49c9c97b0937f,
+      objectReference: {fileID: 21300000, guid: 23e4f480d2bc74303aa1dfa0ebc67606,
         type: 3}
     - target: {fileID: 0}
       propertyPath: climbSpeed
@@ -503,6 +503,11 @@ Prefab:
       propertyPath: bottomChecker
       value: 
       objectReference: {fileID: 128098, guid: 1b96b1df63876014fa9537471faa8660, type: 2}
+    - target: {fileID: 0}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 34f41337b69344c7da20b4878281dcc7,
+        type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 141626}
