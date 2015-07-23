@@ -8,11 +8,6 @@ public class Player : MonoBehaviour, IRestartable
 	public float moveSpeed;
 	public float jumpPower;
 	public float climbSpeed;
-	public Transform groundCheck1;
-	public Transform groundCheck2;
-	public Transform groundCheck3;
-	public float groundCheckRadius;
-	public LayerMask whatIsGround;
 	public Transform ladderCheck1;
 	public Transform ladderCheck2;
 	public Transform ladderCheck3;
@@ -23,7 +18,6 @@ public class Player : MonoBehaviour, IRestartable
 	public GameObject bottomChecker;
 
 	private Vector3 startPoint;
-	private bool grounded;
 	private bool laddered;
 	private bool moving;
 	private bool climbing;
@@ -31,6 +25,8 @@ public class Player : MonoBehaviour, IRestartable
 	new Collider2D ladderToClimb;
 	
 	float gravityScale;
+
+	public GroundChecker groundChecker;
 	
 	void Start ()
 	{
@@ -50,10 +46,7 @@ public class Player : MonoBehaviour, IRestartable
 	void FixedUpdate()
 	{
 		GetComponent<Rigidbody2D> ().gravityScale = gravityScale;
-		
-		grounded = (Physics2D.OverlapCircle (groundCheck1.position, groundCheckRadius, whatIsGround)
-		            || Physics2D.OverlapCircle (groundCheck2.position, groundCheckRadius, whatIsGround)
-		            || Physics2D.OverlapCircle (groundCheck3.position, groundCheckRadius, whatIsGround));
+
 		laddered = (Physics2D.OverlapCircle (ladderCheck1.position, ladderCheckRadius, whatIsLadder)
 		            || Physics2D.OverlapCircle (ladderCheck2.position, ladderCheckRadius, whatIsLadder)
 		            || Physics2D.OverlapCircle (ladderCheck3.position, ladderCheckRadius, whatIsLadder)
@@ -87,7 +80,7 @@ public class Player : MonoBehaviour, IRestartable
 
 	private void Jump()
 	{
-		if (Input.GetKeyDown (KeyCode.Space) && grounded)
+		if (Input.GetKeyDown (KeyCode.Space) && groundChecker.IsGrounded())
 		{
 			GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x, jumpPower);
 		}
@@ -107,7 +100,7 @@ public class Player : MonoBehaviour, IRestartable
 				whileClimbing();
 				GetComponent<Rigidbody2D>().velocity = new Vector2(0, -climbSpeed);
 			}
-			else if (grounded != true && climbing == true)
+			else if (groundChecker.IsGrounded() != true && climbing == true)
 			{
 				GetComponent<Rigidbody2D>().gravityScale = 0;
 				GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);

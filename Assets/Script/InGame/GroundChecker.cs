@@ -4,19 +4,16 @@ using System.Collections;
 using Enums;
 
 public class GroundChecker : MonoBehaviour {
-
-	private Action<Collider2D> onTriggerEnterWithGround;
-
-	public void SetCallback(Action<Collider2D> onEnterGroundCallback)
+	// collider name is duplicated with legacy api.
+	new BoxCollider2D collider;
+	void Start()
 	{
-		this.onTriggerEnterWithGround = onEnterGroundCallback;
+		collider = GetComponent<BoxCollider2D> ();
 	}
 
-	void OnTriggerEnter2D (Collider2D collision)
+	public bool IsGrounded()
 	{
-		if(collision.gameObject.tag == "Ground")
-		{
-			onTriggerEnterWithGround(collision);
-		}
+		Bounds region = collider.bounds;
+		return Physics2D.OverlapArea (region.max, region.min, LayerMask.GetMask ("Ground"));
 	}
 }
