@@ -1,35 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &127932
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 452934}
-  m_Layer: 0
-  m_Name: Ladder Check 2
-  m_TagString: Untagged
-  m_Icon: {fileID: -3545028842045912814, guid: 0000000000000000d000000000000000, type: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!1 &131200
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 496778}
-  m_Layer: 0
-  m_Name: Ladder Check 4
-  m_TagString: Untagged
-  m_Icon: {fileID: -3545028842045912814, guid: 0000000000000000d000000000000000, type: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
 --- !u!1 &141626
 GameObject:
   m_ObjectHideFlags: 0
@@ -43,7 +13,7 @@ GameObject:
   - 50: {fileID: 5022094}
   - 114: {fileID: 11484958}
   - 114: {fileID: 11481792}
-  - 114: {fileID: 11457656}
+  - 114: {fileID: 11476734}
   m_Layer: 9
   m_Name: Player
   m_TagString: Player
@@ -65,51 +35,6 @@ GameObject:
   m_Name: GroundChecker
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!1 &160646
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 414842}
-  m_Layer: 0
-  m_Name: Ladder Check 1
-  m_TagString: Untagged
-  m_Icon: {fileID: -3545028842045912814, guid: 0000000000000000d000000000000000, type: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!1 &169526
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 458048}
-  m_Layer: 0
-  m_Name: Ladder Check 3
-  m_TagString: Untagged
-  m_Icon: {fileID: -3545028842045912814, guid: 0000000000000000d000000000000000, type: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!1 &183384
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 451722}
-  m_Layer: 0
-  m_Name: Ladder Check 5
-  m_TagString: Untagged
-  m_Icon: {fileID: -3545028842045912814, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -140,66 +65,13 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 141626}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 32.0394096, y: -22.0343037, z: 0}
+  m_LocalPosition: {x: 0, y: 3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 490268}
-  - {fileID: 414842}
-  - {fileID: 458048}
-  - {fileID: 496778}
-  - {fileID: 452934}
-  - {fileID: 451722}
   - {fileID: 493606}
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!4 &414842
-Transform:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 160646}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.5, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 414702}
-  m_RootOrder: 1
---- !u!4 &451722
-Transform:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 183384}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -1.5, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 414702}
-  m_RootOrder: 5
---- !u!4 &452934
-Transform:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 127932}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: .75, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 414702}
-  m_RootOrder: 4
---- !u!4 &458048
-Transform:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 169526}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 414702}
-  m_RootOrder: 2
 --- !u!4 &490268
 Transform:
   m_ObjectHideFlags: 1
@@ -223,19 +95,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 414702}
-  m_RootOrder: 6
---- !u!4 &496778
-Transform:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 131200}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -.75, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 414702}
-  m_RootOrder: 3
+  m_RootOrder: 1
 --- !u!20 &2098470
 Camera:
   m_ObjectHideFlags: 1
@@ -348,7 +208,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 11484958}
---- !u!114 &11457656
+--- !u!114 &11476734
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -356,7 +216,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 141626}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1a185775b39586948af6b878b033d677, type: 3}
+  m_Script: {fileID: 11500000, guid: 11a9788f4f834d240b1d7c5851c85a0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &11481792
@@ -386,17 +246,9 @@ MonoBehaviour:
   moveSpeed: 7
   jumpPower: 25
   climbSpeed: 10
-  ladderCheck1: {fileID: 414842}
-  ladderCheck2: {fileID: 452934}
-  ladderCheck3: {fileID: 458048}
-  ladderCheck4: {fileID: 496778}
-  ladderCheck5: {fileID: 451722}
-  ladderCheckRadius: .00999999978
-  whatIsLadder:
-    serializedVersion: 2
-    m_Bits: 1024
   bottomChecker: {fileID: 0}
   groundChecker: {fileID: 11408506}
+  ladderChecker: {fileID: 11476734}
 --- !u!124 &12448762
 Behaviour:
   m_ObjectHideFlags: 1
@@ -487,23 +339,23 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: ladderCheck1
       value: 
-      objectReference: {fileID: 414842}
+      objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: ladderCheck2
       value: 
-      objectReference: {fileID: 452934}
+      objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: ladderCheck3
       value: 
-      objectReference: {fileID: 458048}
+      objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: ladderCheck4
       value: 
-      objectReference: {fileID: 496778}
+      objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: ladderCheck5
       value: 
-      objectReference: {fileID: 451722}
+      objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: whatIsGround.m_Bits
       value: 256
