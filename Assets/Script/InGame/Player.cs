@@ -6,154 +6,170 @@ using Enums;
 public class Player : MonoBehaviour, IRestartable
 {
 	public float moveSpeed;
-	public float climbSpeed;
 	public float jumpPower;
-	private CharacterLocation characterLocation;
+	public float climbSpeed;
+	public Transform groundCheck1;
+	public Transform groundCheck2;
+	public Transform groundCheck3;
+	public float groundCheckRadius;
+	public LayerMask whatIsGround;
+	public Transform ladderCheck1;
+	public Transform ladderCheck2;
+	public Transform ladderCheck3;
+	public Transform ladderCheck4;
+	public Transform ladderCheck5;
+	public float ladderCheckRadius;
+	public LayerMask whatIsLadder;
+	public GameObject bottomChecker;
+
 	private Vector3 startPoint;
-	private Collider2D ladderCollider;
-	new private Rigidbody2D rigidbody2D;
-
-	public GroundChecker locationChecker;
-
+	private bool grounded;
+	private bool laddered;
+	private bool moving;
+	private bool climbing;
+	
+	new Collider2D ladderToClimb;
+	
+	float gravityScale;
+	
 	void Start ()
 	{
-		ladderCollider = null;
 		startPoint = gameObject.transform.position;
-		rigidbody2D = gameObject.GetComponent<Rigidbody2D> ();
-		locationChecker.SetCallback(OnTriggerEnterWithGround);
+		gravityScale = GetComponent<Rigidbody2D> ().gravityScale;
+		ladderToClimb = null;
 	}
-
+	
 	void Update ()
 	{
-		if(characterLocation != CharacterLocation.OnLadder)
-		{
-			Move ();
-
-			if (characterLocation == CharacterLocation.OnBlock && Input.GetKeyDown (KeyCode.Space))
-			{
-				Jump ();
-			}
-		}
-		else
-		{
-			Climb ();
-		}
-
-		//Restart by R Key is not needed. It should be replaced by restart button in menu.
-		if(gameObject.transform.position.y <= -10 || Input.GetKeyDown(KeyCode.R))
+		if(gameObject.transform.position.y - bottomChecker.transform.position.y <= -10 || Input.GetKeyDown(KeyCode.R))
 		{
 			Restarter.RestartAll();
 		}
 	}
-
-	void OnTriggerStay2D (Collider2D coll)
+	
+	void FixedUpdate()
 	{
-		if (coll.gameObject.tag != "Ladder")
-		{
-			return;
-		}
+		GetComponent<Rigidbody2D> ().gravityScale = gravityScale;
 		
-		StartClimbingLadder (coll);
+		grounded = (Physics2D.OverlapCircle (groundCheck1.position, groundCheckRadius, whatIsGround)
+		            || Physics2D.OverlapCircle (groundCheck2.position, groundCheckRadius, whatIsGround)
+		            || Physics2D.OverlapCircle (groundCheck3.position, groundCheckRadius, whatIsGround));
+		laddered = (Physics2D.OverlapCircle (ladderCheck1.position, ladderCheckRadius, whatIsLadder)
+		            || Physics2D.OverlapCircle (ladderCheck2.position, ladderCheckRadius, whatIsLadder)
+		            || Physics2D.OverlapCircle (ladderCheck3.position, ladderCheckRadius, whatIsLadder)
+		            || Physics2D.OverlapCircle (ladderCheck4.position, ladderCheckRadius, whatIsLadder)
+		            || Physics2D.OverlapCircle (ladderCheck5.position, ladderCheckRadius, whatIsLadder));
+		
+		Move ();
+		Jump ();
+		Climb ();
 	}
-
-	void OnTriggerExit2D (Collider2D coll)
+	
+	void Move ()
 	{
-		if(characterLocation == CharacterLocation.OnLadder)
+		moving = false;
+
+		if (Input.GetKey (KeyCode.RightArrow))
 		{
-			if (coll.gameObject.tag != "Ladder")
-			{
-				return;
-			}
-			
-			EscapeFromLadder (ladderCollider);
-			characterLocation = CharacterLocation.OnAir;
+			moving = true;
+			GetComponent<Rigidbody2D>().velocity = new Vector2(moveSpeed, GetComponent<Rigidbody2D>().velocity.y);
+		}
+		else if (Input.GetKey(KeyCode.LeftArrow))
+		{
+			moving = true;
+			GetComponent<Rigidbody2D>().velocity = new Vector2(-moveSpeed, GetComponent<Rigidbody2D>().velocity.y);
+		}
+		else if (moving == false)
+		{
+			GetComponent<Rigidbody2D>().velocity = new Vector2(0, GetComponent<Rigidbody2D>().velocity.y);
 		}
 	}
 
 	private void OnTriggerEnterWithGround(Collider2D collision)
 	{
-		if(characterLocation != CharacterLocation.OnLadder)
+		if (Input.GetKeyDown (KeyCode.Space) && grounded)
 		{
-			characterLocation = CharacterLocation.OnBlock;
+			GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x, jumpPower);
+		}
+	}
+	
+	void Climb ()
+	{
+		if (laddered)
+		{
+			if (Input.GetKey (KeyCode.UpArrow))
+			{
+				whileClimbing();
+				GetComponent<Rigidbody2D>().velocity = new Vector2(0, climbSpeed);
+			}
+			else if (Input.GetKey (KeyCode.DownArrow))
+			{
+				whileClimbing();
+				GetComponent<Rigidbody2D>().velocity = new Vector2(0, -climbSpeed);
+			}
+			else if (grounded != true && climbing == true)
+			{
+				GetComponent<Rigidbody2D>().gravityScale = 0;
+				GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);
+			}
 		}
 		else
 		{
-			EscapeFromLadder(gameObject.GetComponentInParent<Player>().ladderCollider);
-			characterLocation = CharacterLocation.OnBlock;
+			climbing = false;
+			if (ladderToClimb == null)
+			{return;}
+			ladderToClimb.gameObject.GetComponent<CeilingColliderController>().EnableCeiling();
 		}
 	}
-
-	void EscapeFromLadder(Collider2D coll)
+	
+	void whileClimbing ()
 	{
-		if(characterLocation == CharacterLocation.OnLadder)
+		GetComponent<Rigidbody2D>().gravityScale = 0;
+		SetPositionXAtCenterOfLadder(ladderToClimb);
+		ladderToClimb.gameObject.GetComponent<CeilingColliderController>().DisableCeiling();
+		climbing = true;
+	}
+	
+	void OnTriggerStay2D (Collider2D coll)
+	{
+		if (coll.gameObject.tag == "Ladder")
 		{
-			rigidbody2D.gravityScale = 1;
-			coll.gameObject.GetComponent<CeilingColliderController>().EnableCeiling();
-			SetDefaultConstraints();
-			ladderCollider = null;
+			ladderToClimb = coll.GetComponent<BoxCollider2D>();
 		}
 	}
-
-	void StartClimbingLadder(Collider2D coll)
+	
+	void OnCollisionEnter2D (Collision2D collision)
 	{
-		if((Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.DownArrow)) && characterLocation != CharacterLocation.OnLadder)
+		if(collision.gameObject.tag == "Fire" && Global.ingame.isDark == IsDark.Light)
 		{
-			characterLocation = CharacterLocation.OnLadder;
-			rigidbody2D.gravityScale = 0;
-			coll.gameObject.GetComponent<CeilingColliderController>().DisableCeiling();
-			SetPositionXAtCenterOfLadder(coll);
-			SetConstraintsforLadder();
-			ladderCollider = coll;
+			Restarter.RestartAll();
+		}
+		
+		if(collision.gameObject.tag == "Grass" && Global.ingame.isDark == IsDark.Dark)
+		{
+			Restarter.RestartAll();
+		}
+		
+		if(collision.gameObject.tag == "Spike")
+		{
+			Restarter.RestartAll();
 		}
 	}
-
-	void Move ()
-	{
-		float horizontalSpeed = Input.GetAxis ("Horizontal") * moveSpeed * Time.deltaTime;
-		rigidbody2D.AddForce (new Vector2 (horizontalSpeed, 0));
-	}
-
-	void Jump ()
-	{
-		rigidbody2D.AddForce (new Vector2 (0, jumpPower));
-		characterLocation = CharacterLocation.OnAir;
-	}
-
-	void Climb ()
-	{
-		float verticalSpeed = Input.GetAxis ("Vertical") * climbSpeed * Time.deltaTime;
-		gameObject.transform.Translate(new Vector2 (0, verticalSpeed));
-	}
-
-	void IRestartable.Restart()
-	{
-		rigidbody2D.isKinematic = true;
-		gameObject.transform.position = startPoint;
-		rigidbody2D.isKinematic = false;
-		SetDefaultConstraints ();
-		characterLocation = CharacterLocation.OnAir;
-		ladderCollider = null;
-		//Temporarily reset isDark in Player.cs, but it should be moved to other script.
-		Global.ingame.isDark = IsDark.Light;
-	}
-
+	
 	void SetPositionXAtCenterOfLadder(Collider2D coll)
 	{
 		float ladderX = coll.gameObject.transform.position.x;
 		Vector3 playerPosition = gameObject.transform.position;
 		playerPosition.x = ladderX;
+		playerPosition.z = -0.000001f;
 		gameObject.transform.position = playerPosition;
 	}
-
-	//This is necessary since character may tumble when colliding.
-	void SetDefaultConstraints()
+	
+	void IRestartable.Restart()
 	{
-		rigidbody2D.constraints = RigidbodyConstraints2D.FreezeRotation;
-	}
-
-	//FreezePositionX is chosen since FreezeRotation and FreezePositionX can't be chosen at the same time.
-	void SetConstraintsforLadder()
-	{
-		rigidbody2D.constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezeRotation;
+		gameObject.transform.position = startPoint;
+		ladderToClimb = null;
+		//Temporarily reset isDark in Player.cs, but it should be moved to other script.
+		Global.ingame.isDark = IsDark.Light;
 	}
 }

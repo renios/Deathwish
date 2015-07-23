@@ -10,6 +10,7 @@ TagManager:
   - Smoke
   - Grass
   - Ladder
+  - Spike
   layers:
   - Default
   - TransparentFX
@@ -19,9 +20,9 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
-  - 
+  - Ground
+  - Player
+  - Ladder
   - 
   - 
   - 

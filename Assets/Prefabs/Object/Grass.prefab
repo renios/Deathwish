@@ -67,7 +67,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inLight: {fileID: 21300000, guid: 975b910827f19f94984ad3f898ef0614, type: 3}
-  inDark: {fileID: 21300000, guid: 975b910827f19f94984ad3f898ef0614, type: 3}
+  inDark: {fileID: 21300000, guid: f0dcc2f8941a945939d849a5e2a3a220, type: 3}
   isTransparentIn: 0
 --- !u!212 &21243310
 SpriteRenderer:
@@ -110,7 +110,7 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: inDark
       value: 
-      objectReference: {fileID: 21300000, guid: 975b910827f19f94984ad3f898ef0614,
+      objectReference: {fileID: 21300000, guid: f0dcc2f8941a945939d849a5e2a3a220,
         type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
