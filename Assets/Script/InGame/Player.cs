@@ -8,17 +8,9 @@ public class Player : MonoBehaviour, IRestartable
 	public float moveSpeed;
 	public float jumpPower;
 	public float climbSpeed;
-	public Transform ladderCheck1;
-	public Transform ladderCheck2;
-	public Transform ladderCheck3;
-	public Transform ladderCheck4;
-	public Transform ladderCheck5;
-	public float ladderCheckRadius;
-	public LayerMask whatIsLadder;
 	public GameObject bottomChecker;
 
 	private Vector3 startPoint;
-	private bool laddered;
 	private bool moving;
 	private bool climbing;
 	
@@ -27,6 +19,7 @@ public class Player : MonoBehaviour, IRestartable
 	float gravityScale;
 
 	public GroundChecker groundChecker;
+	public LadderChecker ladderChecker;
 	
 	void Start ()
 	{
@@ -46,12 +39,6 @@ public class Player : MonoBehaviour, IRestartable
 	void FixedUpdate()
 	{
 		GetComponent<Rigidbody2D> ().gravityScale = gravityScale;
-
-		laddered = (Physics2D.OverlapCircle (ladderCheck1.position, ladderCheckRadius, whatIsLadder)
-		            || Physics2D.OverlapCircle (ladderCheck2.position, ladderCheckRadius, whatIsLadder)
-		            || Physics2D.OverlapCircle (ladderCheck3.position, ladderCheckRadius, whatIsLadder)
-		            || Physics2D.OverlapCircle (ladderCheck4.position, ladderCheckRadius, whatIsLadder)
-		            || Physics2D.OverlapCircle (ladderCheck5.position, ladderCheckRadius, whatIsLadder));
 		
 		Move ();
 		Jump ();
@@ -88,7 +75,7 @@ public class Player : MonoBehaviour, IRestartable
 	
 	void Climb ()
 	{
-		if (laddered)
+		if (ladderChecker.IsLaddered())
 		{
 			if (Input.GetKey (KeyCode.UpArrow))
 			{
