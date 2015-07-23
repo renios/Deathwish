@@ -13,6 +13,7 @@ public class Player : MonoBehaviour, IRestartable
 	private Vector3 startPoint;
 	private bool moving;
 	private bool climbing;
+	private float yOfLowestObject;
 	
 	new Collider2D ladderToClimb;
 	
@@ -26,11 +27,13 @@ public class Player : MonoBehaviour, IRestartable
 		startPoint = gameObject.transform.position;
 		gravityScale = GetComponent<Rigidbody2D> ().gravityScale;
 		ladderToClimb = null;
+		yOfLowestObject = LowestObjectFinder.Find ().position.y;
+
 	}
 	
 	void Update ()
 	{
-		if(gameObject.transform.position.y - bottomChecker.transform.position.y <= -10 || Input.GetKeyDown(KeyCode.R))
+		if(gameObject.transform.position.y - yOfLowestObject <= -10 || Input.GetKeyDown(KeyCode.R))
 		{
 			Restarter.RestartAll();
 		}
