@@ -432,7 +432,7 @@ MonoBehaviour:
   whatIsLadder:
     serializedVersion: 2
     m_Bits: 1024
-  bottomChecker: {fileID: 128098, guid: 1b96b1df63876014fa9537471faa8660, type: 2}
+  bottomChecker: {fileID: 0}
 --- !u!124 &12448762
 Behaviour:
   m_ObjectHideFlags: 1
@@ -508,6 +508,54 @@ Prefab:
       value: 
       objectReference: {fileID: 21300000, guid: 34f41337b69344c7da20b4878281dcc7,
         type: 3}
+    - target: {fileID: 0}
+      propertyPath: groundCheck1
+      value: 
+      objectReference: {fileID: 482174}
+    - target: {fileID: 0}
+      propertyPath: groundCheck2
+      value: 
+      objectReference: {fileID: 481574}
+    - target: {fileID: 0}
+      propertyPath: groundCheck3
+      value: 
+      objectReference: {fileID: 472656}
+    - target: {fileID: 0}
+      propertyPath: ladderCheck1
+      value: 
+      objectReference: {fileID: 414842}
+    - target: {fileID: 0}
+      propertyPath: ladderCheck2
+      value: 
+      objectReference: {fileID: 452934}
+    - target: {fileID: 0}
+      propertyPath: ladderCheck3
+      value: 
+      objectReference: {fileID: 458048}
+    - target: {fileID: 0}
+      propertyPath: ladderCheck4
+      value: 
+      objectReference: {fileID: 496778}
+    - target: {fileID: 0}
+      propertyPath: ladderCheck5
+      value: 
+      objectReference: {fileID: 451722}
+    - target: {fileID: 0}
+      propertyPath: whatIsGround.m_Bits
+      value: 256
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: whatIsLadder.m_Bits
+      value: 1024
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: groundCheckRadius
+      value: .0500000007
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: ladderCheckRadius
+      value: .00999999978
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 141626}

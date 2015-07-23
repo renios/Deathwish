@@ -85,7 +85,7 @@ public class Player : MonoBehaviour, IRestartable
 		}
 	}
 
-	private void OnTriggerEnterWithGround(Collider2D collision)
+	private void Jump()
 	{
 		if (Input.GetKeyDown (KeyCode.Space) && grounded)
 		{
