@@ -5,6 +5,7 @@ public class Damage : MonoBehaviour
 {
 	void OnCollisionEnter2D (Collision2D collision)
 	{
-		Restarter.RestartAll();
+		if (collision.gameObject.tag == "Player")
+			Restarter.RestartAll();
 	}
 }
