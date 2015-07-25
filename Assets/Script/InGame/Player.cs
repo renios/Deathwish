@@ -123,20 +123,7 @@ public class Player : MonoBehaviour, IRestartable
 	
 	void OnCollisionEnter2D (Collision2D collision)
 	{
-		if(collision.gameObject.tag == "Fire" && Global.ingame.isDark == IsDark.Light)
-		{
-			Restarter.RestartAll();
-		}
-		
-		if(collision.gameObject.tag == "Grass" && Global.ingame.isDark == IsDark.Dark)
-		{
-			Restarter.RestartAll();
-		}
-		
-		if(collision.gameObject.tag == "Spike")
-		{
-			Restarter.RestartAll();
-		}
+
 	}
 	
 	void SetPositionXAtCenterOfLadder(Collider2D coll)
