@@ -27,4 +27,9 @@ public class UIButtonEventManager : MonoBehaviour {
 	{
 		Application.LoadLevel("Option");
 	}
+
+	public void Restart()
+	{
+		Restarter.RestartAll();
+	}
 }
