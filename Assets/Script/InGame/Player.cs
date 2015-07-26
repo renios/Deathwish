@@ -8,7 +8,6 @@ public class Player : MonoBehaviour, IRestartable
 	public float moveSpeed;
 	public float jumpPower;
 	public float climbSpeed;
-	public GameObject bottomChecker;
 
 	private Vector3 startPoint;
 	private bool climbing;
