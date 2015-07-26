@@ -37,12 +37,8 @@ public class Player : MonoBehaviour, IRestartable
 		{
 			Restarter.RestartAll();
 		}
-	}
-	
-	void FixedUpdate()
-	{
+
 		GetComponent<Rigidbody2D> ().gravityScale = gravityScale;
-		
 		Move ();
 		Jump ();
 		Climb ();
