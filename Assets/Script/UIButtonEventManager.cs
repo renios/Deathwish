@@ -32,4 +32,9 @@ public class UIButtonEventManager : MonoBehaviour {
 	{
 		Restarter.RestartAll();
 	}
+	
+	public void GoToTestScene()
+	{
+		Application.LoadLevel("Test");
+	}
 }
