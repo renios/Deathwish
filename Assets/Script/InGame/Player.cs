@@ -11,7 +11,6 @@ public class Player : MonoBehaviour, IRestartable
 	public GameObject bottomChecker;
 
 	private Vector3 startPoint;
-	private bool moving;
 	private bool climbing;
 	private float yOfLowestObject;
 	
@@ -46,19 +45,15 @@ public class Player : MonoBehaviour, IRestartable
 	
 	void Move ()
 	{
-		moving = false;
-
 		if (Input.GetKey (KeyCode.RightArrow))
 		{
-			moving = true;
 			GetComponent<Rigidbody2D>().velocity = new Vector2(moveSpeed, GetComponent<Rigidbody2D>().velocity.y);
 		}
 		else if (Input.GetKey(KeyCode.LeftArrow))
 		{
-			moving = true;
 			GetComponent<Rigidbody2D>().velocity = new Vector2(-moveSpeed, GetComponent<Rigidbody2D>().velocity.y);
 		}
-		else if (moving == false)
+		else
 		{
 			GetComponent<Rigidbody2D>().velocity = new Vector2(0, GetComponent<Rigidbody2D>().velocity.y);
 		}
@@ -78,12 +73,12 @@ public class Player : MonoBehaviour, IRestartable
 		{
 			if (Input.GetKey (KeyCode.UpArrow))
 			{
-				whileClimbing();
+				changeWhileClimbing();
 				GetComponent<Rigidbody2D>().velocity = new Vector2(0, climbSpeed);
 			}
 			else if (Input.GetKey (KeyCode.DownArrow))
 			{
-				whileClimbing();
+				changeWhileClimbing();
 				GetComponent<Rigidbody2D>().velocity = new Vector2(0, -climbSpeed);
 			}
 			else if (groundChecker.IsGrounded() != true && climbing == true)
@@ -101,7 +96,7 @@ public class Player : MonoBehaviour, IRestartable
 		}
 	}
 	
-	void whileClimbing ()
+	void changeWhileClimbing ()
 	{
 		GetComponent<Rigidbody2D>().gravityScale = 0;
 		SetPositionXAtCenterOfLadder(ladderToClimb);
@@ -127,7 +122,6 @@ public class Player : MonoBehaviour, IRestartable
 		float ladderX = coll.gameObject.transform.position.x;
 		Vector3 playerPosition = gameObject.transform.position;
 		playerPosition.x = ladderX;
-		playerPosition.z = -0.000001f;
 		gameObject.transform.position = playerPosition;
 	}
 	
