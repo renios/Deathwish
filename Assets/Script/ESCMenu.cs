@@ -1,9 +1,11 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.EventSystems;
 
 public class ESCMenu : MonoBehaviour {
 
 	public GameObject PopupMenu;
+	public GameObject MainMenuButton;
 
 	void Awake () {
 		PopupMenu.SetActive(false);
@@ -14,12 +16,12 @@ public class ESCMenu : MonoBehaviour {
 		if ((Input.GetKeyDown("escape")) && (PopupMenu.activeInHierarchy == false))
 		{
 			PopupMenu.SetActive(true);
-			//GameObject.Find("MainMenu").GetComponent<Button>().OnPointerEnter();
+			EventSystem.current.SetSelectedGameObject(MainMenuButton, null);
 		}
-		// Using test.
 		else if ((Input.GetKeyDown("escape")) && (PopupMenu.activeInHierarchy == true))
 		{
 			PopupMenu.SetActive(false);
+			EventSystem.current.SetSelectedGameObject(null);
 		}
 	}
 	
@@ -28,6 +30,7 @@ public class ESCMenu : MonoBehaviour {
 		if (PopupMenu.activeInHierarchy == true)
 		{
 			PopupMenu.SetActive(false);
+			EventSystem.current.SetSelectedGameObject(null);
 		}
 	}
 }

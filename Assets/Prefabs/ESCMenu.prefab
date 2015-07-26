@@ -352,6 +352,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PopupMenu: {fileID: 147994}
+  MainMenuButton: {fileID: 142870}
 --- !u!114 &11433064
 MonoBehaviour:
   m_ObjectHideFlags: 1
