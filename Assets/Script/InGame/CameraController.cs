@@ -3,45 +3,16 @@ using System.Collections;
 
 public class CameraController : MonoBehaviour
 {
-	public GameObject player;
-	public float xLimit;
-	public float yLimit;
-
-	private Vector3 startPoint;
+	public Player player;
+	private Vector3 fromPlayerToCamera;
 
 	void Start ()
 	{
-		startPoint = player.transform.position - new Vector3 (0,0,10);
-
-		gameObject.transform.position = startPoint;
+		fromPlayerToCamera = player.gameObject.transform.position - gameObject.transform.position;
 	}
-
-	void Update ()
+	
+	void LateUpdate ()
 	{
-		Vector3 cameraPosition = gameObject.transform.position;
-		float playerX = player.transform.position.x;
-		float playerY = player.transform.position.y;
-
-		if (cameraPosition.x - playerX > xLimit)
-		{
-			cameraPosition.x = playerX + xLimit;
-		}
-
-		if (cameraPosition.x + xLimit < playerX)
-		{
-			cameraPosition.x = playerX - xLimit;
-		}
-
-		if (cameraPosition.y - playerY > yLimit)
-		{
-			cameraPosition.y = playerY + yLimit;
-		}
-
-		if (cameraPosition.y + yLimit < playerY)
-		{
-			cameraPosition.y = playerY - yLimit;
-		}
-
-		gameObject.transform.position = cameraPosition;
+		gameObject.transform.position = player.transform.position - fromPlayerToCamera;
 	}
 }
