@@ -90,7 +90,7 @@ public class Player : MonoBehaviour, IRestartable
 		{
 			climbing = false;
 			if (ladderToClimb == null)
-			{return;}
+				return;
 			ladderToClimb.gameObject.GetComponent<CeilingColliderController>().EnableCeiling();
 		}
 	}
