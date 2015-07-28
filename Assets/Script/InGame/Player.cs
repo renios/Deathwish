@@ -10,20 +10,20 @@ public class Player : MonoBehaviour, IRestartable
 	public float climbSpeed;
 
 	private Vector3 startPoint;
-	private bool climbing;
 	private float yOfLowestObject;
 
-	float gravityScale;
+	float gravityScaleOfStartTime;
 
 	public GroundChecker groundChecker;
 	public LadderChecker ladderChecker;
+	private Climber climber;
 	
 	void Start ()
 	{
 		startPoint = gameObject.transform.position;
-		gravityScale = GetComponent<Rigidbody2D> ().gravityScale;
+		gravityScaleOfStartTime = GetComponent<Rigidbody2D> ().gravityScale;
 		yOfLowestObject = LowestObjectFinder.Find ().position.y;
-
+		climber = new Climber (gameObject, ladderChecker, groundChecker, climbSpeed);
 	}
 	
 	void Update ()
@@ -33,10 +33,9 @@ public class Player : MonoBehaviour, IRestartable
 			Restarter.RestartAll();
 		}
 
-		GetComponent<Rigidbody2D> ().gravityScale = gravityScale;
 		Move ();
 		Jump ();
-		Climb ();
+		climber.Update ();
 	}
 	
 	void Move ()
@@ -62,58 +61,13 @@ public class Player : MonoBehaviour, IRestartable
 			GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x, jumpPower);
 		}
 	}
-	
-	void Climb ()
-	{
-		if (ladderChecker.IsLaddered())
-		{
-			if (Input.GetKey (KeyCode.UpArrow))
-			{
-				changeWhileClimbing();
-				GetComponent<Rigidbody2D>().velocity = new Vector2(0, climbSpeed);
-			}
-			else if (Input.GetKey (KeyCode.DownArrow))
-			{
-				changeWhileClimbing();
-				GetComponent<Rigidbody2D>().velocity = new Vector2(0, -climbSpeed);
-			}
-			else if (groundChecker.IsGrounded() != true && climbing == true)
-			{
-				GetComponent<Rigidbody2D>().gravityScale = 0;
-				GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);
-			}
-		}
-		else
-		{
-			climbing = false;
-			Collider2D ladderToClimb = ladderChecker.GetLatestLadderCollider();
-			if (ladderToClimb == null)
-				return;
-			ladderToClimb.gameObject.GetComponent<CeilingColliderController>().EnableCeiling();
-		}
-	}
-	
-	void changeWhileClimbing ()
-	{
-		GetComponent<Rigidbody2D>().gravityScale = 0;
-		Collider2D ladderToClimb = ladderChecker.GetLadderCollider ();
-		SetPositionXAtCenterOfLadder(ladderToClimb);
-		ladderToClimb.gameObject.GetComponent<CeilingColliderController>().DisableCeiling();
-		climbing = true;
-	}
-	
-	void SetPositionXAtCenterOfLadder(Collider2D coll)
-	{
-		float ladderX = coll.gameObject.transform.position.x;
-		Vector3 playerPosition = gameObject.transform.position;
-		playerPosition.x = ladderX;
-		gameObject.transform.position = playerPosition;
-	}
-	
+
 	void IRestartable.Restart()
 	{
 		gameObject.transform.position = startPoint;
 		//Temporarily reset isDark in Player.cs, but it should be moved to other script.
 		Global.ingame.isDark = IsDark.Light;
+		climber = new Climber (gameObject, ladderChecker, groundChecker, climbSpeed);
+		GetComponent<Rigidbody2D> ().gravityScale = gravityScaleOfStartTime;
 	}
 }
