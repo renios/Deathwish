@@ -111,11 +111,6 @@ public class Player : MonoBehaviour, IRestartable
 		}
 	}
 	
-	void OnCollisionEnter2D (Collision2D collision)
-	{
-
-	}
-	
 	void SetPositionXAtCenterOfLadder(Collider2D coll)
 	{
 		float ladderX = coll.gameObject.transform.position.x;
