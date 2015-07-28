@@ -12,9 +12,7 @@ public class Player : MonoBehaviour, IRestartable
 	private Vector3 startPoint;
 	private bool climbing;
 	private float yOfLowestObject;
-	
-	new Collider2D ladderToClimb;
-	
+
 	float gravityScale;
 
 	public GroundChecker groundChecker;
@@ -24,7 +22,6 @@ public class Player : MonoBehaviour, IRestartable
 	{
 		startPoint = gameObject.transform.position;
 		gravityScale = GetComponent<Rigidbody2D> ().gravityScale;
-		ladderToClimb = null;
 		yOfLowestObject = LowestObjectFinder.Find ().position.y;
 
 	}
@@ -89,6 +86,7 @@ public class Player : MonoBehaviour, IRestartable
 		else
 		{
 			climbing = false;
+			Collider2D ladderToClimb = ladderChecker.GetLatestLadderCollider();
 			if (ladderToClimb == null)
 				return;
 			ladderToClimb.gameObject.GetComponent<CeilingColliderController>().EnableCeiling();
@@ -98,17 +96,10 @@ public class Player : MonoBehaviour, IRestartable
 	void changeWhileClimbing ()
 	{
 		GetComponent<Rigidbody2D>().gravityScale = 0;
+		Collider2D ladderToClimb = ladderChecker.GetLadderCollider ();
 		SetPositionXAtCenterOfLadder(ladderToClimb);
 		ladderToClimb.gameObject.GetComponent<CeilingColliderController>().DisableCeiling();
 		climbing = true;
-	}
-	
-	void OnTriggerStay2D (Collider2D coll)
-	{
-		if (coll.gameObject.tag == "Ladder")
-		{
-			ladderToClimb = coll.GetComponent<BoxCollider2D>();
-		}
 	}
 	
 	void SetPositionXAtCenterOfLadder(Collider2D coll)
@@ -122,7 +113,6 @@ public class Player : MonoBehaviour, IRestartable
 	void IRestartable.Restart()
 	{
 		gameObject.transform.position = startPoint;
-		ladderToClimb = null;
 		//Temporarily reset isDark in Player.cs, but it should be moved to other script.
 		Global.ingame.isDark = IsDark.Light;
 	}
