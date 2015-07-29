@@ -9,7 +9,14 @@ public class LightState : MonoBehaviour {
 		False
 	}
 
+	public enum AttachedLightBug
+	{
+		False,
+		True
+	}
+
 	private IsLight lightState;
+	private AttachedLightBug attachedLightBug;
 	
 	public IsLight GetLightState()
 	{
@@ -26,9 +33,20 @@ public class LightState : MonoBehaviour {
 		lightState = IsLight.False;
 	}
 
+	public void AttachLightBug()
+	{
+		attachedLightBug = AttachedLightBug.True;
+	}
+
+	public void DetachLightBug()
+	{
+		attachedLightBug = AttachedLightBug.False;
+	}
+
 	void InitiateToLight()
 	{
 		lightState = IsLight.True;
+		attachedLightBug = AttachedLightBug.False;
 	}
 
 	// Use this for initialization
