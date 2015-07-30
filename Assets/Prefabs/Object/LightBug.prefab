@@ -9,9 +9,10 @@ GameObject:
   m_Component:
   - 4: {fileID: 433952}
   - 58: {fileID: 5823470}
+  - 114: {fileID: 11449382}
   m_Layer: 0
   m_Name: LightCollider
-  m_TagString: Untagged
+  m_TagString: LightBug
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -30,7 +31,7 @@ GameObject:
   - 114: {fileID: 11482988}
   m_Layer: 0
   m_Name: LightBug
-  m_TagString: Untagged
+  m_TagString: LightBug
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -44,9 +45,10 @@ GameObject:
   m_Component:
   - 4: {fileID: 473162}
   - 58: {fileID: 5894720}
+  - 114: {fileID: 11461566}
   m_Layer: 0
   m_Name: AwayCollider
-  m_TagString: Untagged
+  m_TagString: LightBug
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -70,7 +72,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 132980}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.5, y: 18.5599995, z: 0}
+  m_LocalPosition: {x: -3.00999999, y: 18.5599995, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 433952}
@@ -141,6 +143,32 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lightCollider: {fileID: 107416}
   awayCollider: {fileID: 176640}
+  movePoints:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+--- !u!114 &11449382
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 107416}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dfe9d69a135a04bad899b37e2b64eb13, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &11461566
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 176640}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e30937e60d7c14988b4e87248ecd8c17, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &11482988
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -185,6 +213,10 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: movePoints.Array.size
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_LocalPosition.x
       value: 0
