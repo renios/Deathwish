@@ -11,6 +11,7 @@ TagManager:
   - Grass
   - Ladder
   - Spike
+  - LightBug
   layers:
   - Default
   - TransparentFX
