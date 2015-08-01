@@ -17,10 +17,16 @@ public class LightState : MonoBehaviour {
 
 	private IsLight lightState;
 	private AttachedLightBug attachedLightBug;
+
+	// Use this for initialization
+	void Start () {
+		InitiateToLight();
+	}
 	
 	public IsLight GetLightState()
 	{
-		return lightState; 
+		// Not used yet.
+		return lightState;
 	}
 
 	public void ChangeStateToLight()
@@ -31,6 +37,11 @@ public class LightState : MonoBehaviour {
 	public void ChangeStateToDark()
 	{
 		lightState = IsLight.False;
+	}
+
+	public AttachedLightBug IsAttachedLightBug()
+	{
+		return attachedLightBug;
 	}
 
 	public void AttachLightBug()
@@ -47,10 +58,5 @@ public class LightState : MonoBehaviour {
 	{
 		lightState = IsLight.True;
 		attachedLightBug = AttachedLightBug.False;
-	}
-
-	// Use this for initialization
-	void Start () {
-		InitiateToLight();
 	}
 }
