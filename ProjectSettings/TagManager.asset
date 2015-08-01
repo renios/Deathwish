@@ -12,6 +12,7 @@ TagManager:
   - Ladder
   - Spike
   - LightBug
+  - AreaMarker
   layers:
   - Default
   - TransparentFX
