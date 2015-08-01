@@ -17,4 +17,10 @@ namespace Enums
 		Light,
 		Dark
 	}
+	
+	public enum ObjectType
+	{
+		LightBug,
+		Dust
+	}
 }
