@@ -8,6 +8,14 @@ public class SwitchDarkLight : MonoBehaviour
 	{
 		if ((collision.gameObject.tag == "Player") && (Input.GetKeyDown(KeyCode.UpArrow)))
 		{
+			foreach (LightState lightState in FindObjectsOfType(typeof(LightState)) as LightState[])
+			{
+				if (Global.ingame.isDark == IsDark.Light)
+					lightState.GetComponent<LightState>().ChangeStateToDark();
+				else
+					lightState.GetComponent<LightState>().ChangeStateToLight();
+			}
+			
 			Global.ingame.ChangeDarkLight();
 		}
 	}
