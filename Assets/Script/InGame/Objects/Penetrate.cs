@@ -8,6 +8,7 @@ public class Penetrate : MonoBehaviour
 	public Sprite inDark;
 
 	private BoxCollider2D coll;
+	// Read at Editor (Inspector). (ex : is Transparent In Light / Dark)
 	public IsDark isTransparentIn;
 
 	void Start()
