@@ -25,7 +25,6 @@ public class LightState : MonoBehaviour {
 	
 	public IsLight GetLightState()
 	{
-		// Not used yet.
 		return lightState;
 	}
 
