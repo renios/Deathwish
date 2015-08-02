@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.Assertions;
 using System.Collections;
 using System.Collections.Generic;
 using System;
@@ -8,16 +9,18 @@ public class LightBug : MonoBehaviour, IRestartable {
 
 	public GameObject attachCollider;
 	public GameObject awayCollider;
-
 	public GameObject[] movePoints;
-	private GameObject currentPoint;
 
-	private List<Func<Vector3>> movePointGetters;
+	private GameObject currentPoint;
 	private float speed = 3;
 	private bool isMoving = false;
 
 	// Use this for initialization
 	void Start () {
+		Assert.IsFalse(movePoints.Length == 0, "MovePoints of firefly is empty");
+		foreach (GameObject movePoint in movePoints)
+			Assert.IsNotNull(movePoint, "Some movePoint slot of firefly are empty");
+
 		currentPoint = movePoints[movePoints.GetLowerBound(0)];
 		gameObject.transform.position = movePoints[movePoints.GetLowerBound(0)].transform.position;
 
