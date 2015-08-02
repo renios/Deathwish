@@ -3,23 +3,18 @@ using System.Collections;
 
 public class AwayFromCharacterCollider : MonoBehaviour {
 
-	GameObject lightBug;
+	LightBug lightBug;
+
+	public void SetReceive(LightBug lightBug)
+	{
+		this.lightBug = lightBug;
+	}
 
 	void OnTriggerEnter2D(Collider2D other)
 	{
 		if (other.gameObject.tag == "Player")
 		{
-			lightBug.GetComponent<LightBug>().MoveNextPoint();
+			lightBug.MoveNextPoint();
 		}
-	}
-
-	// Use this for initialization
-	void Start () {
-		lightBug = gameObject.transform.parent.gameObject;
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
 	}
 }

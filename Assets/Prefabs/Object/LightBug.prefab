@@ -10,6 +10,7 @@ GameObject:
   - 4: {fileID: 433952}
   - 58: {fileID: 5823470}
   - 114: {fileID: 11449382}
+  - 50: {fileID: 5060698}
   m_Layer: 0
   m_Name: LightCollider
   m_TagString: LightBug
@@ -29,6 +30,7 @@ GameObject:
   - 114: {fileID: 11433968}
   - 114: {fileID: 11446980}
   - 114: {fileID: 11482988}
+  - 50: {fileID: 5028176}
   m_Layer: 0
   m_Name: LightBug
   m_TagString: LightBug
@@ -46,6 +48,7 @@ GameObject:
   - 4: {fileID: 473162}
   - 58: {fileID: 5894720}
   - 114: {fileID: 11461566}
+  - 50: {fileID: 5083416}
   m_Layer: 0
   m_Name: AwayCollider
   m_TagString: LightBug
@@ -72,7 +75,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 132980}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.00999999, y: 18.5599995, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 433952}
@@ -91,6 +94,54 @@ Transform:
   m_Children: []
   m_Father: {fileID: 444874}
   m_RootOrder: 1
+--- !u!50 &5028176
+Rigidbody2D:
+  serializedVersion: 2
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 132980}
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0
+  m_GravityScale: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!50 &5060698
+Rigidbody2D:
+  serializedVersion: 2
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 107416}
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0
+  m_GravityScale: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!50 &5083416
+Rigidbody2D:
+  serializedVersion: 2
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 176640}
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0
+  m_GravityScale: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!58 &5823470
 CircleCollider2D:
   m_ObjectHideFlags: 1
@@ -116,7 +167,7 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 1
+  m_Radius: 1.5
 --- !u!114 &11433968
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -141,11 +192,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c13ad813af15a4aefacc7f968a88d927, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lightCollider: {fileID: 107416}
+  attachCollider: {fileID: 0}
   awayCollider: {fileID: 176640}
   movePoints:
-  - {fileID: 0}
-  - {fileID: 0}
   - {fileID: 0}
 --- !u!114 &11449382
 MonoBehaviour:
@@ -203,7 +252,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 89269eb83701f4a28bf169c90f06b508, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &100100000
@@ -215,7 +264,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 0}
       propertyPath: movePoints.Array.size
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_LocalPosition.x
@@ -230,6 +279,30 @@ Prefab:
       value: 
       objectReference: {fileID: 21300000, guid: 89269eb83701f4a28bf169c90f06b508,
         type: 3}
+    - target: {fileID: 0}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Radius
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_AngularDrag
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_IsKinematic
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_GravityScale
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 132980}
