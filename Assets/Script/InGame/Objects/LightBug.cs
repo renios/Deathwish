@@ -21,19 +21,19 @@ public class LightBug : MonoBehaviour, IRestartable {
 		foreach (GameObject movePoint in movePoints)
 			Assert.IsNotNull(movePoint, "Some movePoint slot of firefly are empty");
 
-		currentPoint = movePoints[movePoints.GetLowerBound(0)];
-		gameObject.transform.position = movePoints[movePoints.GetLowerBound(0)].transform.position;
+		currentPoint = movePoints[0];
+		gameObject.transform.position = movePoints[0].transform.position;
 
-		GetComponentInChildren<AwayFromCharacterCollider>().SetReceive(this);
+		GetComponentInChildren<PlayerDetector>().SetCallBack(MoveNextPoint);
 		GetComponentInChildren<AttachToAreaMarker>().SetParentObjectType(ObjectType.LightBug);
 	}
 
 	void Update()
 	{
 		if ((GetComponent<LightState>().GetLightState() == LightState.IsLight.True) && (!isMoving))
-			GetComponentInChildren<AwayFromCharacterCollider>().gameObject.GetComponent<Collider2D>().enabled = true;
+			GetComponentInChildren<PlayerDetector>().gameObject.GetComponent<Collider2D>().enabled = true;
 		else
-			GetComponentInChildren<AwayFromCharacterCollider>().gameObject.GetComponent<Collider2D>().enabled = false;
+			GetComponentInChildren<PlayerDetector>().gameObject.GetComponent<Collider2D>().enabled = false;
 	}
 
 	public void MoveNextPoint()
@@ -70,7 +70,7 @@ public class LightBug : MonoBehaviour, IRestartable {
 	{
 		currentPoint = movePoints[movePoints.GetLowerBound(0)];
 		gameObject.transform.position = movePoints[movePoints.GetLowerBound(0)].transform.position;
-		GetComponentInChildren<AwayFromCharacterCollider>().gameObject.GetComponent<Collider2D>().enabled = true;
+		GetComponentInChildren<PlayerDetector>().gameObject.GetComponent<Collider2D>().enabled = true;
 		gameObject.GetComponent<SpriteRenderer>().sprite = gameObject.GetComponent<SpriteSwitch>().light;		
 	}
 }
