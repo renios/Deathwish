@@ -29,10 +29,9 @@ GameObject:
   - 212: {fileID: 21283398}
   - 114: {fileID: 11433968}
   - 114: {fileID: 11446980}
-  - 114: {fileID: 11482988}
   - 50: {fileID: 5028176}
   m_Layer: 0
-  m_Name: LightBug
+  m_Name: FireFly
   m_TagString: LightBug
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -196,6 +195,9 @@ MonoBehaviour:
   awayCollider: {fileID: 176640}
   movePoints:
   - {fileID: 0}
+  currentPoint: {fileID: 0}
+  speed: 3
+  isMoving: 0
 --- !u!114 &11449382
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -216,17 +218,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e30937e60d7c14988b4e87248ecd8c17, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &11482988
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 132980}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: db08007b38eff4f25b38410d1cb9521a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!212 &21283398

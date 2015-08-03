@@ -124,7 +124,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 483920, guid: 11f02d6a666ab44b1a803bd9dcb36c92, type: 2}
       propertyPath: m_RootOrder
-      value: 0
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 11f02d6a666ab44b1a803bd9dcb36c92, type: 2}
@@ -746,7 +746,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 444874, guid: ca70040b77ffa4cc9972be70036c707d, type: 2}
       propertyPath: m_RootOrder
-      value: 11
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 11446980, guid: ca70040b77ffa4cc9972be70036c707d, type: 2}
       propertyPath: movePoints.Array.data[0]

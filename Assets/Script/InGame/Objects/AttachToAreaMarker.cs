@@ -16,12 +16,12 @@ public class AttachToAreaMarker : MonoBehaviour {
 		if (other.gameObject.tag == "AreaMarker")
 		{
 			GameObject areaMarker = other.gameObject;
-			if (parentObjectType == ObjectType.LightBug)
+			if (parentObjectType == ObjectType.FireFly)
 			{
 				foreach(Collider2D colliderOfOther in Physics2D.OverlapAreaAll(areaMarker.GetComponent<Collider2D>().bounds.max, areaMarker.GetComponent<Collider2D>().bounds.min))
 				{
 					if ((colliderOfOther.gameObject.GetComponent<ObjectMonoBehaviour>() != null) && (colliderOfOther.gameObject.tag != "Player"))
-						colliderOfOther.gameObject.GetComponent<ObjectMonoBehaviour>().AttachLightBug();
+						colliderOfOther.gameObject.GetComponent<ObjectMonoBehaviour>().AttachFireFly();
 				}
 			}
 		}
@@ -32,12 +32,12 @@ public class AttachToAreaMarker : MonoBehaviour {
 		if (other.gameObject.tag == "AreaMarker")
 		{
 			GameObject areaMarker = other.gameObject;
-			if (parentObjectType == ObjectType.LightBug)
+			if (parentObjectType == ObjectType.FireFly)
 			{
 				foreach(Collider2D colliderOfOther in Physics2D.OverlapAreaAll(areaMarker.GetComponent<Collider2D>().bounds.max, areaMarker.GetComponent<Collider2D>().bounds.min))
 				{
 					if ((colliderOfOther.gameObject.GetComponent<ObjectMonoBehaviour>() != null) && (colliderOfOther.gameObject.tag != "Player"))
-						colliderOfOther.gameObject.GetComponent<ObjectMonoBehaviour>().DetachLightBug();
+						colliderOfOther.gameObject.GetComponent<ObjectMonoBehaviour>().DetachFireFly();
 				}
 			}
 		}

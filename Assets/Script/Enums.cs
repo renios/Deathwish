@@ -20,7 +20,7 @@ namespace Enums
 	
 	public enum ObjectType
 	{
-		LightBug,
+		FireFly,
 		Dust
 	}
 }

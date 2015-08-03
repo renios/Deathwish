@@ -4,23 +4,23 @@ using Enums;
 
 public abstract class ObjectMonoBehaviour : MonoBehaviour {
 
-	bool isAttachedLightBug = false;
+	bool isAttachedFireFly = false;
 
-	public void AttachLightBug()
+	public void AttachFireFly()
 	{
-		isAttachedLightBug = true;
+		isAttachedFireFly = true;
 	}
 
-	public void DetachLightBug()
+	public void DetachFireFly()
 	{
-		isAttachedLightBug = false;
+		isAttachedFireFly = false;
 	}
 
 	public abstract void UpdateByParent();
 
 	// DO NOT Implement 'Update' method in derived class.
 	private void Update () {
-		if ((isAttachedLightBug) && (Global.ingame.isDark == IsDark.Dark))
+		if ((isAttachedFireFly) && (Global.ingame.isDark == IsDark.Dark))
 		{
 			GetComponent<SpriteRenderer>().enabled = false;
 			if (GetComponent<Box>() != null)

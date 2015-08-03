@@ -1,7 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.Assertions;
 using System.Collections;
-using System.Collections.Generic;
 using System;
 using Enums;
 
@@ -25,12 +24,12 @@ public class LightBug : MonoBehaviour, IRestartable {
 		gameObject.transform.position = movePoints[0].transform.position;
 
 		GetComponentInChildren<PlayerDetector>().SetCallBack(MoveNextPoint);
-		GetComponentInChildren<AttachToAreaMarker>().SetParentObjectType(ObjectType.LightBug);
+		GetComponentInChildren<AttachToAreaMarker>().SetParentObjectType(ObjectType.FireFly);
 	}
 
 	void Update()
 	{
-		if ((GetComponent<LightState>().GetLightState() == LightState.IsLight.True) && (!isMoving))
+		if ((Global.ingame.isDark == IsDark.Light) && (!isMoving))
 			GetComponentInChildren<PlayerDetector>().gameObject.GetComponent<Collider2D>().enabled = true;
 		else
 			GetComponentInChildren<PlayerDetector>().gameObject.GetComponent<Collider2D>().enabled = false;
@@ -68,7 +67,7 @@ public class LightBug : MonoBehaviour, IRestartable {
 
 	void IRestartable.Restart()
 	{
-		StopAllCoroutines();//(MoveNextPointCoroutine());
+		StopAllCoroutines();
 		iTween.Stop(gameObject);
 		isMoving = false;
 		currentPoint = movePoints[0];
