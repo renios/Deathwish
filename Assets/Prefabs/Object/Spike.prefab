@@ -11,6 +11,7 @@ GameObject:
   - 212: {fileID: 21241512}
   - 114: {fileID: 11479862}
   - 61: {fileID: 6109270}
+  - 114: {fileID: 11415050}
   m_Layer: 0
   m_Name: Spike
   m_TagString: Spike
@@ -43,6 +44,17 @@ BoxCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Size: {x: .920000017, y: .975000024}
+--- !u!114 &11415050
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 119630}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19185949f283042ca8baa6597ea138aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &11479862
 MonoBehaviour:
   m_ObjectHideFlags: 1

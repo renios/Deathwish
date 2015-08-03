@@ -68,8 +68,11 @@ public class LightBug : MonoBehaviour, IRestartable {
 
 	void IRestartable.Restart()
 	{
-		currentPoint = movePoints[movePoints.GetLowerBound(0)];
-		gameObject.transform.position = movePoints[movePoints.GetLowerBound(0)].transform.position;
+		StopAllCoroutines();//(MoveNextPointCoroutine());
+		iTween.Stop(gameObject);
+		isMoving = false;
+		currentPoint = movePoints[0];
+		gameObject.transform.position = movePoints[0].transform.position;
 		GetComponentInChildren<PlayerDetector>().gameObject.GetComponent<Collider2D>().enabled = true;
 		gameObject.GetComponent<SpriteRenderer>().sprite = gameObject.GetComponent<SpriteSwitch>().light;		
 	}

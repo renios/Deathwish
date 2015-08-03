@@ -11,8 +11,7 @@ GameObject:
   - 212: {fileID: 21287536}
   - 61: {fileID: 6173618}
   - 114: {fileID: 11432406}
-  - 114: {fileID: 11481496}
-  - 114: {fileID: 11428728}
+  - 114: {fileID: 11460510}
   m_Layer: 0
   m_Name: Wall
   m_TagString: Wall
@@ -45,17 +44,6 @@ BoxCollider2D:
   m_Offset: {x: 0, y: -.00235272106}
   serializedVersion: 2
   m_Size: {x: .504118323, y: 2.50067067}
---- !u!114 &11428728
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 122268}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c579822ac6264404fa4796c9b842c7d6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &11432406
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -69,7 +57,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   light: {fileID: 21300000, guid: 1313512a04c469d438dd3bcfbcd479f8, type: 3}
   dark: {fileID: 21300000, guid: e73569d0ada2df142a08c685ff2de7be, type: 3}
---- !u!114 &11481496
+--- !u!114 &11460510
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -77,7 +65,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 122268}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: db08007b38eff4f25b38410d1cb9521a, type: 3}
+  m_Script: {fileID: 11500000, guid: 19185949f283042ca8baa6597ea138aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!212 &21287536

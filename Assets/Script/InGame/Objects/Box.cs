@@ -2,7 +2,7 @@
 using System.Collections;
 using Enums;
 
-public class Box : MonoBehaviour, IRestartable {
+public class Box : ObjectMonoBehaviour, IRestartable {
 
 	private Vector3 originalPosition;
 	
@@ -12,7 +12,7 @@ public class Box : MonoBehaviour, IRestartable {
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	public override void UpdateByParent () {
 		if (Global.ingame.isDark == IsDark.Light)
 		{
 			gameObject.GetComponent<Rigidbody2D>().isKinematic = false;	

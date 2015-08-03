@@ -20,8 +20,8 @@ public class AttachToAreaMarker : MonoBehaviour {
 			{
 				foreach(Collider2D colliderOfOther in Physics2D.OverlapAreaAll(areaMarker.GetComponent<Collider2D>().bounds.max, areaMarker.GetComponent<Collider2D>().bounds.min))
 				{
-					if ((colliderOfOther.gameObject.GetComponent<LightState>() != null) && (colliderOfOther.gameObject.tag != "LightBug") && (colliderOfOther.gameObject.tag != "Player"))
-						colliderOfOther.gameObject.GetComponent<LightState>().AttachLightBug();
+					if ((colliderOfOther.gameObject.GetComponent<ObjectMonoBehaviour>() != null) && (colliderOfOther.gameObject.tag != "Player"))
+						colliderOfOther.gameObject.GetComponent<ObjectMonoBehaviour>().AttachLightBug();
 				}
 			}
 		}
@@ -36,8 +36,8 @@ public class AttachToAreaMarker : MonoBehaviour {
 			{
 				foreach(Collider2D colliderOfOther in Physics2D.OverlapAreaAll(areaMarker.GetComponent<Collider2D>().bounds.max, areaMarker.GetComponent<Collider2D>().bounds.min))
 				{
-					if ((colliderOfOther.gameObject.GetComponent<LightState>() != null) && (colliderOfOther.gameObject.tag != "LightBug") && (colliderOfOther.gameObject.tag != "Player"))
-						colliderOfOther.gameObject.GetComponent<LightState>().DetachLightBug();
+					if ((colliderOfOther.gameObject.GetComponent<ObjectMonoBehaviour>() != null) && (colliderOfOther.gameObject.tag != "Player"))
+						colliderOfOther.gameObject.GetComponent<ObjectMonoBehaviour>().DetachLightBug();
 				}
 			}
 		}

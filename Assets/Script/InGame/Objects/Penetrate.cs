@@ -2,7 +2,7 @@
 using System.Collections;
 using Enums;
 
-public class Penetrate : MonoBehaviour
+public class Penetrate : ObjectMonoBehaviour
 {
 	public Sprite inLight;
 	public Sprite inDark;
@@ -16,8 +16,10 @@ public class Penetrate : MonoBehaviour
 		coll = GetComponent<BoxCollider2D> ();
 	}
 
-	void Update()
+	public override void UpdateByParent()
 	{
+		GetComponent<SpriteRenderer>().enabled = true;
+
 		if(Global.ingame.isDark == IsDark.Light)
 		{
 			gameObject.GetComponent<SpriteRenderer>().sprite = inLight;
