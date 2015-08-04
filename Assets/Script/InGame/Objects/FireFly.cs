@@ -4,7 +4,7 @@ using System.Collections;
 using System;
 using Enums;
 
-public class LightBug : MonoBehaviour, IRestartable {
+public class FireFly : MonoBehaviour, IRestartable {
 
 	public GameObject attachCollider;
 	public GameObject awayCollider;
