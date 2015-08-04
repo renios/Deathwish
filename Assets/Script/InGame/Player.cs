@@ -17,7 +17,9 @@ public class Player : MonoBehaviour, IRestartable
 	public GroundChecker groundChecker;
 	public LadderChecker ladderChecker;
 	private Climber climber;
-	
+
+	public GameObject playerSpriteObject;
+
 	void Start ()
 	{
 		startPoint = gameObject.transform.position;
@@ -43,10 +45,12 @@ public class Player : MonoBehaviour, IRestartable
 		if (Input.GetKey (KeyCode.RightArrow))
 		{
 			GetComponent<Rigidbody2D>().velocity = new Vector2(moveSpeed, GetComponent<Rigidbody2D>().velocity.y);
+			playerSpriteObject.transform.rotation = Quaternion.Euler(0, 180, 0);
 		}
 		else if (Input.GetKey(KeyCode.LeftArrow))
 		{
 			GetComponent<Rigidbody2D>().velocity = new Vector2(-moveSpeed, GetComponent<Rigidbody2D>().velocity.y);
+			playerSpriteObject.transform.rotation = Quaternion.Euler(0, 0, 0);
 		}
 		else
 		{
