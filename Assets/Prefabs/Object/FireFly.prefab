@@ -191,13 +191,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c13ad813af15a4aefacc7f968a88d927, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attachCollider: {fileID: 0}
+  attachCollider: {fileID: 107416}
   awayCollider: {fileID: 176640}
   movePoints:
   - {fileID: 0}
-  currentPoint: {fileID: 0}
-  speed: 3
-  isMoving: 0
 --- !u!114 &11449382
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -294,6 +291,10 @@ Prefab:
       propertyPath: m_GravityScale
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: attachCollider
+      value: 
+      objectReference: {fileID: 107416}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 132980}
