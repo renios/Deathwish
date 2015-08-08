@@ -24,6 +24,11 @@ public class AttachToAreaMarker : MonoBehaviour {
 						colliderOfOther.gameObject.GetComponent<ObjectMonoBehaviour>().AttachFireFly();
 				}
 			}
+			else if (parentObjectType == ObjectType.Dust)
+			{
+				areaMarker.AddComponent<Damage>();
+				areaMarker.GetComponent<Damage>().isActiveAtDark = true;
+			}
 		}
 	}
 
@@ -39,6 +44,10 @@ public class AttachToAreaMarker : MonoBehaviour {
 					if ((colliderOfOther.gameObject.GetComponent<ObjectMonoBehaviour>() != null) && (colliderOfOther.gameObject.tag != "Player"))
 						colliderOfOther.gameObject.GetComponent<ObjectMonoBehaviour>().DetachFireFly();
 				}
+			}
+			else if (parentObjectType == ObjectType.Dust)
+			{
+				Destroy(areaMarker.GetComponent<Damage>());
 			}
 		}
 	}
