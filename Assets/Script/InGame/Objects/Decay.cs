@@ -47,7 +47,7 @@ public class Decay : ObjectMonoBehaviour, IRestartable
 
 	void OnCollisionEnter2D(Collision2D collision)
 	{
-		if(collision.gameObject.tag == "Player" && Global.ingame.isDark == Enums.IsDark.Light)
+		if((collision.gameObject.tag == "Player" || collision.gameObject.tag == "Box" || collision.gameObject.tag == "Lamp") && Global.ingame.isDark == Enums.IsDark.Light)
 		{
 			Invoke("DestroySelf", delay);
 			// FIXME : temp checking method.
