@@ -8992,7 +8992,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 444874, guid: cb0b631587e0a42c7ad7c4eed04a340b, type: 2}
       propertyPath: m_RootOrder
-      value: 297
+      value: 301
       objectReference: {fileID: 0}
     - target: {fileID: 11422500, guid: cb0b631587e0a42c7ad7c4eed04a340b, type: 2}
       propertyPath: movePoints.Array.data[0]
