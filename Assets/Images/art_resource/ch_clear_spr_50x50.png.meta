@@ -1,13 +1,15 @@
 fileFormatVersion: 2
-guid: bf04d6ec62d034674ac3c443695ddb8b
-timeCreated: 1439053410
+guid: 3178c1df6c489473bb2faca6f6fbe50e
+timeCreated: 1439054105
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: ch_w_spr_50x50_0
-    21300002: ch_w_spr_50x50_1
-    21300004: ch_w_spr_50x50_2
-    21300006: ch_w_spr_50x50_3
+    21300000: ch_clear_spr_50x50_0
+    21300002: ch_clear_spr_50x50_1
+    21300004: ch_clear_spr_50x50_2
+    21300006: ch_clear_spr_50x50_3
+    21300008: ch_clear_spr_50x50_4
+    21300010: ch_clear_spr_50x50_5
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -53,45 +55,65 @@ TextureImporter:
   buildTargetSettings: []
   spriteSheet:
     sprites:
-    - name: ch_w_spr_50x50_0
+    - name: ch_clear_spr_50x50_0
       rect:
         serializedVersion: 2
-        x: 0
+        x: 3
         y: 0
         width: 81
-        height: 149
-      alignment: 0
-      pivot: {x: .5, y: .5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ch_w_spr_50x50_1
-      rect:
-        serializedVersion: 2
-        x: 92
-        y: 0
-        width: 93
         height: 150
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: .75, y: .0299999993}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ch_w_spr_50x50_2
+    - name: ch_clear_spr_50x50_1
       rect:
         serializedVersion: 2
-        x: 196
+        x: 90
+        y: 0
+        width: 86
+        height: 150
+      alignment: 9
+      pivot: {x: .75, y: .0299999993}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ch_clear_spr_50x50_2
+      rect:
+        serializedVersion: 2
+        x: 184
         y: 0
         width: 81
-        height: 149
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 150
+      alignment: 9
+      pivot: {x: .75, y: .0299999993}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ch_w_spr_50x50_3
+    - name: ch_clear_spr_50x50_3
       rect:
         serializedVersion: 2
-        x: 288
+        x: 270
         y: 0
-        width: 93
+        width: 86
         height: 150
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: .75, y: .0299999993}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ch_clear_spr_50x50_4
+      rect:
+        serializedVersion: 2
+        x: 366
+        y: 0
+        width: 82
+        height: 150
+      alignment: 9
+      pivot: {x: .730000019, y: .0299999993}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ch_clear_spr_50x50_5
+      rect:
+        serializedVersion: 2
+        x: 456
+        y: 0
+        width: 80
+        height: 150
+      alignment: 9
+      pivot: {x: .667673111, y: .0299999546}
       border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 
