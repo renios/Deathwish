@@ -1,13 +1,15 @@
 fileFormatVersion: 2
-guid: 71041f76de995a349a7df8b82cfc9e57
-timeCreated: 1439040536
+guid: d08abf7d2ea454c1b8fd137edaa5ddb2
+timeCreated: 1439045982
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: ch_climb_spr_50x50_0
-    21300002: ch_climb_spr_50x50_1
-    21300004: ch_climb_spr_50x50_2
-    21300006: ch_climb_spr_50x50_3
+    21300000: ch_jump_spr_50x50_0
+    21300002: ch_jump_spr_50x50_1
+    21300004: ch_jump_spr_50x50_2
+    21300006: ch_jump_spr_50x50_3
+    21300008: ch_jump_spr_50x50_4
+    21300010: ch_jump_spr_50x50_5
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -53,45 +55,65 @@ TextureImporter:
   buildTargetSettings: []
   spriteSheet:
     sprites:
-    - name: ch_climb_spr_50x50_0
+    - name: ch_jump_spr_50x50_0
       rect:
         serializedVersion: 2
-        x: 0
+        x: 2
         y: 0
-        width: 75
-        height: 150
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 110
+        height: 139
+      alignment: 9
+      pivot: {x: .137411714, y: .692743182}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ch_climb_spr_50x50_1
+    - name: ch_jump_spr_50x50_1
       rect:
         serializedVersion: 2
-        x: 96
+        x: 118
         y: 0
-        width: 87
-        height: 150
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 94
+        height: 145
+      alignment: 9
+      pivot: {x: .583053291, y: .223055691}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ch_climb_spr_50x50_2
+    - name: ch_jump_spr_50x50_2
       rect:
         serializedVersion: 2
-        x: 196
-        y: 0
-        width: 76
-        height: 150
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 221
+        y: 5
+        width: 121
+        height: 141
+      alignment: 9
+      pivot: {x: .760929048, y: .113594271}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ch_climb_spr_50x50_3
+    - name: ch_jump_spr_50x50_3
       rect:
         serializedVersion: 2
-        x: 289
-        y: 0
-        width: 87
-        height: 150
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 360
+        y: 2
+        width: 104
+        height: 143
+      alignment: 9
+      pivot: {x: .879851103, y: .41612643}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ch_jump_spr_50x50_4
+      rect:
+        serializedVersion: 2
+        x: 472
+        y: 1
+        width: 128
+        height: 146
+      alignment: 9
+      pivot: {x: .763919353, y: .743756115}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ch_jump_spr_50x50_5
+      rect:
+        serializedVersion: 2
+        x: 602
+        y: 1
+        width: 102
+        height: 145
+      alignment: 9
+      pivot: {x: 1.22285736, y: .752333343}
       border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 
