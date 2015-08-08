@@ -138,7 +138,13 @@ PlayerSettings:
     - m_Icon: {fileID: 0}
       m_Size: 128
   m_BuildTargetBatching: []
-  m_BuildTargetGraphicsAPIs: []
+  m_BuildTargetGraphicsAPIs:
+  - m_BuildTarget: WindowsStandaloneSupport
+    m_APIs: 01000000
+    m_Automatic: 0
+  - m_BuildTarget: AndroidPlayer
+    m_APIs: 08000000
+    m_Automatic: 0
   webPlayerTemplate: APPLICATION:Default
   m_TemplateCustomTags: {}
   actionOnDotNetUnhandledException: 1
@@ -201,7 +207,7 @@ PlayerSettings:
   ps4ApplicationParam3: 0
   ps4ApplicationParam4: 0
   ps4GarlicHeapSize: 2048
-  ps4Passcode: wQj99nsQzldVI5ZuGXbEWRK5RhRXdCdG
+  ps4Passcode: xr84P2R391UXaLHbavJvFZGfO47XWS2q
   ps4pnSessions: 1
   ps4pnPresence: 1
   ps4pnFriends: 1
@@ -225,7 +231,7 @@ PlayerSettings:
   psp2LiveAreaTrialPath: 
   psp2PatchChangeInfoPath: 
   psp2PatchOriginalPackage: 
-  psp2PackagePassword: 5nG5azdNMK66MuCV6GXi5xr84P2R391U
+  psp2PackagePassword: VOw5lxuBEBNue7b9PZS0hoI6pgabi9UO
   psp2KeystoneFile: 
   psp2MemoryExpansionMode: 0
   psp2DRMType: 0
@@ -372,6 +378,7 @@ PlayerSettings:
   XboxOnePersistentLocalStorageSize: 0
   intPropertyNames:
   - Metro::ScriptingBackend
+  - Standalone::ScriptingBackend
   - WP8::ScriptingBackend
   - WebGL::ScriptingBackend
   - WebGL::audioCompressionFormat
@@ -380,6 +387,7 @@ PlayerSettings:
   - iOS::Architecture
   - iOS::ScriptingBackend
   Metro::ScriptingBackend: 2
+  Standalone::ScriptingBackend: 0
   WP8::ScriptingBackend: 2
   WebGL::ScriptingBackend: 1
   WebGL::audioCompressionFormat: 4
@@ -391,16 +399,16 @@ PlayerSettings:
   - WebGL::analyzeBuildSize
   - WebGL::dataCaching
   - WebGL::useEmbeddedResources
-  - XboxOne::enus
   WebGL::analyzeBuildSize: 0
   WebGL::dataCaching: 0
   WebGL::useEmbeddedResources: 0
-  XboxOne::enus: 1
   stringPropertyNames:
   - WebGL::emscriptenArgs
   - WebGL::template
+  - additionalIl2CppArgs::additionalIl2CppArgs
   WebGL::emscriptenArgs: 
   WebGL::template: APPLICATION:Default
+  additionalIl2CppArgs::additionalIl2CppArgs: 
   firstStreamedSceneWithResources: 0
   cloudProjectId: 
   projectId: 

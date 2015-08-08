@@ -13,6 +13,9 @@ TagManager:
   - Spike
   - FireFly
   - AreaMarker
+  - LightBug
+  - Lamp
+  - Box
   layers:
   - Default
   - TransparentFX

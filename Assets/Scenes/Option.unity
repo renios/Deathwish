@@ -1001,7 +1001,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Gallary
+  m_Text: Gallery
 --- !u!222 &998784330
 CanvasRenderer:
   m_ObjectHideFlags: 0

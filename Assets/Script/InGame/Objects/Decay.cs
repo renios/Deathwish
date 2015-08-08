@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using Enums;
 
 public class Decay : ObjectMonoBehaviour, IRestartable
 {
@@ -24,14 +25,34 @@ public class Decay : ObjectMonoBehaviour, IRestartable
 		{
 			collider2D.enabled = true;
 			renderer.enabled = true;
+			// FIXME : temp checking method.
+			if (GetComponent<DecayGroundEffect>() != null)
+			{
+				if (Global.ingame.isDark == IsDark.Light)
+					GetComponent<DecayGroundEffect>().decayParticleS.SetActive(true);
+				else if (Global.ingame.isDark == IsDark.Dark)
+					GetComponent<DecayGroundEffect>().decayParticleS.SetActive(false);
+			}
 		}
+	}
+	
+	public override void HideObject()
+	{
+		GetComponent<SpriteRenderer>().enabled = false;
+		GetComponent<Collider2D>().enabled = false;
+		// FIXME : temp checking method.
+		if (GetComponent<DecayGroundEffect>() != null)
+			GetComponent<DecayGroundEffect>().decayParticleS.SetActive(false);
 	}
 
 	void OnCollisionEnter2D(Collision2D collision)
 	{
-		if(collision.gameObject.tag == "Player" && Global.ingame.isDark == Enums.IsDark.Light)
+		if((collision.gameObject.tag == "Player" || collision.gameObject.tag == "Box" || collision.gameObject.tag == "Lamp") && Global.ingame.isDark == Enums.IsDark.Light)
 		{
 			Invoke("DestroySelf", delay);
+			// FIXME : temp checking method.
+			if (GetComponent<DecayGroundEffect>() != null)
+				GetComponent<DecayGroundEffect>().PlayDecayEffect();
 		}
 	}
 
