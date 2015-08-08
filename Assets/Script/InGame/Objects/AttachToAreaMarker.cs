@@ -28,6 +28,8 @@ public class AttachToAreaMarker : MonoBehaviour {
 			{
 				areaMarker.AddComponent<Damage>();
 				areaMarker.GetComponent<Damage>().isActiveAtDark = true;
+				// temp image.
+				areaMarker.GetComponent<SpriteRenderer>().enabled = true;
 			}
 		}
 	}
@@ -48,6 +50,7 @@ public class AttachToAreaMarker : MonoBehaviour {
 			else if (parentObjectType == ObjectType.Dust)
 			{
 				Destroy(areaMarker.GetComponent<Damage>());
+				areaMarker.GetComponent<SpriteRenderer>().enabled = false;
 			}
 		}
 	}
