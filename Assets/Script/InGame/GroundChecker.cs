@@ -14,6 +14,6 @@ public class GroundChecker : MonoBehaviour {
 	public bool IsGrounded()
 	{
 		Bounds region = collider.bounds;
-		return Physics2D.OverlapArea (region.max, region.min, LayerMask.GetMask ("Ground"));
+		return Physics2D.OverlapArea (region.max, region.min, LayerMask.GetMask ("Ground")) != null;
 	}
 }
