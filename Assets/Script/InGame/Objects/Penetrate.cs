@@ -26,4 +26,10 @@ public class Penetrate : ObjectMonoBehaviour
 			coll.enabled = true;
 		}
 	}
+
+	public override void HideObject()
+	{
+		GetComponent<SpriteRenderer>().enabled = false;
+		GetComponent<Collider2D>().enabled = false;
+	}
 }

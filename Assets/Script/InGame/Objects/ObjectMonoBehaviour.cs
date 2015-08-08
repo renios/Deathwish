@@ -17,15 +17,17 @@ public abstract class ObjectMonoBehaviour : MonoBehaviour {
 	}
 
 	public abstract void UpdateByParent();
+	public abstract void HideObject();
 
 	// DO NOT Implement 'Update' method in derived class.
 	private void Update () {
 		if ((isAttachedFireFly) && (Global.ingame.isDark == IsDark.Dark))
 		{
-			GetComponent<SpriteRenderer>().enabled = false;
+			HideObject();
+			//  GetComponent<SpriteRenderer>().enabled = false;
 			if (GetComponent<Box>() != null)
 				GetComponent<Rigidbody2D>().isKinematic = true;
-			GetComponent<Collider2D>().enabled = false;
+			//  GetComponent<Collider2D>().enabled = false;
 		}
 		else
 			UpdateByParent();
