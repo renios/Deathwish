@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: d08abf7d2ea454c1b8fd137edaa5ddb2
-timeCreated: 1439044979
+timeCreated: 1439045982
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -59,61 +59,61 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 2
-        y: 1
-        width: 101
-        height: 145
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        y: 0
+        width: 110
+        height: 139
+      alignment: 9
+      pivot: {x: .137411714, y: .692743182}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: ch_jump_spr_50x50_1
       rect:
         serializedVersion: 2
-        x: 105
+        x: 118
         y: 0
-        width: 127
-        height: 146
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 94
+        height: 145
+      alignment: 9
+      pivot: {x: .583053291, y: .223055691}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: ch_jump_spr_50x50_2
       rect:
         serializedVersion: 2
-        x: 246
-        y: 3
-        width: 105
-        height: 143
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 221
+        y: 5
+        width: 121
+        height: 141
+      alignment: 9
+      pivot: {x: .760929048, y: .113594271}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: ch_jump_spr_50x50_3
       rect:
         serializedVersion: 2
         x: 360
-        y: 5
-        width: 120
-        height: 141
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        y: 2
+        width: 104
+        height: 143
+      alignment: 9
+      pivot: {x: .879851103, y: .41612643}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: ch_jump_spr_50x50_4
       rect:
         serializedVersion: 2
-        x: 485
-        y: 0
-        width: 94
-        height: 145
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 472
+        y: 1
+        width: 128
+        height: 146
+      alignment: 9
+      pivot: {x: .763919353, y: .743756115}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: ch_jump_spr_50x50_5
       rect:
         serializedVersion: 2
-        x: 590
-        y: 0
-        width: 111
-        height: 139
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 602
+        y: 1
+        width: 102
+        height: 145
+      alignment: 9
+      pivot: {x: 1.22285736, y: .752333343}
       border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 

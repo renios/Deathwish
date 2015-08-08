@@ -87,33 +87,33 @@ NavMeshSettings:
     cellSize: .166666672
     manualCellSize: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &1608013154
+--- !u!1 &1912184356
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   serializedVersion: 4
   m_Component:
-  - 4: {fileID: 1608013157}
-  - 212: {fileID: 1608013156}
-  - 95: {fileID: 1608013155}
+  - 4: {fileID: 1912184359}
+  - 212: {fileID: 1912184358}
+  - 95: {fileID: 1912184357}
   m_Layer: 0
-  m_Name: ch_climb_spr_50x50_0
+  m_Name: ch_jump_spr_50x50_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!95 &1608013155
+--- !u!95 &1912184357
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1608013154}
+  m_GameObject: {fileID: 1912184356}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: fbe560a125b2549e0afd5c1e4ea9ac6b, type: 2}
+  m_Controller: {fileID: 9100000, guid: 08b97dd72594a46c592916a5bcd9d706, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -121,12 +121,12 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!212 &1608013156
+--- !u!212 &1912184358
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1608013154}
+  m_GameObject: {fileID: 1912184356}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -145,14 +145,14 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 71041f76de995a349a7df8b82cfc9e57, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d08abf7d2ea454c1b8fd137edaa5ddb2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
---- !u!4 &1608013157
+--- !u!4 &1912184359
 Transform:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1608013154}
+  m_GameObject: {fileID: 1912184356}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
