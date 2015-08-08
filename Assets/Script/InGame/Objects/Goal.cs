@@ -1,20 +1,43 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Goal : MonoBehaviour
+public class Goal : MonoBehaviour, IRestartable
 {
+	private bool playerInZone;
+
+	public string LevelToLoad;
+
+	void Start()
+	{
+		playerInZone = false;
+	}
+
+	void Update()
+	{
+		if (Input.GetKeyDown(KeyCode.UpArrow) && playerInZone)
+		{
+			Scene.Load(LevelToLoad, Scene.SceneType.Stage);
+		}
+	}
+
 	void OnTriggerEnter2D(Collider2D collision)
 	{
 		if(collision.gameObject.tag == "Player")
 		{
-			LevelEnd();
+			playerInZone = true;
 		}
 	}
 
-	//Not made yet.
-	void LevelEnd()
+	void OnTriggerExit2D(Collider2D collision)
 	{
-		Debug.Log ("End");
-		return;
+		if (collision.gameObject.tag == "Player")
+		{
+			playerInZone = false;
+		}
+	}
+
+	void IRestartable.Restart()
+	{
+		playerInZone = false;
 	}
 }
