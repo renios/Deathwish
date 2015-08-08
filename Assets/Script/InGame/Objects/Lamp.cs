@@ -1,11 +1,13 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 using Enums;
 
 public class Lamp : ObjectMonoBehaviour
 {
 	public LampProperty lampProperty;
 	public float detectingRadius;
+	List<Lamp> lamps;
 
 	void Start()
 	{

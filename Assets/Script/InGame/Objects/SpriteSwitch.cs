@@ -4,6 +4,7 @@ using Enums;
 
 public class SpriteSwitch : MonoBehaviour
 {
+	public IsDark isDark;
 
 	public new Sprite light;
 	public Sprite dark;
@@ -17,11 +18,11 @@ public class SpriteSwitch : MonoBehaviour
 
 	void Update ()
 	{
-		if(Global.ingame.isDark == IsDark.Light)
+		if(isDark == IsDark.Light)
 		{
 			sr.sprite = light;
 		}
-		else if(Global.ingame.isDark == IsDark.Dark)
+		else if(isDark == IsDark.Dark)
 		{
 			sr.sprite = dark;
 		}

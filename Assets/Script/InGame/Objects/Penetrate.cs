@@ -17,7 +17,7 @@ public class Penetrate : ObjectMonoBehaviour
 	{
 		GetComponent<SpriteRenderer>().enabled = true;
 
-		if (Global.ingame.isDark == isTransparentIn)
+		if (isDarkAfterLamp() == isTransparentIn)
 		{
 			coll.enabled = false;
 		}

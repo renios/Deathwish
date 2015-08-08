@@ -28,9 +28,9 @@ public class Decay : ObjectMonoBehaviour, IRestartable
 			// FIXME : temp checking method.
 			if (GetComponent<DecayGroundEffect>() != null)
 			{
-				if (Global.ingame.isDark == IsDark.Light)
+				if (isDarkAfterLamp() == IsDark.Light)
 					GetComponent<DecayGroundEffect>().decayParticleS.SetActive(true);
-				else if (Global.ingame.isDark == IsDark.Dark)
+				else if (isDarkAfterLamp() == IsDark.Dark)
 					GetComponent<DecayGroundEffect>().decayParticleS.SetActive(false);
 			}
 		}
@@ -47,7 +47,7 @@ public class Decay : ObjectMonoBehaviour, IRestartable
 
 	void OnCollisionEnter2D(Collision2D collision)
 	{
-		if(collision.gameObject.tag == "Player" && Global.ingame.isDark == Enums.IsDark.Light)
+		if(collision.gameObject.tag == "Player" && isDarkAfterLamp() == Enums.IsDark.Light)
 		{
 			Invoke("DestroySelf", delay);
 			// FIXME : temp checking method.

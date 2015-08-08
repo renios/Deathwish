@@ -18,49 +18,58 @@ public abstract class ObjectMonoBehaviour : MonoBehaviour
 		isAttachedFireFly = false;
 	}
 
-	void UpdateByParent2()
+	public IsDark isDarkAfterLamp()
 	{
 		if(isNearbyLamp && nearbyLamp != null)
 		{
 			if(nearbyLamp.lampProperty == LampProperty.LightLamp)
 			{
-				//UpdateOnLight();
+				return IsDark.Light;
 			}
 			else if(nearbyLamp.lampProperty == LampProperty.DarkLamp)
 			{
-				//UpdateOnDark();
+				return IsDark.Dark;
+			}
+			else
+			{
+				return IsDark.Light;
 			}
 		}
 		else if(!isNearbyLamp)
 		{
 			if(Global.ingame.isDark == IsDark.Light)
 			{
-				//UpdateOnLight();
+				return IsDark.Light;
 			}
 			else if(Global.ingame.isDark == IsDark.Dark)
 			{
-				//UpdateOnDark();
+				return IsDark.Dark;
+			}
+			else
+			{
+				return IsDark.Light;
 			}
 		}
 		else
 		{
-			return;
+			return IsDark.Light;
 		}
 	}
 
 	public abstract void UpdateByParent();
-	//public abstract void UpdateOnLight();
-	//public abstract void UpdateOnDark();
 	public abstract void HideObject();
 
 	// DO NOT Implement 'Update' method in derived class.
 	private void Update ()
 	{
-		foreach(Lamp lamp in Global.ingame.LampsInMap)
-		{
-			return;
-		}
-		if ((isAttachedFireFly) && (Global.ingame.isDark == IsDark.Dark))
+		//foreach(Lamp lamp in Global.ingame.LampsInMap)
+		//{
+			//return;
+		//}
+
+		GetComponentInChildren<SpriteSwitch> ().isDark = isDarkAfterLamp ();
+
+		if ((isAttachedFireFly) && (isDarkAfterLamp() == IsDark.Dark))
 		{
 			HideObject();
 			//  GetComponent<SpriteRenderer>().enabled = false;
