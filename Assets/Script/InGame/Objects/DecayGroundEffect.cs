@@ -15,14 +15,6 @@ public class DecayGroundEffect : MonoBehaviour, IRestartable {
 		decayParticleL.SetActive(false);
 	}
 
-	//  public override void UpdateByParent()
-	//  {
-	//  	if (Global.ingame.isDark == IsDark.Light)
-	//  		decayParticleS.SetActive(true);
-	//  	else if (Global.ingame.isDark == IsDark.Dark)
-	//  		decayParticleS.SetActive(false);
-	//  }
-
 	public void PlayDecayEffect()
 	{
 		StartCoroutine(PlayDecayEffectCoroutine());

@@ -22,7 +22,13 @@ public class Box : ObjectMonoBehaviour, IRestartable {
 			gameObject.GetComponent<Rigidbody2D>().isKinematic = true;
 		}
 	}
-	
+
+	public override void HideObject()
+	{
+		GetComponent<SpriteRenderer>().enabled = false;
+		GetComponent<Collider2D>().enabled = false;
+	}
+
 	void IRestartable.Restart()
 	{
 		gameObject.transform.position = originalPosition;
