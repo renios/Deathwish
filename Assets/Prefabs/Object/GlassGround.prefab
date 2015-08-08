@@ -9,9 +9,10 @@ GameObject:
   m_Component:
   - 4: {fileID: 483920}
   - 212: {fileID: 21277314}
-  - 61: {fileID: 6103632}
   - 114: {fileID: 11440192}
   - 114: {fileID: 11469324}
+  - 68: {fileID: 6874064}
+  - 68: {fileID: 6869154}
   m_Layer: 8
   m_Name: GlassGround
   m_TagString: Ground
@@ -31,8 +32,8 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!61 &6103632
-BoxCollider2D:
+--- !u!68 &6869154
+EdgeCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -41,9 +42,24 @@ BoxCollider2D:
   m_Material: {fileID: 6200000, guid: b170f10ddd4f0b947a2c09099661fea7, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Offset: {x: 0, y: -.5}
+  m_Points:
+  - {x: -.5, y: 0}
+  - {x: .5, y: 0}
+--- !u!68 &6874064
+EdgeCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 178374}
+  m_Enabled: 1
+  m_Material: {fileID: 6200000, guid: b170f10ddd4f0b947a2c09099661fea7, type: 2}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: .5}
+  m_Points:
+  - {x: -.5, y: 0}
+  - {x: .5, y: 0}
 --- !u!114 &11440192
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -167,6 +183,14 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_SortingOrder
       value: -2
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 6200000, guid: b170f10ddd4f0b947a2c09099661fea7, type: 2}
+    - target: {fileID: 0}
+      propertyPath: m_Offset.y
+      value: -.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
