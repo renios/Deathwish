@@ -62,14 +62,22 @@ public abstract class ObjectMonoBehaviour : MonoBehaviour
 	// DO NOT Implement 'Update' method in derived class.
 	private void Update ()
 	{
-		//foreach(Lamp lamp in Global.ingame.LampsInMap)
-		//{
-			//return;
-		//}
+		foreach(Lamp lamp in Global.ingame.LampsInMap)
+		{
+			Vector3 difference = lamp.transform.position - this.transform.position;
+			if(difference.magnitude < lamp.detectingRadius)
+			{
+				isNearbyLamp = true;
+				nearbyLamp = lamp;
+			}
+		}
 
 		SpriteSwitch ss = GetComponentInChildren<SpriteSwitch> ();
 		if (ss != null)
+		{
 			ss.isDark = isDarkAfterLamp ();
+			ss.changed = true;
+		}
 
 		if ((isAttachedFireFly) && (isDarkAfterLamp() == IsDark.Dark))
 		{

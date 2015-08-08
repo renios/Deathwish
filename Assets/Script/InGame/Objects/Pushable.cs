@@ -34,6 +34,7 @@ public class Pushable : ObjectMonoBehaviour, IRestartable {
 		gameObject.transform.position = originalPosition;
 		gameObject.GetComponent<Rigidbody2D>().isKinematic = false;
 		SpriteSwitch spriteSwitch = gameObject.GetComponent<SpriteSwitch>();
-		gameObject.GetComponent<SpriteRenderer>().sprite = spriteSwitch.light;
+		if(spriteSwitch != null)
+			gameObject.GetComponent<SpriteRenderer>().sprite = spriteSwitch.light;
 	}
 }
