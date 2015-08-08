@@ -136,13 +136,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Content: {fileID: 1917062523}
-  m_Horizontal: 0
-  m_Vertical: 0
+  m_Horizontal: 1
+  m_Vertical: 1
   m_MovementType: 2
   m_Elasticity: .100000001
   m_Inertia: 1
   m_DecelerationRate: .135000005
-  m_ScrollSensitivity: 1
+  m_ScrollSensitivity: 30
   m_HorizontalScrollbar: {fileID: 0}
   m_VerticalScrollbar: {fileID: 451361693}
   m_OnValueChanged:
@@ -1304,7 +1304,7 @@ MonoBehaviour:
   m_Direction: 2
   m_Value: 1
   m_Size: .478860289
-  m_NumberOfSteps: 4
+  m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []

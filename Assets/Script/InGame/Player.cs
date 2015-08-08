@@ -68,6 +68,7 @@ public class Player : MonoBehaviour, IRestartable
 
 	void IRestartable.Restart()
 	{
+		GetComponent<Rigidbody2D>().velocity = Vector2.zero;
 		gameObject.transform.position = startPoint;
 		//Temporarily reset isDark in Player.cs, but it should be moved to other script.
 		Global.ingame.isDark = IsDark.Light;

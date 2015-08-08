@@ -43,7 +43,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1, y: 2}
 --- !u!114 &11419696
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -69,8 +69,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isDark: 0
-  light: {fileID: 21300000, guid: 975b910827f19f94984ad3f898ef0614, type: 3}
-  dark: {fileID: 21300000, guid: f0dcc2f8941a945939d849a5e2a3a220, type: 3}
+  changed: 0
+  light: {fileID: 21300000, guid: f1749eafdf91a4b79ac93d429c90b41e, type: 3}
+  dark: {fileID: 21300000, guid: bc59d112af3114944a01654b9d6d6c5b, type: 3}
 --- !u!212 &21243310
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -95,7 +96,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 975b910827f19f94984ad3f898ef0614, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f1749eafdf91a4b79ac93d429c90b41e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &100100000
 Prefab:
@@ -117,12 +118,12 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: light
       value: 
-      objectReference: {fileID: 21300000, guid: 975b910827f19f94984ad3f898ef0614,
+      objectReference: {fileID: 21300000, guid: f1749eafdf91a4b79ac93d429c90b41e,
         type: 3}
     - target: {fileID: 0}
       propertyPath: dark
       value: 
-      objectReference: {fileID: 21300000, guid: f0dcc2f8941a945939d849a5e2a3a220,
+      objectReference: {fileID: 21300000, guid: bc59d112af3114944a01654b9d6d6c5b,
         type: 3}
     - target: {fileID: 0}
       propertyPath: m_SortingOrder
@@ -136,6 +137,11 @@ Prefab:
       propertyPath: m_IsTrigger
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: f1749eafdf91a4b79ac93d429c90b41e,
+        type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 138448}
