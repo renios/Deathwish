@@ -67,7 +67,9 @@ public abstract class ObjectMonoBehaviour : MonoBehaviour
 			//return;
 		//}
 
-		GetComponentInChildren<SpriteSwitch> ().isDark = isDarkAfterLamp ();
+		SpriteSwitch ss = GetComponentInChildren<SpriteSwitch> ();
+		if (ss != null)
+			ss.isDark = isDarkAfterLamp ();
 
 		if ((isAttachedFireFly) && (isDarkAfterLamp() == IsDark.Dark))
 		{
