@@ -32,7 +32,7 @@ public abstract class ObjectMonoBehaviour : MonoBehaviour
 			}
 			else
 			{
-				return IsDark.Light;
+				return IsDark.Dark;
 			}
 		}
 		else if(!isNearbyLamp)
@@ -62,6 +62,7 @@ public abstract class ObjectMonoBehaviour : MonoBehaviour
 	// DO NOT Implement 'Update' method in derived class.
 	private void Update ()
 	{
+		int i = 0;
 		foreach(Lamp lamp in Global.ingame.LampsInMap)
 		{
 			Vector3 difference = lamp.transform.position - this.transform.position;
@@ -69,7 +70,13 @@ public abstract class ObjectMonoBehaviour : MonoBehaviour
 			{
 				isNearbyLamp = true;
 				nearbyLamp = lamp;
+				i++;
 			}
+		}
+		if(i > 0)
+		{
+			bool isNearbyLamp = false;
+			Lamp nearbyLamp=null;
 		}
 
 		SpriteSwitch ss = GetComponentInChildren<SpriteSwitch> ();
