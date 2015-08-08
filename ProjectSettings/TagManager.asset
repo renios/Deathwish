@@ -13,6 +13,8 @@ TagManager:
   - Spike
   - FireFly
   - AreaMarker
+  - LightBug
+  - Lamp
   layers:
   - Default
   - TransparentFX
