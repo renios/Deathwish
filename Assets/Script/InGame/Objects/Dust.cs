@@ -16,9 +16,9 @@ public class Dust : MonoBehaviour, IRestartable {
 
 	// Use this for initialization
 	void Start () {
-		Assert.IsFalse(movePoints.Length == 0, "MovePoints of firefly is empty");
+		Assert.IsFalse(movePoints.Length == 0, "MovePoints of dust is empty");
 		foreach (GameObject movePoint in movePoints)
-			Assert.IsNotNull(movePoint, "Some movePoint slot of firefly are empty");
+			Assert.IsNotNull(movePoint, "Some movePoint slot of dust are empty");
 
 		currentPoint = movePoints[0];
 		gameObject.transform.position = movePoints[0].transform.position;
