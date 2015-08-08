@@ -23,4 +23,10 @@ namespace Enums
 		FireFly,
 		Dust
 	}
+
+	public enum LampProperty
+	{
+		LightLamp,
+		DarkLamp
+	}
 }
