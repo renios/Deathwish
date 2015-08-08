@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 using Enums;
 
 public class Decay : ObjectMonoBehaviour, IRestartable
@@ -7,14 +8,14 @@ public class Decay : ObjectMonoBehaviour, IRestartable
 	public float delay;
 	public Sprite normal;
 	public Sprite transparent;
-	new private Collider2D collider2D;
+	private List<Collider2D> collider2Ds;
 	new private SpriteRenderer renderer;
 	private SpriteSwitch spriteSwitch;
 	bool isDestroy = false;
 
 	void Start()
 	{
-		collider2D = GetComponent<Collider2D> ();
+		collider2Ds = new List<Collider2D>(GetComponents<Collider2D> ());
 		renderer = GetComponent<SpriteRenderer> ();
 		spriteSwitch = GetComponent<SpriteSwitch> ();
 	}
@@ -23,14 +24,16 @@ public class Decay : ObjectMonoBehaviour, IRestartable
 	{
 		if (!isDestroy)
 		{
-			collider2D.enabled = true;
+			foreach (var collider in collider2Ds) {
+				collider.enabled = true;
+			}
 			renderer.enabled = true;
 			// FIXME : temp checking method.
 			if (GetComponent<DecayGroundEffect>() != null)
 			{
-				if (Global.ingame.isDark == IsDark.Light)
+				if (isDarkAfterLamp() == IsDark.Light)
 					GetComponent<DecayGroundEffect>().decayParticleS.SetActive(true);
-				else if (Global.ingame.isDark == IsDark.Dark)
+				else if (isDarkAfterLamp() == IsDark.Dark)
 					GetComponent<DecayGroundEffect>().decayParticleS.SetActive(false);
 			}
 		}
@@ -39,7 +42,9 @@ public class Decay : ObjectMonoBehaviour, IRestartable
 	public override void HideObject()
 	{
 		GetComponent<SpriteRenderer>().enabled = false;
-		GetComponent<Collider2D>().enabled = false;
+		foreach (var collider in collider2Ds) {
+				collider.enabled = false;
+		}
 		// FIXME : temp checking method.
 		if (GetComponent<DecayGroundEffect>() != null)
 			GetComponent<DecayGroundEffect>().decayParticleS.SetActive(false);
@@ -47,7 +52,8 @@ public class Decay : ObjectMonoBehaviour, IRestartable
 
 	void OnCollisionEnter2D(Collision2D collision)
 	{
-		if((collision.gameObject.tag == "Player" || collision.gameObject.tag == "Box" || collision.gameObject.tag == "Lamp") && Global.ingame.isDark == Enums.IsDark.Light)
+		if((collision.gameObject.tag == "Player" || collision.gameObject.tag == "Box" || collision.gameObject.tag == "Lamp")
+					   && isDarkAfterLamp() == Enums.IsDark.Light)
 		{
 			Invoke("DestroySelf", delay);
 			// FIXME : temp checking method.
@@ -59,7 +65,9 @@ public class Decay : ObjectMonoBehaviour, IRestartable
 	void DestroySelf()
 	{
 		isDestroy = true;
-		collider2D.enabled = false;
+		foreach (var collider in collider2Ds) {
+			collider.enabled = false;
+		}
 		renderer.sprite = transparent;
 		spriteSwitch.enabled = false;
 	}
@@ -67,7 +75,9 @@ public class Decay : ObjectMonoBehaviour, IRestartable
 	void IRestartable.Restart()
 	{
 		isDestroy = false;
-		collider2D.enabled = true;
+		foreach (var collider in collider2Ds) {
+			collider.enabled = true;
+		}
 		renderer.sprite = normal;
 		spriteSwitch.enabled = true;
 	}

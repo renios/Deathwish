@@ -13,11 +13,11 @@ public class Pushable : ObjectMonoBehaviour, IRestartable {
 	
 	// Update is called once per frame
 	public override void UpdateByParent () {
-		if (Global.ingame.isDark == IsDark.Light)
+		if (isDarkAfterLamp() == IsDark.Light)
 		{
 			gameObject.GetComponent<Rigidbody2D>().isKinematic = false;	
 		}
-		else if (Global.ingame.isDark == IsDark.Dark)
+		else if (isDarkAfterLamp() == IsDark.Dark)
 		{
 			gameObject.GetComponent<Rigidbody2D>().isKinematic = true;
 		}
@@ -32,7 +32,9 @@ public class Pushable : ObjectMonoBehaviour, IRestartable {
 	void IRestartable.Restart()
 	{
 		gameObject.transform.position = originalPosition;
-		gameObject.GetComponent<Rigidbody2D>().isKinematic = false;		
-		gameObject.GetComponent<SpriteRenderer>().sprite = gameObject.GetComponent<SpriteSwitch>().light;
+		gameObject.GetComponent<Rigidbody2D>().isKinematic = false;
+		SpriteSwitch spriteSwitch = gameObject.GetComponent<SpriteSwitch>();
+		if(spriteSwitch != null)
+			gameObject.GetComponent<SpriteRenderer>().sprite = spriteSwitch.light;
 	}
 }

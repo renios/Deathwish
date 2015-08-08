@@ -4,6 +4,8 @@ using Enums;
 
 public class SpriteSwitch : MonoBehaviour
 {
+	public IsDark isDark;
+	public bool changed;
 
 	public new Sprite light;
 	public Sprite dark;
@@ -15,15 +17,30 @@ public class SpriteSwitch : MonoBehaviour
 		sr = GetComponent<SpriteRenderer> ();
 	}
 
+	//fatal problem. Need to solve.
 	void Update ()
 	{
-		if(Global.ingame.isDark == IsDark.Light)
+		if(changed)
 		{
-			sr.sprite = light;
+			if(isDark == IsDark.Light)
+			{
+				sr.sprite = light;
+			}
+			else if(isDark == IsDark.Dark)
+			{
+				sr.sprite = dark;
+			}
 		}
-		else if(Global.ingame.isDark == IsDark.Dark)
+		else
 		{
-			sr.sprite = dark;
+			if(Global.ingame.isDark == IsDark.Light)
+			{
+				sr.sprite = light;
+			}
+			else if(Global.ingame.isDark == IsDark.Dark)
+			{
+				sr.sprite = dark;
+			}
 		}
 	}
 }

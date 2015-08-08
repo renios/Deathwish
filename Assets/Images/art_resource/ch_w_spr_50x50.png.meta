@@ -1,18 +1,17 @@
 fileFormatVersion: 2
-<<<<<<< Updated upstream
 guid: bf04d6ec62d034674ac3c443695ddb8b
-timeCreated: 1438858953
+timeCreated: 1439053410
 licenseType: Free
 TextureImporter:
-  fileIDToRecycleName: {}
-=======
-guid: d66b2edd8039140b295f802ea6b4f0d9
-TextureImporter:
->>>>>>> Stashed changes
+  fileIDToRecycleName:
+    21300000: ch_w_spr_50x50_0
+    21300002: ch_w_spr_50x50_1
+    21300004: ch_w_spr_50x50_2
+    21300006: ch_w_spr_50x50_3
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
-    enableMipMap: 0
+    enableMipMap: 1
     linearTexture: 0
     correctGamma: 0
     fadeOut: 0
@@ -27,7 +26,6 @@ TextureImporter:
   isReadable: 0
   grayScaleToAlpha: 0
   generateCubemap: 0
-<<<<<<< Updated upstream
   cubemapConvolution: 0
   cubemapConvolutionSteps: 8
   cubemapConvolutionExponent: 1.5
@@ -42,46 +40,60 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   rGBM: 0
-=======
-  seamlessCubemap: 0
-  textureFormat: -1
-  maxTextureSize: 1024
-  textureSettings:
-    filterMode: -1
-    aniso: -1
-    mipBias: -1
-    wrapMode: -1
-  nPOTScale: 0
-  lightmap: 0
->>>>>>> Stashed changes
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: .5, y: .5}
-<<<<<<< Updated upstream
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spritePixelsToUnits: 100
   alphaIsTransparency: 1
   textureType: 8
   buildTargetSettings: []
-=======
-  spritePixelsToUnits: 100
-  alphaIsTransparency: 1
-  textureType: 8
-  buildTargetSettings:
-  - buildTarget: iPhone
-    maxTextureSize: 1024
-    textureFormat: -2
-    compressionQuality: 50
->>>>>>> Stashed changes
   spriteSheet:
-    sprites: []
+    sprites:
+    - name: ch_w_spr_50x50_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 81
+        height: 149
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ch_w_spr_50x50_1
+      rect:
+        serializedVersion: 2
+        x: 92
+        y: 0
+        width: 93
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ch_w_spr_50x50_2
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 0
+        width: 81
+        height: 149
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ch_w_spr_50x50_3
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 0
+        width: 93
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 
-<<<<<<< Updated upstream
   assetBundleName: 
   assetBundleVariant: 
-=======
->>>>>>> Stashed changes

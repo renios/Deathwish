@@ -1,15 +1,22 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 using Enums;
 
 public class Lamp : ObjectMonoBehaviour
 {
 	public LampProperty lampProperty;
 	public float detectingRadius;
+	//forDebugging
+	List<Lamp> lamps;
+	Scaler scaler;
 
 	void Start()
 	{
 		Global.ingame.LampsInMap.Add (this);
+		lamps = Global.ingame.LampsInMap;
+		scaler = GetComponentInChildren<Scaler> ();
+		scaler.detectingRadius = detectingRadius;
 	}
 
 	public override void UpdateByParent ()
@@ -20,7 +27,6 @@ public class Lamp : ObjectMonoBehaviour
 	
 	public override void HideObject()
 	{
-		GetComponent<SpriteRenderer>().enabled = false;
-		GetComponent<Collider2D>().enabled = false;
+		return;
 	}
 }
