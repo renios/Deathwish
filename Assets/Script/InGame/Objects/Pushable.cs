@@ -2,7 +2,7 @@
 using System.Collections;
 using Enums;
 
-public class Box : ObjectMonoBehaviour, IRestartable {
+public class Pushable : ObjectMonoBehaviour, IRestartable {
 
 	private Vector3 originalPosition;
 	

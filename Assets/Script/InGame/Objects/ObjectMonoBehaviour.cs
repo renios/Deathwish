@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 using Enums;
 
@@ -25,7 +25,7 @@ public abstract class ObjectMonoBehaviour : MonoBehaviour {
 		{
 			HideObject();
 			//  GetComponent<SpriteRenderer>().enabled = false;
-			if (GetComponent<Box>() != null)
+			if (GetComponent<Pushable>() != null)
 				GetComponent<Rigidbody2D>().isKinematic = true;
 			//  GetComponent<Collider2D>().enabled = false;
 		}
