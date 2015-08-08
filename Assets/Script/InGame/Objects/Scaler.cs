@@ -5,12 +5,10 @@ public class Scaler : MonoBehaviour
 {
 	public float detectingRadius;
 	float startScale;
-	SpriteRenderer spriteRenderer;
 
 	void Start()
 	{
 		startScale = this.transform.localScale.x;
-		spriteRenderer = GetComponent<SpriteRenderer> ();
 	}
 
 	void Update()

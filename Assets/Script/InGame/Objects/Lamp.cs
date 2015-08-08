@@ -27,7 +27,6 @@ public class Lamp : ObjectMonoBehaviour
 	
 	public override void HideObject()
 	{
-		GetComponent<SpriteRenderer>().enabled = false;
-		GetComponent<Collider2D>().enabled = false;
+		return;
 	}
 }
