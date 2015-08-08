@@ -15,6 +15,7 @@ TagManager:
   - AreaMarker
   - LightBug
   - Lamp
+  - Box
   layers:
   - Default
   - TransparentFX
