@@ -32,7 +32,9 @@ public class Decay : ObjectMonoBehaviour, IRestartable
 		if(collision.gameObject.tag == "Player" && Global.ingame.isDark == Enums.IsDark.Light)
 		{
 			Invoke("DestroySelf", delay);
-			GetComponent<DecayGroundEffect>().PlayDecayEffect();
+			// FIXME : temp method.
+			if (GetComponent<DecayGroundEffect>() != null)
+				GetComponent<DecayGroundEffect>().PlayDecayEffect();
 		}
 	}
 
