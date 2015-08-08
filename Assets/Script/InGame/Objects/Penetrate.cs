@@ -17,14 +17,10 @@ public class Penetrate : ObjectMonoBehaviour
 	{
 		GetComponent<SpriteRenderer>().enabled = true;
 
-		if (Global.ingame.isDark == isTransparentIn)
-		{
+		if ((Global.ingame.isDark == isTransparentIn) && (coll.isTrigger == false))
 			coll.enabled = false;
-		}
 		else
-		{
 			coll.enabled = true;
-		}
 	}
 
 	public override void HideObject()
