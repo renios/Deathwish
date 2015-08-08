@@ -185,7 +185,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Size: {x: 1, y: 2.79999995}
+  m_Size: {x: .920000017, y: 2.79999995}
 --- !u!61 &6171836
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -424,6 +424,10 @@ Prefab:
       propertyPath: playerSpriteObject
       value: 
       objectReference: {fileID: 146886}
+    - target: {fileID: 0}
+      propertyPath: m_Size.x
+      value: .920000017
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 141626}

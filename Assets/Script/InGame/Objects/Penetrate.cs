@@ -16,15 +16,10 @@ public class Penetrate : ObjectMonoBehaviour
 	public override void UpdateByParent()
 	{
 		GetComponent<SpriteRenderer>().enabled = true;
-
-		if (isDarkAfterLamp() == isTransparentIn)
-		{
+		if ((isDarkAfterLamp() == isTransparentIn) && (coll.isTrigger == false))
 			coll.enabled = false;
-		}
 		else
-		{
 			coll.enabled = true;
-		}
 	}
 
 	public override void HideObject()
