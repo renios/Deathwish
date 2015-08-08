@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 1fa15d78001f747f3b89fcbb10ed9961
-timeCreated: 1439037088
+timeCreated: 1439037449
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -61,9 +61,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 14
-        y: 12
+        y: 11
         width: 125
-        height: 137
+        height: 138
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -71,9 +71,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 140
-        y: 12
+        y: 11
         width: 125
-        height: 137
+        height: 138
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -81,9 +81,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 269
-        y: 12
+        y: 11
         width: 125
-        height: 137
+        height: 138
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -95,44 +95,44 @@ TextureImporter:
         width: 125
         height: 138
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: ch_push_spr_50x50_4
       rect:
         serializedVersion: 2
-        x: 511
-        y: 13
-        width: 125
-        height: 137
-      alignment: 0
-      pivot: {x: .5, y: .5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ch_push_spr_50x50_5
-      rect:
-        serializedVersion: 2
-        x: 639
+        x: 531
         y: 12
         width: 125
         height: 138
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ch_push_spr_50x50_6
+    - name: ch_push_spr_50x50_5
       rect:
         serializedVersion: 2
-        x: 768
+        x: 659
         y: 12
         width: 125
         height: 137
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ch_push_spr_50x50_6
+      rect:
+        serializedVersion: 2
+        x: 787
+        y: 11
+        width: 126
+        height: 138
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
     - name: ch_push_spr_50x50_7
       rect:
         serializedVersion: 2
-        x: 894
-        y: 12
-        width: 120
+        x: 913
+        y: 11
+        width: 125
         height: 138
       alignment: 0
       pivot: {x: 0, y: 0}
