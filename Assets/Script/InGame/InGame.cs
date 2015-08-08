@@ -6,7 +6,7 @@ using Enums;
 public class InGame
 {
 	public IsDark isDark = IsDark.Light;
-	public List<Lamp> LampsInMap;
+	public List<Lamp> LampsInMap = new List<Lamp>();
 
 	public void ChangeDarkLight()
 	{
