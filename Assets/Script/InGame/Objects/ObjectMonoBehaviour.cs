@@ -30,10 +30,8 @@ public abstract class ObjectMonoBehaviour : MonoBehaviour
 		if ((isAttachedFireFly) && (isDarkAfterLamp() == IsDark.Dark))
 		{
 			HideObject();
-			//  GetComponent<SpriteRenderer>().enabled = false;
 			if (GetComponent<Pushable>() != null)
 				GetComponent<Rigidbody2D>().isKinematic = true;
-			//  GetComponent<Collider2D>().enabled = false;
 		}
 		else
 			UpdateByParent();
