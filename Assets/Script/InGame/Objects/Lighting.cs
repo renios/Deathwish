@@ -19,14 +19,15 @@ public class Lighting: MonoBehaviour, IRestartable
 
 	void Start()
 	{
-		effectGameObjects = GetComponentInChildren<LightingChecker> ().lightingEffectObjects;
 		isLighting = false;
-		length = effectGameObjects.Length;
 		repeat ();
 	}
 
 	void Update()
 	{
+		effectGameObjects = GetComponentInChildren<LightingChecker> ().lightingEffectObjects;
+		length = effectGameObjects.Length;
+
 		if (lightingChecker.IsEffectLighting () && Global.ingame.isDark == IsDark.Dark && isLighting == true)
 		{
 			for(int i = 0; i < length; i++)
