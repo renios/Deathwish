@@ -6,12 +6,14 @@ public class DefaultObject : ObjectMonoBehaviour {
 	// Update is called once per frame
 	public override void UpdateByParent () {
 		GetComponent<SpriteRenderer>().enabled = true;
-		GetComponent<Collider2D>().enabled = true;
+		foreach (Collider2D collider in GetComponents<Collider2D>())
+			collider.enabled = true;
 	}
 
 	public override void HideObject()
 	{
 		GetComponent<SpriteRenderer>().enabled = false;
-		GetComponent<Collider2D>().enabled = false;
+		foreach (Collider2D collider in GetComponents<Collider2D>())
+			collider.enabled = false;
 	}
 }
