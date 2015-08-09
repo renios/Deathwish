@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System;
 using System.Collections;
+using System.Collections.Generic;
 using Enums;
 
 public class LightingChecker : MonoBehaviour
@@ -10,7 +11,7 @@ public class LightingChecker : MonoBehaviour
 	private Collider2D[] lightingEffectColliders;
 	private int length;
 
-	public GameObject[] lightingEffectObjects;
+	public HashSet<GameObject> lightingEffectObjects = new HashSet<GameObject>();
 
 	void Start()
 	{
@@ -24,10 +25,10 @@ public class LightingChecker : MonoBehaviour
 			Bounds region = collider.bounds;
 			lightingEffectColliders = Physics2D.OverlapAreaAll (region.max, region.min);
 			length = lightingEffectColliders.Length;
-			lightingEffectObjects = new GameObject[length];
-			for(int i = 0; i < length; i++)
+			lightingEffectObjects = new HashSet<GameObject>();
+			for (int i = 0; i < length; i++)
 			{
-				lightingEffectObjects[i] = lightingEffectColliders[i].gameObject;
+				lightingEffectObjects.Add(lightingEffectColliders[i].gameObject);
 			}
 		}
 	}

@@ -18,7 +18,7 @@ public abstract class ObjectMonoBehaviour : MonoBehaviour
 
 	public IsDark isDarkAfterLamp()
 	{
-		return Global.ingame.GetIsDarkInPosition(transform.position);
+		return Global.ingame.GetIsDarkInPosition(gameObject);
 	}
 
 	public abstract void UpdateByParent();

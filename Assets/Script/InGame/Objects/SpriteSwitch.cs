@@ -17,7 +17,7 @@ public class SpriteSwitch : MonoBehaviour
 	//fatal problem. Need to solve.
 	void Update ()
 	{
-		IsDark isDarkNow = Global.ingame.GetIsDarkInPosition(transform.position);
+		IsDark isDarkNow = Global.ingame.GetIsDarkInPosition(gameObject);
 		if(isDarkNow == IsDark.Light)
 		{
 			sr.sprite = light;

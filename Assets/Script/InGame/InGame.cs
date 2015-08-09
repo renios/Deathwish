@@ -7,6 +7,7 @@ public class InGame
 {
 	public IsDark isDark = IsDark.Light;
 	public HashSet<Lamp> LampsInMap = new HashSet<Lamp>();
+	public HashSet<Lighting> LightsInMap = new HashSet<Lighting>();
 
 	public void ChangeDarkLight()
 	{
@@ -19,6 +20,19 @@ public class InGame
 		{
 			isDark = IsDark.Light;
 		}
+	}
+
+	public IsDark GetIsDarkInPosition(GameObject gameObject)
+	{
+		foreach (Lighting light in LightsInMap)
+		{
+			Debug.Assert(light != null);
+			if (light.GetGameObjectsInLighting().Contains(gameObject))
+			{
+				return IsDark.Light;
+			}
+		}
+		return GetIsDarkInPosition(gameObject.transform.position);
 	}
 
 	public IsDark GetIsDarkInPosition(Vector3 position)

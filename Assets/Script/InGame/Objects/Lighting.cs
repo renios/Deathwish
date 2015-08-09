@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.Assertions;
 using System.Collections;
+using System.Collections.Generic;
 using System;
 using Enums;
 
@@ -20,22 +21,26 @@ public class Lighting: MonoBehaviour, IRestartable
 	void Start()
 	{
 		isLighting = false;
+		Global.ingame.LightsInMap.Add(this);
 		repeat ();
 	}
 
-	void Update()
+	public HashSet<GameObject> GetGameObjectsInLighting()
 	{
-		effectGameObjects = GetComponentInChildren<LightingChecker> ().lightingEffectObjects;
-		length = effectGameObjects.Length;
-
-		if (lightingChecker.IsEffectLighting () && Global.ingame.isDark == IsDark.Dark && isLighting == true)
+		LightingChecker checker = GetComponentInChildren<LightingChecker> ();
+		if (checker == null)
 		{
-			for(int i = 0; i < length; i++)
-			{
-				//  Temporary disable lightning.
-				//  if (effectGameObjects[i].GetComponent<SpriteSwitch>() != null)
-				//  	effectGameObjects[i].GetComponent<SpriteSwitch>().isDark = IsDark.Light;
-			}
+			Debug.Log("Light's checker is not exist.");
+			return new HashSet<GameObject>();
+		}
+
+		if (isLighting)
+		{
+			return GetComponentInChildren<LightingChecker> ().lightingEffectObjects;
+		}
+		else
+		{
+			return new HashSet<GameObject>();
 		}
 	}
 
