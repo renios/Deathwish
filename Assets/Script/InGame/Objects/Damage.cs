@@ -11,8 +11,9 @@ public class Damage : MonoBehaviour
 	{
 		if (collision.gameObject.tag == "Player")
 		{
-			if ((isActiveAtLight && (Global.ingame.isDark == IsDark.Light)) ||
-				(isActiveAtDark && (Global.ingame.isDark == IsDark.Dark)))
+			IsDark isDarkNow = Global.ingame.GetIsDarkInPosition(transform.position);
+			if ((isActiveAtLight && (isDarkNow == IsDark.Light)) ||
+				(isActiveAtDark && (isDarkNow == IsDark.Dark)))
 			Restarter.RestartAll();
 		}
 	}
@@ -21,8 +22,9 @@ public class Damage : MonoBehaviour
 	{
 		if (collision.gameObject.tag == "Player")
 		{
-			if ((isActiveAtLight && (Global.ingame.isDark == IsDark.Light)) ||
-				(isActiveAtDark && (Global.ingame.isDark == IsDark.Dark)))
+			IsDark isDarkNow = Global.ingame.GetIsDarkInPosition(transform.position);
+			if ((isActiveAtLight && (isDarkNow == IsDark.Light)) ||
+				(isActiveAtDark && (isDarkNow == IsDark.Dark)))
 			Restarter.RestartAll();
 		}
 	}

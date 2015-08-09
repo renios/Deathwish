@@ -5,7 +5,6 @@ using Enums;
 public abstract class ObjectMonoBehaviour : MonoBehaviour
 {
 	bool isAttachedFireFly = false;
-	Lamp nearbyLamp = null;
 
 	public void AttachFireFly()
 	{
@@ -28,13 +27,6 @@ public abstract class ObjectMonoBehaviour : MonoBehaviour
 	// DO NOT Implement 'Update' method in derived class.
 	private void Update ()
 	{
-		SpriteSwitch ss = GetComponentInChildren<SpriteSwitch> ();
-		if (ss != null)
-		{
-			ss.isDark = isDarkAfterLamp ();
-			ss.changed = true;
-		}
-
 		if ((isAttachedFireFly) && (isDarkAfterLamp() == IsDark.Dark))
 		{
 			HideObject();

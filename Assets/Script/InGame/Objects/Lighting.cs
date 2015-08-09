@@ -32,8 +32,9 @@ public class Lighting: MonoBehaviour, IRestartable
 		{
 			for(int i = 0; i < length; i++)
 			{
-				if (effectGameObjects[i].GetComponent<SpriteSwitch>() != null)
-					effectGameObjects[i].GetComponent<SpriteSwitch>().isDark = IsDark.Light;
+				//  Temporary disable lightning.
+				//  if (effectGameObjects[i].GetComponent<SpriteSwitch>() != null)
+				//  	effectGameObjects[i].GetComponent<SpriteSwitch>().isDark = IsDark.Light;
 			}
 		}
 	}
