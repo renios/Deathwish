@@ -5,8 +5,7 @@ using Enums;
 public abstract class ObjectMonoBehaviour : MonoBehaviour
 {
 	bool isAttachedFireFly = false;
-	bool isNearbyLamp = false;
-	Lamp nearbyLamp;
+	Lamp nearbyLamp = null;
 
 	public void AttachFireFly()
 	{
@@ -20,39 +19,27 @@ public abstract class ObjectMonoBehaviour : MonoBehaviour
 
 	public IsDark isDarkAfterLamp()
 	{
-		if(isNearbyLamp && nearbyLamp != null)
+		if(nearbyLamp != null)
 		{
 			if(nearbyLamp.lampProperty == LampProperty.LightLamp)
 			{
 				return IsDark.Light;
 			}
-			else if(nearbyLamp.lampProperty == LampProperty.DarkLamp)
-			{
-				return IsDark.Dark;
-			}
 			else
 			{
 				return IsDark.Dark;
 			}
 		}
-		else if(!isNearbyLamp)
+		else
 		{
 			if(Global.ingame.isDark == IsDark.Light)
 			{
 				return IsDark.Light;
 			}
-			else if(Global.ingame.isDark == IsDark.Dark)
+			else
 			{
 				return IsDark.Dark;
 			}
-			else
-			{
-				return IsDark.Light;
-			}
-		}
-		else
-		{
-			return IsDark.Light;
 		}
 	}
 
@@ -62,22 +49,7 @@ public abstract class ObjectMonoBehaviour : MonoBehaviour
 	// DO NOT Implement 'Update' method in derived class.
 	private void Update ()
 	{
-		int i = 0;
-		foreach(Lamp lamp in Global.ingame.LampsInMap)
-		{
-			Vector3 difference = lamp.transform.position - this.transform.position;
-			if(difference.magnitude < lamp.detectingRadius)
-			{
-				isNearbyLamp = true;
-				nearbyLamp = lamp;
-				i++;
-			}
-		}
-		if(i > 0)
-		{
-			bool isNearbyLamp = false;
-			Lamp nearbyLamp=null;
-		}
+		UpdateNearbyLamp();
 
 		SpriteSwitch ss = GetComponentInChildren<SpriteSwitch> ();
 		if (ss != null)
@@ -96,5 +68,18 @@ public abstract class ObjectMonoBehaviour : MonoBehaviour
 		}
 		else
 			UpdateByParent();
+	}
+
+	private void UpdateNearbyLamp()
+	{
+		nearbyLamp = null;
+		foreach(Lamp lamp in Global.ingame.LampsInMap)
+		{
+			Vector3 difference = lamp.transform.position - this.transform.position;
+			if(difference.magnitude < lamp.detectingRadius)
+			{
+				nearbyLamp = lamp;
+			}
+		}
 	}
 }
