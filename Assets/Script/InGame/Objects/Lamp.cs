@@ -14,7 +14,7 @@ public class Lamp : ObjectMonoBehaviour
 	void Start()
 	{
 		Global.ingame.LampsInMap.Add (this);
-		lamps = Global.ingame.LampsInMap;
+		lamps = new List<Lamp>(Global.ingame.LampsInMap);
 		scaler = GetComponentInChildren<Scaler> ();
 		scaler.detectingRadius = detectingRadius;
 	}
