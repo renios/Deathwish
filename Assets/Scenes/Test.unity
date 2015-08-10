@@ -418,6 +418,10 @@ Prefab:
       propertyPath: LevelToLoad
       value: Munkyu_map1
       objectReference: {fileID: 0}
+    - target: {fileID: 11406808, guid: 3faf376f5a9190d428e52f389f6a67ae, type: 2}
+      propertyPath: LevelTag
+      value: Level1_1Lock
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3faf376f5a9190d428e52f389f6a67ae, type: 2}
   m_IsPrefabParent: 0
@@ -1122,7 +1126,7 @@ Transform:
   m_Children:
   - {fileID: 1910064751}
   m_Father: {fileID: 0}
-  m_RootOrder: 27
+  m_RootOrder: 24
 --- !u!1001 &1257114198
 Prefab:
   m_ObjectHideFlags: 0

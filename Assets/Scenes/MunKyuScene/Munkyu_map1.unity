@@ -924,6 +924,14 @@ Prefab:
       propertyPath: m_RootOrder
       value: 112
       objectReference: {fileID: 0}
+    - target: {fileID: 11406808, guid: 3faf376f5a9190d428e52f389f6a67ae, type: 2}
+      propertyPath: LevelTag
+      value: Level1_2Lock
+      objectReference: {fileID: 0}
+    - target: {fileID: 11406808, guid: 3faf376f5a9190d428e52f389f6a67ae, type: 2}
+      propertyPath: LevelToLoad
+      value: Chapter1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3faf376f5a9190d428e52f389f6a67ae, type: 2}
   m_IsPrefabParent: 0
