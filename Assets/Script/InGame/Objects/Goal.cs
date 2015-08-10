@@ -7,6 +7,8 @@ public class Goal : MonoBehaviour, IRestartable
 
 	public string LevelToLoad;
 
+	public string LevelTag;
+
 	void Start()
 	{
 		playerInZone = false;
@@ -16,10 +18,16 @@ public class Goal : MonoBehaviour, IRestartable
 	{
 		if (Input.GetKeyDown(KeyCode.UpArrow) && playerInZone)
 		{
-			Scene.Load(LevelToLoad, Scene.SceneType.Stage);
+			LoadLevel();
 		}
 	}
 
+	public void LoadLevel()
+	{
+		PlayerPrefs.SetInt(LevelTag, 1);
+		Scene.Load(LevelToLoad, Scene.SceneType.Stage);
+
+	}
 	void OnTriggerEnter2D(Collider2D collision)
 	{
 		if(collision.gameObject.tag == "Player")
