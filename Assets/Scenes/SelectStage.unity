@@ -786,7 +786,7 @@ MonoBehaviour:
     m_HighlightedTrigger: Highlighted
     m_PressedTrigger: Pressed
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 194219573}
   m_OnClick:
     m_PersistentCalls:
@@ -1028,7 +1028,7 @@ MonoBehaviour:
     m_HighlightedTrigger: Highlighted
     m_PressedTrigger: Pressed
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 303103188}
   m_OnClick:
     m_PersistentCalls:
@@ -1377,7 +1377,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 625427895}
   m_Direction: 2
   m_Value: 1
-  m_Size: .478860289
+  m_Size: .478860229
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -2520,7 +2520,7 @@ MonoBehaviour:
     m_HighlightedTrigger: Highlighted
     m_PressedTrigger: Pressed
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 1065326841}
   m_OnClick:
     m_PersistentCalls:
@@ -2635,6 +2635,7 @@ MonoBehaviour:
   - {fileID: 87737988}
   - {fileID: 808098782}
   LevelUnlocked: 0000
+  Interactable: 0
 --- !u!4 &1234809335
 Transform:
   m_ObjectHideFlags: 0
@@ -2944,7 +2945,7 @@ MonoBehaviour:
     m_HighlightedTrigger: Highlighted
     m_PressedTrigger: Pressed
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 1396670935}
   m_OnClick:
     m_PersistentCalls:
