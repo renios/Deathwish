@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class LevelSelectManager : MonoBehaviour
 {
@@ -8,6 +9,8 @@ public class LevelSelectManager : MonoBehaviour
 
 	public GameObject[] Locks;
 	public bool[] LevelUnlocked;
+
+	public Button[] Interactable;
 
 	void Start()
 	{
@@ -29,6 +32,7 @@ public class LevelSelectManager : MonoBehaviour
 			if (LevelUnlocked[i])
 			{
 				Locks[i].SetActive(false);
+				Interactable[i].interactable = true;
 			}
 		}
 	}

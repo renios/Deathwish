@@ -45,4 +45,8 @@ public class UIButtonEventManager : MonoBehaviour
 		Scene.Load(NextLevel, Scene.SceneType.Stage);
 	}
 
+	public void NewGame()
+	{
+		PlayerPrefs.DeleteAll();
+	}
 }

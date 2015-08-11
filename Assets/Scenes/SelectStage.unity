@@ -786,7 +786,7 @@ MonoBehaviour:
     m_HighlightedTrigger: Highlighted
     m_PressedTrigger: Pressed
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 194219573}
   m_OnClick:
     m_PersistentCalls:
@@ -1028,7 +1028,7 @@ MonoBehaviour:
     m_HighlightedTrigger: Highlighted
     m_PressedTrigger: Pressed
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 303103188}
   m_OnClick:
     m_PersistentCalls:
@@ -1616,7 +1616,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 488252, guid: 610e36bdf29584830afbac06e70d34ff, type: 2}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 120712, guid: 610e36bdf29584830afbac06e70d34ff, type: 2}
       propertyPath: m_IsActive
@@ -2520,7 +2520,7 @@ MonoBehaviour:
     m_HighlightedTrigger: Highlighted
     m_PressedTrigger: Pressed
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 1065326841}
   m_OnClick:
     m_PersistentCalls:
@@ -2635,6 +2635,9 @@ MonoBehaviour:
   - {fileID: 87737988}
   - {fileID: 808098782}
   LevelUnlocked: 0000
+  Interactable:
+  - {fileID: 303103190}
+  - {fileID: 1396670937}
 --- !u!4 &1234809335
 Transform:
   m_ObjectHideFlags: 0
@@ -2944,7 +2947,7 @@ MonoBehaviour:
     m_HighlightedTrigger: Highlighted
     m_PressedTrigger: Pressed
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 1396670935}
   m_OnClick:
     m_PersistentCalls:
