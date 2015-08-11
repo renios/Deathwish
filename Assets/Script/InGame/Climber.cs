@@ -20,7 +20,12 @@ class Climber
 		this.climbSpeed = climbSpeed;
 		this.gravityScale = playerRigidbody.gravityScale;
 	}
-	
+
+	public bool IsClimbing()
+	{
+		return isClimbing;
+	}
+
 	public void Update()
 	{
 		UpdateIsClimb ();

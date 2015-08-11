@@ -29,6 +29,7 @@ GameObject:
   - 4: {fileID: 488034}
   - 212: {fileID: 21272688}
   - 114: {fileID: 11481302}
+  - 95: {fileID: 9561652}
   m_Layer: 9
   m_Name: PlayerSprite
   m_TagString: Untagged
@@ -96,7 +97,7 @@ Transform:
   m_GameObject: {fileID: 146886}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 414702}
   m_RootOrder: 2
@@ -144,7 +145,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 10
+  orthographic size: 5
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -213,6 +214,23 @@ Behaviour:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 197868}
   m_Enabled: 1
+--- !u!95 &9561652
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 146886}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: fc9cb2966cbe14c82ba7200222a37eda, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 1
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &11408506
 MonoBehaviour:
   m_ObjectHideFlags: 1

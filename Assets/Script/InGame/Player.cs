@@ -19,15 +19,17 @@ public class Player : MonoBehaviour, IRestartable
 	private Climber climber;
 
 	public GameObject playerSpriteObject;
+	private Animator animator;
 
 	void Start ()
 	{
+		animator = GetComponentInChildren<Animator>();
 		startPoint = gameObject.transform.position;
 		gravityScaleOfStartTime = GetComponent<Rigidbody2D> ().gravityScale;
 		yOfLowestObject = LowestObjectFinder.Find ().position.y;
 		climber = new Climber (gameObject, ladderChecker, groundChecker, climbSpeed);
 	}
-	
+
 	void Update ()
 	{
 		if(gameObject.transform.position.y - yOfLowestObject <= -10 || Input.GetKeyDown(KeyCode.R))
@@ -38,8 +40,12 @@ public class Player : MonoBehaviour, IRestartable
 		Move ();
 		Jump ();
 		climber.Update ();
+
+		animator.SetFloat("absSpeedX", Mathf.Abs(GetComponent<Rigidbody2D>().velocity.x));
+		animator.SetBool("isGrounded", groundChecker.IsGrounded());
+		animator.SetBool("isClimbing", climber.IsClimbing());
 	}
-	
+
 	void Move ()
 	{
 		if (Input.GetKey (KeyCode.RightArrow))
