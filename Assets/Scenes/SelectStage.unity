@@ -1377,7 +1377,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 625427895}
   m_Direction: 2
   m_Value: 1
-  m_Size: .478860229
+  m_Size: .478860289
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -1616,7 +1616,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 488252, guid: 610e36bdf29584830afbac06e70d34ff, type: 2}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 120712, guid: 610e36bdf29584830afbac06e70d34ff, type: 2}
       propertyPath: m_IsActive
@@ -2635,7 +2635,9 @@ MonoBehaviour:
   - {fileID: 87737988}
   - {fileID: 808098782}
   LevelUnlocked: 0000
-  Interactable: 0
+  Interactable:
+  - {fileID: 303103190}
+  - {fileID: 1396670937}
 --- !u!4 &1234809335
 Transform:
   m_ObjectHideFlags: 0
