@@ -55,6 +55,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55316bbb797293547aaaf84c70d78c3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  groundChecker: {fileID: 11408506, guid: b510a595ceb3e8f45a951a21ee48a8bc, type: 2}
 --- !u!114 &11442460
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -139,6 +140,11 @@ Prefab:
       propertyPath: m_Size.y
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: groundChecker
+      value: 
+      objectReference: {fileID: 11408506, guid: b510a595ceb3e8f45a951a21ee48a8bc,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 147872}
