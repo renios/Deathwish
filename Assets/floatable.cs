@@ -20,11 +20,17 @@ public class floatable : MonoBehaviour {
 			float upperBoundOfWaterCollider = waterCollider.bounds.max.y;
 			if (gameObject.transform.position.y < upperBoundOfWaterCollider)
 			{
-				GetComponent<Rigidbody2D>().gravityScale = 0;
-				GetComponent<Rigidbody2D>().velocity = Vector2.zero;
-				transform.position = new Vector2(transform.position.x, upperBoundOfWaterCollider);
-				//  GetComponent<Rigidbody2D>().velocity = new Vector2(0, 10);
-				Debug.Log("floating, " + GetComponent<Rigidbody2D>().velocity);
+				// Delete shake at surface.
+				if (Mathf.Abs(gameObject.transform.position.y - upperBoundOfWaterCollider) < 0.1f)
+				{
+					transform.position = new Vector2(transform.position.x, upperBoundOfWaterCollider);
+					GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+				}
+				else
+				{
+					GetComponent<Rigidbody2D>().gravityScale = 0;
+					GetComponent<Rigidbody2D>().velocity = new Vector2(0, 10);
+				}
 			}
 			else
 			{
