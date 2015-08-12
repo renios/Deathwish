@@ -20,16 +20,13 @@ public class LightingChecker : MonoBehaviour
 
 	void Update()
 	{
-		if (Global.ingame.isDark == IsDark.Light)
+		Bounds region = collider.bounds;
+		lightingEffectColliders = Physics2D.OverlapAreaAll (region.max, region.min);
+		length = lightingEffectColliders.Length;
+		lightingEffectObjects = new HashSet<GameObject>();
+		for (int i = 0; i < length; i++)
 		{
-			Bounds region = collider.bounds;
-			lightingEffectColliders = Physics2D.OverlapAreaAll (region.max, region.min);
-			length = lightingEffectColliders.Length;
-			lightingEffectObjects = new HashSet<GameObject>();
-			for (int i = 0; i < length; i++)
-			{
-				lightingEffectObjects.Add(lightingEffectColliders[i].gameObject);
-			}
+			lightingEffectObjects.Add(lightingEffectColliders[i].gameObject);
 		}
 	}
 
