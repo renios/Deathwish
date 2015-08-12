@@ -145,7 +145,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 10
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -292,6 +292,7 @@ MonoBehaviour:
   moveSpeed: 7
   jumpPower: 25
   climbSpeed: 10
+  maxSpeedInWater: 5
   groundChecker: {fileID: 11408506}
   ladderChecker: {fileID: 11476734}
   playerSpriteObject: {fileID: 146886}
@@ -449,6 +450,10 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_CollisionDetection
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: orthographic size
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

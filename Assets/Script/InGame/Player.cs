@@ -8,6 +8,7 @@ public class Player : MonoBehaviour, IRestartable
 	public float moveSpeed;
 	public float jumpPower;
 	public float climbSpeed;
+	public float maxSpeedInWater;
 
 	private Vector3 startPoint;
 	private float yOfLowestObject;
@@ -48,7 +49,27 @@ public class Player : MonoBehaviour, IRestartable
 
 	void Move ()
 	{
-		if (Input.GetKey (KeyCode.RightArrow))
+		if (IsUnderwater())
+		{
+			if (GetComponent<Rigidbody2D>().velocity.y < -1 * maxSpeedInWater)
+				GetComponent<Rigidbody2D>().velocity = new Vector2 (GetComponent<Rigidbody2D>().velocity.x, -1 * maxSpeedInWater);
+
+			if (Input.GetKey (KeyCode.RightArrow))
+			{
+				GetComponent<Rigidbody2D>().velocity = new Vector2(moveSpeed * 0.5f, GetComponent<Rigidbody2D>().velocity.y);
+				playerSpriteObject.transform.rotation = Quaternion.Euler(0, 180, 0);
+			}
+			else if (Input.GetKey(KeyCode.LeftArrow))
+			{
+				GetComponent<Rigidbody2D>().velocity = new Vector2(-moveSpeed * 0.5f, GetComponent<Rigidbody2D>().velocity.y);
+				playerSpriteObject.transform.rotation = Quaternion.Euler(0, 0, 0);
+			}
+			else
+			{
+				GetComponent<Rigidbody2D>().velocity = new Vector2(0, GetComponent<Rigidbody2D>().velocity.y);
+			}
+		}
+		else if (Input.GetKey (KeyCode.RightArrow))
 		{
 			GetComponent<Rigidbody2D>().velocity = new Vector2(moveSpeed, GetComponent<Rigidbody2D>().velocity.y);
 			playerSpriteObject.transform.rotation = Quaternion.Euler(0, 180, 0);
@@ -66,10 +87,26 @@ public class Player : MonoBehaviour, IRestartable
 
 	private void Jump()
 	{
-		if (Input.GetKeyDown (KeyCode.Space) && groundChecker.IsGrounded())
+		if (Input.GetKeyDown (KeyCode.Space) && IsUnderwater())
+		{
+			GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x, jumpPower * 0.8f);
+		}
+		else if (Input.GetKeyDown (KeyCode.Space) && groundChecker.IsGrounded())
 		{
 			GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x, jumpPower);
 		}
+	}
+
+	bool IsUnderwater()
+	{
+		Collider2D playerCollider = GetComponent<Collider2D>();
+		Collider2D[] otherColliders = Physics2D.OverlapAreaAll(playerCollider.bounds.max, playerCollider.bounds.min);
+		foreach (Collider2D otherCollider in otherColliders)
+		{
+			if (otherCollider.gameObject.tag == "Water")
+				return true;
+		}
+		return false;
 	}
 
 	void IRestartable.Restart()
