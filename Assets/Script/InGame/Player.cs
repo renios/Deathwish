@@ -22,8 +22,11 @@ public class Player : MonoBehaviour, IRestartable
 	public GameObject playerSpriteObject;
 	private Animator animator;
 
+	private O2Checker O2Checker;
+
 	void Start ()
 	{
+		O2Checker = FindObjectOfType<O2Checker>();
 		animator = GetComponentInChildren<Animator>();
 		startPoint = gameObject.transform.position;
 		gravityScaleOfStartTime = GetComponent<Rigidbody2D> ().gravityScale;
@@ -33,6 +36,11 @@ public class Player : MonoBehaviour, IRestartable
 
 	void Update ()
 	{
+		if (IsUnderwater() && !O2Checker.isActive)
+			O2Checker.Active();
+		if (!IsUnderwater() && O2Checker.isActive)
+			O2Checker.Deactive();
+
 		if(gameObject.transform.position.y - yOfLowestObject <= -10 || Input.GetKeyDown(KeyCode.R))
 		{
 			Restarter.RestartAll();
