@@ -18,7 +18,7 @@ public class floatable : MonoBehaviour {
 		if (waterCollider != null)
 		{
 			float upperBoundOfWaterCollider = waterCollider.bounds.max.y;
-			if (gameObject.transform.position.y < upperBoundOfWaterCollider)
+			if (gameObject.transform.position.y <= upperBoundOfWaterCollider)
 			{
 				// Delete shake at surface.
 				if (Mathf.Abs(gameObject.transform.position.y - upperBoundOfWaterCollider) < 0.1f)
@@ -33,9 +33,7 @@ public class floatable : MonoBehaviour {
 				}
 			}
 			else
-			{
-				GetComponent<Rigidbody2D>().velocity = Vector2.zero;
-			}
+				GetComponent<Rigidbody2D>().gravityScale = initGravityScale;
 		}
 		else
 			GetComponent<Rigidbody2D>().gravityScale = initGravityScale;	
