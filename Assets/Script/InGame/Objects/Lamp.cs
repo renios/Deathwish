@@ -11,6 +11,7 @@ public class Lamp : ObjectMonoBehaviour
 	public GameObject DarkParticleObject;
 	private ParticleSystem particle;
 	//forDebugging
+	#pragma warning disable 0414
 	List<Lamp> lamps;
 
 	void Start()
