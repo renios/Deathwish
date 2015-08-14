@@ -1,15 +1,15 @@
 fileFormatVersion: 2
-guid: d08abf7d2ea454c1b8fd137edaa5ddb2
-timeCreated: 1439045982
+guid: 7823c04ac85064f0a953dd7e3e94ed39
+timeCreated: 1439519327
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: ch_jump_spr_50x50_0
-    21300002: ch_jump_spr_50x50_1
-    21300004: ch_jump_spr_50x50_2
-    21300006: ch_jump_spr_50x50_3
-    21300008: ch_jump_spr_50x50_4
-    21300010: ch_jump_spr_50x50_5
+    21300000: ch_jump_re_50x50_0
+    21300002: ch_jump_re_50x50_1
+    21300004: ch_jump_re_50x50_2
+    21300006: ch_jump_re_50x50_3
+    21300008: ch_jump_re_50x50_4
+    21300010: ch_jump_re_50x50_5
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -55,7 +55,7 @@ TextureImporter:
   buildTargetSettings: []
   spriteSheet:
     sprites:
-    - name: ch_jump_spr_50x50_0
+    - name: ch_jump_re_50x50_0
       rect:
         serializedVersion: 2
         x: 2
@@ -63,19 +63,19 @@ TextureImporter:
         width: 110
         height: 139
       alignment: 9
-      pivot: {x: .137411714, y: .692743182}
+      pivot: {x: .257501304, y: .540000021}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ch_jump_spr_50x50_1
+    - name: ch_jump_re_50x50_1
       rect:
         serializedVersion: 2
-        x: 118
+        x: 129
         y: 0
-        width: 94
-        height: 145
+        width: 71
+        height: 148
       alignment: 9
-      pivot: {x: .583053291, y: .223055691}
+      pivot: {x: .325067222, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ch_jump_spr_50x50_2
+    - name: ch_jump_re_50x50_2
       rect:
         serializedVersion: 2
         x: 221
@@ -83,37 +83,37 @@ TextureImporter:
         width: 121
         height: 141
       alignment: 9
-      pivot: {x: .760929048, y: .113594271}
+      pivot: {x: .205909029, y: -.200000003}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ch_jump_spr_50x50_3
+    - name: ch_jump_re_50x50_3
       rect:
         serializedVersion: 2
-        x: 360
-        y: 2
-        width: 104
-        height: 143
+        x: 357
+        y: 3
+        width: 110
+        height: 142
       alignment: 9
-      pivot: {x: .879851103, y: .41612643}
+      pivot: {x: .189999998, y: .119999997}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ch_jump_spr_50x50_4
+    - name: ch_jump_re_50x50_4
       rect:
         serializedVersion: 2
-        x: 472
-        y: 1
+        x: 471
+        y: 0
         width: 128
         height: 146
       alignment: 9
-      pivot: {x: .763919353, y: .743756115}
+      pivot: {x: .0700000003, y: .540000021}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ch_jump_spr_50x50_5
+    - name: ch_jump_re_50x50_5
       rect:
         serializedVersion: 2
         x: 602
         y: 1
-        width: 102
+        width: 100
         height: 145
       alignment: 9
-      pivot: {x: 1.22285736, y: .752333343}
+      pivot: {x: .318122566, y: .540000021}
       border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 
