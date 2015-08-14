@@ -12,7 +12,7 @@ GameObject:
   - 61: {fileID: 6103632}
   - 114: {fileID: 11440192}
   - 114: {fileID: 11451274}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: GlassWall
   m_TagString: Wall
   m_Icon: {fileID: 0}
@@ -151,6 +151,10 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_SortingOrder
       value: -2
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

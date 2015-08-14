@@ -1,7 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class UIButtonEventManager : MonoBehaviour {
+public class UIButtonEventManager : MonoBehaviour
+{
+	public string NextLevel;
 
 	// Use this for initialization
 	void Start () {
@@ -15,17 +17,17 @@ public class UIButtonEventManager : MonoBehaviour {
 	
 	public void ToTitle()
 	{
-		Application.LoadLevel("Title");
+		Scene.Load("Title", Scene.SceneType.Stage);
 	}
 	
 	public void ToStageSelect()
 	{
-		Application.LoadLevel("SelectStage");
+		Scene.Load("SelectStage", Scene.SceneType.Stage);
 	}
-	
+
 	public void ToOption()
 	{
-		Application.LoadLevel("Option");
+		Scene.Load("Option", Scene.SceneType.Stage);
 	}
 
 	public void Restart()
@@ -35,6 +37,16 @@ public class UIButtonEventManager : MonoBehaviour {
 	
 	public void GoToTestScene()
 	{
-		Application.LoadLevel("Test");
+		Scene.Load("Test", Scene.SceneType.Stage);
+	}
+
+	public void NextStage(string NextLevel)
+	{
+		Scene.Load(NextLevel, Scene.SceneType.Stage);
+	}
+
+	public void NewGame()
+	{
+		PlayerPrefs.DeleteAll();
 	}
 }

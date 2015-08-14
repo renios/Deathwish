@@ -43,7 +43,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Size: {x: 2, y: 4}
+  m_Size: {x: .5, y: 1}
 --- !u!114 &11418152
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -129,6 +129,14 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Size.x
+      value: .5
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Size.y
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []

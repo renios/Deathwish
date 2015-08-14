@@ -11,7 +11,7 @@ public class LadderTriggerController : MonoBehaviour
 
 	void Update ()
 	{
-		if (Global.ingame.isDark == IsDark.Dark) {
+		if (Global.ingame.GetIsDarkInPosition(gameObject) == IsDark.Dark) {
 			GetComponent<BoxCollider2D> ().isTrigger = false;
 		} else
 		{
