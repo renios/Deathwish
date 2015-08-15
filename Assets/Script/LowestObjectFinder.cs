@@ -2,9 +2,9 @@
 using System.Collections;
 using System.Linq;
 
-public class LowestObjectFinder
+public class ObjectFinder
 {
-	public static Transform Find ()
+	public static Transform FindLowest ()
 	{
 		Transform transformOfLowestObject;
 

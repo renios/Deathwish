@@ -31,7 +31,7 @@ public class Player : MonoBehaviour, IRestartable
 		animator = GetComponentInChildren<Animator>();
 		startPoint = gameObject.transform.position;
 		gravityScaleOfStartTime = GetComponent<Rigidbody2D> ().gravityScale;
-		yOfLowestObject = LowestObjectFinder.Find ().position.y;
+		yOfLowestObject = ObjectFinder.FindLowest ().position.y;
 		climber = new Climber (gameObject, ladderCheckerUp, ladderCheckerDown, groundChecker, climbSpeed);
 	}
 
