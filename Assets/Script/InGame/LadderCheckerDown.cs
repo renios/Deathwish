@@ -1,17 +1,22 @@
 ﻿using UnityEngine;
-using System;
 using System.Collections;
-using Enums;
 
-public class LadderChecker : MonoBehaviour
+public class LadderCheckerDown : MonoBehaviour 
 {
+	public bool isDownLaddered;
+	
 	private Collider2D latestLadderCollider = null;
+	
+	void Update()
+	{
+		isDownLaddered = IsDownLaddered ();
+	}
 
-	public bool IsLaddered()
+	public bool IsDownLaddered()
 	{
 		return GetLadderCollider () != null;
 	}
-
+	
 	public Collider2D GetLadderCollider()
 	{
 		Bounds region = GetComponent<BoxCollider2D> ().bounds;
@@ -22,7 +27,7 @@ public class LadderChecker : MonoBehaviour
 		}
 		return newCollider;
 	}
-
+	
 	public Collider2D GetLatestLadderCollider()
 	{
 		return latestLadderCollider;

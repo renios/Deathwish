@@ -16,7 +16,8 @@ public class Player : MonoBehaviour, IRestartable
 	float gravityScaleOfStartTime;
 
 	public GroundChecker groundChecker;
-	public LadderChecker ladderChecker;
+	public LadderCheckerUp ladderCheckerUp;
+	public LadderCheckerDown ladderCheckerDown;
 	private Climber climber;
 
 	public GameObject playerSpriteObject;
@@ -31,7 +32,7 @@ public class Player : MonoBehaviour, IRestartable
 		startPoint = gameObject.transform.position;
 		gravityScaleOfStartTime = GetComponent<Rigidbody2D> ().gravityScale;
 		yOfLowestObject = LowestObjectFinder.Find ().position.y;
-		climber = new Climber (gameObject, ladderChecker, groundChecker, climbSpeed);
+		climber = new Climber (gameObject, ladderCheckerUp, ladderCheckerDown, groundChecker, climbSpeed);
 	}
 
 	void Update ()
@@ -123,7 +124,7 @@ public class Player : MonoBehaviour, IRestartable
 		gameObject.transform.position = startPoint;
 		//Temporarily reset isDark in Player.cs, but it should be moved to other script.
 		Global.ingame.isDark = IsDark.Light;
-		climber = new Climber (gameObject, ladderChecker, groundChecker, climbSpeed);
+		climber = new Climber (gameObject, ladderCheckerUp, ladderCheckerDown, groundChecker, climbSpeed);
 		GetComponent<Rigidbody2D> ().gravityScale = gravityScaleOfStartTime;
 	}
 }
