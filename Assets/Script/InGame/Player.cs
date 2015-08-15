@@ -36,9 +36,9 @@ public class Player : MonoBehaviour, IRestartable
 
 	void Update ()
 	{
-		if (IsUnderwater() && !O2Checker.isActive)
+		if (IsUnderwater() && !O2Checker.IsActive())
 			O2Checker.Active();
-		if (!IsUnderwater() && O2Checker.isActive)
+		if (!IsUnderwater() && O2Checker.IsActive())
 			O2Checker.Deactive();
 
 		if(gameObject.transform.position.y - yOfLowestObject <= -10 || Input.GetKeyDown(KeyCode.R))
