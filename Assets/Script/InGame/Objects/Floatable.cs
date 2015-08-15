@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class floatable : MonoBehaviour {
+public class Floatable : MonoBehaviour {
 
 	private Collider2D coll;
 	private float initGravityScale;
