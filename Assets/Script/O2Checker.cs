@@ -6,12 +6,12 @@ public class O2Checker : MonoBehaviour, IRestartable {
 	public GameObject O2Bar;
 
 	// O2 decrease speed : 1/s
-	public float maxO2 = 15;
-	private float currentO2;
+	public float maxAmountO2 = 15;
+	private float currentAmountO2;
 	private SpriteRenderer O2BarBgRenderer;
 	private SpriteRenderer O2BarRenderer;
 	private Vector3 initScale;
-	public bool isActive = false;
+	private bool isActive = false;
 
 	// Use this for initialization
 	void Start () {
@@ -24,13 +24,18 @@ public class O2Checker : MonoBehaviour, IRestartable {
 
 	// Update is called once per frame
 	void Update () {
-		if (isActive && (currentO2 > 0))
+		if (isActive && (currentAmountO2 > 0))
 		{
-			currentO2 -= Time.deltaTime;
+			currentAmountO2 -= Time.deltaTime;
 			UpdateO2Bar();
 		}
-		if (currentO2 <= 0)
+		if (currentAmountO2 <= 0)
 			Restarter.RestartAll();	
+	}
+	
+	public bool IsActive()
+	{
+		return isActive;
 	}
 
 	public void Active()
@@ -50,13 +55,13 @@ public class O2Checker : MonoBehaviour, IRestartable {
 	{
 		O2BarBgRenderer.enabled = false;
 		O2BarRenderer.enabled = false;
-		currentO2 = maxO2;
+		currentAmountO2 = maxAmountO2;
 		O2BarRenderer.gameObject.transform.localScale = initScale;
 	}
 	
 	void UpdateO2Bar()
 	{
-		O2BarRenderer.gameObject.transform.localScale = new Vector3(initScale.x * currentO2 / maxO2, initScale.y, O2BarRenderer.gameObject.transform.localScale.z);
+		O2BarRenderer.gameObject.transform.localScale = new Vector3(initScale.x * currentAmountO2 / maxAmountO2, initScale.y, O2BarRenderer.gameObject.transform.localScale.z);
 	}
 
 	void IRestartable.Restart()
