@@ -12,6 +12,7 @@ GameObject:
   - 61: {fileID: 6147010}
   - 114: {fileID: 11427462}
   - 114: {fileID: 11473182}
+  - 114: {fileID: 11484196}
   m_Layer: 10
   m_Name: Ladder
   m_TagString: Ladder
@@ -111,6 +112,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b2121ee0b8aedc4dbc6649e397d2a3b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &11484196
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 104434}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 870dfea6228011d4cbbf86c95172aad2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  light: {fileID: 21300000, guid: d658dfe635a230146ad4530fdb49488a, type: 3}
+  dark: {fileID: 21300000, guid: c268283fe9ce1412e8defbf917c983b5, type: 3}
 --- !u!114 &11495282
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -122,7 +136,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 870dfea6228011d4cbbf86c95172aad2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isDark: 0
   light: {fileID: 21300000, guid: 8eea289af589250468fb5259c7643c65, type: 3}
   dark: {fileID: 21300000, guid: b34c2090af7020742b2ff09dab0a7d07, type: 3}
 --- !u!212 &21217744
@@ -212,12 +225,12 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: light
       value: 
-      objectReference: {fileID: 21300000, guid: 8eea289af589250468fb5259c7643c65,
+      objectReference: {fileID: 21300000, guid: d658dfe635a230146ad4530fdb49488a,
         type: 3}
     - target: {fileID: 0}
       propertyPath: dark
       value: 
-      objectReference: {fileID: 21300000, guid: b34c2090af7020742b2ff09dab0a7d07,
+      objectReference: {fileID: 21300000, guid: c268283fe9ce1412e8defbf917c983b5,
         type: 3}
     - target: {fileID: 0}
       propertyPath: m_Material
