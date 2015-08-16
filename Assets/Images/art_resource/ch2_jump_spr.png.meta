@@ -1,0 +1,121 @@
+fileFormatVersion: 2
+guid: cd0214e925a594661bbc525b29d81e66
+timeCreated: 1439731114
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: ch2_jump_spr_0
+    21300002: ch2_jump_spr_1
+    21300004: ch2_jump_spr_2
+    21300006: ch2_jump_spr_3
+    21300008: ch2_jump_spr_4
+    21300010: ch2_jump_spr_5
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 8
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: ch2_jump_spr_0
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 18
+        width: 112
+        height: 141
+      alignment: 9
+      pivot: {x: .257499993, y: .600000024}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ch2_jump_spr_1
+      rect:
+        serializedVersion: 2
+        x: 121
+        y: 10
+        width: 73
+        height: 157
+      alignment: 9
+      pivot: {x: .32506001, y: .600000024}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ch2_jump_spr_2
+      rect:
+        serializedVersion: 2
+        x: 203
+        y: 22
+        width: 128
+        height: 146
+      alignment: 9
+      pivot: {x: .205899999, y: .600000024}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ch2_jump_spr_3
+      rect:
+        serializedVersion: 2
+        x: 338
+        y: 21
+        width: 110
+        height: 146
+      alignment: 9
+      pivot: {x: .189999998, y: .600000024}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ch2_jump_spr_4
+      rect:
+        serializedVersion: 2
+        x: 465
+        y: 22
+        width: 128
+        height: 145
+      alignment: 9
+      pivot: {x: .100000001, y: .600000024}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ch2_jump_spr_5
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 21
+        width: 104
+        height: 146
+      alignment: 9
+      pivot: {x: .314999998, y: .579999983}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
