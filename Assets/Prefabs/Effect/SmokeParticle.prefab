@@ -46,7 +46,7 @@ ParticleSystem:
   InitialModule:
     enabled: 1
     startLifetime:
-      scalar: 2
+      scalar: 3
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -206,7 +206,7 @@ ParticleSystem:
         rgba: 4294967295
       minMaxState: 0
     startSize:
-      scalar: 2
+      scalar: 3
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -404,10 +404,10 @@ ParticleSystem:
       maxGradient:
         key0:
           serializedVersion: 2
-          rgba: 2017081914
+          rgba: 4282006074
         key1:
           serializedVersion: 2
-          rgba: 16777215
+          rgba: 4013374
         key2:
           serializedVersion: 2
           rgba: 0
@@ -1122,6 +1122,10 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_LocalPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: InitialModule.startLifetime.scalar
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
