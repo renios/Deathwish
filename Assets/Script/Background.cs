@@ -27,13 +27,13 @@ public class Background : MonoBehaviour
         var middleX = (rightX + leftX) / 2;
         var ratioX = Constrain(
           (player.transform.position.x - middleX) / (rightX - leftX),
-          min: 0, max: 1);
+          min: -1, max: 1);
         var diffPosX = ratioX * 4; // (200 pixel() / (50 pixel per unit)) = 4
 
         var middleY = (upY + downY) / 2;
         var ratioY = Constrain(
             (player.transform.position.y - middleY) / (upY - downY),
-            min: 0, max: 1);
+            min: -1, max: 1);
         var diffPosY = ratioY * 2.5f; // (125 pixel() / (50 pixel per unit)) = 2.5
         cameraTransform.transform.position = new Vector3(cameraInitialPos.x + diffPosX,
             cameraInitialPos.y + diffPosY, cameraInitialPos.z);
