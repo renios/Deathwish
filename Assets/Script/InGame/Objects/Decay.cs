@@ -12,6 +12,7 @@ public class Decay : ObjectMonoBehaviour, IRestartable
 	new private SpriteRenderer renderer;
 	private SpriteSwitch spriteSwitch;
 	bool isDestroy = false;
+	IEnumerator destroyingCoroutine;
 
 	void Start()
 	{
@@ -55,25 +56,32 @@ public class Decay : ObjectMonoBehaviour, IRestartable
 		if((collision.gameObject.tag == "Player" || collision.gameObject.tag == "Box" || collision.gameObject.tag == "Lamp")
 					   && isDarkAfterLamp() == Enums.IsDark.Light)
 		{
-			Invoke("DestroySelf", delay);
+			destroyingCoroutine = DestroySelf(delay);
+			StartCoroutine(destroyingCoroutine);
 			// FIXME : temp checking method.
 			if (GetComponent<DecayGroundEffect>() != null)
 				GetComponent<DecayGroundEffect>().PlayDecayEffect();
 		}
 	}
 
-	void DestroySelf()
+	IEnumerator DestroySelf(float delay)
 	{
+		yield return new WaitForSeconds(delay);
 		isDestroy = true;
 		foreach (var collider in collider2Ds) {
 			collider.enabled = false;
 		}
 		renderer.sprite = transparent;
 		spriteSwitch.enabled = false;
+
+		destroyingCoroutine = null;
 	}
 
 	void IRestartable.Restart()
 	{
+		if (destroyingCoroutine != null) {
+			StopCoroutine(destroyingCoroutine);
+		}
 		isDestroy = false;
 		foreach (var collider in collider2Ds) {
 			collider.enabled = true;

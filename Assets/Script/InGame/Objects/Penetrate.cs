@@ -21,14 +21,14 @@ public class Penetrate : ObjectMonoBehaviour
 		{
 			foreach (var collider in collider2Ds)
 			{
-				collider.enabled = false;
+				collider.isTrigger = true;
 			}
 		}
 		else
 		{
 			foreach (var collider in collider2Ds)
 			{
-				collider.enabled = true;
+				collider.isTrigger = false;
 			}
 		}
 	}
@@ -39,7 +39,7 @@ public class Penetrate : ObjectMonoBehaviour
 
 		foreach (var collider in collider2Ds)
 		{
-			collider.enabled = false;
+			collider.isTrigger = true;
 		}
 	}
 }

@@ -1,0 +1,143 @@
+fileFormatVersion: 2
+guid: cb3bbb776e492443ba25ffac8e1bca48
+timeCreated: 1439700302
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: ch_push_re_50x50_0
+    21300002: ch_push_re_50x50_1
+    21300004: ch_push_re_50x50_2
+    21300006: ch_push_re_50x50_3
+    21300008: ch_push_re_50x50_4
+    21300010: ch_push_re_50x50_5
+    21300012: ch_push_re_50x50_6
+    21300014: ch_push_re_50x50_7
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 8
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: ch_push_re_50x50_0
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 6
+        width: 133
+        height: 139
+      alignment: 9
+      pivot: {x: .550000012, y: .610000014}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ch_push_re_50x50_1
+      rect:
+        serializedVersion: 2
+        x: 145
+        y: 6
+        width: 126
+        height: 139
+      alignment: 9
+      pivot: {x: .579999983, y: .610000014}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ch_push_re_50x50_2
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 6
+        width: 135
+        height: 139
+      alignment: 9
+      pivot: {x: .550000012, y: .610000014}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ch_push_re_50x50_3
+      rect:
+        serializedVersion: 2
+        x: 438
+        y: 8
+        width: 125
+        height: 137
+      alignment: 9
+      pivot: {x: .589999974, y: .610000014}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ch_push_re_50x50_4
+      rect:
+        serializedVersion: 2
+        x: 595
+        y: 6
+        width: 135
+        height: 139
+      alignment: 9
+      pivot: {x: .550000012, y: .610000014}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ch_push_re_50x50_5
+      rect:
+        serializedVersion: 2
+        x: 773
+        y: 5
+        width: 126
+        height: 139
+      alignment: 9
+      pivot: {x: .579999983, y: .610000014}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ch_push_re_50x50_6
+      rect:
+        serializedVersion: 2
+        x: 924
+        y: 6
+        width: 135
+        height: 139
+      alignment: 9
+      pivot: {x: .550000012, y: .610000014}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ch_push_re_50x50_7
+      rect:
+        serializedVersion: 2
+        x: 1076
+        y: 8
+        width: 125
+        height: 137
+      alignment: 9
+      pivot: {x: .589999974, y: .610000014}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

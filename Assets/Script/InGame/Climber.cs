@@ -5,22 +5,32 @@ class Climber
 {
 	private Rigidbody2D playerRigidbody;
 	private Transform playerTransform;
-	private LadderChecker ladderChecker;
+	private LadderCheckerUp ladderCheckerUp;
+	private LadderCheckerDown ladderCheckerDown;
 	private GroundChecker groundChecker;
 	private bool isClimbing = false;
 	private float climbSpeed;
 	private float gravityScale;
+
+	//bool upOfLadder = false;
+	//bool downOfLadder = false;
 	
-	public Climber(GameObject playerGo, LadderChecker ladderChecker, GroundChecker groundChecker, float climbSpeed)
+	public Climber(GameObject playerGo, LadderCheckerUp ladderCheckerUp, LadderCheckerDown ladderCheckerDown, GroundChecker groundChecker, float climbSpeed)
 	{
 		playerRigidbody = playerGo.GetComponent<Rigidbody2D> ();
 		playerTransform = playerGo.GetComponent<Transform> ();
-		this.ladderChecker = ladderChecker;
+		this.ladderCheckerUp = ladderCheckerUp;
+		this.ladderCheckerDown = ladderCheckerDown;
 		this.groundChecker = groundChecker;
 		this.climbSpeed = climbSpeed;
 		this.gravityScale = playerRigidbody.gravityScale;
 	}
-	
+
+	public bool IsClimbing()
+	{
+		return isClimbing;
+	}
+
 	public void Update()
 	{
 		UpdateIsClimb ();
@@ -31,13 +41,25 @@ class Climber
 			if (isMoved == false)
 				StayInLadder ();
 		}
+		else
+		{
+			if (ladderCheckerUp.IsUpLaddered() == false && Input.GetKey(KeyCode.UpArrow))
+				isClimbing = false;
+			if (ladderCheckerDown.IsDownLaddered() == false && Input.GetKey (KeyCode.DownArrow))
+				isClimbing = false;
+		}
 	}
 	
 	void UpdateIsClimb ()
 	{
 		if (isClimbing == false)
 		{
-			if (ladderChecker.IsLaddered() && (Input.GetKey (KeyCode.UpArrow) || Input.GetKey(KeyCode.DownArrow)))
+			if(ladderCheckerUp.IsUpLaddered() && Input.GetKey (KeyCode.UpArrow))
+			{
+				isClimbing = true;
+				OnStartClimb();
+			}
+			else if(ladderCheckerDown.IsDownLaddered() && Input.GetKey (KeyCode.DownArrow))
 			{
 				isClimbing = true;
 				OnStartClimb();
@@ -45,12 +67,14 @@ class Climber
 		}
 		else if (isClimbing == true)
 		{
-			if (ladderChecker.IsLaddered() == false || groundChecker.IsGrounded())
+			if ((ladderCheckerUp.IsUpLaddered() || ladderCheckerDown.IsDownLaddered()) == false || groundChecker.IsGrounded())
 			{
 				isClimbing = false;
 				OnStopClimb();
 			}
 		}
+
+
 	}
 	
 	bool MoveUpDown ()
@@ -80,7 +104,11 @@ class Climber
 	{
 		Debug.Log ("OnStartClimb");
 		playerRigidbody.gravityScale = 0;
-		Collider2D ladderToClimb = ladderChecker.GetLadderCollider ();
+		Collider2D ladderToClimb = ladderCheckerUp.GetLadderCollider ();
+		if (ladderToClimb == null)
+		{
+			ladderToClimb = ladderCheckerDown.GetLatestLadderCollider ();
+		}
 		SetPositionXAtCenterOfLadder(ladderToClimb);
 		ladderToClimb.gameObject.GetComponent<CeilingColliderController>().DisableCeiling();
 	}
@@ -89,8 +117,13 @@ class Climber
 	{
 		Debug.Log ("OnStopClimb");
 		playerRigidbody.gravityScale = gravityScale;
-		Collider2D ladderToClimb = ladderChecker.GetLatestLadderCollider ();
+		Collider2D ladderToClimb = ladderCheckerDown.GetLatestLadderCollider ();
+		if (ladderToClimb == null)
+		{
+			ladderToClimb = ladderCheckerUp.GetLadderCollider ();
+		}
 		ladderToClimb.gameObject.GetComponent<CeilingColliderController> ().EnableCeiling ();
+		playerRigidbody.velocity = new Vector2 (0, 0);
 	}
 	
 	void SetPositionXAtCenterOfLadder(Collider2D ladderCollider)
