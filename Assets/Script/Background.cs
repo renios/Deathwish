@@ -25,13 +25,33 @@ public class Background : MonoBehaviour
     void Update()
     {
         var middleX = (rightX + leftX) / 2;
-        var ratioX = (player.transform.position.x - middleX) / (rightX - leftX);
-        var diffPosX = ratioX * 8; // (400 pixel() / (50 pixel per unit)) = 8 
+        var ratioX = Constrain(
+          (player.transform.position.x - middleX) / (rightX - leftX),
+          min: 0, max: 1);
+        var diffPosX = ratioX * 4; // (200 pixel() / (50 pixel per unit)) = 4
 
         var middleY = (upY + downY) / 2;
-        var ratioY = (player.transform.position.y - middleY) / (upY - downY);
-        var diffPosY = ratioY * 5; // (250 pixel() / (50 pixel per unit)) = 8 
+        var ratioY = Constrain(
+            (player.transform.position.y - middleY) / (upY - downY),
+            min: 0, max: 1);
+        var diffPosY = ratioY * 2.5f; // (125 pixel() / (50 pixel per unit)) = 2.5
         cameraTransform.transform.position = new Vector3(cameraInitialPos.x + diffPosX,
-        cameraInitialPos.y + diffPosY, cameraInitialPos.z);
+            cameraInitialPos.y + diffPosY, cameraInitialPos.z);
+    }
+
+    float Constrain(float value, float min, float max)
+    {
+        if (value <= min)
+        {
+            return min;
+        }
+        else if (value >= max)
+        {
+            return max;
+        }
+        else
+        {
+            return value;
+        }
     }
 }
