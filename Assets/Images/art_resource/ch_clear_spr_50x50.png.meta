@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 3178c1df6c489473bb2faca6f6fbe50e
-timeCreated: 1439054105
+timeCreated: 1439700534
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -13,7 +13,7 @@ TextureImporter:
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
-    enableMipMap: 1
+    enableMipMap: 0
     linearTexture: 0
     correctGamma: 0
     fadeOut: 0
@@ -63,7 +63,7 @@ TextureImporter:
         width: 81
         height: 150
       alignment: 9
-      pivot: {x: .75, y: .0299999993}
+      pivot: {x: .529999971, y: .569999993}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: ch_clear_spr_50x50_1
       rect:
@@ -73,7 +73,7 @@ TextureImporter:
         width: 86
         height: 150
       alignment: 9
-      pivot: {x: .75, y: .0299999993}
+      pivot: {x: .545000017, y: .569999993}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: ch_clear_spr_50x50_2
       rect:
@@ -83,7 +83,7 @@ TextureImporter:
         width: 81
         height: 150
       alignment: 9
-      pivot: {x: .75, y: .0299999993}
+      pivot: {x: .529999971, y: .569999993}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: ch_clear_spr_50x50_3
       rect:
@@ -93,7 +93,7 @@ TextureImporter:
         width: 86
         height: 150
       alignment: 9
-      pivot: {x: .75, y: .0299999993}
+      pivot: {x: .550000012, y: .569999993}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: ch_clear_spr_50x50_4
       rect:
@@ -103,7 +103,7 @@ TextureImporter:
         width: 82
         height: 150
       alignment: 9
-      pivot: {x: .730000019, y: .0299999993}
+      pivot: {x: .529999971, y: .569999993}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: ch_clear_spr_50x50_5
       rect:
@@ -113,7 +113,7 @@ TextureImporter:
         width: 80
         height: 150
       alignment: 9
-      pivot: {x: .667673111, y: .0299999546}
+      pivot: {x: .467673093, y: .569999993}
       border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 
