@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 51815c0c4b7144706b87c7ee838f9a61
-timeCreated: 1439518248
+timeCreated: 1439053658
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -58,8 +58,8 @@ TextureImporter:
         y: 0
         width: 78
         height: 150
-      alignment: 0
-      pivot: {x: .5, y: .5}
+      alignment: 9
+      pivot: {x: .467377841, y: .556545198}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: ch_idle_spr_50x50_1
       rect:
@@ -69,7 +69,7 @@ TextureImporter:
         width: 78
         height: 150
       alignment: 9
-      pivot: {x: .504999995, y: .5}
+      pivot: {x: .475533307, y: .555131614}
       border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 

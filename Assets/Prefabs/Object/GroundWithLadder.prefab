@@ -1,25 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &104434
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 459940}
-  - 212: {fileID: 21249236}
-  - 61: {fileID: 6147010}
-  - 114: {fileID: 11427462}
-  - 114: {fileID: 11473182}
-  - 114: {fileID: 11484196}
-  m_Layer: 10
-  m_Name: Ladder
-  m_TagString: Ladder
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
 --- !u!1 &131686
 GameObject:
   m_ObjectHideFlags: 0
@@ -29,8 +9,9 @@ GameObject:
   m_Component:
   - 4: {fileID: 462406}
   - 212: {fileID: 21217744}
-  - 61: {fileID: 6144990}
   - 114: {fileID: 11495282}
+  - 68: {fileID: 6855996}
+  - 68: {fileID: 6844094}
   m_Layer: 8
   m_Name: GroundWithLadder
   m_TagString: Ground
@@ -38,15 +19,34 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &459940
+--- !u!1 &163602
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 431008}
+  - 212: {fileID: 21219908}
+  - 61: {fileID: 6150198}
+  - 114: {fileID: 11403092}
+  - 114: {fileID: 11425550}
+  m_Layer: 10
+  m_Name: Ladder
+  m_TagString: Ladder
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &431008
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 104434}
+  m_GameObject: {fileID: 163602}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -2, z: 0}
-  m_LocalScale: {x: .785094142, y: 2.62207222, z: 1}
+  m_LocalPosition: {x: 0, y: -2.05999994, z: 0}
+  m_LocalScale: {x: .785094142, y: 2.55816555, z: 1}
   m_Children: []
   m_Father: {fileID: 462406}
   m_RootOrder: 0
@@ -57,14 +57,27 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 131686}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 20.5, y: 2.5, z: 0}
+  m_LocalPosition: {x: -6, y: 15, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 459940}
+  - {fileID: 431008}
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!61 &6144990
+--- !u!61 &6150198
 BoxCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 163602}
+  m_Enabled: 1
+  m_Material: {fileID: 6200000, guid: b170f10ddd4f0b947a2c09099661fea7, type: 2}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Size: {x: .25, y: 2}
+--- !u!68 &6844094
+EdgeCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -73,58 +86,47 @@ BoxCollider2D:
   m_Material: {fileID: 6200000, guid: b170f10ddd4f0b947a2c09099661fea7, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1}
---- !u!61 &6147010
-BoxCollider2D:
+  m_Offset: {x: 0, y: .5}
+  m_Points:
+  - {x: -.5, y: 0}
+  - {x: .5, y: 0}
+--- !u!68 &6855996
+EdgeCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 104434}
+  m_GameObject: {fileID: 131686}
   m_Enabled: 1
   m_Material: {fileID: 6200000, guid: b170f10ddd4f0b947a2c09099661fea7, type: 2}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Size: {x: .25, y: 2}
---- !u!114 &11427462
+  m_Offset: {x: 0, y: -.5}
+  m_Points:
+  - {x: -.5, y: 0}
+  - {x: .5, y: 0}
+--- !u!114 &11403092
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 104434}
+  m_GameObject: {fileID: 163602}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a2e7fd4baf8f2284484e4689223fa3c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Ground: {fileID: 131686}
---- !u!114 &11473182
+--- !u!114 &11425550
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 104434}
+  m_GameObject: {fileID: 163602}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5b2121ee0b8aedc4dbc6649e397d2a3b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &11484196
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 104434}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 870dfea6228011d4cbbf86c95172aad2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  light: {fileID: 21300000, guid: d658dfe635a230146ad4530fdb49488a, type: 3}
-  dark: {fileID: 21300000, guid: c268283fe9ce1412e8defbf917c983b5, type: 3}
 --- !u!114 &11495282
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -164,12 +166,12 @@ SpriteRenderer:
   m_SortingOrder: -2
   m_Sprite: {fileID: 21300000, guid: 8eea289af589250468fb5259c7643c65, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
---- !u!212 &21249236
+--- !u!212 &21219908
 SpriteRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 104434}
+  m_GameObject: {fileID: 163602}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -225,12 +227,12 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: light
       value: 
-      objectReference: {fileID: 21300000, guid: d658dfe635a230146ad4530fdb49488a,
+      objectReference: {fileID: 21300000, guid: 8eea289af589250468fb5259c7643c65,
         type: 3}
     - target: {fileID: 0}
       propertyPath: dark
       value: 
-      objectReference: {fileID: 21300000, guid: c268283fe9ce1412e8defbf917c983b5,
+      objectReference: {fileID: 21300000, guid: b34c2090af7020742b2ff09dab0a7d07,
         type: 3}
     - target: {fileID: 0}
       propertyPath: m_Material
@@ -258,7 +260,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

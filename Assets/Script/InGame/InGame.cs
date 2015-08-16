@@ -70,4 +70,9 @@ public class InGame
 			}
 		}
 	}
+
+    public Player GetPlayer()
+    {
+        return GameObject.FindObjectOfType<Player>();
+    }
 }
