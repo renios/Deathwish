@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 7823c04ac85064f0a953dd7e3e94ed39
-timeCreated: 1439698963
+timeCreated: 1439724956
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -59,11 +59,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 2
-        y: 0
+        y: 7
         width: 110
         height: 139
       alignment: 9
-      pivot: {x: .257501304, y: .600000024}
+      pivot: {x: .257499993, y: .600000024}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: ch_jump_re_50x50_1
       rect:
@@ -71,25 +71,25 @@ TextureImporter:
         x: 129
         y: 0
         width: 71
-        height: 148
+        height: 155
       alignment: 9
-      pivot: {x: .325067222, y: .600000024}
+      pivot: {x: .32506001, y: .600000024}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: ch_jump_re_50x50_2
       rect:
         serializedVersion: 2
         x: 221
-        y: 5
+        y: 12
         width: 121
         height: 141
       alignment: 9
-      pivot: {x: .205909029, y: .600000024}
+      pivot: {x: .205899999, y: .600000024}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: ch_jump_re_50x50_3
       rect:
         serializedVersion: 2
         x: 357
-        y: 3
+        y: 10
         width: 110
         height: 142
       alignment: 9
@@ -99,7 +99,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 471
-        y: 0
+        y: 7
         width: 128
         height: 146
       alignment: 9
@@ -109,11 +109,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 602
-        y: 1
+        y: 8
         width: 100
         height: 145
       alignment: 9
-      pivot: {x: .318122566, y: .600000024}
+      pivot: {x: .318120003, y: .600000024}
       border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 
