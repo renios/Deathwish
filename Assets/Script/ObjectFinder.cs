@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using System;
 using System.Collections;
 using System.Linq;
 
@@ -6,59 +7,25 @@ public class ObjectFinder
 {
     public static Transform FindLowest()
     {
-        Transform transformOfLowestObject;
-
-        Transform[] allTransforms = GameObject.FindObjectsOfType<ObjectMonoBehaviour>()
-            .Select(objectMonoBehaviour => objectMonoBehaviour.GetComponent<Transform>()).ToArray();
-        transformOfLowestObject = allTransforms[0];
-
-        foreach (Transform transform in allTransforms)
-        {
-            if (transformOfLowestObject.position.y >= transform.position.y)
-            {
-                transformOfLowestObject = transform;
-            }
-        }
-        return transformOfLowestObject;
+        return FindMost((previousResult, newData) => previousResult.y >= newData.y);
     }
 
     public static Transform FindRightmost()
     {
-        Transform transformOfLowestObject;
-
-        Transform[] allTransforms = GameObject.FindObjectsOfType<ObjectMonoBehaviour>()
-            .Select(objectMonoBehaviour => objectMonoBehaviour.GetComponent<Transform>()).ToArray();
-        transformOfLowestObject = allTransforms[0];
-
-        foreach (Transform transform in allTransforms)
-        {
-            if (transformOfLowestObject.position.x <= transform.position.x)
-            {
-                transformOfLowestObject = transform;
-            }
-        }
-        return transformOfLowestObject;
+        return FindMost((previousResult, newData) => previousResult.x <= newData.x);
     }
 
     public static Transform FindLeftmost()
     {
-        Transform transformOfLowestObject;
-
-        Transform[] allTransforms = GameObject.FindObjectsOfType<ObjectMonoBehaviour>()
-            .Select(objectMonoBehaviour => objectMonoBehaviour.GetComponent<Transform>()).ToArray();
-        transformOfLowestObject = allTransforms[0];
-
-        foreach (Transform transform in allTransforms)
-        {
-            if (transformOfLowestObject.position.x >= transform.position.x)
-            {
-                transformOfLowestObject = transform;
-            }
-        }
-        return transformOfLowestObject;
+        return FindMost((previousResult, newData) => previousResult.x >= newData.x);
     }
 
     public static Transform FindUpmost()
+    {
+        return FindMost((previousResult, newData) => previousResult.y <= newData.y);
+    }
+
+    private static Transform FindMost(Func<Vector3, Vector3, bool> comparator)
     {
         Transform transformOfLowestObject;
 
@@ -68,7 +35,7 @@ public class ObjectFinder
 
         foreach (Transform transform in allTransforms)
         {
-            if (transformOfLowestObject.position.y <= transform.position.y)
+            if (comparator(transformOfLowestObject.position, transform.position))
             {
                 transformOfLowestObject = transform;
             }
