@@ -9,6 +9,7 @@ public class Player : MonoBehaviour, IRestartable
 	public float jumpPower;
 	public float climbSpeed;
 	public float maxSpeedInWater;
+	public float maxSpeedInAir;
 
 	private Vector3 startPoint;
 	private float yOfLowestObject;
@@ -48,6 +49,7 @@ public class Player : MonoBehaviour, IRestartable
 		}
 
 		Move ();
+		ApplyDirectionToSprite();
 		Jump ();
 		climber.Update ();
 
@@ -56,42 +58,36 @@ public class Player : MonoBehaviour, IRestartable
 		animator.SetBool("isClimbing", climber.IsClimbing());
 	}
 
-	void Move ()
+	float GetDrag()
 	{
 		if (IsUnderwater())
-		{
-			if (GetComponent<Rigidbody2D>().velocity.y < -1 * maxSpeedInWater)
-				GetComponent<Rigidbody2D>().velocity = new Vector2 (GetComponent<Rigidbody2D>().velocity.x, -1 * maxSpeedInWater);
-
-			if (Input.GetKey (KeyCode.RightArrow))
-			{
-				GetComponent<Rigidbody2D>().velocity = new Vector2(moveSpeed * 0.5f, GetComponent<Rigidbody2D>().velocity.y);
-				playerSpriteObject.transform.rotation = Quaternion.Euler(0, 180, 0);
-			}
-			else if (Input.GetKey(KeyCode.LeftArrow))
-			{
-				GetComponent<Rigidbody2D>().velocity = new Vector2(-moveSpeed * 0.5f, GetComponent<Rigidbody2D>().velocity.y);
-				playerSpriteObject.transform.rotation = Quaternion.Euler(0, 0, 0);
-			}
-			else
-			{
-				GetComponent<Rigidbody2D>().velocity = new Vector2(0, GetComponent<Rigidbody2D>().velocity.y);
-			}
-		}
-		else if (Input.GetKey (KeyCode.RightArrow))
-		{
-			GetComponent<Rigidbody2D>().velocity = new Vector2(moveSpeed, GetComponent<Rigidbody2D>().velocity.y);
-			playerSpriteObject.transform.rotation = Quaternion.Euler(0, 180, 0);
-		}
-		else if (Input.GetKey(KeyCode.LeftArrow))
-		{
-			GetComponent<Rigidbody2D>().velocity = new Vector2(-moveSpeed, GetComponent<Rigidbody2D>().velocity.y);
-			playerSpriteObject.transform.rotation = Quaternion.Euler(0, 0, 0);
-		}
+			return 0.5f;
 		else
-		{
+			return 1;
+	}
+
+	void ApplyDirectionToSprite()
+	{
+		if (Input.GetKey (KeyCode.RightArrow))
+			playerSpriteObject.transform.rotation = Quaternion.Euler(0, 180, 0);
+		else if (Input.GetKey(KeyCode.LeftArrow))
+			playerSpriteObject.transform.rotation = Quaternion.Euler(0, 0, 0);
+	}
+
+	void Move ()
+	{
+		if ((IsUnderwater()) && (GetComponent<Rigidbody2D>().velocity.y < -1 * maxSpeedInWater))
+			GetComponent<Rigidbody2D>().velocity = new Vector2 (GetComponent<Rigidbody2D>().velocity.x, -1 * maxSpeedInWater);
+
+		if ((!groundChecker.IsGrounded()) && (GetComponent<Rigidbody2D>().velocity.y < -1 * maxSpeedInAir))
+			GetComponent<Rigidbody2D>().velocity = new Vector2 (GetComponent<Rigidbody2D>().velocity.x, -1 * maxSpeedInAir);
+
+		if (Input.GetKey (KeyCode.RightArrow))
+			GetComponent<Rigidbody2D>().velocity = new Vector2(moveSpeed * GetDrag(), GetComponent<Rigidbody2D>().velocity.y);
+		else if (Input.GetKey(KeyCode.LeftArrow))
+			GetComponent<Rigidbody2D>().velocity = new Vector2(-moveSpeed * GetDrag(), GetComponent<Rigidbody2D>().velocity.y);
+		else
 			GetComponent<Rigidbody2D>().velocity = new Vector2(0, GetComponent<Rigidbody2D>().velocity.y);
-		}
 	}
 
 	private void Jump()
