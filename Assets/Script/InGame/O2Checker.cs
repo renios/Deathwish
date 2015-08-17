@@ -67,5 +67,6 @@ public class O2Checker : MonoBehaviour, IRestartable {
 	void IRestartable.Restart()
 	{
 		Initialize();
+		isActive = false;
 	}
 }
