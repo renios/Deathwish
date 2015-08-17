@@ -108,7 +108,8 @@ public class Player : MonoBehaviour, IRestartable
 		Collider2D[] otherColliders = Physics2D.OverlapAreaAll(playerCollider.bounds.max, playerCollider.bounds.min);
 		foreach (Collider2D otherCollider in otherColliders)
 		{
-			if (otherCollider.gameObject.tag == "Water")
+			if ((otherCollider.gameObject.tag == "Water") && 
+				(otherCollider.gameObject.GetComponent<Water>().IsActive()))
 				return true;
 		}
 		return false;
