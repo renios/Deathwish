@@ -11,7 +11,7 @@ GameObject:
   - 198: {fileID: 19840438}
   - 199: {fileID: 19969888}
   m_Layer: 8
-  m_Name: DecayGroundParticleM
+  m_Name: DecayGroundParticle_Decaying
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

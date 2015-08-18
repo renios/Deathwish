@@ -11,7 +11,7 @@ GameObject:
   - 198: {fileID: 19835768}
   - 199: {fileID: 19962446}
   m_Layer: 0
-  m_Name: DecayWallParticleL
+  m_Name: DecayWallParticle_Destroy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
