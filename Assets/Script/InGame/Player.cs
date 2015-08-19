@@ -9,6 +9,8 @@ public class Player : MonoBehaviour, IRestartable
 	public float jumpPower;
 	public float climbSpeed;
 	public float maxSpeedInWater;
+	// Temporary value.
+	public float VerticalDragInWater;
 	public float maxSpeedInAir;
 
 	private Vector3 startPoint;
@@ -58,10 +60,21 @@ public class Player : MonoBehaviour, IRestartable
 		animator.SetBool("isClimbing", climber.IsClimbing());
 	}
 
-	float GetDrag()
+	float GetDrag(Direction direction)
 	{
 		if (IsUnderwater())
-			return 0.5f;
+		{
+			if (direction == Direction.Horizontal)
+			{
+				return 0.4f;
+			}
+			else // direction == Direction.Vertical
+			{
+				// temporary value.
+				return VerticalDragInWater;
+				//  return 0.8f;
+			}
+		}
 		else
 			return 1;
 	}
@@ -83,9 +96,9 @@ public class Player : MonoBehaviour, IRestartable
 			GetComponent<Rigidbody2D>().velocity = new Vector2 (GetComponent<Rigidbody2D>().velocity.x, -1 * maxSpeedInAir);
 
 		if (Input.GetKey (KeyCode.RightArrow))
-			GetComponent<Rigidbody2D>().velocity = new Vector2(moveSpeed * GetDrag(), GetComponent<Rigidbody2D>().velocity.y);
+			GetComponent<Rigidbody2D>().velocity = new Vector2(moveSpeed * GetDrag(Direction.Horizontal), GetComponent<Rigidbody2D>().velocity.y);
 		else if (Input.GetKey(KeyCode.LeftArrow))
-			GetComponent<Rigidbody2D>().velocity = new Vector2(-moveSpeed * GetDrag(), GetComponent<Rigidbody2D>().velocity.y);
+			GetComponent<Rigidbody2D>().velocity = new Vector2(-moveSpeed * GetDrag(Direction.Horizontal), GetComponent<Rigidbody2D>().velocity.y);
 		else
 			GetComponent<Rigidbody2D>().velocity = new Vector2(0, GetComponent<Rigidbody2D>().velocity.y);
 	}
@@ -94,7 +107,7 @@ public class Player : MonoBehaviour, IRestartable
 	{
 		if (Input.GetKeyDown (KeyCode.Space) && IsUnderwater())
 		{
-			GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x, jumpPower * 0.8f);
+			GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x, jumpPower * GetDrag(Direction.Vertical));
 		}
 		else if (Input.GetKeyDown (KeyCode.Space) && groundChecker.IsGrounded())
 		{

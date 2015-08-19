@@ -29,4 +29,10 @@ namespace Enums
 		LightLamp,
 		DarkLamp
 	}
+
+	public enum Direction
+	{
+		Horizontal,
+		Vertical
+	}
 }
