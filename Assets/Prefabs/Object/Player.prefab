@@ -464,7 +464,7 @@ MonoBehaviour:
   jumpPower: 25
   climbSpeed: 10
   maxSpeedInWater: 5
-  VerticalDragInWater: .800000012
+  verticalDragInWater: .800000012
   maxSpeedInAir: 20
   groundChecker: {fileID: 11408506}
   ladderCheckerUp: {fileID: 11489788}
