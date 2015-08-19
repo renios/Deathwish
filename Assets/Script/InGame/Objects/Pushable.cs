@@ -5,6 +5,7 @@ using Enums;
 public class Pushable : ObjectMonoBehaviour, IRestartable {
 
 	private Vector3 originalPosition;
+	public bool isLamp;
 	
 	// Use this for initialization
 	void Start () {
@@ -12,7 +13,17 @@ public class Pushable : ObjectMonoBehaviour, IRestartable {
 	}
 	
 	// Update is called once per frame
-	public override void UpdateByParent () {
+	public override void UpdateByParent ()
+	{
+		if(isLamp == true)
+		{
+			if(GetComponent<Lamp>().lampProperty == LampProperty.DarkLamp)
+			{
+				gameObject.GetComponent<Rigidbody2D>().isKinematic = false;
+				return;
+			}
+		}
+
 		if (isDarkAfterLamp() == IsDark.Light)
 		{
 			gameObject.GetComponent<Rigidbody2D>().isKinematic = false;	

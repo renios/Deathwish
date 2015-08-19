@@ -161,6 +161,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 264eb54f346fc4ecfb7ca610f3245bca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isLamp: 1
 --- !u!198 &19815616
 ParticleSystem:
   m_ObjectHideFlags: 1
@@ -2439,6 +2440,10 @@ Prefab:
       value: 
       objectReference: {fileID: 21300000, guid: 2a480938d25ac415783095500ec9c7ce,
         type: 3}
+    - target: {fileID: 0}
+      propertyPath: isLamp
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 157952}
