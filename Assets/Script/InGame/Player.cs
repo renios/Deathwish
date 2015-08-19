@@ -10,7 +10,7 @@ public class Player : MonoBehaviour, IRestartable
 	public float climbSpeed;
 	public float maxSpeedInWater;
 	// Temporary value.
-	public float VerticalDragInWater;
+	public float verticalDragInWater;
 	public float maxSpeedInAir;
 
 	private Vector3 startPoint;
@@ -71,7 +71,7 @@ public class Player : MonoBehaviour, IRestartable
 			else // direction == Direction.Vertical
 			{
 				// temporary value.
-				return VerticalDragInWater;
+				return verticalDragInWater;
 				//  return 0.8f;
 			}
 		}
