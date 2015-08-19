@@ -30,6 +30,7 @@ GameObject:
   - 212: {fileID: 21250784}
   - 114: {fileID: 11474704}
   - 114: {fileID: 11438668}
+  - 114: {fileID: 11402222}
   m_Layer: 0
   m_Name: Lamp
   m_TagString: Lamp
@@ -121,6 +122,19 @@ BoxCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
+--- !u!114 &11402222
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 157952}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 870dfea6228011d4cbbf86c95172aad2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  light: {fileID: 21300000, guid: 2a480938d25ac415783095500ec9c7ce, type: 3}
+  dark: {fileID: 21300000, guid: c57893bd7aa7841a4940ddd6dd16d95a, type: 3}
 --- !u!114 &11438668
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2349,7 +2363,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: beb6b22402314bf43adaf29bbff10726, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2a480938d25ac415783095500ec9c7ce, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &100100000
 Prefab:
@@ -2410,6 +2424,21 @@ Prefab:
       propertyPath: lampProperty
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: light
+      value: 
+      objectReference: {fileID: 21300000, guid: 2a480938d25ac415783095500ec9c7ce,
+        type: 3}
+    - target: {fileID: 0}
+      propertyPath: dark
+      value: 
+      objectReference: {fileID: 21300000, guid: c57893bd7aa7841a4940ddd6dd16d95a,
+        type: 3}
+    - target: {fileID: 0}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 2a480938d25ac415783095500ec9c7ce,
+        type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 157952}
