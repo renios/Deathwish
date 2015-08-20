@@ -11,6 +11,14 @@ namespace Enums
 		OnLadder
 	}
 
+	public enum CharacterAction
+	{
+		Default,
+		Walk,
+		Jump,
+		Land
+	}
+
 	//FIXME : need better name
 	public enum IsDark
 	{
