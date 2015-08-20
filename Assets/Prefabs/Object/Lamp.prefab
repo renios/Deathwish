@@ -31,7 +31,7 @@ GameObject:
   - 114: {fileID: 11474704}
   - 114: {fileID: 11438668}
   - 114: {fileID: 11402222}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Lamp
   m_TagString: Lamp
   m_Icon: {fileID: 0}
@@ -2443,6 +2443,10 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: isLamp
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
