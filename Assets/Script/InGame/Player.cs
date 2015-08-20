@@ -28,6 +28,11 @@ public class Player : MonoBehaviour, IRestartable
 
 	private O2Checker O2Checker;
 
+	public SoundEffectController soundEffectController;
+	//need for landing sound effect
+	bool onAir = true;
+	bool leavingGround = true;
+
 	void Start ()
 	{
 		O2Checker = FindObjectOfType<O2Checker>();
@@ -36,6 +41,8 @@ public class Player : MonoBehaviour, IRestartable
 		gravityScaleOfStartTime = GetComponent<Rigidbody2D> ().gravityScale;
 		yOfLowestObject = ObjectFinder.FindLowest ().position.y;
 		climber = new Climber (gameObject, ladderCheckerUp, ladderCheckerDown, groundChecker, climbSpeed);
+		soundEffectController = GetComponentInChildren<SoundEffectController> ();
+		soundEffectController.player = this;
 	}
 
 	void Update ()
@@ -50,14 +57,19 @@ public class Player : MonoBehaviour, IRestartable
 			Restarter.RestartAll();
 		}
 
+		soundEffectController.characterAction = CharacterAction.Default;
+
 		Move ();
 		ApplyDirectionToSprite();
 		Jump ();
+		CheckLandingForSoundEffect ();
 		climber.Update ();
 
 		animator.SetFloat("absSpeedX", Mathf.Abs(GetComponent<Rigidbody2D>().velocity.x));
 		animator.SetBool("isGrounded", groundChecker.IsGrounded());
 		animator.SetBool("isClimbing", climber.IsClimbing());
+
+		soundEffectController.Play ();
 	}
 
 	float GetDrag(Direction direction)
@@ -89,16 +101,28 @@ public class Player : MonoBehaviour, IRestartable
 
 	void Move ()
 	{
-		if ((IsUnderwater()) && (GetComponent<Rigidbody2D>().velocity.y < -1 * maxSpeedInWater))
-			GetComponent<Rigidbody2D>().velocity = new Vector2 (GetComponent<Rigidbody2D>().velocity.x, -1 * maxSpeedInWater);
+		if ((IsUnderwater ()) && (GetComponent<Rigidbody2D> ().velocity.y < -1 * maxSpeedInWater))
+			GetComponent<Rigidbody2D> ().velocity = new Vector2 (GetComponent<Rigidbody2D> ().velocity.x, -1 * maxSpeedInWater);
 
-		if ((!groundChecker.IsGrounded()) && (GetComponent<Rigidbody2D>().velocity.y < -1 * maxSpeedInAir))
-			GetComponent<Rigidbody2D>().velocity = new Vector2 (GetComponent<Rigidbody2D>().velocity.x, -1 * maxSpeedInAir);
+		if ((!groundChecker.IsGrounded ()) && (GetComponent<Rigidbody2D> ().velocity.y < -1 * maxSpeedInAir))
+			GetComponent<Rigidbody2D> ().velocity = new Vector2 (GetComponent<Rigidbody2D> ().velocity.x, -1 * maxSpeedInAir);
 
 		if (Input.GetKey (KeyCode.RightArrow))
-			GetComponent<Rigidbody2D>().velocity = new Vector2(moveSpeed * GetDrag(Direction.Horizontal), GetComponent<Rigidbody2D>().velocity.y);
-		else if (Input.GetKey(KeyCode.LeftArrow))
-			GetComponent<Rigidbody2D>().velocity = new Vector2(-moveSpeed * GetDrag(Direction.Horizontal), GetComponent<Rigidbody2D>().velocity.y);
+		{
+			GetComponent<Rigidbody2D> ().velocity = new Vector2 (moveSpeed * GetDrag (Direction.Horizontal), GetComponent<Rigidbody2D> ().velocity.y);
+			if(!onAir)
+			{
+				soundEffectController.characterAction = CharacterAction.Walk;
+			}
+		}
+		else if (Input.GetKey (KeyCode.LeftArrow))
+		{
+			GetComponent<Rigidbody2D> ().velocity = new Vector2 (-moveSpeed * GetDrag (Direction.Horizontal), GetComponent<Rigidbody2D> ().velocity.y);
+			if(!onAir)
+			{
+				soundEffectController.characterAction = CharacterAction.Walk;
+			}
+		}
 		else
 			GetComponent<Rigidbody2D>().velocity = new Vector2(0, GetComponent<Rigidbody2D>().velocity.y);
 	}
@@ -112,6 +136,32 @@ public class Player : MonoBehaviour, IRestartable
 		else if (Input.GetKeyDown (KeyCode.Space) && groundChecker.IsGrounded())
 		{
 			GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x, jumpPower);
+		}
+		else {return;}
+
+		soundEffectController.characterAction = CharacterAction.Jump;
+		onAir = true;
+	}
+
+	void CheckLandingForSoundEffect()
+	{
+		if(onAir&&!leavingGround)
+		{
+			if(!groundChecker.IsGrounded())
+			{
+				leavingGround = true;
+				return;
+			}
+		}
+
+		if(onAir&&leavingGround)
+		{
+			if(groundChecker.IsGrounded())
+			{
+				soundEffectController.characterAction = CharacterAction.Land;
+				onAir = false;
+				leavingGround = false;
+			}
 		}
 	}
 

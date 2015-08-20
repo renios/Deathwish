@@ -4,11 +4,12 @@ using System.Collections.Generic;
 
 namespace Enums
 {
-	public enum CharacterLocation
+	public enum CharacterAction
 	{
-		OnBlock,
-		OnAir,
-		OnLadder
+		Default,
+		Walk,
+		Jump,
+		Land
 	}
 
 	//FIXME : need better name
