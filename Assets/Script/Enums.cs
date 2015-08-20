@@ -4,13 +4,6 @@ using System.Collections.Generic;
 
 namespace Enums
 {
-	public enum CharacterLocation
-	{
-		OnBlock,
-		OnAir,
-		OnLadder
-	}
-
 	public enum CharacterAction
 	{
 		Default,
