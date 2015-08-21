@@ -15,6 +15,7 @@ GameObject:
   - 114: {fileID: 11436648}
   - 114: {fileID: 11456078}
   - 114: {fileID: 11461528}
+  - 114: {fileID: 11482412}
   m_Layer: 8
   m_Name: FloatBox
   m_TagString: Box
@@ -74,6 +75,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 264eb54f346fc4ecfb7ca610f3245bca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isLamp: 0
 --- !u!114 &11436648
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -109,6 +111,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f108b8665a38c4e1c98c00129798567b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &11482412
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 114812}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8ed4bb5da22348dfba3121bca453617, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  groundMask:
+    serializedVersion: 2
+    m_Bits: 256
 --- !u!212 &21229300
 SpriteRenderer:
   m_ObjectHideFlags: 1

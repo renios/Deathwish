@@ -31,6 +31,7 @@ GameObject:
   - 114: {fileID: 11474704}
   - 114: {fileID: 11438668}
   - 114: {fileID: 11402222}
+  - 114: {fileID: 11439158}
   m_Layer: 8
   m_Name: Lamp
   m_TagString: Lamp
@@ -150,6 +151,20 @@ MonoBehaviour:
   detectingRadius: 2
   LightParticleObject: {fileID: 173970}
   DarkParticleObject: {fileID: 125678}
+--- !u!114 &11439158
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 157952}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8ed4bb5da22348dfba3121bca453617, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  groundMask:
+    serializedVersion: 2
+    m_Bits: 256
 --- !u!114 &11474704
 MonoBehaviour:
   m_ObjectHideFlags: 1
