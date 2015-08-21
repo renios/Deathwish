@@ -94,6 +94,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c313fdbc34a56d24bac185e74dedb273, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lightTerm: 20
+  darkTerm: 5
   light: {fileID: 21300000, guid: 42d56944b4b946946926307e86eaa975, type: 3}
   dark: {fileID: 0}
   lightingChecker: {fileID: 11426552}
@@ -129,7 +131,15 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: lightTerm
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: darkTerm
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 153086}
