@@ -7,6 +7,8 @@ using Enums;
 
 public class Lighting: MonoBehaviour, IRestartable
 {
+	public int lightTerm;
+	public int darkTerm;
 	public new Sprite light;
 	public Sprite dark;
 	public LightingChecker lightingChecker;
@@ -57,8 +59,8 @@ public class Lighting: MonoBehaviour, IRestartable
 
 	void repeat()
 	{
-		InvokeRepeating ("changeDark", 0, 10);
-		InvokeRepeating ("changeLight", 5, 10);
+		InvokeRepeating ("changeDark", 0, lightTerm + darkTerm);
+		InvokeRepeating ("changeLight", darkTerm, lightTerm + darkTerm);
 	}
 
 	void IRestartable.Restart()
