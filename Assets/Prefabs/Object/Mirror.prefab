@@ -66,8 +66,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 870dfea6228011d4cbbf86c95172aad2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  light: {fileID: 21300000, guid: 0d3ec46761fa661419d673a7dd90cf0c, type: 3}
-  dark: {fileID: 21300000, guid: 0d3ec46761fa661419d673a7dd90cf0c, type: 3}
+  light: {fileID: 21300000, guid: d34d4b05fd79549329c70791206f64eb, type: 3}
+  dark: {fileID: 21300000, guid: d34d4b05fd79549329c70791206f64eb, type: 3}
 --- !u!212 &21214670
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -92,7 +92,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: -2
-  m_Sprite: {fileID: 21300000, guid: 0d3ec46761fa661419d673a7dd90cf0c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d34d4b05fd79549329c70791206f64eb, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &100100000
 Prefab:
@@ -112,12 +112,12 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: light
       value: 
-      objectReference: {fileID: 21300000, guid: 0d3ec46761fa661419d673a7dd90cf0c,
+      objectReference: {fileID: 21300000, guid: d34d4b05fd79549329c70791206f64eb,
         type: 3}
     - target: {fileID: 0}
       propertyPath: dark
       value: 
-      objectReference: {fileID: 21300000, guid: 0d3ec46761fa661419d673a7dd90cf0c,
+      objectReference: {fileID: 21300000, guid: d34d4b05fd79549329c70791206f64eb,
         type: 3}
     - target: {fileID: 0}
       propertyPath: m_LocalPosition.z
@@ -139,6 +139,11 @@ Prefab:
       propertyPath: m_Size.y
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: d34d4b05fd79549329c70791206f64eb,
+        type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 147872}

@@ -14,9 +14,9 @@ GameObject:
   - 114: {fileID: 11419358}
   - 114: {fileID: 11436648}
   - 114: {fileID: 11456078}
-  - 114: {fileID: 11461528}
+  - 114: {fileID: 11483776}
   m_Layer: 8
-  m_Name: Box
+  m_Name: UnfloatBox
   m_TagString: Box
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -74,6 +74,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 264eb54f346fc4ecfb7ca610f3245bca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isLamp: 0
 --- !u!114 &11436648
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -85,8 +86,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 870dfea6228011d4cbbf86c95172aad2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  light: {fileID: 21300000, guid: 98b1762d2c4128e48a1cdc7e37666394, type: 3}
-  dark: {fileID: 21300000, guid: d8559a6e7434f4521a3132d5fe4a80e4, type: 3}
+  light: {fileID: 21300000, guid: 8c7af0cbbb981491ba6b7c1dd6962528, type: 3}
+  dark: {fileID: 21300000, guid: 0e11f0a8a18ff4b5d981533f166e3a09, type: 3}
 --- !u!114 &11456078
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -98,7 +99,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19185949f283042ca8baa6597ea138aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &11461528
+--- !u!114 &11483776
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -106,9 +107,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 114812}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f108b8665a38c4e1c98c00129798567b, type: 3}
+  m_Script: {fileID: 11500000, guid: a8ed4bb5da22348dfba3121bca453617, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  groundMask:
+    serializedVersion: 2
+    m_Bits: 256
 --- !u!212 &21229300
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -133,7 +137,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 98b1762d2c4128e48a1cdc7e37666394, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 8c7af0cbbb981491ba6b7c1dd6962528, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &100100000
 Prefab:
@@ -166,6 +170,21 @@ Prefab:
       propertyPath: m_LocalPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 8c7af0cbbb981491ba6b7c1dd6962528,
+        type: 3}
+    - target: {fileID: 0}
+      propertyPath: light
+      value: 
+      objectReference: {fileID: 21300000, guid: 8c7af0cbbb981491ba6b7c1dd6962528,
+        type: 3}
+    - target: {fileID: 0}
+      propertyPath: dark
+      value: 
+      objectReference: {fileID: 21300000, guid: 0e11f0a8a18ff4b5d981533f166e3a09,
+        type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 114812}

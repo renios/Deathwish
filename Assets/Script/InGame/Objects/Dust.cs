@@ -29,7 +29,8 @@ public class Dust : MonoBehaviour, IRestartable {
 
 	void Update()
 	{
-		if ((Global.ingame.isDark == IsDark.Light) && (!isMoving))
+		IsDark isDarkNow = Global.ingame.GetIsDarkInPosition(gameObject);
+		if ((isDarkNow == IsDark.Light) && (!isMoving))
 			GetComponentInChildren<PlayerDetector>().gameObject.GetComponent<Collider2D>().enabled = true;
 		else
 			GetComponentInChildren<PlayerDetector>().gameObject.GetComponent<Collider2D>().enabled = false;
