@@ -584,6 +584,7 @@ MonoBehaviour:
   moveSpeed: 7
   jumpPower: 25
   climbSpeed: 10
+  windSpeed: 21
   maxSpeedInWater: 5
   verticalDragInWater: .800000012
   maxSpeedInAir: 20
@@ -592,6 +593,9 @@ MonoBehaviour:
   ladderCheckerDown: {fileID: 11432702}
   playerSpriteObject: {fileID: 146886}
   soundEffectController: {fileID: 0}
+  windDirection: 0
+  canMove: 0
+  gravityDirection: 0
 --- !u!114 &11489126
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -844,6 +848,10 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: VerticalDragInWater
       value: .800000012
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: windSpeed
+      value: 21
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
