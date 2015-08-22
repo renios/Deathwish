@@ -168,19 +168,19 @@ public class Player : MonoBehaviour, IRestartable
 			GetComponent<Rigidbody2D>().gravityScale = 0;
 			if (windDirection == WindDirection.Left)
 			{
-				GetComponent<Rigidbody2D>().velocity = new Vector2(windSpeed,0);
+				GetComponent<Rigidbody2D>().velocity = new Vector2(-windSpeed,0);
 			}
 			else if (windDirection == WindDirection.Right)
 			{
-				GetComponent<Rigidbody2D>().velocity = new Vector2(-windSpeed,0);
+				GetComponent<Rigidbody2D>().velocity = new Vector2(windSpeed,0);
 			}
 			else if (windDirection == WindDirection.Up)
 			{
-				GetComponent<Rigidbody2D>().velocity = new Vector2(0, -windSpeed);
+				GetComponent<Rigidbody2D>().velocity = new Vector2(0, windSpeed);
 			}
 			else if (windDirection == WindDirection.Down)
 			{
-				GetComponent<Rigidbody2D>().velocity = new Vector2(0, windSpeed);
+				GetComponent<Rigidbody2D>().velocity = new Vector2(0, -windSpeed);
 			}
 		}
 
