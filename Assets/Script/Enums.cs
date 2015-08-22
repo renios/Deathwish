@@ -36,4 +36,12 @@ namespace Enums
 		Horizontal,
 		Vertical
 	}
+
+	public enum WindDirection
+	{
+		Right,
+		Left,
+		Up,
+		Down
+	}
 }
