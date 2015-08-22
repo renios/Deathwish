@@ -30,7 +30,15 @@ public abstract class ObjectMonoBehaviour : MonoBehaviour
 	// DO NOT Implement 'Start' method in derived class.
 	private void Start ()
 	{
+		if (GetComponent<Rigidbody2D> () != null)
+			GetComponent<Rigidbody2D> ().gravityScale *= GravityCoefficient (gravityDirection);
 		StartByParent ();
+	}
+
+	int GravityCoefficient(GravityDirection gravityDirection)
+	{
+		if(gravityDirection == GravityDirection.Normal) return 1;
+		else return (-1);
 	}
 
 	// DO NOT Implement 'Update' method in derived class.
