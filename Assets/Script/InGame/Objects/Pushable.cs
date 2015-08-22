@@ -2,13 +2,15 @@
 using System.Collections;
 using Enums;
 
-public class Pushable : ObjectMonoBehaviour, IRestartable {
+public class Pushable : ObjectMonoBehaviour, IRestartable
+{
 
 	private Vector3 originalPosition;
 	public bool isLamp;
 	
 	// Use this for initialization
-	void Start () {
+	public override void StartByParent()
+	{
 		originalPosition = gameObject.transform.position;
 	}
 	

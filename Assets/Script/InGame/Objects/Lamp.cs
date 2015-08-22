@@ -14,7 +14,7 @@ public class Lamp : ObjectMonoBehaviour
 	#pragma warning disable 0414
 	List<Lamp> lamps;
 
-	void Start()
+	public override void StartByParent()
 	{
 		Global.ingame.LampsInMap.Add (this);
 		lamps = new List<Lamp>(Global.ingame.LampsInMap);
