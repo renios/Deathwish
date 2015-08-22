@@ -34,7 +34,7 @@ class Climber
 
 	public void Update()
 	{
-		if (Global.ingame.isDark == IsDark.Light)
+		if (Global.ingame.GetIsDarkInPosition(playerTransform.gameObject) == IsDark.Light)
 		{
 			UpdateIsClimb ();
 			
