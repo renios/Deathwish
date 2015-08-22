@@ -34,6 +34,8 @@ public class Player : MonoBehaviour, IRestartable
 
 	public bool canMove;
 
+	public GravityDirection gravityDirection;
+
 	//used for Text display purposes.
 
 	void Start ()
@@ -41,11 +43,19 @@ public class Player : MonoBehaviour, IRestartable
 		O2Checker = FindObjectOfType<O2Checker>();
 		animator = GetComponentInChildren<Animator>();
 		startPoint = gameObject.transform.position;
+		GetComponent<Rigidbody2D> ().gravityScale = GetComponent<Rigidbody2D> ().gravityScale * GravityCoefficient(gravityDirection);
 		gravityScaleOfStartTime = GetComponent<Rigidbody2D> ().gravityScale;
 		yOfLowestObject = ObjectFinder.FindLowest ().position.y;
 		climber = new Climber (gameObject, ladderCheckerUp, ladderCheckerDown, groundChecker, climbSpeed);
 		soundEffectController = GetComponentInChildren<SoundEffectController> ();
 		soundEffectController.player = this;
+
+		if(gravityDirection == GravityDirection.Reverse)
+		{
+			GetComponentInChildren<Camera>().enabled = false;
+			GetComponentInChildren<AudioListener>().enabled = false;
+			this.transform.rotation = Quaternion.Euler(180, 0, 0);
+		}
 	}
 
 	void Update ()
@@ -102,21 +112,31 @@ public class Player : MonoBehaviour, IRestartable
 
 	void ApplyDirectionToSprite()
 	{
-		if (Input.GetKey (KeyCode.RightArrow))
-			playerSpriteObject.transform.rotation = Quaternion.Euler(0, 180, 0);
-		else if (Input.GetKey(KeyCode.LeftArrow))
-			playerSpriteObject.transform.rotation = Quaternion.Euler(0, 0, 0);
+		if(gravityDirection == GravityDirection.Normal)
+		{
+			if (Input.GetKey (KeyCode.RightArrow))
+				playerSpriteObject.transform.rotation = Quaternion.Euler(0, 180, 0);
+			else if (Input.GetKey(KeyCode.LeftArrow))
+				playerSpriteObject.transform.rotation = Quaternion.Euler(0, 0, 0);
+		}
+		else
+		{
+			if (Input.GetKey (KeyCode.RightArrow))
+				playerSpriteObject.transform.rotation = Quaternion.Euler(180, 180, 0);
+			else if (Input.GetKey(KeyCode.LeftArrow))
+				playerSpriteObject.transform.rotation = Quaternion.Euler(180, 0, 0);
+		}
 	}
 
 	void Move ()
 	{
 		if(Global.ingame.inWind == false)
 		{
-			if ((IsUnderwater ()) && (GetComponent<Rigidbody2D> ().velocity.y < -1 * maxSpeedInWater))
-				GetComponent<Rigidbody2D> ().velocity = new Vector2 (GetComponent<Rigidbody2D> ().velocity.x, -1 * maxSpeedInWater);
+			if ((IsUnderwater ()) && (overMaxFallingSpeed(GetComponent<Rigidbody2D> ().velocity.y, maxSpeedInWater, GravityCoefficient(gravityDirection))))
+				GetComponent<Rigidbody2D> ().velocity = new Vector2 (GetComponent<Rigidbody2D> ().velocity.x, -1 * maxSpeedInWater * GravityCoefficient(gravityDirection));
 			
-			if ((!groundChecker.IsGrounded ()) && (GetComponent<Rigidbody2D> ().velocity.y < -1 * maxSpeedInAir))
-				GetComponent<Rigidbody2D> ().velocity = new Vector2 (GetComponent<Rigidbody2D> ().velocity.x, -1 * maxSpeedInAir);
+			if ((!groundChecker.IsGrounded ()) && (overMaxFallingSpeed(GetComponent<Rigidbody2D> ().velocity.y, maxSpeedInAir, GravityCoefficient(gravityDirection))))
+				GetComponent<Rigidbody2D> ().velocity = new Vector2 (GetComponent<Rigidbody2D> ().velocity.x, -1 * maxSpeedInAir * GravityCoefficient(gravityDirection));
 			
 			if (Input.GetKey (KeyCode.RightArrow))
 			{
@@ -137,17 +157,31 @@ public class Player : MonoBehaviour, IRestartable
 			else
 				GetComponent<Rigidbody2D>().velocity = new Vector2(0, GetComponent<Rigidbody2D>().velocity.y);
 		}
+	}
+
+	bool overMaxFallingSpeed(float currentSpeed, float maxFallingSpeed, int gravityCoefficient)
+	{
+		if(gravityCoefficient > 0)
+		{
+			if(currentSpeed < -1 * maxFallingSpeed * gravityCoefficient) { return true; }
+			else { return false; }
 		}
+		else
+		{
+			if(currentSpeed > -1 * maxFallingSpeed * gravityCoefficient) { return true; }
+			else { return false; }
+		}
+	}
 
 	private void Jump()
 	{
 		if (Input.GetKeyDown (KeyCode.Space) && IsUnderwater())
 		{
-			GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x, jumpPower * GetDrag(Direction.Vertical));
+			GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x, jumpPower * GetDrag(Direction.Vertical) * GravityCoefficient(gravityDirection));
 		}
 		else if (Input.GetKeyDown (KeyCode.Space) && groundChecker.IsGrounded())
 		{
-			GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x, jumpPower);
+			GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x, jumpPower * GravityCoefficient(gravityDirection));
 		}
 		else {return;}
 
@@ -210,6 +244,12 @@ public class Player : MonoBehaviour, IRestartable
 				leavingGround = false;
 			}
 		}
+	}
+
+	int GravityCoefficient(GravityDirection gravityDirection)
+	{
+		if(gravityDirection == GravityDirection.Normal) return 1;
+		else return (-1);
 	}
 
 	bool IsUnderwater()
