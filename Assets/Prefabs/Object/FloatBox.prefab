@@ -16,6 +16,7 @@ GameObject:
   - 114: {fileID: 11456078}
   - 114: {fileID: 11461528}
   - 114: {fileID: 11482412}
+  - 114: {fileID: 11486968}
   m_Layer: 8
   m_Name: FloatBox
   m_TagString: Box
@@ -125,6 +126,18 @@ MonoBehaviour:
   groundMask:
     serializedVersion: 2
     m_Bits: 256
+--- !u!114 &11486968
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 114812}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d945e71c115184d4b9b1b95638930104, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gravityDirection: 0
 --- !u!212 &21229300
 SpriteRenderer:
   m_ObjectHideFlags: 1

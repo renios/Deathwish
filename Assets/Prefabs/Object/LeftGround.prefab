@@ -14,6 +14,7 @@ GameObject:
   - 68: {fileID: 6870744}
   - 68: {fileID: 6831668}
   - 68: {fileID: 6804098}
+  - 114: {fileID: 11452940}
   m_Layer: 8
   m_Name: LeftGround
   m_TagString: Ground
@@ -86,6 +87,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19185949f283042ca8baa6597ea138aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &11452940
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 142090}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d945e71c115184d4b9b1b95638930104, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gravityDirection: 0
 --- !u!114 &11467782
 MonoBehaviour:
   m_ObjectHideFlags: 1
