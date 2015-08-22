@@ -47,7 +47,7 @@ public class Player : MonoBehaviour, IRestartable
 		GetComponent<Rigidbody2D> ().gravityScale = GetComponent<Rigidbody2D> ().gravityScale * GravityCoefficient(gravityDirection);
 		gravityScaleOfStartTime = GetComponent<Rigidbody2D> ().gravityScale;
 		yOfLowestObject = ObjectFinder.FindLowest ().position.y;
-		climber = new Climber (gameObject, ladderCheckerUp, ladderCheckerDown, groundChecker, climbSpeed);
+		climber = new Climber (gameObject, ladderCheckerUp, ladderCheckerDown, groundChecker, climbSpeed, gravityScaleOfStartTime);
 		soundEffectController = GetComponentInChildren<SoundEffectController> ();
 		soundEffectController.player = this;
 
@@ -200,30 +200,33 @@ public class Player : MonoBehaviour, IRestartable
 
 	void Wind()
 	{
-		if (Global.ingame.inWind == true)
+		if (Global.ingame.isDark == IsDark.Light)
 		{
-			GetComponent<Rigidbody2D>().gravityScale = 0;
-			if (windDirection == WindDirection.Left)
+			if (Global.ingame.inWind == true)
 			{
-				GetComponent<Rigidbody2D>().velocity = new Vector2(-windSpeed,0);
+				GetComponent<Rigidbody2D>().gravityScale = 0;
+				if (windDirection == WindDirection.Left)
+				{
+					GetComponent<Rigidbody2D>().velocity = new Vector2(-windSpeed,0);
+				}
+				else if (windDirection == WindDirection.Right)
+				{
+					GetComponent<Rigidbody2D>().velocity = new Vector2(windSpeed,0);
+				}
+				else if (windDirection == WindDirection.Up)
+				{
+					GetComponent<Rigidbody2D>().velocity = new Vector2(0, windSpeed);
+				}
+				else if (windDirection == WindDirection.Down)
+				{
+					GetComponent<Rigidbody2D>().velocity = new Vector2(0, -windSpeed);
+				}
 			}
-			else if (windDirection == WindDirection.Right)
+			
+			if (Global.ingame.inWind == false)
 			{
-				GetComponent<Rigidbody2D>().velocity = new Vector2(windSpeed,0);
+				GetComponent<Rigidbody2D>().gravityScale = gravityScaleOfStartTime;
 			}
-			else if (windDirection == WindDirection.Up)
-			{
-				GetComponent<Rigidbody2D>().velocity = new Vector2(0, windSpeed);
-			}
-			else if (windDirection == WindDirection.Down)
-			{
-				GetComponent<Rigidbody2D>().velocity = new Vector2(0, -windSpeed);
-			}
-		}
-
-		if (Global.ingame.inWind == false)
-		{
-			GetComponent<Rigidbody2D>().gravityScale = gravityScaleOfStartTime;
 		}
 	}
 

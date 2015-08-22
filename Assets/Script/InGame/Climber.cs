@@ -16,7 +16,7 @@ class Climber
 	//bool upOfLadder = false;
 	//bool downOfLadder = false;
 	
-	public Climber(GameObject playerGo, LadderCheckerUp ladderCheckerUp, LadderCheckerDown ladderCheckerDown, GroundChecker groundChecker, float climbSpeed)
+	public Climber(GameObject playerGo, LadderCheckerUp ladderCheckerUp, LadderCheckerDown ladderCheckerDown, GroundChecker groundChecker, float climbSpeed, float gravityScale)
 	{
 		playerRigidbody = playerGo.GetComponent<Rigidbody2D> ();
 		playerTransform = playerGo.GetComponent<Transform> ();
