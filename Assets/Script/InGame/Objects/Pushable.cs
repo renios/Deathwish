@@ -2,20 +2,20 @@
 using System.Collections;
 using Enums;
 
-public class Pushable : ObjectMonoBehaviour, IRestartable
+public class Pushable : MonoBehaviour, IRestartable
 {
 
 	private Vector3 originalPosition;
 	public bool isLamp;
 	
 	// Use this for initialization
-	public override void StartByParent()
+	void Start()
 	{
 		originalPosition = gameObject.transform.position;
 	}
 	
 	// Update is called once per frame
-	public override void UpdateByParent ()
+	void Update ()
 	{
 		if(isLamp == true)
 		{
@@ -26,20 +26,14 @@ public class Pushable : ObjectMonoBehaviour, IRestartable
 			}
 		}
 
-		if (isDarkAfterLamp() == IsDark.Light)
+		if (Global.ingame.GetIsDarkInPosition(gameObject) == IsDark.Light)
 		{
 			gameObject.GetComponent<Rigidbody2D>().isKinematic = false;	
 		}
-		else if (isDarkAfterLamp() == IsDark.Dark)
+		else if (Global.ingame.GetIsDarkInPosition(gameObject) == IsDark.Dark)
 		{
 			gameObject.GetComponent<Rigidbody2D>().isKinematic = true;
 		}
-	}
-
-	public override void HideObject()
-	{
-		GetComponent<SpriteRenderer>().enabled = false;
-		GetComponent<Collider2D>().enabled = false;
 	}
 
 	void IRestartable.Restart()
