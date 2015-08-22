@@ -4,6 +4,12 @@ using System.Collections.Generic;
 
 namespace Enums
 {
+	public enum GravityDirection
+	{
+		Normal,
+		Reverse
+	}
+
 	public enum CharacterAction
 	{
 		Default,
