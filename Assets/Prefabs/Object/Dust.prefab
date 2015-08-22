@@ -30,6 +30,7 @@ GameObject:
   - 114: {fileID: 11433968}
   - 50: {fileID: 5028176}
   - 114: {fileID: 11422500}
+  - 114: {fileID: 11476752}
   m_Layer: 0
   m_Name: Dust
   m_TagString: LightBug
@@ -216,6 +217,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e30937e60d7c14988b4e87248ecd8c17, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &11476752
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 132980}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d945e71c115184d4b9b1b95638930104, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gravityDirection: 0
 --- !u!212 &21283398
 SpriteRenderer:
   m_ObjectHideFlags: 1

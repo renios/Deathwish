@@ -8,7 +8,7 @@ public class SwitchDarkLight : MonoBehaviour
 
 	void Update()
 	{
-		isGround = GameObject.Find ("GroundChecker").GetComponent<GroundChecker> ().IsGrounded ();
+		isGround = GameObject.FindObjectOfType<GroundChecker> ().IsGrounded ();
 	}
 
 	void OnTriggerStay2D(Collider2D collision)

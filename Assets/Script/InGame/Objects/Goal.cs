@@ -8,6 +8,8 @@ public class Goal : MonoBehaviour, IRestartable
 	public string LevelToLoad;
 
 	public string LevelTag;
+	
+	private bool isGround;
 
 	void Start()
 	{
@@ -16,7 +18,8 @@ public class Goal : MonoBehaviour, IRestartable
 
 	void Update()
 	{
-		if (Input.GetKeyDown(KeyCode.UpArrow) && playerInZone)
+		isGround = GameObject.FindObjectOfType<GroundChecker> ().IsGrounded ();
+		if (Input.GetKeyDown(KeyCode.UpArrow) && playerInZone && isGround)
 		{
 			LoadLevel();
 		}

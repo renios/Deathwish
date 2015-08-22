@@ -14,6 +14,7 @@ GameObject:
   - 114: {fileID: 11425968}
   - 68: {fileID: 6848022}
   - 68: {fileID: 6827946}
+  - 114: {fileID: 11423800}
   m_Layer: 8
   m_Name: DecayGround
   m_TagString: Ground
@@ -194,6 +195,18 @@ MonoBehaviour:
   delay: 1
   normal: {fileID: 21300000, guid: d548397fc1510ba4ea696fc7c0ce2c0a, type: 3}
   transparent: {fileID: 21300000, guid: e90ea4b0cdf82bb41be285b61b89ea57, type: 3}
+--- !u!114 &11423800
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 112420}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d945e71c115184d4b9b1b95638930104, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gravityDirection: 0
 --- !u!114 &11425968
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -220,7 +233,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   light: {fileID: 21300000, guid: d548397fc1510ba4ea696fc7c0ce2c0a, type: 3}
-  dark: {fileID: 21300000, guid: d8559a6e7434f4521a3132d5fe4a80e4, type: 3}
+  dark: {fileID: 21300000, guid: 4a098be9c7da4114286304c16b8d36e4, type: 3}
 --- !u!198 &19818360
 ParticleSystem:
   m_ObjectHideFlags: 1
@@ -3529,7 +3542,7 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: dark
       value: 
-      objectReference: {fileID: 21300000, guid: d548397fc1510ba4ea696fc7c0ce2c0a,
+      objectReference: {fileID: 21300000, guid: 4a098be9c7da4114286304c16b8d36e4,
         type: 3}
     - target: {fileID: 0}
       propertyPath: transparent
