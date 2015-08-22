@@ -298,7 +298,7 @@ public class Player : MonoBehaviour, IRestartable
 		gameObject.transform.position = startPoint;
 		//Temporarily reset isDark in Player.cs, but it should be moved to other script.
 		Global.ingame.isDark = IsDark.Light;
-		climber = new Climber (gameObject, ladderCheckerUp, ladderCheckerDown, groundChecker, climbSpeed);
+		climber = new Climber (gameObject, ladderCheckerUp, ladderCheckerDown, groundChecker, climbSpeed, gravityScaleOfStartTime);
 		GetComponent<Rigidbody2D> ().gravityScale = gravityScaleOfStartTime;
 	}
 }
