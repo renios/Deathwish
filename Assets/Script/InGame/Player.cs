@@ -33,6 +33,9 @@ public class Player : MonoBehaviour, IRestartable
 	bool onAir = true;
 	bool leavingGround = true;
 
+	public bool canMove;
+	//used for Text display purposes.
+
 	void Start ()
 	{
 		O2Checker = FindObjectOfType<O2Checker>();
@@ -47,6 +50,10 @@ public class Player : MonoBehaviour, IRestartable
 
 	void Update ()
 	{
+		if (!canMove) 
+		{
+			return;
+		}
 		if (IsUnderwater() && !O2Checker.IsActive())
 			O2Checker.Active();
 		if (!IsUnderwater() && O2Checker.IsActive())
