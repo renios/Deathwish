@@ -11,6 +11,7 @@ public class Wind : MonoBehaviour
 		if (other.gameObject.tag == "Player")
 		{
 			Global.ingame.inWind = true;
+			other.GetComponent<Player>().windDirection = windDirection;
 		}
 	}
 

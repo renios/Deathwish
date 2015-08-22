@@ -20,6 +20,7 @@ public class Player : MonoBehaviour, IRestartable
 	public GameObject playerSpriteObject;
 	public SoundEffectController soundEffectController;
 	//need for landing sound effect
+	public WindDirection windDirection;
 
 	private Vector3 startPoint;
 	private float yOfLowestObject;
@@ -30,8 +31,6 @@ public class Player : MonoBehaviour, IRestartable
 	float gravityScaleOfStartTime;
 	bool onAir = true;
 	bool leavingGround = true;
-	Vector3 playerPosition;
-	public bool isMoving;
 
 	public bool canMove;
 
@@ -80,11 +79,6 @@ public class Player : MonoBehaviour, IRestartable
 		animator.SetBool("isClimbing", climber.IsClimbing());
 
 		soundEffectController.Play ();
-	}
-
-	void LateUpdate ()
-	{
-		playerPosition = GetComponent<Transform> ().position;
 	}
 
 	float GetDrag(Direction direction)
@@ -161,18 +155,33 @@ public class Player : MonoBehaviour, IRestartable
 		onAir = true;
 	}
 
+	public bool obstacle = false;
+	void OnCollsionStaty2D (Collider2D other)
+	{
+		obstacle = true;
+	}
+
 	void Wind()
 	{
 		if (Global.ingame.inWind == true)
 		{
 			GetComponent<Rigidbody2D>().gravityScale = 0;
-			GetComponent<Rigidbody2D>().velocity = new Vector2(windSpeed,0);
-
-			if (Mathf.Abs(playerPosition.x - GetComponent<Transform> ().position.x) < 10)
+			if (windDirection == WindDirection.Left)
 			{
-				isMoving = false;
+				GetComponent<Rigidbody2D>().velocity = new Vector2(windSpeed,0);
 			}
-			else isMoving = true;
+			else if (windDirection == WindDirection.Right)
+			{
+				GetComponent<Rigidbody2D>().velocity = new Vector2(-windSpeed,0);
+			}
+			else if (windDirection == WindDirection.Up)
+			{
+				GetComponent<Rigidbody2D>().velocity = new Vector2(0, -windSpeed);
+			}
+			else if (windDirection == WindDirection.Down)
+			{
+				GetComponent<Rigidbody2D>().velocity = new Vector2(0, windSpeed);
+			}
 		}
 
 		if (Global.ingame.inWind == false)
