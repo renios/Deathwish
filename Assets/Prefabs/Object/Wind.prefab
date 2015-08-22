@@ -27,6 +27,7 @@ GameObject:
   - 4: {fileID: 408058}
   - 212: {fileID: 21223048}
   - 114: {fileID: 11415666}
+  - 114: {fileID: 11458694}
   m_Layer: 0
   m_Name: Wind
   m_TagString: Untagged
@@ -41,7 +42,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 156214}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 15, y: 0, z: 0}
+  m_LocalPosition: {x: 20.0195866, y: .0631775856, z: 0}
   m_LocalScale: {x: 1, y: 1.5, z: 1}
   m_Children:
   - {fileID: 421566}
@@ -54,7 +55,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 107330}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -15, y: .300000012, z: 0}
+  m_LocalPosition: {x: 0, y: 3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 408058}
@@ -71,7 +72,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Size: {x: 30, y: .100000001}
+  m_Size: {x: 1, y: 6}
 --- !u!114 &11415666
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -84,6 +85,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gravityDirection: 0
+--- !u!114 &11458694
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 156214}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 870dfea6228011d4cbbf86c95172aad2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  light: {fileID: 21300000, guid: a0af84c3a83f4de4a87e92bd5168d897, type: 3}
+  dark: {fileID: 0}
 --- !u!114 &11490588
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -95,7 +109,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c728842c75299da469218b4d7b75be73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  windDirection: 1
+  windDirection: 2
 --- !u!212 &21223048
 SpriteRenderer:
   m_ObjectHideFlags: 1
