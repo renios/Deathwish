@@ -93,5 +93,5 @@ public class TextBoxManager : MonoBehaviour {
 			textLines = (theText.text.Split ('\n'));
 			
 		}
-
+	}
 }
