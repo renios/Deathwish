@@ -189,10 +189,9 @@ public class Player : MonoBehaviour, IRestartable
 		onAir = true;
 	}
 
-	public bool obstacle = false;
-	void OnCollsionStaty2D (Collider2D other)
+	void OnCollisionEnter2D(Collision2D collision)
 	{
-		obstacle = true;
+		Global.ingame.inWind = false;
 	}
 
 	void Wind()
