@@ -8,30 +8,30 @@ public class Player : MonoBehaviour, IRestartable
 	public float moveSpeed;
 	public float jumpPower;
 	public float climbSpeed;
+	public float windSpeed;
 	public float maxSpeedInWater;
 	// Temporary value.
 	public float verticalDragInWater;
 	public float maxSpeedInAir;
 
-	private Vector3 startPoint;
-	private float yOfLowestObject;
-
-	float gravityScaleOfStartTime;
-
 	public GroundChecker groundChecker;
 	public LadderCheckerUp ladderCheckerUp;
 	public LadderCheckerDown ladderCheckerDown;
-	private Climber climber;
-
 	public GameObject playerSpriteObject;
-	private Animator animator;
-
-	private O2Checker O2Checker;
-
 	public SoundEffectController soundEffectController;
 	//need for landing sound effect
+
+	private Vector3 startPoint;
+	private float yOfLowestObject;
+	private Animator animator;
+	private Climber climber;
+	private O2Checker O2Checker;
+
+	float gravityScaleOfStartTime;
 	bool onAir = true;
 	bool leavingGround = true;
+	Vector3 playerPosition;
+	public bool isMoving;
 
 	public bool canMove;
 
@@ -68,6 +68,7 @@ public class Player : MonoBehaviour, IRestartable
 
 		soundEffectController.characterAction = CharacterAction.Default;
 
+		Wind ();
 		Move ();
 		ApplyDirectionToSprite();
 		Jump ();
@@ -79,6 +80,11 @@ public class Player : MonoBehaviour, IRestartable
 		animator.SetBool("isClimbing", climber.IsClimbing());
 
 		soundEffectController.Play ();
+	}
+
+	void LateUpdate ()
+	{
+		playerPosition = GetComponent<Transform> ().position;
 	}
 
 	float GetDrag(Direction direction)
@@ -110,31 +116,34 @@ public class Player : MonoBehaviour, IRestartable
 
 	void Move ()
 	{
-		if ((IsUnderwater ()) && (GetComponent<Rigidbody2D> ().velocity.y < -1 * maxSpeedInWater))
-			GetComponent<Rigidbody2D> ().velocity = new Vector2 (GetComponent<Rigidbody2D> ().velocity.x, -1 * maxSpeedInWater);
-
-		if ((!groundChecker.IsGrounded ()) && (GetComponent<Rigidbody2D> ().velocity.y < -1 * maxSpeedInAir))
-			GetComponent<Rigidbody2D> ().velocity = new Vector2 (GetComponent<Rigidbody2D> ().velocity.x, -1 * maxSpeedInAir);
-
-		if (Input.GetKey (KeyCode.RightArrow))
+		if(Global.ingame.inWind == false)
 		{
-			GetComponent<Rigidbody2D> ().velocity = new Vector2 (moveSpeed * GetDrag (Direction.Horizontal), GetComponent<Rigidbody2D> ().velocity.y);
-			if(!onAir)
+			if ((IsUnderwater ()) && (GetComponent<Rigidbody2D> ().velocity.y < -1 * maxSpeedInWater))
+				GetComponent<Rigidbody2D> ().velocity = new Vector2 (GetComponent<Rigidbody2D> ().velocity.x, -1 * maxSpeedInWater);
+			
+			if ((!groundChecker.IsGrounded ()) && (GetComponent<Rigidbody2D> ().velocity.y < -1 * maxSpeedInAir))
+				GetComponent<Rigidbody2D> ().velocity = new Vector2 (GetComponent<Rigidbody2D> ().velocity.x, -1 * maxSpeedInAir);
+			
+			if (Input.GetKey (KeyCode.RightArrow))
 			{
-				soundEffectController.characterAction = CharacterAction.Walk;
+				GetComponent<Rigidbody2D> ().velocity = new Vector2 (moveSpeed * GetDrag (Direction.Horizontal), GetComponent<Rigidbody2D> ().velocity.y);
+				if(!onAir)
+				{
+					soundEffectController.characterAction = CharacterAction.Walk;
+				}
 			}
-		}
-		else if (Input.GetKey (KeyCode.LeftArrow))
-		{
-			GetComponent<Rigidbody2D> ().velocity = new Vector2 (-moveSpeed * GetDrag (Direction.Horizontal), GetComponent<Rigidbody2D> ().velocity.y);
-			if(!onAir)
+			else if (Input.GetKey (KeyCode.LeftArrow))
 			{
-				soundEffectController.characterAction = CharacterAction.Walk;
+				GetComponent<Rigidbody2D> ().velocity = new Vector2 (-moveSpeed * GetDrag (Direction.Horizontal), GetComponent<Rigidbody2D> ().velocity.y);
+				if(!onAir)
+				{
+					soundEffectController.characterAction = CharacterAction.Walk;
+				}
 			}
+			else
+				GetComponent<Rigidbody2D>().velocity = new Vector2(0, GetComponent<Rigidbody2D>().velocity.y);
 		}
-		else
-			GetComponent<Rigidbody2D>().velocity = new Vector2(0, GetComponent<Rigidbody2D>().velocity.y);
-	}
+		}
 
 	private void Jump()
 	{
@@ -150,6 +159,26 @@ public class Player : MonoBehaviour, IRestartable
 
 		soundEffectController.characterAction = CharacterAction.Jump;
 		onAir = true;
+	}
+
+	void Wind()
+	{
+		if (Global.ingame.inWind == true)
+		{
+			GetComponent<Rigidbody2D>().gravityScale = 0;
+			GetComponent<Rigidbody2D>().velocity = new Vector2(windSpeed,0);
+
+			if (Mathf.Abs(playerPosition.x - GetComponent<Transform> ().position.x) < 10)
+			{
+				isMoving = false;
+			}
+			else isMoving = true;
+		}
+
+		if (Global.ingame.inWind == false)
+		{
+			GetComponent<Rigidbody2D>().gravityScale = gravityScaleOfStartTime;
+		}
 	}
 
 	void CheckLandingForSoundEffect()
