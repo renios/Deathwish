@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using Enums;
 
 class Climber
 {
@@ -33,20 +34,23 @@ class Climber
 
 	public void Update()
 	{
-		UpdateIsClimb ();
-		
-		if (isClimbing)
+		if (Global.ingame.isDark == IsDark.Light)
 		{
-			bool isMoved = MoveUpDown ();
-			if (isMoved == false)
-				StayInLadder ();
-		}
-		else
-		{
-			if (ladderCheckerUp.IsUpLaddered() == false && Input.GetKey(KeyCode.UpArrow))
-				isClimbing = false;
-			if (ladderCheckerDown.IsDownLaddered() == false && Input.GetKey (KeyCode.DownArrow))
-				isClimbing = false;
+			UpdateIsClimb ();
+			
+			if (isClimbing)
+			{
+				bool isMoved = MoveUpDown ();
+				if (isMoved == false)
+					StayInLadder ();
+			}
+			else
+			{
+				if (ladderCheckerUp.IsUpLaddered() == false && Input.GetKey(KeyCode.UpArrow))
+					isClimbing = false;
+				if (ladderCheckerDown.IsDownLaddered() == false && Input.GetKey (KeyCode.DownArrow))
+					isClimbing = false;
+			}
 		}
 	}
 	
