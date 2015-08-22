@@ -34,6 +34,7 @@ public class Player : MonoBehaviour, IRestartable
 
 	public bool canMove;
 
+
 	public GravityDirection gravityDirection;
 
 	//used for Text display purposes.
@@ -87,8 +88,11 @@ public class Player : MonoBehaviour, IRestartable
 		animator.SetFloat("absSpeedX", Mathf.Abs(GetComponent<Rigidbody2D>().velocity.x));
 		animator.SetBool("isGrounded", groundChecker.IsGrounded());
 		animator.SetBool("isClimbing", climber.IsClimbing());
+		animator.SetBool ("isDark", IsItDark ());
 
 		soundEffectController.Play ();
+
+		IsItDark ();
 	}
 
 	float GetDrag(Direction direction)
@@ -251,6 +255,27 @@ public class Player : MonoBehaviour, IRestartable
 		else return (-1);
 	}
 
+
+	bool IsItDark()
+		
+	{
+		IsDark isItDark = Global.ingame.GetIsDarkInPosition (gameObject);
+		if (isItDark == IsDark.Light) 
+		{
+			return false;
+		} 
+		else if (isItDark == IsDark.Dark) 
+		{
+			return true;
+		}
+		else 
+		{
+			return true;
+		}
+	}
+	
+	
+	
 	bool IsUnderwater()
 	{
 		Collider2D playerCollider = GetComponent<Collider2D>();
