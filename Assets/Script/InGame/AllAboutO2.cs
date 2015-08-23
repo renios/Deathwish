@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class O2Checker : MonoBehaviour, IRestartable {
+public class AllAboutO2 : MonoBehaviour, IRestartable {
 
 	public GameObject O2Bar;
 
