@@ -107,10 +107,20 @@ public class Player : MonoBehaviour, IRestartable
 	IEnumerator PlayDieAnimAndRestartCoroutine()
 	{
 		canMove = false;
+		GetComponent<Rigidbody2D>().velocity = new Vector2(0, GetComponent<Rigidbody2D>().velocity.y);
+		ReverseSpriteDirection();
 		animator.SetTrigger("Die");
-		yield return new WaitForSeconds(2);
+		float playTimeOfAnim = 2;
+		yield return new WaitForSeconds(playTimeOfAnim);
 		canMove = true;
+		animator.SetTrigger("Revive");
 		Restarter.RestartAll();
+	}
+
+	void ReverseSpriteDirection()
+	{
+		float rotationY = playerSpriteObject.transform.rotation.eulerAngles.y;
+		playerSpriteObject.transform.rotation = Quaternion.Euler(0, 180 - rotationY, 0);
 	}
 
 	float GetDrag(Direction direction)
