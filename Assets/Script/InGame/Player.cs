@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using Enums;
+using System.Linq;
 
 public class Player : MonoBehaviour, IRestartable
 {
@@ -31,6 +32,7 @@ public class Player : MonoBehaviour, IRestartable
 	float gravityScaleOfStartTime;
 	bool onAir = true;
 	bool leavingGround = true;
+	HashSet<GameObject> pushableObjectsNearbyPlayer;
 
 	public bool canMove;
 
@@ -41,6 +43,7 @@ public class Player : MonoBehaviour, IRestartable
 
 	void Start ()
 	{
+		pushableObjectsNearbyPlayer = new HashSet<GameObject>();
 		O2Checker = FindObjectOfType<O2Checker>();
 		animator = GetComponentInChildren<Animator>();
 		startPoint = gameObject.transform.position;
@@ -88,7 +91,8 @@ public class Player : MonoBehaviour, IRestartable
 		animator.SetFloat("absSpeedX", Mathf.Abs(GetComponent<Rigidbody2D>().velocity.x));
 		animator.SetBool("isGrounded", groundChecker.IsGrounded());
 		animator.SetBool("isClimbing", climber.IsClimbing());
-		animator.SetBool ("isDark", IsItDark ());
+		animator.SetBool("isDark", IsItDark ());
+		animator.SetBool("isPushing", IsPlayerPushingObject());
 
 		soundEffectController.Play ();
 
@@ -193,9 +197,15 @@ public class Player : MonoBehaviour, IRestartable
 		onAir = true;
 	}
 
-	void OnCollisionEnter2D(Collision2D collision)
+	void OnCollisionEnter2D(Collision2D coll)
 	{
 		Global.ingame.inWind = false;
+
+		if ((coll.gameObject.tag == "Box") || (coll.gameObject.tag == "Lamp"))
+		{
+			GameObject newPushableObject = coll.gameObject;
+			pushableObjectsNearbyPlayer.Add(newPushableObject);
+		}
 	}
 
 	void Wind()
@@ -258,9 +268,7 @@ public class Player : MonoBehaviour, IRestartable
 		else return (-1);
 	}
 
-
 	bool IsItDark()
-		
 	{
 		IsDark isItDark = Global.ingame.GetIsDarkInPosition (gameObject);
 		if (isItDark == IsDark.Light) 
@@ -276,9 +284,37 @@ public class Player : MonoBehaviour, IRestartable
 			return true;
 		}
 	}
-	
-	
-	
+
+	bool IsPlayerPushingObject()
+	{
+		foreach (GameObject pushableObject in pushableObjectsNearbyPlayer)
+		{
+			// It prevent playing 'push' animation when Player is over or under the box (or lamp).
+			float maximumDeltaY = 1;
+			if (Mathf.Abs(gameObject.transform.position.y - pushableObject.transform.position.y) < maximumDeltaY)
+			{
+				// Player -> Box
+				if ((gameObject.GetComponent<Rigidbody2D>().velocity.x > 0) && (gameObject.transform.position.x < pushableObject.transform.position.x))
+					return true;
+		
+				// Box <- Player
+				if ((gameObject.GetComponent<Rigidbody2D>().velocity.x < 0) && (gameObject.transform.position.x > pushableObject.transform.position.x))
+					return true;
+			}
+		}
+
+		return false;
+	}
+
+	void OnCollisionExit2D(Collision2D coll)
+	{
+		if ((coll.gameObject.tag == "Box") || (coll.gameObject.tag == "Lamp"))
+		{
+			GameObject pushableObject = coll.gameObject;
+			pushableObjectsNearbyPlayer.Remove(pushableObject);
+		}
+	}
+
 	bool IsUnderwater()
 	{
 		Collider2D playerCollider = GetComponent<Collider2D>();
@@ -300,5 +336,6 @@ public class Player : MonoBehaviour, IRestartable
 		Global.ingame.isDark = IsDark.Light;
 		climber = new Climber (gameObject, ladderCheckerUp, ladderCheckerDown, groundChecker, climbSpeed, gravityScaleOfStartTime);
 		GetComponent<Rigidbody2D> ().gravityScale = gravityScaleOfStartTime;
+		pushableObjectsNearbyPlayer = new HashSet<GameObject>();
 	}
 }
