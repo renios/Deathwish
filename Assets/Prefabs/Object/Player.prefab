@@ -595,6 +595,8 @@ MonoBehaviour:
   soundEffectController: {fileID: 0}
   windDirection: 0
   canMove: 1
+  dieEffectLight: {fileID: 143462, guid: 6bf84aa6d44fe4db09ce45ec019d65d8, type: 2}
+  dieEffectDark: {fileID: 143462, guid: aa5af728b41384adc84775e6462b2641, type: 2}
   gravityDirection: 0
 --- !u!114 &11489126
 MonoBehaviour:
@@ -857,6 +859,14 @@ Prefab:
       propertyPath: canMove
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: dieEffectLight
+      value: 
+      objectReference: {fileID: 143462, guid: 6bf84aa6d44fe4db09ce45ec019d65d8, type: 2}
+    - target: {fileID: 0}
+      propertyPath: dieEffectDark
+      value: 
+      objectReference: {fileID: 143462, guid: aa5af728b41384adc84775e6462b2641, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 141626}

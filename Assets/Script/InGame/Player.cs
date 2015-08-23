@@ -36,6 +36,8 @@ public class Player : MonoBehaviour, IRestartable
 
 	public bool canMove = true;
 
+	public GameObject dieEffectLight;
+	public GameObject dieEffectDark;
 
 	public GravityDirection gravityDirection;
 
@@ -110,11 +112,22 @@ public class Player : MonoBehaviour, IRestartable
 		GetComponent<Rigidbody2D>().velocity = new Vector2(0, GetComponent<Rigidbody2D>().velocity.y);
 		ReverseSpriteDirection();
 		animator.SetTrigger("Die");
+		PlayDieEffect();
 		float playTimeOfAnim = 2;
 		yield return new WaitForSeconds(playTimeOfAnim);
 		canMove = true;
 		animator.SetTrigger("Revive");
 		Restarter.RestartAll();
+	}
+
+	void PlayDieEffect()
+	{
+		GameObject dieEffect;
+		if (Global.ingame.GetIsDarkInPosition(gameObject) == IsDark.Light)
+			dieEffect = Instantiate(dieEffectLight, gameObject.transform.position, transform.rotation) as GameObject;
+		else
+			dieEffect = Instantiate(dieEffectDark, gameObject.transform.position, transform.rotation) as GameObject;
+		Destroy(dieEffect, 2);
 	}
 
 	void ReverseSpriteDirection()
