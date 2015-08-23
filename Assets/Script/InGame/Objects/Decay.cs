@@ -14,7 +14,7 @@ public class Decay : ObjectMonoBehaviour, IRestartable
 	bool isDestroy = false;
 	IEnumerator destroyingCoroutine;
 
-	void Start()
+	public override void StartByParent()
 	{
 		collider2Ds = new List<Collider2D>(GetComponents<Collider2D> ());
 		renderer = GetComponent<SpriteRenderer> ();

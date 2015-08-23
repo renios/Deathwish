@@ -12,6 +12,7 @@ GameObject:
   - 61: {fileID: 6103632}
   - 114: {fileID: 11440192}
   - 114: {fileID: 11451274}
+  - 114: {fileID: 11422492}
   m_Layer: 8
   m_Name: GlassWall
   m_TagString: Wall
@@ -44,6 +45,18 @@ BoxCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
+--- !u!114 &11422492
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 178374}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d945e71c115184d4b9b1b95638930104, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gravityDirection: 0
 --- !u!114 &11440192
 MonoBehaviour:
   m_ObjectHideFlags: 1

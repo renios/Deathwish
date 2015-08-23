@@ -9,7 +9,7 @@ public class Penetrate : ObjectMonoBehaviour
 	// Read at Editor (Inspector). (ex : is Transparent In Light / Dark)
 	public IsDark isTransparentIn;
 
-	void Start()
+	public override void StartByParent()
 	{
 		collider2Ds = new List<Collider2D>(GetComponents<Collider2D> ());
 	}
