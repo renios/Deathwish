@@ -108,7 +108,7 @@ public class Player : MonoBehaviour, IRestartable
 	{
 		canMove = false;
 		animator.SetTrigger("Die");
-		yield return new WaitForSeconds(3);
+		yield return new WaitForSeconds(2);
 		canMove = true;
 		Restarter.RestartAll();
 	}

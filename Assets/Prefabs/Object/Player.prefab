@@ -594,7 +594,7 @@ MonoBehaviour:
   playerSpriteObject: {fileID: 146886}
   soundEffectController: {fileID: 0}
   windDirection: 0
-  canMove: 0
+  canMove: 1
   gravityDirection: 0
 --- !u!114 &11489126
 MonoBehaviour:
@@ -852,6 +852,10 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: windSpeed
       value: 21
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: canMove
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
