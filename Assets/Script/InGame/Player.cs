@@ -34,7 +34,7 @@ public class Player : MonoBehaviour, IRestartable
 	bool leavingGround = true;
 	HashSet<GameObject> pushableObjectsNearbyPlayer;
 
-	public bool canMove;
+	public bool canMove = true;
 
 
 	public GravityDirection gravityDirection;
@@ -64,11 +64,11 @@ public class Player : MonoBehaviour, IRestartable
 
 	void Update ()
 	{
-		/*if (!canMove) 
+		if (!canMove) 
 		{
 			return;
 		}
-		*/
+
 		if (IsUnderwater() && !O2Checker.IsActive())
 			O2Checker.Active();
 		if (!IsUnderwater() && O2Checker.IsActive())
@@ -97,6 +97,20 @@ public class Player : MonoBehaviour, IRestartable
 		soundEffectController.Play ();
 
 		IsItDark ();
+	}
+	
+	public void PlayDieAnimAndRestart()
+	{
+		StartCoroutine(PlayDieAnimAndRestartCoroutine());
+	}
+
+	IEnumerator PlayDieAnimAndRestartCoroutine()
+	{
+		canMove = false;
+		animator.SetTrigger("Die");
+		yield return new WaitForSeconds(3);
+		canMove = true;
+		Restarter.RestartAll();
 	}
 
 	float GetDrag(Direction direction)
