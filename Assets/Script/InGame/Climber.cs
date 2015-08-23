@@ -77,8 +77,6 @@ class Climber
 				OnStopClimb();
 			}
 		}
-
-
 	}
 	
 	bool MoveUpDown ()
