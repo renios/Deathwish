@@ -27,7 +27,7 @@ public class Player : MonoBehaviour, IRestartable
 	private float yOfLowestObject;
 	private Animator animator;
 	private Climber climber;
-	private O2Checker O2Checker;
+	private AllAboutO2 AllAboutO2;
 
 	float gravityScaleOfStartTime;
 	bool onAir = true;
@@ -44,7 +44,7 @@ public class Player : MonoBehaviour, IRestartable
 	void Start ()
 	{
 		pushableObjectsNearbyPlayer = new HashSet<GameObject>();
-		O2Checker = FindObjectOfType<O2Checker>();
+		AllAboutO2 = FindObjectOfType<AllAboutO2>();
 		animator = GetComponentInChildren<Animator>();
 		startPoint = gameObject.transform.position;
 		GetComponent<Rigidbody2D> ().gravityScale = GetComponent<Rigidbody2D> ().gravityScale * GravityCoefficient(gravityDirection);
@@ -69,10 +69,10 @@ public class Player : MonoBehaviour, IRestartable
 			return;
 		}
 
-		if (IsUnderwater() && !O2Checker.IsActive())
-			O2Checker.Active();
-		if (!IsUnderwater() && O2Checker.IsActive())
-			O2Checker.Deactive();
+		if (IsUnderwater() && !AllAboutO2.IsActive())
+			AllAboutO2.Active();
+		if (!IsUnderwater() && AllAboutO2.IsActive())
+			AllAboutO2.Deactive();
 
 		if(gameObject.transform.position.y - yOfLowestObject <= -10 || Input.GetKeyDown(KeyCode.R))
 		{
