@@ -68,6 +68,8 @@ public class Player : MonoBehaviour, IRestartable
 	{
 		if (!canMove) 
 		{
+			GetComponent<Rigidbody2D>().velocity = new Vector2(0, GetComponent<Rigidbody2D>().velocity.y);
+			animator.SetFloat("absSpeedX", Mathf.Abs(GetComponent<Rigidbody2D>().velocity.x));
 			return;
 		}
 
@@ -109,7 +111,6 @@ public class Player : MonoBehaviour, IRestartable
 	IEnumerator PlayDieAnimAndRestartCoroutine()
 	{
 		canMove = false;
-		GetComponent<Rigidbody2D>().velocity = new Vector2(0, GetComponent<Rigidbody2D>().velocity.y);
 		ReverseSpriteDirection();
 		animator.SetTrigger("Die");
 		PlayDieEffect();
