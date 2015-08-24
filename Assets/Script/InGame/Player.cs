@@ -34,7 +34,7 @@ public class Player : MonoBehaviour, IRestartable
 	bool leavingGround = true;
 	HashSet<GameObject> pushableObjectsNearbyPlayer;
 
-	public bool canMove = true;
+	public bool canMove;
 
 	public GameObject dieEffectLight;
 	public GameObject dieEffectDark;
