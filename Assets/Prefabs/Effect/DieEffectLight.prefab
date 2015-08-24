@@ -11,7 +11,7 @@ GameObject:
   - 198: {fileID: 19803712}
   - 199: {fileID: 19925220}
   m_Layer: 0
-  m_Name: DieEffectDark
+  m_Name: DieEffectLight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -193,7 +193,7 @@ ParticleSystem:
         rgba: 4294967295
       maxColor:
         serializedVersion: 2
-        rgba: 4286188555
+        rgba: 4290379775
       minMaxState: 2
     startSize:
       scalar: 2
@@ -1097,7 +1097,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 0}
       propertyPath: InitialModule.startColor.maxColor.rgba
-      value: 4287768146
+      value: 4290379775
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: looping
