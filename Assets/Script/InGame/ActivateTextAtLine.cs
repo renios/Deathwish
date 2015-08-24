@@ -5,8 +5,8 @@ public class ActivateTextAtLine : MonoBehaviour {
 
 	public TextAsset theText;
 
-	public int startLine;
-	public int endLine;
+	private int startLine = 0;
+	private int endLine;
 
 	public TextBoxManager theTextBox;
 
@@ -48,7 +48,7 @@ public class ActivateTextAtLine : MonoBehaviour {
 			}
 			theTextBox.ReloadScript(theText);
 			theTextBox.currentLine = startLine;
-			theTextBox.endAtLine = endLine;
+			theTextBox.endAtLine = theTextBox.textLines.Length - 1;
 			theTextBox.EnableTextBox();
 
 			if (destroyWhenActivated) 
