@@ -51,7 +51,7 @@ public class TextBoxManager : MonoBehaviour {
 	// Update is called once per frame
 	void Update () 
 	{
-		if (isActive) 
+		if (!isActive) 
 		{
 			return;
 		} 
