@@ -5,22 +5,19 @@ using Enums;
 public class WindEffect : MonoBehaviour, IRestartable
 {
 	public GameObject windEffect;
-
-	Vector3 position;
 	
 	void Start ()
 	{
 		windEffect.SetActive(true);
-		position = GetComponent<Transform> ().position;
 	}
 	
 	void Update()
 	{
-		if (Global.ingame.GetIsDarkInPosition (position) == IsDark.Light)
+		if (Global.ingame.GetIsDarkInPosition(gameObject) == IsDark.Light)
 		{
 			windEffect.SetActive (true);
 		}
-		else if (Global.ingame.GetIsDarkInPosition (position) == IsDark.Dark)
+		else if (Global.ingame.GetIsDarkInPosition(gameObject) == IsDark.Dark)
 		{
 			windEffect.SetActive (false);
 		}
