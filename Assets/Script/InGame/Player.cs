@@ -248,7 +248,7 @@ public class Player : MonoBehaviour, IRestartable
 
 	void Wind()
 	{
-		if (Global.ingame.isDark == IsDark.Light)
+		if (Global.ingame.GetIsDarkInPosition(gameObject) == IsDark.Light)
 		{
 			if (Global.ingame.inWind == true)
 			{
