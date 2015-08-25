@@ -12,7 +12,7 @@ GameObject:
   - 61: {fileID: 6183806}
   - 114: {fileID: 11421148}
   - 114: {fileID: 11443490}
-  - 114: {fileID: 11440750}
+  - 114: {fileID: 11401760}
   m_Layer: 8
   m_Name: Smoke
   m_TagString: Smoke
@@ -62,7 +62,7 @@ Transform:
   m_GameObject: {fileID: 108592}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 1.5, z: 1}
   m_Children:
   - {fileID: 443920}
   - {fileID: 469028}
@@ -105,6 +105,19 @@ BoxCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Size: {x: 1.89999998, y: 2.5}
+--- !u!114 &11401760
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 108592}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ff94c353ee259e48a3e98575a4b38f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Effect_Light: {fileID: 187232}
+  Effect_Dark: {fileID: 114734}
 --- !u!114 &11421148
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -118,19 +131,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gravityDirection: 0
   isTransparentIn: 0
---- !u!114 &11440750
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 108592}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 00a6760215443da4aac00f29cc26289a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  smokeEffect_Light: {fileID: 187232}
-  smokeEffect_Dark: {fileID: 114734}
 --- !u!114 &11443490
 MonoBehaviour:
   m_ObjectHideFlags: 1
