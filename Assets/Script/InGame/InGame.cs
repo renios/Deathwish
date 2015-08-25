@@ -47,7 +47,7 @@ public class InGame
 	
 	private IsDark DecorateByDarkSplitter(IsDark previousIsDark, Vector3 position)
 	{
-		var splitter = GameObject.FindObjectOfType<Chapter5.DarkSplitter>();
+		var splitter = Chapter5.DarkSplitter.Instance;
 		if (splitter != null)
 		{
 			if (position.y < splitter.transform.position.y)
