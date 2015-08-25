@@ -270,11 +270,10 @@ public class Player : MonoBehaviour, IRestartable
 					GetComponent<Rigidbody2D>().velocity = new Vector2(0, -windSpeed);
 				}
 			}
-			
-			if (Global.ingame.inWind == false)
-			{
-				GetComponent<Rigidbody2D>().gravityScale = gravityScaleOfStartTime;
-			}
+		}
+		if (Global.ingame.inWind == false)
+		{
+			GetComponent<Rigidbody2D>().gravityScale = gravityScaleOfStartTime;
 		}
 	}
 
