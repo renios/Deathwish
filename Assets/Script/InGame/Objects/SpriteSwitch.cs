@@ -7,11 +7,11 @@ public class SpriteSwitch : MonoBehaviour
 	public new Sprite light;
 	public Sprite dark;
 
-	private SpriteRenderer sr;
+	private SpriteRenderer spriteRenderer;
 
 	void Start ()
 	{
-		sr = GetComponent<SpriteRenderer> ();
+		spriteRenderer = GetComponent<SpriteRenderer> ();
 	}
 
 	//fatal problem. Need to solve.
@@ -20,11 +20,11 @@ public class SpriteSwitch : MonoBehaviour
 		IsDark isDarkNow = Global.ingame.GetIsDarkInPosition(gameObject);
 		if(isDarkNow == IsDark.Light)
 		{
-			sr.sprite = light;
+			spriteRenderer.sprite = light;
 		}
 		else if(isDarkNow == IsDark.Dark)
 		{
-			sr.sprite = dark;
+			spriteRenderer.sprite = dark;
 		}
 	}
 }

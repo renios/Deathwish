@@ -41,7 +41,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 153086}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 23.8600006, y: 14.3500004, z: 0}
   m_LocalScale: {x: .424863309, y: .857621253, z: 1}
   m_Children:
   - {fileID: 487820}
@@ -71,7 +71,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Size: {x: 10, y: 10}
+  m_Size: {x: 3000, y: 3000}
 --- !u!114 &11426552
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -95,7 +95,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lightTerm: 5
-  darkTerm: 20
+  darkTerm: 10
   light: {fileID: 21300000, guid: 42d56944b4b946946926307e86eaa975, type: 3}
   dark: {fileID: 0}
   lightingChecker: {fileID: 11426552}

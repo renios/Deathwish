@@ -14,7 +14,7 @@ public class Damage : MonoBehaviour
 			IsDark isDarkNow = Global.ingame.GetIsDarkInPosition(gameObject);
 			if ((isActiveAtLight && (isDarkNow == IsDark.Light)) ||
 				(isActiveAtDark && (isDarkNow == IsDark.Dark)))
-			Restarter.RestartAll();
+			GameObject.FindObjectOfType<Player>().PlayDieAnimAndRestart();
 		}
 	}
 
@@ -25,7 +25,7 @@ public class Damage : MonoBehaviour
 			IsDark isDarkNow = Global.ingame.GetIsDarkInPosition(gameObject);
 			if ((isActiveAtLight && (isDarkNow == IsDark.Light)) ||
 				(isActiveAtDark && (isDarkNow == IsDark.Dark)))
-			Restarter.RestartAll();
+			GameObject.FindObjectOfType<Player>().PlayDieAnimAndRestart();
 		}
-	}
+	}	
 }

@@ -71,6 +71,7 @@ GameObject:
   - 61: {fileID: 6194246}
   - 212: {fileID: 21231790}
   - 114: {fileID: 11446744}
+  - 114: {fileID: 11429740}
   m_Layer: 0
   m_Name: AreaMarker
   m_TagString: AreaMarker
@@ -155,6 +156,18 @@ BoxCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
+--- !u!114 &11429740
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 188422}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d945e71c115184d4b9b1b95638930104, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gravityDirection: 0
 --- !u!114 &11446744
 MonoBehaviour:
   m_ObjectHideFlags: 1

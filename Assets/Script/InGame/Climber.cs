@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using Enums;
 
 class Climber
 {
@@ -15,7 +16,7 @@ class Climber
 	//bool upOfLadder = false;
 	//bool downOfLadder = false;
 	
-	public Climber(GameObject playerGo, LadderCheckerUp ladderCheckerUp, LadderCheckerDown ladderCheckerDown, GroundChecker groundChecker, float climbSpeed)
+	public Climber(GameObject playerGo, LadderCheckerUp ladderCheckerUp, LadderCheckerDown ladderCheckerDown, GroundChecker groundChecker, float climbSpeed, float gravityScale)
 	{
 		playerRigidbody = playerGo.GetComponent<Rigidbody2D> ();
 		playerTransform = playerGo.GetComponent<Transform> ();
@@ -33,20 +34,23 @@ class Climber
 
 	public void Update()
 	{
-		UpdateIsClimb ();
-		
-		if (isClimbing)
+		if (Global.ingame.GetIsDarkInPosition(playerTransform.gameObject) == IsDark.Light)
 		{
-			bool isMoved = MoveUpDown ();
-			if (isMoved == false)
-				StayInLadder ();
-		}
-		else
-		{
-			if (ladderCheckerUp.IsUpLaddered() == false && Input.GetKey(KeyCode.UpArrow))
-				isClimbing = false;
-			if (ladderCheckerDown.IsDownLaddered() == false && Input.GetKey (KeyCode.DownArrow))
-				isClimbing = false;
+			UpdateIsClimb ();
+			
+			if (isClimbing)
+			{
+				bool isMoved = MoveUpDown ();
+				if (isMoved == false)
+					StayInLadder ();
+			}
+			else
+			{
+				if (ladderCheckerUp.IsUpLaddered() == false && Input.GetKey(KeyCode.UpArrow))
+					isClimbing = false;
+				if (ladderCheckerDown.IsDownLaddered() == false && Input.GetKey (KeyCode.DownArrow))
+					isClimbing = false;
+			}
 		}
 	}
 	
@@ -73,8 +77,6 @@ class Climber
 				OnStopClimb();
 			}
 		}
-
-
 	}
 	
 	bool MoveUpDown ()

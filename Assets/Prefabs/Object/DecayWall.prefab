@@ -12,6 +12,7 @@ GameObject:
   - 61: {fileID: 6161840}
   - 114: {fileID: 11439146}
   - 114: {fileID: 11411548}
+  - 114: {fileID: 11467312}
   m_Layer: 8
   m_Name: DecayWall
   m_TagString: Wall
@@ -71,6 +72,18 @@ MonoBehaviour:
   delay: 1
   normal: {fileID: 21300000, guid: baeb86480f1a5b44e83a9ccd6ebbdeb7, type: 3}
   transparent: {fileID: 21300000, guid: e90ea4b0cdf82bb41be285b61b89ea57, type: 3}
+--- !u!114 &11467312
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 186840}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d945e71c115184d4b9b1b95638930104, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gravityDirection: 0
 --- !u!212 &21266168
 SpriteRenderer:
   m_ObjectHideFlags: 1

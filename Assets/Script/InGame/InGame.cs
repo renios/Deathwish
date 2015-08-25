@@ -31,13 +31,35 @@ public class InGame
 			Debug.Assert(light != null);
 			if (light.GetGameObjectsInLighting().Contains(gameObject))
 			{
-				return IsDark.Light;
+				return DecorateByDarkSplitter(IsDark.Light, gameObject.transform.position);
 			}
 		}
 		return GetIsDarkInPosition(gameObject.transform.position);
 	}
 
 	public IsDark GetIsDarkInPosition(Vector3 position)
+	{
+		var firstIsDark = GetGlobalIsDark();
+		var afterApplyLamp = DecorateByLamp(firstIsDark, position);
+		var afterSplitter = DecorateByDarkSplitter(afterApplyLamp, position);
+		return afterSplitter;
+	}
+	
+	private IsDark DecorateByDarkSplitter(IsDark previousIsDark, Vector3 position)
+	{
+		var splitter = Chapter5.DarkSplitter.Instance;
+		if (splitter != null)
+		{
+			if (position.y < splitter.transform.position.y)
+			{
+				//  Debug.Log("Reversed.");
+				return ReverseIsDark(previousIsDark);
+			}
+		}
+		return previousIsDark;
+	}
+	
+	private IsDark DecorateByLamp(IsDark previousIsDark, Vector3 position)
 	{
 		Lamp nearbyLamp = null;
 		foreach(Lamp lamp in Global.ingame.LampsInMap)
@@ -62,19 +84,29 @@ public class InGame
 		}
 		else
 		{
-			if(Global.ingame.isDark == IsDark.Light)
-			{
-				return IsDark.Light;
-			}
-			else
-			{
-				return IsDark.Dark;
-			}
+			return previousIsDark;
 		}
+	}
+	
+	private IsDark GetGlobalIsDark()
+	{
+		return isDark;
 	}
 
     public Player GetPlayer()
     {
         return GameObject.FindObjectOfType<Player>();
     }
+		
+	private static IsDark ReverseIsDark(IsDark isdark)
+	{
+		if (isdark == IsDark.Dark)
+		{
+			return IsDark.Light;
+		}
+		else
+		{
+			return IsDark.Dark;
+		}
+	} 
 }
