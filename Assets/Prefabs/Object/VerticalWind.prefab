@@ -26,6 +26,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 476040}
   - 212: {fileID: 21283876}
+  - 114: {fileID: 11454866}
   m_Layer: 0
   m_Name: VerticalWind
   m_TagString: Untagged
@@ -113,6 +114,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   windDirection: 2
+--- !u!114 &11454866
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 118634}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 216fdade313af564ba5c95531641193e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  windEffect: {fileID: 188238}
 --- !u!198 &19859480
 ParticleSystem:
   m_ObjectHideFlags: 1
@@ -1234,7 +1247,15 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 118634}

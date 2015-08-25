@@ -43,6 +43,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 422068}
   - 212: {fileID: 21249108}
+  - 114: {fileID: 11412472}
   m_Layer: 0
   m_Name: HorizontalWind
   m_TagString: Untagged
@@ -101,6 +102,18 @@ BoxCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Size: {x: 20, y: .100000001}
+--- !u!114 &11412472
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 196684}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 216fdade313af564ba5c95531641193e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  windEffect: {fileID: 108082}
 --- !u!114 &11457836
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1234,7 +1247,11 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: windEffect
+      value: 
+      objectReference: {fileID: 108082}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 196684}
