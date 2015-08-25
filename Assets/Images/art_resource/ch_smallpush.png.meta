@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 918a58e3467494a2588b3d3687a30157
-timeCreated: 1440507238
+timeCreated: 1440510042
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -65,7 +65,7 @@ TextureImporter:
         width: 133
         height: 139
       alignment: 9
-      pivot: {x: .0399999991, y: .610000014}
+      pivot: {x: .0599999987, y: .620000005}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: ch_smallpush_1
       rect:
@@ -75,7 +75,7 @@ TextureImporter:
         width: 126
         height: 139
       alignment: 9
-      pivot: {x: .0700000003, y: .610000014}
+      pivot: {x: .0700000003, y: .620000005}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: ch_smallpush_2
       rect:
@@ -85,7 +85,7 @@ TextureImporter:
         width: 135
         height: 139
       alignment: 9
-      pivot: {x: .0399999991, y: .610000014}
+      pivot: {x: .0599999987, y: .620000005}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: ch_smallpush_3
       rect:
@@ -95,7 +95,7 @@ TextureImporter:
         width: 125
         height: 137
       alignment: 9
-      pivot: {x: .0700000003, y: .610000014}
+      pivot: {x: .0649999976, y: .620000005}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: ch_smallpush_4
       rect:
@@ -105,7 +105,7 @@ TextureImporter:
         width: 135
         height: 139
       alignment: 9
-      pivot: {x: .0399999991, y: .610000014}
+      pivot: {x: .0599999987, y: .620000005}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: ch_smallpush_5
       rect:
@@ -115,7 +115,7 @@ TextureImporter:
         width: 126
         height: 139
       alignment: 9
-      pivot: {x: .0700000003, y: .610000014}
+      pivot: {x: .0700000003, y: .620000005}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: ch_smallpush_6
       rect:
@@ -125,7 +125,7 @@ TextureImporter:
         width: 135
         height: 139
       alignment: 9
-      pivot: {x: .0399999991, y: .610000014}
+      pivot: {x: .0599999987, y: .620000005}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: ch_smallpush_7
       rect:
@@ -135,7 +135,7 @@ TextureImporter:
         width: 125
         height: 137
       alignment: 9
-      pivot: {x: .0700000003, y: .610000014}
+      pivot: {x: .0649999976, y: .620000005}
       border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 
