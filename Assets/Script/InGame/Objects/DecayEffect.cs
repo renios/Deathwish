@@ -23,8 +23,8 @@ public class DecayEffect : MonoBehaviour, IRestartable {
 	IEnumerator PlayDecayEffectCoroutine()
 	{
 		permanentDecayParticle.SetActive(false);
-		permanentDecayParticle.GetComponent<ParticleSystem> ().Stop ();
 		permanentDecayParticle.GetComponent<ParticleSystem> ().loop = false;
+		permanentDecayParticle.GetComponent<ParticleSystem> ().Stop ();
 		decayingParticle.SetActive(true);
 		yield return new WaitForSeconds(GetComponent<Decay>().delay);
 		afterDecayParticle.SetActive(true);
