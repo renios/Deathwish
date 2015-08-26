@@ -3,7 +3,8 @@ using System;
 using System.Collections;
 using Enums;
 
-public class GroundChecker : MonoBehaviour {
+public class GroundChecker : MonoBehaviour
+{
 	// collider name is duplicated with legacy api.
 	new BoxCollider2D collider;
 	void Start()
