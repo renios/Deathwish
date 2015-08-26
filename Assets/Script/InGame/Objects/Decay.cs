@@ -11,6 +11,7 @@ public class Decay : ObjectMonoBehaviour, IRestartable
 	private List<Collider2D> collider2Ds;
 	new private SpriteRenderer renderer;
 	private SpriteSwitch spriteSwitch;
+	public DecayEffect decayEffect;
 	bool isDestroy = false;
 	IEnumerator destroyingCoroutine;
 
@@ -19,6 +20,7 @@ public class Decay : ObjectMonoBehaviour, IRestartable
 		collider2Ds = new List<Collider2D>(GetComponents<Collider2D> ());
 		renderer = GetComponent<SpriteRenderer> ();
 		spriteSwitch = GetComponent<SpriteSwitch> ();
+		decayEffect = GetComponent<DecayEffect> ();
 	}
 
 	public override void UpdateByParent()
@@ -29,13 +31,15 @@ public class Decay : ObjectMonoBehaviour, IRestartable
 				collider.enabled = true;
 			}
 			renderer.enabled = true;
-			// FIXME : temp checking method.
-			if (GetComponent<DecayGroundEffect>() != null)
+			 
+			if (decayEffect != null)
 			{
+				if(isDestroy) return;
+
 				if (isDarkAfterLamp() == IsDark.Light)
-					GetComponent<DecayGroundEffect>().decayParticleS.SetActive(true);
+					decayEffect.permanentDecayParticle.SetActive(true);
 				else if (isDarkAfterLamp() == IsDark.Dark)
-					GetComponent<DecayGroundEffect>().decayParticleS.SetActive(false);
+					decayEffect.permanentDecayParticle.SetActive(false);
 			}
 		}
 	}
@@ -46,9 +50,9 @@ public class Decay : ObjectMonoBehaviour, IRestartable
 		foreach (var collider in collider2Ds) {
 				collider.enabled = false;
 		}
-		// FIXME : temp checking method.
-		if (GetComponent<DecayGroundEffect>() != null)
-			GetComponent<DecayGroundEffect>().decayParticleS.SetActive(false);
+
+		if (decayEffect != null)
+			decayEffect.permanentDecayParticle.SetActive(false);
 	}
 
 	void OnCollisionEnter2D(Collision2D collision)
@@ -58,9 +62,9 @@ public class Decay : ObjectMonoBehaviour, IRestartable
 		{
 			destroyingCoroutine = DestroySelf(delay);
 			StartCoroutine(destroyingCoroutine);
-			// FIXME : temp checking method.
-			if (GetComponent<DecayGroundEffect>() != null)
-				GetComponent<DecayGroundEffect>().PlayDecayEffect();
+
+			if (decayEffect != null)
+				decayEffect.PlayDecayEffect();
 		}
 	}
 
