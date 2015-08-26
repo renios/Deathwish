@@ -1,17 +1,17 @@
 fileFormatVersion: 2
-guid: cb3bbb776e492443ba25ffac8e1bca48
-timeCreated: 1440504667
+guid: 8ab4c9adf9a824ec08517ebdc480c2f8
+timeCreated: 1440509859
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: ch_push_re_50x50_0
-    21300002: ch_push_re_50x50_1
-    21300004: ch_push_re_50x50_2
-    21300006: ch_push_re_50x50_3
-    21300008: ch_push_re_50x50_4
-    21300010: ch_push_re_50x50_5
-    21300012: ch_push_re_50x50_6
-    21300014: ch_push_re_50x50_7
+    21300000: ch2_smallpush_0
+    21300002: ch2_smallpush_1
+    21300004: ch2_smallpush_2
+    21300006: ch2_smallpush_3
+    21300008: ch2_smallpush_4
+    21300010: ch2_smallpush_5
+    21300012: ch2_smallpush_6
+    21300014: ch2_smallpush_7
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -57,85 +57,85 @@ TextureImporter:
   buildTargetSettings: []
   spriteSheet:
     sprites:
-    - name: ch_push_re_50x50_0
+    - name: ch2_smallpush_0
       rect:
         serializedVersion: 2
-        x: 3
-        y: 6
-        width: 133
-        height: 139
+        x: 2
+        y: 5
+        width: 135
+        height: 142
       alignment: 9
-      pivot: {x: .0299999993, y: .610000014}
+      pivot: {x: .0599999987, y: .610000014}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ch_push_re_50x50_1
+    - name: ch2_smallpush_1
       rect:
         serializedVersion: 2
         x: 144
-        y: 6
-        width: 126
-        height: 139
-      alignment: 9
-      pivot: {x: .0599999987, y: .610000014}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ch_push_re_50x50_2
-      rect:
-        serializedVersion: 2
-        x: 280
-        y: 6
-        width: 135
-        height: 139
-      alignment: 9
-      pivot: {x: .0299999993, y: .610000014}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ch_push_re_50x50_3
-      rect:
-        serializedVersion: 2
-        x: 438
-        y: 8
-        width: 125
-        height: 137
-      alignment: 9
-      pivot: {x: .0399999991, y: .610000014}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ch_push_re_50x50_4
-      rect:
-        serializedVersion: 2
-        x: 595
-        y: 6
-        width: 135
-        height: 139
-      alignment: 9
-      pivot: {x: .0299999993, y: .610000014}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ch_push_re_50x50_5
-      rect:
-        serializedVersion: 2
-        x: 773
         y: 5
-        width: 126
-        height: 139
+        width: 129
+        height: 142
+      alignment: 9
+      pivot: {x: .0799999982, y: .610000014}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ch2_smallpush_2
+      rect:
+        serializedVersion: 2
+        x: 279
+        y: 5
+        width: 138
+        height: 142
       alignment: 9
       pivot: {x: .0599999987, y: .610000014}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ch_push_re_50x50_6
+    - name: ch2_smallpush_3
       rect:
         serializedVersion: 2
-        x: 924
-        y: 6
-        width: 135
-        height: 139
+        x: 435
+        y: 7
+        width: 129
+        height: 140
       alignment: 9
-      pivot: {x: .0299999993, y: .610000014}
+      pivot: {x: .0700000003, y: .610000014}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ch_push_re_50x50_7
+    - name: ch2_smallpush_4
       rect:
         serializedVersion: 2
-        x: 1076
-        y: 8
-        width: 125
-        height: 137
+        x: 594
+        y: 5
+        width: 139
+        height: 142
       alignment: 9
-      pivot: {x: .0399999991, y: .610000014}
+      pivot: {x: .0700000003, y: .610000014}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ch2_smallpush_5
+      rect:
+        serializedVersion: 2
+        x: 771
+        y: 5
+        width: 129
+        height: 142
+      alignment: 9
+      pivot: {x: .075000003, y: .610000014}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ch2_smallpush_6
+      rect:
+        serializedVersion: 2
+        x: 923
+        y: 5
+        width: 138
+        height: 142
+      alignment: 9
+      pivot: {x: .0700000003, y: .610000014}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ch2_smallpush_7
+      rect:
+        serializedVersion: 2
+        x: 1074
+        y: 7
+        width: 129
+        height: 140
+      alignment: 9
+      pivot: {x: .0700000003, y: .610000014}
       border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 
