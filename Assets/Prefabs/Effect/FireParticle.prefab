@@ -335,10 +335,10 @@ ParticleSystem:
           inSlope: 3.49526381
           outSlope: 3.49526381
           tangentMode: 0
-        - time: .99636364
-          value: .351086438
-          inSlope: -.670020521
-          outSlope: -.670020521
+        - time: .988489628
+          value: 0
+          inSlope: -1.28649795
+          outSlope: -1.28649795
           tangentMode: 0
         m_PreInfinity: 2
         m_PostInfinity: 2
@@ -402,16 +402,16 @@ ParticleSystem:
           rgba: 4288411883
         key1:
           serializedVersion: 2
-          rgba: 2907103999
+          rgba: 4282835711
         key2:
           serializedVersion: 2
-          rgba: 2769366527
+          rgba: 4279315967
         key3:
           serializedVersion: 2
-          rgba: 2415922018
+          rgba: 925867
         key4:
           serializedVersion: 2
-          rgba: 2215718399
+          rgba: 2417044991
         key5:
           serializedVersion: 2
           rgba: 1125887
@@ -431,8 +431,8 @@ ParticleSystem:
         ctime7: 0
         atime0: 0
         atime1: 19275
-        atime2: 49344
-        atime3: 65342
+        atime2: 44911
+        atime3: 65535
         atime4: 65342
         atime5: 0
         atime6: 0
@@ -1114,7 +1114,51 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: ColorModule.gradient.maxGradient.key1.rgba
+      value: 4282835711
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: ColorModule.gradient.maxGradient.key3.rgba
+      value: 925867
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: ColorModule.gradient.maxGradient.key4.rgba
+      value: 2417044991
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: ColorModule.gradient.maxGradient.atime3
+      value: 65535
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: ColorModule.gradient.maxGradient.m_NumAlphaKeys
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: ColorModule.gradient.maxGradient.key2.rgba
+      value: 4279315967
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: SizeModule.curve.maxCurve.m_Curve.Array.data[1].value
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: SizeModule.curve.maxCurve.m_Curve.Array.data[1].time
+      value: .988489628
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: SizeModule.curve.maxCurve.m_Curve.Array.data[1].inSlope
+      value: -1.28649795
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: SizeModule.curve.maxCurve.m_Curve.Array.data[1].outSlope
+      value: -1.28649795
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: ColorModule.gradient.maxGradient.atime2
+      value: 44911
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 141760}
