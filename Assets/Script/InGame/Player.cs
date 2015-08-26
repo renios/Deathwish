@@ -369,10 +369,14 @@ public class Player : MonoBehaviour, IRestartable
 	{
 		GetComponent<Rigidbody2D>().velocity = Vector2.zero;
 		gameObject.transform.position = startPoint;
-		//Temporarily reset isDark in Player.cs, but it should be moved to other script.
-		Global.ingame.isDark = IsDark.Light;
 		climber = new Climber (gameObject, ladderCheckerUp, ladderCheckerDown, groundChecker, climbSpeed, gravityScaleOfStartTime);
 		GetComponent<Rigidbody2D> ().gravityScale = gravityScaleOfStartTime;
 		pushableObjectsNearbyPlayer = new HashSet<GameObject>();
+		
+		//FIXME: scene reseting is should moved.
+		var shadowStarter = GameObject.FindObjectOfType<ShadowStarter>();
+		if (shadowStarter == null) {
+			Global.ingame.isDark = Enums.IsDark.Light;
+		}
 	}
 }
