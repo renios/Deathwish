@@ -97,6 +97,7 @@ public class Player : MonoBehaviour, IRestartable
 		animator.SetBool("isClimbing", climber.IsClimbing());
 		animator.SetBool("isDark", IsItDark ());
 		animator.SetBool("isPushing", IsPlayerPushingObject());
+		animator.SetBool("isObjectSmall", WhatIsPlayerPushingObject() == ObjectSize.Small);
 
 		soundEffectController.Play ();
 
@@ -333,17 +334,53 @@ public class Player : MonoBehaviour, IRestartable
 		{
 			// It prevent playing 'push' animation when Player is over or under the box (or lamp).
 			float maximumDeltaY = 1;
-			if (Mathf.Abs(gameObject.transform.position.y - pushableObject.transform.position.y) < maximumDeltaY)
-			{
-				// Player -> Box
-				if ((gameObject.GetComponent<Rigidbody2D>().velocity.x > 0) && (gameObject.transform.position.x < pushableObject.transform.position.x))
-					return true;
-		
-				// Box <- Player
-				if ((gameObject.GetComponent<Rigidbody2D>().velocity.x < 0) && (gameObject.transform.position.x > pushableObject.transform.position.x))
-					return true;
-			}
+			if ((Mathf.Abs(gameObject.transform.position.y - pushableObject.transform.position.y) < maximumDeltaY) &&
+				(IsSameDirectionWithPlayerVelocity(pushableObject)))
+				return true;
 		}
+
+		return false;
+	}
+
+	public enum ObjectSize
+	{
+		Null,
+		Small,
+		Big
+	}
+
+	ObjectSize WhatIsPlayerPushingObject()
+	{
+		// It prevent playing 'push' animation when Player is over or under the box (or lamp).
+		float maximumDeltaY = 1;
+		// It divide big / small push animation.
+		float minimumDeltaY = 0.5f;
+
+		HashSet<GameObject> pushableObjectsAtSameDirection = new HashSet<GameObject>();
+		foreach (GameObject pushableObject in pushableObjectsNearbyPlayer)
+		{
+			if (IsSameDirectionWithPlayerVelocity(pushableObject))
+				pushableObjectsAtSameDirection.Add(pushableObject);
+		}
+
+		if (pushableObjectsAtSameDirection.Any(k => (Mathf.Abs(gameObject.transform.position.y - k.transform.position.y) < minimumDeltaY) == true))
+			return ObjectSize.Big;
+
+		if (pushableObjectsAtSameDirection.Any(k => (Mathf.Abs(gameObject.transform.position.y - k.transform.position.y) < maximumDeltaY) == true))
+				return ObjectSize.Small;
+
+		return ObjectSize.Null;
+	}		
+
+	bool IsSameDirectionWithPlayerVelocity(GameObject pushableObject)
+	{
+		// Player -> Box
+		if ((gameObject.GetComponent<Rigidbody2D>().velocity.x > 0) && (gameObject.transform.position.x < pushableObject.transform.position.x))
+			return true;
+
+		// Box <- Player
+		if ((gameObject.GetComponent<Rigidbody2D>().velocity.x < 0) && (gameObject.transform.position.x > pushableObject.transform.position.x))
+			return true;
 
 		return false;
 	}
