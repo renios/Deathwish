@@ -10,7 +10,7 @@ GameObject:
   - 4: {fileID: 446504}
   - 61: {fileID: 6117094}
   - 114: {fileID: 11419696}
-  - 114: {fileID: 11490810}
+  - 114: {fileID: 11499520}
   m_Layer: 0
   m_Name: Grass
   m_TagString: Grass
@@ -112,7 +112,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   light: {fileID: 21300000, guid: b8e6d316afed4624dbe54caa25e5f77b, type: 3}
   dark: {fileID: 21300000, guid: faa132a5be0e7e94cbdd5ad0ab51201e, type: 3}
---- !u!114 &11490810
+--- !u!114 &11499520
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -120,7 +120,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 138448}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 19185949f283042ca8baa6597ea138aa, type: 3}
+  m_Script: {fileID: 11500000, guid: 53e9fe27f70fda74491eeac4fdf98d1c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   gravityDirection: 0
@@ -200,7 +200,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -.0500000007
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: spriteDifference
+      value: .0500000007
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

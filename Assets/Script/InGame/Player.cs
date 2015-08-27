@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 using Enums;
@@ -30,8 +30,6 @@ public class Player : MonoBehaviour, IRestartable
 	private AllAboutO2 allAboutO2;
 
 	float gravityScaleOfStartTime;
-	bool onAir = true;
-	bool leavingGround = true;
 	HashSet<GameObject> pushableObjectsNearbyPlayer;
 
 	public bool canMove;
@@ -40,6 +38,11 @@ public class Player : MonoBehaviour, IRestartable
 	public GameObject dieEffectDark;
 
 	public GravityDirection gravityDirection;
+
+	public SoundType soundType;
+	public bool withGrass = false;
+	bool onAir = true;
+	bool leavingGround = true;
 
 	//used for Text display purposes.
 
@@ -54,7 +57,6 @@ public class Player : MonoBehaviour, IRestartable
 		yOfLowestObject = ObjectFinder.FindLowest ().position.y;
 		climber = new Climber (gameObject, ladderCheckerUp, ladderCheckerDown, groundChecker, climbSpeed, gravityScaleOfStartTime);
 		soundEffectController = GetComponentInChildren<SoundEffectController> ();
-		soundEffectController.player = this;
 
 		if(gravityDirection == GravityDirection.Reverse)
 		{
@@ -83,7 +85,7 @@ public class Player : MonoBehaviour, IRestartable
 			Restarter.RestartAll();
 		}
 
-		soundEffectController.characterAction = CharacterAction.Default;
+		soundType = SoundType.None;
 
 		Wind ();
 		Move ();
@@ -99,7 +101,9 @@ public class Player : MonoBehaviour, IRestartable
 		animator.SetBool("isPushing", IsPlayerPushingObject());
 		animator.SetBool("isObjectSmall", WhatIsPlayerPushingObject() == ObjectSize.Small);
 
-		soundEffectController.Play ();
+		if(IsPlayerPushingObject()) soundType = SoundType.BoxPush;
+
+		soundEffectController.Play (soundType);
 
 		IsItDark ();
 		
@@ -109,14 +113,15 @@ public class Player : MonoBehaviour, IRestartable
 		}
 	}
 	
-	public void PlayDieAnimAndRestart()
+	public void PlayDieAnimSoundAndRestart(SoundType soundType)
 	{
-		StartCoroutine(PlayDieAnimAndRestartCoroutine());
+		StartCoroutine(PlayDieAnimSoundAndRestartCoroutine(soundType));
 	}
 
-	IEnumerator PlayDieAnimAndRestartCoroutine()
+	IEnumerator PlayDieAnimSoundAndRestartCoroutine(SoundType soundType)
 	{
 		canMove = false;
+		soundEffectController.Play (soundType);
 		ReverseSpriteDirection();
 		animator.SetTrigger("Die");
 		PlayDieEffect();
@@ -195,7 +200,8 @@ public class Player : MonoBehaviour, IRestartable
 				GetComponent<Rigidbody2D> ().velocity = new Vector2 (moveSpeed * GetDrag (Direction.Horizontal), GetComponent<Rigidbody2D> ().velocity.y);
 				if(!onAir)
 				{
-					soundEffectController.characterAction = CharacterAction.Walk;
+					if(withGrass) soundType = SoundType.GrassPassing;
+					else soundType = SoundType.Walk;
 				}
 			}
 			else if (Input.GetKey (KeyCode.LeftArrow))
@@ -203,7 +209,8 @@ public class Player : MonoBehaviour, IRestartable
 				GetComponent<Rigidbody2D> ().velocity = new Vector2 (-moveSpeed * GetDrag (Direction.Horizontal), GetComponent<Rigidbody2D> ().velocity.y);
 				if(!onAir)
 				{
-					soundEffectController.characterAction = CharacterAction.Walk;
+					if(withGrass) soundType = SoundType.GrassPassing;
+					else soundType = SoundType.Walk;
 				}
 			}
 			else
@@ -237,7 +244,7 @@ public class Player : MonoBehaviour, IRestartable
 		}
 		else {return;}
 
-		soundEffectController.characterAction = CharacterAction.Jump;
+		soundType = SoundType.Jump;
 		onAir = true;
 	}
 
@@ -298,7 +305,7 @@ public class Player : MonoBehaviour, IRestartable
 		{
 			if(groundChecker.IsGrounded())
 			{
-				soundEffectController.characterAction = CharacterAction.Land;
+				soundType = SoundType.Land;
 				onAir = false;
 				leavingGround = false;
 			}
