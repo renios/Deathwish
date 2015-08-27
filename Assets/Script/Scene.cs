@@ -24,10 +24,10 @@ public class Scene
 
 	public static void Load(string sceneName, SceneType sceneType)
 	{
-		BeforeLoad ();
 		currentSceneName = new MapName(sceneName);
 		currentSceneType = sceneType;
 		Application.LoadLevel (sceneName);
+		BeforeLoad (); // global.ingame should be null after loading scene.
 		AfterLoad ();
 	}
 
@@ -71,6 +71,20 @@ public class Scene
 			return null;
 		}
     }
+	
+	public static LevelTag? GetPreviousLevelTag(LevelTag current)
+	{
+		IEnumerable<LevelTag> levelTags = levelTagToMapName.Keys.Reverse();
+		var nextLevels = levelTags.SkipWhile(levelTag => levelTag.CompareTo(current) >= 0)
+			.ToList();
+
+		if (nextLevels.Count > 0)
+		{
+			return nextLevels.First();
+		} else {
+			return null;
+		}
+	}
 
     private static Dictionary<MapName, LevelTag> mapNameToLevelTag = new Dictionary<MapName, LevelTag>();
 	private static SortedDictionary<LevelTag, MapName> levelTagToMapName = new SortedDictionary<LevelTag, MapName>();
@@ -83,8 +97,8 @@ public class Scene
 
     public static void AddStage(MapName mapName, LevelTag levelTag)
     {
-		mapNameToLevelTag.Add(mapName, levelTag);
-		levelTagToMapName.Add(levelTag, mapName);
+		mapNameToLevelTag[mapName] = levelTag;
+		levelTagToMapName[levelTag] = mapName;
     }
 
     private static void BeforeLoad()

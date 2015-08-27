@@ -58,7 +58,7 @@ public class TextBoxManager : MonoBehaviour {
 
 		theText.text = textLines [currentLine];
 		
-		if (Input.GetKeyDown (KeyCode.Return)) 
+		if (Input.GetKeyDown (KeyCode.Space)) 
 		{
 			currentLine += 1;
 		}

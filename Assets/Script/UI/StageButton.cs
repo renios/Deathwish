@@ -16,7 +16,7 @@ namespace UI
 		{
 			parsedLevelTag = new LevelTag(levelTag);
 		}
-		
+
 		public LevelTag GetLevelTag()
 		{
 			return parsedLevelTag;
@@ -38,7 +38,8 @@ namespace UI
 			{
 				return false;
 			}
-			return PlayerPrefs.GetInt(parsedLevelTag.ToString()) == 1;
+			var previousLevelTag = Scene.GetPreviousLevelTag(parsedLevelTag);
+			return PlayerPrefs.GetInt(previousLevelTag.ToString()) == 0;
 		}
 
 		public void Lock()
