@@ -2954,7 +2954,19 @@ Prefab:
     - target: {fileID: 11459630, guid: c05202b64616b4e54a784411ce383903, type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 2091290252}
+      objectReference: {fileID: 3726094}
+    - target: {fileID: 11459630, guid: c05202b64616b4e54a784411ce383903, type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnButtonClicked
+      objectReference: {fileID: 0}
+    - target: {fileID: 11459630, guid: c05202b64616b4e54a784411ce383903, type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11432724, guid: c05202b64616b4e54a784411ce383903, type: 2}
+      propertyPath: mapName
+      value: Chapter0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c05202b64616b4e54a784411ce383903, type: 2}
   m_IsPrefabParent: 0
@@ -3555,12 +3567,6 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fc9029619a5774b9c83b8cbfb6a06d92, type: 2}
   m_IsPrefabParent: 0
---- !u!114 &2091290252 stripped
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 11431376, guid: fc9029619a5774b9c83b8cbfb6a06d92,
-    type: 2}
-  m_PrefabInternal: {fileID: 2091290251}
-  m_Script: {fileID: 11500000, guid: dbf0cc98f83824fe1a965867219df400, type: 3}
 --- !u!1 &2135469491
 GameObject:
   m_ObjectHideFlags: 0
