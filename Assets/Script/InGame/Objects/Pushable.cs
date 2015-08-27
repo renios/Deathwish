@@ -4,7 +4,6 @@ using Enums;
 
 public class Pushable : MonoBehaviour, IRestartable
 {
-
 	private Vector3 originalPosition;
 	public bool isLamp;
 	

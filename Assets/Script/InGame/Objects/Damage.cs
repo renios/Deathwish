@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 using Enums;
 
@@ -14,7 +14,7 @@ public class Damage : MonoBehaviour
 			IsDark isDarkNow = Global.ingame.GetIsDarkInPosition(gameObject);
 			if ((isActiveAtLight && (isDarkNow == IsDark.Light)) ||
 				(isActiveAtDark && (isDarkNow == IsDark.Dark)))
-			GameObject.FindObjectOfType<Player>().PlayDieAnimAndRestart();
+			GameObject.FindObjectOfType<Player>().PlayDieAnimSoundAndRestart(soundType);
 		}
 	}
 
@@ -25,7 +25,18 @@ public class Damage : MonoBehaviour
 			IsDark isDarkNow = Global.ingame.GetIsDarkInPosition(gameObject);
 			if ((isActiveAtLight && (isDarkNow == IsDark.Light)) ||
 				(isActiveAtDark && (isDarkNow == IsDark.Dark)))
-			GameObject.FindObjectOfType<Player>().PlayDieAnimAndRestart();
+			GameObject.FindObjectOfType<Player>().PlayDieAnimSoundAndRestart(soundType);
 		}
-	}	
+	}
+
+	SoundType soundType
+	{
+		get
+		{
+			if(this.tag == "Spike") return SoundType.SpikeDeath;
+			if(this.tag == "Fire") return SoundType.FireDeath;
+			if(this.tag == "Grass") return SoundType.SpikeDeath;
+			else return SoundType.None;
+		}
+	}
 }

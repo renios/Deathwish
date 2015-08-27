@@ -3,12 +3,24 @@ using System.Collections;
 using System.Collections.Generic;
 using Enums;
 
-public class SoundEffectController : MonoBehaviour
+public class SoundEffectController : MonoBehaviour, IRestartable
 {
-	public Player player;
+	public AudioClip walkSound;
+	public AudioClip landSound;
+	public AudioClip JumpSound;
+	public AudioClip grassPassingSound;
+	public AudioClip swimSound;
+	public AudioClip boxFallingSound;
+	public AudioClip boxPushSound;
+	public AudioClip openDoorSound;
+	public AudioClip lightningSound;
+	public AudioClip decaySound;
+	public AudioClip mirrorSound;
+	public AudioClip fireDeathSound;
+	public AudioClip spikeDeathSound;
+	public AudioClip dustDeathSound;
+
 	public AudioSource audioSource;
-	public List<AudioClip> audioClips;
-	public CharacterAction characterAction;
 	public float delay;
 	float timeAfterPlay;
 	bool recentlyPlayed;
@@ -16,7 +28,6 @@ public class SoundEffectController : MonoBehaviour
 	void Start()
 	{
 		audioSource = GetComponent<AudioSource> ();
-		characterAction = CharacterAction.Default;
 		recentlyPlayed = false;
 	}
 
@@ -33,23 +44,76 @@ public class SoundEffectController : MonoBehaviour
 		}
 	}
 
-	public void Play()
+	public void Play(SoundType soundType)
 	{
-		if(characterAction == CharacterAction.Walk)
+		if(soundType == SoundType.FireDeath || soundType == SoundType.DustDeath
+		   || soundType == SoundType.SpikeDeath)
+		{
+			switch(soundType)
+			{
+				case SoundType.DustDeath:
+					audioSource.PlayOneShot(dustDeathSound);
+					break;
+				case SoundType.FireDeath:
+					audioSource.PlayOneShot(fireDeathSound);
+					break;
+				case SoundType.SpikeDeath:
+					audioSource.PlayOneShot(spikeDeathSound);
+					break;
+				default:
+					break;
+			}
+
+			return;
+		}
+
+		if(soundType == SoundType.Walk || soundType == SoundType.GrassPassing
+		   || soundType == SoundType.BoxPush || soundType == SoundType.Swim)
 		{
 			if(recentlyPlayed) return;
 
-			audioSource.PlayOneShot(audioClips[Random.Range(2, 4)]);
 			timeAfterPlay = 0;
 			recentlyPlayed = true;
+
+			switch(soundType)
+			{
+				case SoundType.BoxPush:
+					audioSource.PlayOneShot(boxPushSound);
+					break;
+				case SoundType.Walk:
+					audioSource.PlayOneShot(walkSound);
+					break;
+				case SoundType.GrassPassing:
+					audioSource.PlayOneShot(grassPassingSound);
+					break;
+				case SoundType.Swim:
+					audioSource.PlayOneShot(swimSound);
+					break;
+				default:
+					break;
+			}
+
 			return;
 		}
 
 		timeAfterPlay = 0;
 		recentlyPlayed = false;
 
-		if(characterAction == CharacterAction.Default) return;
-		if(characterAction == CharacterAction.Jump) audioSource.PlayOneShot(audioClips[0]);
-		if(characterAction == CharacterAction.Land) audioSource.PlayOneShot(audioClips[1]);
+		if(soundType == SoundType.None) return;
+		if(soundType == SoundType.Jump) audioSource.PlayOneShot(JumpSound);
+		if(soundType == SoundType.Land) audioSource.PlayOneShot(landSound);
+
+		if(soundType == SoundType.OpenDoor) audioSource.PlayOneShot(openDoorSound);
+		if(soundType == SoundType.Mirror) return;//audioSource.PlayOneShot(mirrorSound);
+
+		if(soundType == SoundType.Decay) return;//audioSource.PlayOneShot(decaySound);
+
+		return;
+	}
+
+	void IRestartable.Restart()
+	{
+		timeAfterPlay = 0;
+		recentlyPlayed = false;
 	}
 }

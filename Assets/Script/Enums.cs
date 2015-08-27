@@ -10,12 +10,23 @@ namespace Enums
 		Reverse
 	}
 
-	public enum CharacterAction
+	public enum SoundType
 	{
-		Default,
-		Walk,
-		Jump,
-		Land
+		None,//
+		Walk,//
+		Jump,//
+		Land,//
+		GrassPassing,//
+		Swim,
+		BoxPush,//
+		FireDeath,//
+		SpikeDeath,//
+		DustDeath,
+		OpenDoor,//
+		Mirror,
+		Decay,//
+		BoxFalling,
+		Lightning
 	}
 
 	//FIXME : need better name

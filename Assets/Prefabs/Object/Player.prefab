@@ -637,15 +637,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e17075f44287fc41847791b5e6720b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
+  walkSound: {fileID: 8300000, guid: 40442b9acfdaffd45af1710b42d09550, type: 3}
+  landSound: {fileID: 8300000, guid: def339c7cb5d402449c23f8564a39995, type: 3}
+  JumpSound: {fileID: 8300000, guid: f0d1faa619e7a0b46bdefb29dd2f0ce3, type: 3}
+  grassPassingSound: {fileID: 8300000, guid: d45fc08bfb551eb4da5cc659fba258fa, type: 3}
+  swimSound: {fileID: 8300000, guid: 43ac3fc15f91a764bb55239b6f149be6, type: 3}
+  boxFallingSound: {fileID: 8300000, guid: 7a70e6cfbd78987419699dc1505a7a6d, type: 3}
+  boxPushSound: {fileID: 8300000, guid: 9fe0ca1c38b48d245b92a0fa982bc328, type: 3}
+  openDoorSound: {fileID: 8300000, guid: 7fcb0a7e9c989b14d9a0cae859577b3f, type: 3}
+  lightningSound: {fileID: 8300000, guid: 57b4aff803ade76408a5e6ace9a2ed93, type: 3}
+  decaySound: {fileID: 0}
+  mirrorSound: {fileID: 0}
+  fireDeathSound: {fileID: 0}
+  spikeDeathSound: {fileID: 0}
+  dustDeathSound: {fileID: 0}
   audioSource: {fileID: 0}
-  audioClips:
-  - {fileID: 8300000, guid: f0d1faa619e7a0b46bdefb29dd2f0ce3, type: 3}
-  - {fileID: 8300000, guid: c6d07b2be26888c47bf13770e14604d6, type: 3}
-  - {fileID: 8300000, guid: 0fab9756922d40946b1a8c999957f6d7, type: 3}
-  - {fileID: 8300000, guid: 90c5cbba585142048ab0d599398213bb, type: 3}
-  - {fileID: 8300000, guid: c82e77d24b481a4419d4567c709ab488, type: 3}
-  characterAction: 0
   delay: .5
 --- !u!114 &11481302
 MonoBehaviour:
@@ -688,6 +694,8 @@ MonoBehaviour:
   dieEffectLight: {fileID: 143462, guid: 59f999d554e654cf1b91749c7c8aea54, type: 2}
   dieEffectDark: {fileID: 143462, guid: aa5af728b41384adc84775e6462b2641, type: 2}
   gravityDirection: 0
+  soundType: 0
+  withGrass: 0
 --- !u!114 &11489126
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1035,6 +1043,42 @@ Prefab:
       propertyPath: dieEffectDark
       value: 
       objectReference: {fileID: 143462, guid: aa5af728b41384adc84775e6462b2641, type: 2}
+    - target: {fileID: 0}
+      propertyPath: walkSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 40442b9acfdaffd45af1710b42d09550, type: 3}
+    - target: {fileID: 0}
+      propertyPath: landSound
+      value: 
+      objectReference: {fileID: 8300000, guid: def339c7cb5d402449c23f8564a39995, type: 3}
+    - target: {fileID: 0}
+      propertyPath: JumpSound
+      value: 
+      objectReference: {fileID: 8300000, guid: f0d1faa619e7a0b46bdefb29dd2f0ce3, type: 3}
+    - target: {fileID: 0}
+      propertyPath: grassPassingSound
+      value: 
+      objectReference: {fileID: 8300000, guid: d45fc08bfb551eb4da5cc659fba258fa, type: 3}
+    - target: {fileID: 0}
+      propertyPath: swimSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 43ac3fc15f91a764bb55239b6f149be6, type: 3}
+    - target: {fileID: 0}
+      propertyPath: boxFallingSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 7a70e6cfbd78987419699dc1505a7a6d, type: 3}
+    - target: {fileID: 0}
+      propertyPath: boxPushSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 9fe0ca1c38b48d245b92a0fa982bc328, type: 3}
+    - target: {fileID: 0}
+      propertyPath: openDoorSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 7fcb0a7e9c989b14d9a0cae859577b3f, type: 3}
+    - target: {fileID: 0}
+      propertyPath: lightningSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 57b4aff803ade76408a5e6ace9a2ed93, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 141626}
