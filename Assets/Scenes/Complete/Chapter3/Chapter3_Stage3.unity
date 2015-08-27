@@ -380,6 +380,10 @@ Prefab:
       propertyPath: movePoints.Array.data[1]
       value: 
       objectReference: {fileID: 604257343}
+    - target: {fileID: 19804214, guid: ca70040b77ffa4cc9972be70036c707d, type: 2}
+      propertyPath: ShapeModule.radius
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ca70040b77ffa4cc9972be70036c707d, type: 2}
   m_IsPrefabParent: 0
@@ -484,6 +488,10 @@ Prefab:
       propertyPath: movePoints.Array.data[1]
       value: 
       objectReference: {fileID: 466872633}
+    - target: {fileID: 19804214, guid: ca70040b77ffa4cc9972be70036c707d, type: 2}
+      propertyPath: ShapeModule.radius
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ca70040b77ffa4cc9972be70036c707d, type: 2}
   m_IsPrefabParent: 0
@@ -918,6 +926,10 @@ Prefab:
       propertyPath: movePoints.Array.data[1]
       value: 
       objectReference: {fileID: 1589103124}
+    - target: {fileID: 19804214, guid: ca70040b77ffa4cc9972be70036c707d, type: 2}
+      propertyPath: ShapeModule.radius
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ca70040b77ffa4cc9972be70036c707d, type: 2}
   m_IsPrefabParent: 0
@@ -1436,6 +1448,10 @@ Prefab:
       propertyPath: movePoints.Array.data[1]
       value: 
       objectReference: {fileID: 1699305136}
+    - target: {fileID: 19804214, guid: ca70040b77ffa4cc9972be70036c707d, type: 2}
+      propertyPath: ShapeModule.radius
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ca70040b77ffa4cc9972be70036c707d, type: 2}
   m_IsPrefabParent: 0
@@ -4103,6 +4119,10 @@ Prefab:
     - target: {fileID: 11438668, guid: 7e5d355abbcd1cf4fb541f2e310bb2b7, type: 2}
       propertyPath: lampProperty
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11438668, guid: 7e5d355abbcd1cf4fb541f2e310bb2b7, type: 2}
+      propertyPath: detectingRadius
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7e5d355abbcd1cf4fb541f2e310bb2b7, type: 2}
@@ -8138,6 +8158,10 @@ Prefab:
       propertyPath: movePoints.Array.data[0]
       value: 
       objectReference: {fileID: 1820033831}
+    - target: {fileID: 19804214, guid: ca70040b77ffa4cc9972be70036c707d, type: 2}
+      propertyPath: ShapeModule.radius
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ca70040b77ffa4cc9972be70036c707d, type: 2}
   m_IsPrefabParent: 0
@@ -8760,6 +8784,10 @@ Prefab:
       propertyPath: movePoints.Array.data[1]
       value: 
       objectReference: {fileID: 80833608}
+    - target: {fileID: 19804214, guid: ca70040b77ffa4cc9972be70036c707d, type: 2}
+      propertyPath: ShapeModule.radius
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ca70040b77ffa4cc9972be70036c707d, type: 2}
   m_IsPrefabParent: 0
@@ -9098,6 +9126,10 @@ Prefab:
       propertyPath: movePoints.Array.data[1]
       value: 
       objectReference: {fileID: 1305938573}
+    - target: {fileID: 19804214, guid: ca70040b77ffa4cc9972be70036c707d, type: 2}
+      propertyPath: ShapeModule.radius
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ca70040b77ffa4cc9972be70036c707d, type: 2}
   m_IsPrefabParent: 0
@@ -12920,6 +12952,10 @@ Prefab:
       propertyPath: movePoints.Array.data[1]
       value: 
       objectReference: {fileID: 841901364}
+    - target: {fileID: 19804214, guid: ca70040b77ffa4cc9972be70036c707d, type: 2}
+      propertyPath: ShapeModule.radius
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ca70040b77ffa4cc9972be70036c707d, type: 2}
   m_IsPrefabParent: 0
@@ -16078,6 +16114,10 @@ Prefab:
       propertyPath: movePoints.Array.data[1]
       value: 
       objectReference: {fileID: 628735995}
+    - target: {fileID: 19804214, guid: ca70040b77ffa4cc9972be70036c707d, type: 2}
+      propertyPath: ShapeModule.radius
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ca70040b77ffa4cc9972be70036c707d, type: 2}
   m_IsPrefabParent: 0
@@ -18330,6 +18370,10 @@ Prefab:
       propertyPath: movePoints.Array.data[1]
       value: 
       objectReference: {fileID: 152511306}
+    - target: {fileID: 19804214, guid: ca70040b77ffa4cc9972be70036c707d, type: 2}
+      propertyPath: ShapeModule.radius
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ca70040b77ffa4cc9972be70036c707d, type: 2}
   m_IsPrefabParent: 0
@@ -18480,6 +18524,10 @@ Prefab:
       propertyPath: movePoints.Array.data[1]
       value: 
       objectReference: {fileID: 1363923691}
+    - target: {fileID: 19804214, guid: ca70040b77ffa4cc9972be70036c707d, type: 2}
+      propertyPath: ShapeModule.radius
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ca70040b77ffa4cc9972be70036c707d, type: 2}
   m_IsPrefabParent: 0
@@ -19156,6 +19204,10 @@ Prefab:
       propertyPath: movePoints.Array.data[4]
       value: 
       objectReference: {fileID: 51948769}
+    - target: {fileID: 19804214, guid: ca70040b77ffa4cc9972be70036c707d, type: 2}
+      propertyPath: ShapeModule.radius
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ca70040b77ffa4cc9972be70036c707d, type: 2}
   m_IsPrefabParent: 0
@@ -19214,6 +19266,10 @@ Prefab:
       propertyPath: movePoints.Array.data[1]
       value: 
       objectReference: {fileID: 1015270183}
+    - target: {fileID: 19804214, guid: ca70040b77ffa4cc9972be70036c707d, type: 2}
+      propertyPath: ShapeModule.radius
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ca70040b77ffa4cc9972be70036c707d, type: 2}
   m_IsPrefabParent: 0
@@ -20004,6 +20060,18 @@ Prefab:
       propertyPath: movePoints.Array.data[1]
       value: 
       objectReference: {fileID: 1150645606}
+    - target: {fileID: 19804214, guid: ca70040b77ffa4cc9972be70036c707d, type: 2}
+      propertyPath: ShapeModule.radius
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 19804214, guid: ca70040b77ffa4cc9972be70036c707d, type: 2}
+      propertyPath: InitialModule.maxNumParticles
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 19804214, guid: ca70040b77ffa4cc9972be70036c707d, type: 2}
+      propertyPath: EmissionModule.rate.scalar
+      value: 20
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ca70040b77ffa4cc9972be70036c707d, type: 2}
   m_IsPrefabParent: 0
@@ -20342,6 +20410,10 @@ Prefab:
       propertyPath: movePoints.Array.data[1]
       value: 
       objectReference: {fileID: 971327875}
+    - target: {fileID: 19804214, guid: ca70040b77ffa4cc9972be70036c707d, type: 2}
+      propertyPath: ShapeModule.radius
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ca70040b77ffa4cc9972be70036c707d, type: 2}
   m_IsPrefabParent: 0
@@ -23250,6 +23322,10 @@ Prefab:
       propertyPath: movePoints.Array.data[1]
       value: 
       objectReference: {fileID: 1340554505}
+    - target: {fileID: 19804214, guid: ca70040b77ffa4cc9972be70036c707d, type: 2}
+      propertyPath: ShapeModule.radius
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ca70040b77ffa4cc9972be70036c707d, type: 2}
   m_IsPrefabParent: 0
