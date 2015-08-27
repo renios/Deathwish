@@ -16,7 +16,7 @@ namespace UI
 		{
 			parsedLevelTag = new LevelTag(levelTag);
 		}
-		
+
 		public LevelTag GetLevelTag()
 		{
 			return parsedLevelTag;
