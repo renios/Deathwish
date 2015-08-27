@@ -23,25 +23,32 @@ public class SoundEffectController : MonoBehaviour, IRestartable
 
 	public AudioSource audioSource;
 	public float delay;
+	public Dictionary<string, float> dicTimeAfterPlay = new Dictionary<string, float>();
+	public Dictionary<string, bool> dicRecentlyPlayed = new Dictionary<string, bool>();
 	float timeAfterPlay;
 	bool recentlyPlayed;
 
 	void Start()
 	{
 		audioSource = GetComponent<AudioSource> ();
-		recentlyPlayed = false;
+		dicTimeAfterPlay.Add ("Move", 0);
+		dicTimeAfterPlay.Add ("Push", 0);
+		dicRecentlyPlayed.Add ("Move", false);
+		dicRecentlyPlayed.Add ("Push", false);
 	}
 
 	void Update()
 	{
-		if(recentlyPlayed)
+		var keys1 = new List<string>(dicTimeAfterPlay.Keys);
+		foreach(string key in keys1)
 		{
-			timeAfterPlay += Time.deltaTime;
+			if(dicRecentlyPlayed[key]) dicTimeAfterPlay[key] += Time.deltaTime;
 		}
 
-		if(timeAfterPlay > delay)
+		var keys2 = new List<string>(dicRecentlyPlayed.Keys);
+		foreach(string key in keys2)
 		{
-			recentlyPlayed = false;
+			if(dicTimeAfterPlay[key] > delay) dicRecentlyPlayed[key] = false;
 		}
 	}
 
@@ -69,18 +76,16 @@ public class SoundEffectController : MonoBehaviour, IRestartable
 		}
 
 		if(soundType == SoundType.Walk || soundType == SoundType.GrassPassing
-		   || soundType == SoundType.BoxPush || soundType == SoundType.Swim)
+		   || soundType == SoundType.Swim)
 		{
-			if(recentlyPlayed) return;
-
-			timeAfterPlay = 0;
-			recentlyPlayed = true;
-
-			switch(soundType)
+			if (dicRecentlyPlayed ["Move"]){}
+			else
 			{
-				case SoundType.BoxPush:
-					audioSource.PlayOneShot(boxPushSound);
-					break;
+				dicTimeAfterPlay["Move"] = 0;
+				dicRecentlyPlayed["Move"] = true;
+				
+				switch(soundType)
+				{
 				case SoundType.Walk:
 					audioSource.PlayOneShot(walkSound);
 					break;
@@ -92,13 +97,31 @@ public class SoundEffectController : MonoBehaviour, IRestartable
 					break;
 				default:
 					break;
+				}
 			}
-
-			return;
+		}
+		else
+		{
+			dicTimeAfterPlay["Move"] = 0;
+			dicRecentlyPlayed["Move"] = false;
 		}
 
-		timeAfterPlay = 0;
-		recentlyPlayed = false;
+		//It Should use another variables.
+		if(soundType == SoundType.BoxPush)
+		{
+			if(dicRecentlyPlayed["Push"]){}
+			else
+			{
+				dicTimeAfterPlay["Push"] = 0;
+				dicRecentlyPlayed["Push"] = true;
+				//audioSource.PlayOneShot(boxPushSound);
+			}
+		}
+		else
+		{
+			dicTimeAfterPlay["Push"] = 0;
+			dicRecentlyPlayed["Push"] = false;
+		}
 
 		if(soundType == SoundType.None) return;
 		if(soundType == SoundType.Jump) audioSource.PlayOneShot(JumpSound);
@@ -118,7 +141,16 @@ public class SoundEffectController : MonoBehaviour, IRestartable
 
 	void IRestartable.Restart()
 	{
-		timeAfterPlay = 0;
-		recentlyPlayed = false;
+		var keys1 = new List<string>(dicTimeAfterPlay.Keys);
+		foreach(var key in keys1)
+		{
+			dicTimeAfterPlay[key] = 0;
+		}
+		
+		var keys2 = new List<string>(dicRecentlyPlayed.Keys);
+		foreach(var key in keys2)
+		{
+			dicRecentlyPlayed[key] = false;
+		}
 	}
 }

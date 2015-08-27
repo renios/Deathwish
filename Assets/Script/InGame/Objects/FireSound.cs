@@ -10,8 +10,11 @@ public class FireSound : MonoBehaviour
 
 	public void PlayFireIsCloseSound()
 	{
-		SoundEffectController soundEffectController
-			= GameObject.FindObjectOfType (typeof(SoundEffectController)) as SoundEffectController;
-		soundEffectController.Play (Enums.SoundType.FireIsClose);
+		if(Global.ingame.GetIsDarkInPosition(gameObject) == Enums.IsDark.Light)
+		{
+			SoundEffectController soundEffectController
+				= GameObject.FindObjectOfType (typeof(SoundEffectController)) as SoundEffectController;
+			soundEffectController.Play (Enums.SoundType.FireIsClose);
+		}
 	}
 }

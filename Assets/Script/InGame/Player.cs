@@ -99,7 +99,7 @@ public class Player : MonoBehaviour, IRestartable
 		animator.SetBool("isDark", IsItDark ());
 		animator.SetBool("isPushing", IsPlayerPushingObject());
 
-		if(IsPlayerPushingObject()) soundType = SoundType.BoxPush;
+		if(IsPlayerPushingObject() && !IsUnderwater()) soundType = SoundType.BoxPush;
 
 		soundEffectController.Play (soundType);
 
