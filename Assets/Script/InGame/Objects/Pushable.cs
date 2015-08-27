@@ -35,6 +35,16 @@ public class Pushable : MonoBehaviour, IRestartable
 		}
 	}
 
+	void OnCollisionEnter2D(Collision2D collision)
+	{
+		if(collision.gameObject.tag == "Ground")
+		{
+			SoundEffectController soundEffectController
+				= GameObject.FindObjectOfType(typeof(SoundEffectController)) as SoundEffectController;
+			soundEffectController.Play(SoundType.BoxFalling);
+		}
+	}
+
 	void IRestartable.Restart()
 	{
 		gameObject.transform.position = originalPosition;

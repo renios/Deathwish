@@ -14,6 +14,9 @@ public class SwitchDarkLight : MonoBehaviour
 		if (isPlayer && Input.GetKeyDown(KeyCode.UpArrow) && isGround)
 		{
 			Global.ingame.ChangeDarkLight();
+			SoundEffectController soundEffectController
+				= GameObject.FindObjectOfType(typeof(SoundEffectController)) as SoundEffectController;
+			soundEffectController.Play(SoundType.Mirror);
 		}
 	}
 

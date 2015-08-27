@@ -19,6 +19,7 @@ public class SoundEffectController : MonoBehaviour, IRestartable
 	public AudioClip fireDeathSound;
 	public AudioClip spikeDeathSound;
 	public AudioClip dustDeathSound;
+	public AudioClip fireIsCloseSound;
 
 	public AudioSource audioSource;
 	public float delay;
@@ -104,9 +105,13 @@ public class SoundEffectController : MonoBehaviour, IRestartable
 		if(soundType == SoundType.Land) audioSource.PlayOneShot(landSound);
 
 		if(soundType == SoundType.OpenDoor) audioSource.PlayOneShot(openDoorSound);
-		if(soundType == SoundType.Mirror) return;//audioSource.PlayOneShot(mirrorSound);
+		if(soundType == SoundType.Mirror) audioSource.PlayOneShot(mirrorSound);
 
-		if(soundType == SoundType.Decay) return;//audioSource.PlayOneShot(decaySound);
+		if(soundType == SoundType.Decay) audioSource.PlayOneShot(decaySound);
+		if(soundType == SoundType.FireIsClose) audioSource.PlayOneShot(fireIsCloseSound);
+		if(soundType == SoundType.Lightning) audioSource.PlayOneShot(lightningSound);
+
+		if(soundType == SoundType.BoxFalling) audioSource.PlayOneShot(boxFallingSound);
 
 		return;
 	}

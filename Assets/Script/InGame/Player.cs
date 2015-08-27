@@ -20,7 +20,6 @@ public class Player : MonoBehaviour, IRestartable
 	public LadderCheckerDown ladderCheckerDown;
 	public GameObject playerSpriteObject;
 	public SoundEffectController soundEffectController;
-	//need for landing sound effect
 	public WindDirection windDirection;
 
 	private Vector3 startPoint;
@@ -56,7 +55,7 @@ public class Player : MonoBehaviour, IRestartable
 		gravityScaleOfStartTime = GetComponent<Rigidbody2D> ().gravityScale;
 		yOfLowestObject = ObjectFinder.FindLowest ().position.y;
 		climber = new Climber (gameObject, ladderCheckerUp, ladderCheckerDown, groundChecker, climbSpeed, gravityScaleOfStartTime);
-		soundEffectController = GetComponentInChildren<SoundEffectController> ();
+		soundEffectController = GameObject.FindObjectOfType (typeof(SoundEffectController)) as SoundEffectController;
 
 		if(gravityDirection == GravityDirection.Reverse)
 		{
@@ -202,6 +201,10 @@ public class Player : MonoBehaviour, IRestartable
 					if(withGrass) soundType = SoundType.GrassPassing;
 					else soundType = SoundType.Walk;
 				}
+				if(IsUnderwater())
+				{
+					soundType = SoundType.Swim;
+				}
 			}
 			else if (Input.GetKey (KeyCode.LeftArrow))
 			{
@@ -210,6 +213,10 @@ public class Player : MonoBehaviour, IRestartable
 				{
 					if(withGrass) soundType = SoundType.GrassPassing;
 					else soundType = SoundType.Walk;
+				}
+				if(IsUnderwater())
+				{
+					soundType = SoundType.Swim;
 				}
 			}
 			else

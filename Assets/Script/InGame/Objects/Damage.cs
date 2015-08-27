@@ -36,6 +36,8 @@ public class Damage : MonoBehaviour
 			if(this.tag == "Spike") return SoundType.SpikeDeath;
 			if(this.tag == "Fire") return SoundType.FireDeath;
 			if(this.tag == "Grass") return SoundType.SpikeDeath;
+			//AreaMarker has Damage and Dust doesn't.
+			if(this.tag == "AreaMarker") return SoundType.DustDeath;
 			else return SoundType.None;
 		}
 	}

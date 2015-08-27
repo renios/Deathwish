@@ -71,8 +71,9 @@ public class Decay : ObjectMonoBehaviour, IRestartable
 	IEnumerator DestroySelf(float delay)
 	{
 		yield return new WaitForSeconds(delay);
-		Player player = GameObject.FindObjectOfType (typeof(Player)) as Player;
-		player.soundEffectController.Play (SoundType.Decay);
+		SoundEffectController soundEffectController
+			= GameObject.FindObjectOfType (typeof(SoundEffectController)) as SoundEffectController;
+		soundEffectController.Play (SoundType.Decay);
 		isDestroy = true;
 		foreach (var collider in collider2Ds) {
 			collider.enabled = false;
