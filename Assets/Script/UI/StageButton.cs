@@ -5,6 +5,7 @@ namespace UI
 {
 	public class StageButton : MonoBehaviour {
 		public string levelTag;
+		public string mapName;
 		public GameObject lockImage;
 		public Button button;
 
@@ -15,6 +16,11 @@ namespace UI
 			parsedLevelTag = new LevelTag(levelTag);
 		}
 		
+		public void OnButtonClicked()
+		{
+			Scene.Load(mapName, Scene.SceneType.Stage);
+		}
+
 		public bool IsLocked()
 		{
 			if (parsedLevelTag.Chapter == 0)
