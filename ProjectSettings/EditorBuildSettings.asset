@@ -6,10 +6,26 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Title.unity
+    path: Assets/Scenes/ui/Title.unity
   - enabled: 1
-    path: Assets/Scenes/SelectStage.unity
+    path: Assets/Scenes/ui/SelectStage.unity
   - enabled: 1
-    path: Assets/Scenes/Option.unity
+    path: Assets/Scenes/ui/Option.unity
   - enabled: 1
     path: Assets/Scenes/Test.unity
+  - enabled: 1
+    path: Assets/Scenes/Complete/Chapter0.unity
+  - enabled: 1
+    path: Assets/Scenes/Complete/Chapter1/Chapter1_Stage1.unity
+  - enabled: 1
+    path: Assets/Scenes/Complete/Chapter1/Chapter1_Stage2.unity
+  - enabled: 1
+    path: Assets/Scenes/Complete/Chapter1/Chapter1_Stage3.unity
+  - enabled: 1
+    path: Assets/Scenes/Complete/Chapter1/first.unity
+  - enabled: 1
+    path: Assets/Scenes/Complete/Chapter1/fourth.unity
+  - enabled: 1
+    path: Assets/Scenes/Complete/Chapter1/second.unity
+  - enabled: 1
+    path: Assets/Scenes/Complete/Chapter1/third.unity

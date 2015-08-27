@@ -11,6 +11,7 @@ public class Background : MonoBehaviour
 
     Vector3 cameraInitialPos = Vector3.zero;
     public Transform cameraTransform;
+    public bool scrollY = true;
 
     void Start()
     {
@@ -24,19 +25,35 @@ public class Background : MonoBehaviour
 
     void Update()
     {
+        var diffPosX = calculateXScrollDiff();
+        var diffPosY = calculateYScrollDiff();
+        cameraTransform.transform.position = new Vector3(cameraInitialPos.x + diffPosX,
+            cameraInitialPos.y + diffPosY, cameraInitialPos.z);
+    }
+    
+    float calculateXScrollDiff()
+    {
         var middleX = (rightX + leftX) / 2;
         var ratioX = Constrain(
           (player.transform.position.x - middleX) / (rightX - leftX),
           min: -1, max: 1);
         var diffPosX = ratioX * 4; // (200 pixel() / (50 pixel per unit)) = 4
-
+        return diffPosX;
+    }
+    
+    float calculateYScrollDiff()
+    {
+        if (scrollY == false)
+        {
+            return 0;
+        }
+        
         var middleY = (upY + downY) / 2;
         var ratioY = Constrain(
             (player.transform.position.y - middleY) / (upY - downY),
             min: -1, max: 1);
         var diffPosY = ratioY * 2.5f; // (125 pixel() / (50 pixel per unit)) = 2.5
-        cameraTransform.transform.position = new Vector3(cameraInitialPos.x + diffPosX,
-            cameraInitialPos.y + diffPosY, cameraInitialPos.z);
+        return diffPosY;
     }
 
     float Constrain(float value, float min, float max)

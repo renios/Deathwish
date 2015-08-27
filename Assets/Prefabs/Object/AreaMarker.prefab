@@ -180,7 +180,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   light: {fileID: 0}
-  dark: {fileID: 21300000, guid: 5eff1e529a3314fcda23c7c705c8f5a9, type: 3}
+  dark: {fileID: 0}
 --- !u!212 &21231790
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -230,8 +230,7 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: dark
       value: 
-      objectReference: {fileID: 21300000, guid: 5eff1e529a3314fcda23c7c705c8f5a9,
-        type: 3}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 188422}
