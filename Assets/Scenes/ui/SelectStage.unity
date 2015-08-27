@@ -1061,7 +1061,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11432724, guid: c05202b64616b4e54a784411ce383903, type: 2}
       propertyPath: mapName
-      value: Chapter0
+      value: Chapter1_Stage1
       objectReference: {fileID: 0}
     - target: {fileID: 22423302, guid: c05202b64616b4e54a784411ce383903, type: 2}
       propertyPath: m_LocalScale.x
@@ -1081,7 +1081,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11432724, guid: c05202b64616b4e54a784411ce383903, type: 2}
       propertyPath: levelTag
-      value: Chapter1_Stage1
+      value: 1-3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c05202b64616b4e54a784411ce383903, type: 2}
@@ -1442,8 +1442,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4466b659599c94e42b629f3513750c43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stageButtons:
-  - {fileID: 3726094}
 --- !u!4 &1234809335
 Transform:
   m_ObjectHideFlags: 0

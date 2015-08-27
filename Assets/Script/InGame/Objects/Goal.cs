@@ -5,8 +5,6 @@ public class Goal : MonoBehaviour, IRestartable
 {
 	private bool playerInZone;
 
-	public string LevelToLoad;
-
 	public string LevelTag;
 	
 	private bool isGround;
@@ -27,10 +25,9 @@ public class Goal : MonoBehaviour, IRestartable
 
 	public void LoadLevel()
 	{
-		PlayerPrefs.SetInt(LevelTag, 1);
-		Scene.Load(LevelToLoad, Scene.SceneType.Stage);
-
+		Scene.LoadNextStageAndSave();
 	}
+
 	void OnTriggerEnter2D(Collider2D collision)
 	{
 		if(collision.gameObject.tag == "Player")
