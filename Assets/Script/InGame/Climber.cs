@@ -99,6 +99,7 @@ class Climber
 		if (groundChecker.IsGrounded () != true)
 		{
 			playerRigidbody.velocity = new Vector2 (0, 0);
+			playerRigidbody.gravityScale = 0;
 		}
 	}
 	
