@@ -33,7 +33,7 @@ GameObject:
   - 198: {fileID: 19893916}
   - 199: {fileID: 19981742}
   m_Layer: 8
-  m_Name: DecayParticleS
+  m_Name: PermanentDecayEffect
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -50,7 +50,7 @@ GameObject:
   - 198: {fileID: 19823378}
   - 199: {fileID: 19964316}
   m_Layer: 8
-  m_Name: DecayParticleM
+  m_Name: DecayingEffect
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -83,7 +83,7 @@ GameObject:
   - 198: {fileID: 19818360}
   - 199: {fileID: 19905266}
   m_Layer: 8
-  m_Name: DecayParticleL
+  m_Name: AfterDecayEffect
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -192,9 +192,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 208bbe558c162cc4db80be6f953df5a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gravityDirection: 0
   delay: 1
   normal: {fileID: 21300000, guid: d548397fc1510ba4ea696fc7c0ce2c0a, type: 3}
   transparent: {fileID: 21300000, guid: e90ea4b0cdf82bb41be285b61b89ea57, type: 3}
+  decayEffect: {fileID: 0}
 --- !u!114 &11423800
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -218,9 +220,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b497be952870444eb90c702cf1dfc4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  decayParticleS: {fileID: 117704}
-  decayParticleM: {fileID: 122848}
-  decayParticleL: {fileID: 179234}
+  permanentDecayParticle: {fileID: 117704}
+  decayingParticle: {fileID: 122848}
+  afterDecayParticle: {fileID: 179234}
 --- !u!114 &11459188
 MonoBehaviour:
   m_ObjectHideFlags: 1
