@@ -5,27 +5,31 @@ using Enums;
 public class SwitchDarkLight : MonoBehaviour
 {
 	private bool isGround;
-	private bool collideWithPlayer = false;
+	private bool isPlayer = false;
 
 	void Update()
 	{
 		isGround = GameObject.FindObjectOfType<GroundChecker> ().IsGrounded ();
 
-		if (collideWithPlayer && Input.GetKeyDown(KeyCode.UpArrow))
+		if (isPlayer && Input.GetKeyDown(KeyCode.UpArrow) && isGround)
 		{
 			Global.ingame.ChangeDarkLight();
 		}
 	}
 
-	void OnTriggerStay2D(Collider2D collision)
+	void OnTriggerEnter2D(Collider2D player)
 	{
-		if (isGround && (collision.gameObject.tag == "Player"))
+		if (player.gameObject.tag == "Player")
 		{
-			collideWithPlayer = true;
+			isPlayer = true;
 		}
-		else
+	}
+
+	void OnTriggerExit2D(Collider2D player)
+	{
+		if (player.gameObject.tag == "Player")
 		{
-			collideWithPlayer = false;
+			isPlayer = false;
 		}
 	}
 }
