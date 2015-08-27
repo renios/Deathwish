@@ -1,34 +1,22 @@
 ﻿using UnityEngine;
-using System.Collections;
+using System.Collections.Generic;
 using UnityEngine.UI;
 
 public class LevelSelectManager : MonoBehaviour
 {
-
-	public string[] LevelTags;
-
-	public GameObject[] Locks;
-	public bool[] LevelUnlocked;
-
-	public Button[] Interactable;
+	public List<UI.StageButton> stageButtons;
 
 	void Start()
 	{
-		for (int i = 0; i < LevelTags.Length; i++)
+		foreach (var stageButton in stageButtons)
 		{
-			if (PlayerPrefs.GetInt(LevelTags[i]) == 0)
+			if (stageButton.IsLocked())
 			{
-				LevelUnlocked[i] = false;
+				stageButton.Lock();
 			}
 			else
 			{
-				LevelUnlocked[i] = true;
-			}
-
-			if (LevelUnlocked[i])
-			{
-				Locks[i].SetActive(false);
-				Interactable[i].interactable = true;
+				stageButton.Unlock();
 			}
 		}
 	}
