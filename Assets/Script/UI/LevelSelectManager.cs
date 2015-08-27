@@ -4,10 +4,14 @@ using UnityEngine.UI;
 
 public class LevelSelectManager : MonoBehaviour
 {
-	public List<UI.StageButton> stageButtons;
-
 	void Start()
 	{
+		var stageButtons = FindObjectsOfType<UI.StageButton>();
+		foreach (var stageButton in stageButtons)
+		{
+			Scene.AddStage(stageButton.GetMapName(), stageButton.GetLevelTag());
+		}
+		
 		foreach (var stageButton in stageButtons)
 		{
 			if (stageButton.IsLocked())

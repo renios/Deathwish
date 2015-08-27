@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using UnityEngine.UI;
 
 namespace UI
@@ -15,6 +16,16 @@ namespace UI
 		{
 			parsedLevelTag = new LevelTag(levelTag);
 		}
+
+		public LevelTag GetLevelTag()
+		{
+			return parsedLevelTag;
+		}
+		
+		public MapName GetMapName()
+		{
+			return new MapName(mapName);
+		}
 		
 		public void OnButtonClicked()
 		{
@@ -27,7 +38,8 @@ namespace UI
 			{
 				return false;
 			}
-			return PlayerPrefs.GetInt(levelTag) == 1;
+			var previousLevelTag = Scene.GetPreviousLevelTag(parsedLevelTag);
+			return PlayerPrefs.GetInt(previousLevelTag.ToString()) == 0;
 		}
 
 		public void Lock()
@@ -43,7 +55,21 @@ namespace UI
 		}
 	}
 
-    class LevelTag
+    public struct MapName
+    {
+		private string mapName;
+		public MapName(string input)
+		{
+			this.mapName = input;
+		}
+		
+		public override String ToString()
+		{
+			return mapName;
+		}
+    }
+
+    public struct LevelTag : System.IComparable<LevelTag>
     {
 		private int chapter;
 		public int Chapter
@@ -67,5 +93,20 @@ namespace UI
 			chapter = int.Parse(tokens[0]);
 			stage = int.Parse(tokens[1]);
 		}
+		
+		public override string ToString()
+		{
+			return chapter + "-" + stage;
+		}
+
+        public int CompareTo(LevelTag other)
+        {
+            if (this.Chapter != other.Chapter)
+			{
+				return this.Chapter - other.Chapter;
+			}
+			
+			return this.stage - other.stage;
+        }
     }
 }

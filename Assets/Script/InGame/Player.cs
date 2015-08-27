@@ -105,6 +105,11 @@ public class Player : MonoBehaviour, IRestartable
 		soundEffectController.Play (soundType);
 
 		IsItDark ();
+		
+		if (Input.GetKeyUp(KeyCode.C))
+		{
+			Scene.LoadNextStageAndSave();
+		}
 	}
 	
 	public void PlayDieAnimSoundAndRestart(SoundType soundType)
