@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using Enums;
 
 public class ActivateTextAtLine : MonoBehaviour {
 
@@ -14,6 +15,9 @@ public class ActivateTextAtLine : MonoBehaviour {
 	private bool waitForPress;
 
 	public bool destroyWhenActivated;
+
+	public bool LightMode;
+	public bool DarkMode;
 
 	// Use this for initialization
 	void Start () 
@@ -39,21 +43,22 @@ public class ActivateTextAtLine : MonoBehaviour {
 
 	void OnTriggerEnter2D(Collider2D other)
 	{
-		if (other.name == "Player") 
+		if (IsItDark() && DarkMode || !IsItDark() && LightMode) 
 		{
-			if(requireButtonPress)
-			{
-				waitForPress = true;
-				return;
-			}
-			theTextBox.ReloadScript(theText);
-			theTextBox.currentLine = startLine;
-			theTextBox.endAtLine = theTextBox.textLines.Length - 1;
-			theTextBox.EnableTextBox();
 
-			if (destroyWhenActivated) 
-			{
-				Destroy (gameObject);
+			if (other.name == "Player") {
+				if (requireButtonPress) {
+					waitForPress = true;
+					return;
+				}
+				theTextBox.ReloadScript (theText);
+				theTextBox.currentLine = startLine;
+				theTextBox.endAtLine = theTextBox.textLines.Length - 1;
+				theTextBox.EnableTextBox ();
+
+				if (destroyWhenActivated) {
+					Destroy (gameObject);
+				}
 			}
 		}
 	}
@@ -62,6 +67,22 @@ public class ActivateTextAtLine : MonoBehaviour {
 		if (other.name == "Player") 
 		{
 			waitForPress = false;
+		}
+	}
+	bool IsItDark()
+	{
+		IsDark isItDark = Global.ingame.GetIsDarkInPosition (gameObject);
+		if (isItDark == IsDark.Light) 
+		{
+			return false;
+		} 
+		else if (isItDark == IsDark.Dark) 
+		{
+			return true;
+		}
+		else 
+		{
+			return true;
 		}
 	}
 }
