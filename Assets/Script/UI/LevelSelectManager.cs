@@ -9,6 +9,11 @@ public class LevelSelectManager : MonoBehaviour
 		var stageButtons = FindObjectsOfType<UI.StageButton>();
 		foreach (var stageButton in stageButtons)
 		{
+			Scene.AddStage(stageButton.GetMapName(), stageButton.GetLevelTag());
+		}
+		
+		foreach (var stageButton in stageButtons)
+		{
 			if (stageButton.IsLocked())
 			{
 				stageButton.Lock();
@@ -17,11 +22,6 @@ public class LevelSelectManager : MonoBehaviour
 			{
 				stageButton.Unlock();
 			}
-		}
-		
-		foreach (var stageButton in stageButtons)
-		{
-			Scene.AddStage(stageButton.GetMapName(), stageButton.GetLevelTag());
 		}
 	}
 
