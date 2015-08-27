@@ -11,7 +11,7 @@ public class SwitchDarkLight : MonoBehaviour
 	{
 		isGround = GameObject.FindObjectOfType<GroundChecker> ().IsGrounded ();
 
-		if (Input.GetKeyDown(KeyCode.UpArrow))
+		if (collideWithPlayer && Input.GetKeyDown(KeyCode.UpArrow))
 		{
 			Global.ingame.ChangeDarkLight();
 		}
