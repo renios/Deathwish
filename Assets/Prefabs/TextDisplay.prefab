@@ -126,6 +126,7 @@ MonoBehaviour:
   player: {fileID: 0}
   isActive: 0
   stopPlayerMovement: 1
+  WaitTime: 3
 --- !u!114 &11438204
 MonoBehaviour:
   m_ObjectHideFlags: 1

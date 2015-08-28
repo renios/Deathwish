@@ -20,16 +20,20 @@ public class TextBoxManager : MonoBehaviour {
 
 	public bool stopPlayerMovement;
 
+	public float WaitTime;
+
 	// Use this for initialization
 	protected virtual void Start () 
 	{
+
+	
+
 		player = FindObjectOfType<Player> ();
 
 		if (textFiles != null) 
 		{
 			textLines = (textFiles.text.Split ('\n'));
-		}
-
+		} 
 		if (endAtLine == 0) 
 		{
 			endAtLine = textLines.Length - 1;
@@ -51,6 +55,7 @@ public class TextBoxManager : MonoBehaviour {
 	// Update is called once per frame
 	void Update () 
 	{
+
 		if (!isActive) 
 		{
 			return;
@@ -61,17 +66,23 @@ public class TextBoxManager : MonoBehaviour {
 		if (Input.GetKeyDown (KeyCode.Space)) 
 		{
 			currentLine += 1;
-		}
+		} 
+
+
 		if (currentLine > endAtLine) 
 		{
 			DisableTextBox ();
 		}
 	}
+
 	public void EnableTextBox()
 	{
 		textBox.SetActive (true);
 		isActive = true;
-		
+		if (isActive) 
+		{
+			StartCoroutine (AutoContinue (WaitTime));
+		}
 		if (stopPlayerMovement) 
 		{
 			player.canMove = false;
@@ -81,8 +92,8 @@ public class TextBoxManager : MonoBehaviour {
 	{
 		textBox.SetActive (false);
 		isActive = false;
-
-		player.canMove = true;
+		StartCoroutine (StopPlayerMovement ());
+		
 	}
 
 	public void ReloadScript(TextAsset theText)
@@ -92,6 +103,23 @@ public class TextBoxManager : MonoBehaviour {
 			textLines = new string[1];
 			textLines = (theText.text.Split ('\n'));
 			
+		}
+	}
+
+
+	IEnumerator StopPlayerMovement()
+	{
+		yield return new WaitForEndOfFrame ();
+		player.canMove = true;
+	}
+
+		
+		IEnumerator AutoContinue(float WaitTime)
+	{
+		for (var f = 1.0; f >= 0; f -= 0.1)
+		{
+			currentLine +=1;
+			yield return new WaitForSeconds(WaitTime);
 		}
 	}
 }
