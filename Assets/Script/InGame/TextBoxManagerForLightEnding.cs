@@ -6,13 +6,13 @@ using System;
 public class TextBoxManagerForLightEnding : TextBoxManager {
 	private bool isStarted = false;
 	
-	public Image blackImage;
-	public Image nextCutScene;
+	public GameObject blackImage;
+	public GameObject nextCutScene;
 	
 	void Awake()
 	{
-		nextCutScene.color = new Color(1, 1, 1, 0);
-		blackImage.color = new Color(1, 1, 1, 0);
+		nextCutScene.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 0);
+		blackImage.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 0);
 	}
 	protected override void Start()
 	{
@@ -78,7 +78,7 @@ public class TextBoxManagerForLightEnding : TextBoxManager {
 				yield return StartCoroutine(MakeNPercentDark(20, blackImage));
 				break;
 			case 4:
-				nextCutScene.color += new Color(0, 0, 0, 1f);
+				nextCutScene.GetComponent<SpriteRenderer>().color += new Color(0, 0, 0, 1f);
 				yield return StartCoroutine(MakeNPercentWhite(50, blackImage));
 				break;
 			case 5:
@@ -95,20 +95,20 @@ public class TextBoxManagerForLightEnding : TextBoxManager {
 		isEffectRunning = false;
 	}
 
-    private IEnumerator MakeNPercentDark(int percent, Image image)
+    private IEnumerator MakeNPercentDark(int percent, GameObject image)
     {
 		for (int i=0; i<percent; i++)
 		{
-			image.color += new Color(0, 0, 0, 0.01f);
+			image.GetComponent<SpriteRenderer>().color += new Color(0, 0, 0, 0.01f);
 			yield return null;
 		}
     }
 
-	private IEnumerator MakeNPercentWhite(int percent, Image image)
+	private IEnumerator MakeNPercentWhite(int percent, GameObject image)
     {
 		for (int i=0; i<percent; i++)
 		{
-			image.color -= new Color(0, 0, 0, 0.01f);
+			image.GetComponent<SpriteRenderer>().color -= new Color(0, 0, 0, 0.01f);
 			yield return null;
 		}
     }
