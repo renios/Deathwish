@@ -18,7 +18,7 @@ public class Lighting: MonoBehaviour, IRestartable
 	
 	GameObject[] effectGameObjects;
 
-	bool isLighting;
+	public bool isLighting;
 	bool isEffectLighting;
 
 	void Start()
