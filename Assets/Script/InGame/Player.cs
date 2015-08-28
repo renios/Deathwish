@@ -31,7 +31,21 @@ public class Player : MonoBehaviour, IRestartable
 	float gravityScaleOfStartTime;
 	HashSet<GameObject> pushableObjectsNearbyPlayer;
 
-	public bool canMove;
+	private bool _canMove = true;
+	public bool canMove
+	{
+		get {
+			return _canMove;
+		}
+		set {
+			if (value == false)
+			{
+				Debug.Log("CanMove set true");
+				GetComponent<Rigidbody2D>().velocity = new Vector2(0, GetComponent<Rigidbody2D>().velocity.y);
+			}
+			_canMove = value;
+		}
+	}
 
 	public GameObject dieEffectLight;
 	public GameObject dieEffectDark;
@@ -69,8 +83,15 @@ public class Player : MonoBehaviour, IRestartable
 	{
 		if (!canMove) 
 		{
-			GetComponent<Rigidbody2D>().velocity = new Vector2(0, GetComponent<Rigidbody2D>().velocity.y);
+			//  GetComponent<Rigidbody2D>().velocity = new Vector2(0, GetComponent<Rigidbody2D>().velocity.y);
+
 			animator.SetFloat("absSpeedX", Mathf.Abs(GetComponent<Rigidbody2D>().velocity.x));
+			animator.SetBool("isGrounded", groundChecker.IsGrounded());
+			animator.SetBool("isClimbing", climber.IsClimbing());
+			animator.SetBool("isDark", IsItDark ());
+			animator.SetBool("isPushing", IsPlayerPushingObject());
+			animator.SetBool("isObjectSmall", WhatIsPlayerPushingObject() == ObjectSize.Small);
+
 			return;
 		}
 

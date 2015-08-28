@@ -53,7 +53,7 @@ public class TextBoxManager : MonoBehaviour {
 
 	
 	// Update is called once per frame
-	void Update () 
+	protected virtual void Update () 
 	{
 
 		if (!isActive) 
@@ -85,14 +85,14 @@ public class TextBoxManager : MonoBehaviour {
 		}
 		if (stopPlayerMovement) 
 		{
-			player.canMove = false;
+			StopPlayerMovement();
 		}
 	}
 	public virtual void DisableTextBox()
 	{
 		textBox.SetActive (false);
 		isActive = false;
-		StartCoroutine (StopPlayerMovement ());
+		StartCoroutine (EnablePlayerMovement ());
 		
 	}
 
@@ -106,8 +106,14 @@ public class TextBoxManager : MonoBehaviour {
 		}
 	}
 
-
 	IEnumerator StopPlayerMovement()
+	{
+		yield return new WaitForEndOfFrame ();
+		player.canMove = false;
+	}
+		
+
+	IEnumerator EnablePlayerMovement()
 	{
 		yield return new WaitForEndOfFrame ();
 		player.canMove = true;
