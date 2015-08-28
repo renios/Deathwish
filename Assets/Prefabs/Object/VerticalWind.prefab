@@ -112,7 +112,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ff94c353ee259e48a3e98575a4b38f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Effect_Light: {fileID: 130802, guid: 3b816d86658ce44d393e3094eb1b9f69, type: 2}
+  Effect_Light: {fileID: 188238}
   Effect_Dark: {fileID: 173976, guid: 3783bdfefec4cad45b756958b3ca07bd, type: 2}
 --- !u!114 &11438120
 MonoBehaviour:
