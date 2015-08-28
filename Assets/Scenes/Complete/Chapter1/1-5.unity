@@ -804,6 +804,14 @@ Prefab:
       propertyPath: m_RootOrder
       value: 43
       objectReference: {fileID: 0}
+    - target: {fileID: 11474496, guid: b510a595ceb3e8f45a951a21ee48a8bc, type: 2}
+      propertyPath: landSound
+      value: 
+      objectReference: {fileID: 8300000, guid: f0d1faa619e7a0b46bdefb29dd2f0ce3, type: 3}
+    - target: {fileID: 11474496, guid: b510a595ceb3e8f45a951a21ee48a8bc, type: 2}
+      propertyPath: swimSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 491b1a719d74cd2459456dc449726c97, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b510a595ceb3e8f45a951a21ee48a8bc, type: 2}
   m_IsPrefabParent: 0
@@ -6619,6 +6627,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b2121ee0b8aedc4dbc6649e397d2a3b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  penetrate: 0
 --- !u!114 &1151871154
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7237,6 +7246,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b2121ee0b8aedc4dbc6649e397d2a3b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  penetrate: 0
 --- !u!114 &1236506194
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10199,6 +10209,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b2121ee0b8aedc4dbc6649e397d2a3b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  penetrate: 0
 --- !u!114 &1710710367
 MonoBehaviour:
   m_ObjectHideFlags: 0
