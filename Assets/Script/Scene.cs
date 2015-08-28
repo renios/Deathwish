@@ -56,7 +56,7 @@ public class Scene
 				}
 				else
 				{
-					Load("Title", SceneType.MainScene);	
+					Scene.Load("DarkEnding", SceneType.Stage);
 				}
 			}
 			else
