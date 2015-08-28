@@ -136,7 +136,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Content: {fileID: 1917062523}
-  m_Horizontal: 1
+  m_Horizontal: 0
   m_Vertical: 1
   m_MovementType: 2
   m_Elasticity: .100000001
@@ -1065,7 +1065,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 625427895}
   m_Direction: 2
   m_Value: 1
-  m_Size: .285479456
+  m_Size: .285479486
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -4977,7 +4977,7 @@ RectTransform:
   m_RootOrder: 0
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: -6.43729982e-06, y: -652}
+  m_AnchoredPosition: {x: 50, y: -652}
   m_SizeDelta: {x: 1016, y: 1825}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &1917062524
