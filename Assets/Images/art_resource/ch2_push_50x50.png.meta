@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 80e11bf3e1fa9497681c1579493080a3
-timeCreated: 1440504740
+timeCreated: 1440744515
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -65,7 +65,7 @@ TextureImporter:
         width: 135
         height: 142
       alignment: 9
-      pivot: {x: .0299999993, y: .610000014}
+      pivot: {x: .129999995, y: .610000014}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: ch2_push_50x50_1
       rect:
@@ -75,7 +75,7 @@ TextureImporter:
         width: 129
         height: 142
       alignment: 9
-      pivot: {x: .0599999987, y: .610000014}
+      pivot: {x: .159999996, y: .610000014}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: ch2_push_50x50_2
       rect:
@@ -85,7 +85,7 @@ TextureImporter:
         width: 138
         height: 142
       alignment: 9
-      pivot: {x: .0299999993, y: .610000014}
+      pivot: {x: .129999995, y: .610000014}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: ch2_push_50x50_3
       rect:
@@ -95,7 +95,7 @@ TextureImporter:
         width: 129
         height: 140
       alignment: 9
-      pivot: {x: .0399999991, y: .610000014}
+      pivot: {x: .140000001, y: .610000014}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: ch2_push_50x50_4
       rect:
@@ -105,7 +105,7 @@ TextureImporter:
         width: 139
         height: 142
       alignment: 9
-      pivot: {x: .0299999993, y: .610000014}
+      pivot: {x: .129999995, y: .610000014}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: ch2_push_50x50_5
       rect:
@@ -115,7 +115,7 @@ TextureImporter:
         width: 129
         height: 142
       alignment: 9
-      pivot: {x: .0599999987, y: .610000014}
+      pivot: {x: .159999996, y: .610000014}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: ch2_push_50x50_6
       rect:
@@ -125,7 +125,7 @@ TextureImporter:
         width: 138
         height: 142
       alignment: 9
-      pivot: {x: .0299999993, y: .610000014}
+      pivot: {x: .129999995, y: .610000014}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: ch2_push_50x50_7
       rect:
@@ -135,7 +135,7 @@ TextureImporter:
         width: 129
         height: 140
       alignment: 9
-      pivot: {x: .0399999991, y: .610000014}
+      pivot: {x: .140000001, y: .610000014}
       border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 
