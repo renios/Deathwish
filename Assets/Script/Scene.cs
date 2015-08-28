@@ -49,7 +49,15 @@ public class Scene
 			{
 				Debug.Log("Clear all stage!");
 				SaveLoad.AllClear();
-				Load("Title", SceneType.MainScene);
+
+				if (IsLightEnding())
+				{
+					Scene.Load("LightEnding", SceneType.Stage);
+				}
+				else
+				{
+					Scene.Load("DarkEnding", SceneType.Stage);
+				}
 			}
 			else
 			{
@@ -84,6 +92,12 @@ public class Scene
 		var ratio = GetClearRatio();
 		return ratio > 0.2f && ratio < 0.8f;
     }
+	
+	private static bool IsLightEnding()
+	{
+		var ratio = GetClearRatio();
+		return ratio > 0.8f;
+	}
 
     private static float GetClearRatio()
     {

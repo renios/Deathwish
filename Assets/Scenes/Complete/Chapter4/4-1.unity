@@ -140,7 +140,12 @@ Prefab:
     - target: {fileID: 2386128, guid: 4f7fdaddb1eee4dd19fc37c9a09ba90d, type: 2}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 10100, guid: 0000000000000000e000000000000000, type: 0}
+      objectReference: {fileID: 2100000, guid: 47a424678c7c9405791fdf3f6be76129, type: 3}
+    - target: {fileID: 10277532, guid: 4f7fdaddb1eee4dd19fc37c9a09ba90d, type: 2}
+      propertyPath: m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: 47a424678c7c9405791fdf3f6be76129,
+        type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4f7fdaddb1eee4dd19fc37c9a09ba90d, type: 2}
   m_IsPrefabParent: 0
