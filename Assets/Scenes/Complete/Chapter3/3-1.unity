@@ -5015,7 +5015,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 64
+  m_RootOrder: 55
 --- !u!1001 &765065576
 Prefab:
   m_ObjectHideFlags: 0
@@ -6780,6 +6780,15 @@ Prefab:
         \uC0DD\uAC01\uC774 \uB4E4\uC5C8\uB2E4.\n\n\uD55C\uACC4\uC5D0 \uBAB0\uB9B0\uB2E4\uB294
         \uAC83\uC740, \uC774\uB7F0 \uB290\uB08C\uC778\uAC78\uAE4C."
       objectReference: {fileID: 0}
+    - target: {fileID: 10277532, guid: 4f7fdaddb1eee4dd19fc37c9a09ba90d, type: 2}
+      propertyPath: m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: 47a424678c7c9405791fdf3f6be76129,
+        type: 3}
+    - target: {fileID: 2386128, guid: 4f7fdaddb1eee4dd19fc37c9a09ba90d, type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 47a424678c7c9405791fdf3f6be76129, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4f7fdaddb1eee4dd19fc37c9a09ba90d, type: 2}
   m_IsPrefabParent: 0

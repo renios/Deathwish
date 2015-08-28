@@ -3178,6 +3178,15 @@ Prefab:
       value: "\uC8FD\uC73C\uBA74, \uBAA8\uB4E0 \uAC83\uC744 \uC783\uB294\uB2E4.\n\n\uBAA8\uB4E0
         \uAC83\uC744 \uC783\uC740 \uADF8 \uC21C\uAC04, \uC8FD\uB294\uB2E4."
       objectReference: {fileID: 0}
+    - target: {fileID: 10277532, guid: 4f7fdaddb1eee4dd19fc37c9a09ba90d, type: 2}
+      propertyPath: m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: 47a424678c7c9405791fdf3f6be76129,
+        type: 3}
+    - target: {fileID: 2386128, guid: 4f7fdaddb1eee4dd19fc37c9a09ba90d, type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 47a424678c7c9405791fdf3f6be76129, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4f7fdaddb1eee4dd19fc37c9a09ba90d, type: 2}
   m_IsPrefabParent: 0
