@@ -6,13 +6,17 @@ using System;
 public class TextBoxManagerForDarkEnding : TextBoxManager {
 	private bool isStarted = false;
 	
-	public Image blackImage;
-	public Image nextCutScene;
+	//  public Image blackImage;
+	//  public Image nextCutScene;
+	public GameObject blackImage;
+	public GameObject nextCutScene;
 	
 	void Awake()
 	{
-		nextCutScene.color = new Color(1, 1, 1, 0);
-		blackImage.color = new Color(1, 1, 1, 0);
+		//  nextCutScene.color = new Color(1, 1, 1, 0);
+		//  blackImage.color = new Color(1, 1, 1, 0);
+		nextCutScene.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 0);
+		blackImage.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 0);
 	}
 	protected override void Start()
 	{
@@ -84,7 +88,8 @@ public class TextBoxManagerForDarkEnding : TextBoxManager {
         for (int i=0; i<100; i++)
 		{
 			Global.ingame.GetPlayer().MoveRight1Frame();
-			blackImage.color += new Color(0, 0, 0, 0.01f);
+			//  blackImage.color += new Color(0, 0, 0, 0.01f);
+			blackImage.GetComponent<SpriteRenderer>().color += new Color(0, 0, 0, 0.01f);
 			yield return null;
 		}
     }
@@ -106,13 +111,13 @@ public class TextBoxManagerForDarkEnding : TextBoxManager {
     {
 		for (int i=0; i<100; i++)
 		{
-			blackImage.color += new Color(0, 0, 0, 0.01f);
+			blackImage.GetComponent<SpriteRenderer>().color += new Color(0, 0, 0, 0.01f);
 			yield return null;
 		}
 
 		for (int i=0; i<100; i++)
 		{
-			nextCutScene.color += new Color(0, 0, 0, 0.01f);
+			nextCutScene.GetComponent<SpriteRenderer>().color += new Color(0, 0, 0, 0.01f);
 			yield return null;
 		}
 
