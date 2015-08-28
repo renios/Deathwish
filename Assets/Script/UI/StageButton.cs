@@ -5,16 +5,38 @@ using UnityEngine.UI;
 namespace UI
 {
 	public class StageButton : MonoBehaviour {
-		public string levelTag;
-		public string mapName;
+		private string levelTag
+		{
+			get {
+				return gameObject.name;
+			}
+		}
+
+		private string mapName
+		{
+			get {
+				return gameObject.name;
+			}
+		}
+
 		public GameObject lockImage;
 		public Button button;
 
 		private LevelTag parsedLevelTag;
+		public Image mapImage;
 
 		void Awake()
 		{
 			parsedLevelTag = new LevelTag(levelTag);
+			var spriteImage = Resources.Load<Sprite>("icons/" + levelTag);
+			if (spriteImage == null)
+			{
+				spriteImage = Resources.Load<Sprite>("icons/default");
+			}
+			if (spriteImage != null)
+			{
+				mapImage.sprite = spriteImage;	
+			}
 		}
 
 		public LevelTag GetLevelTag()

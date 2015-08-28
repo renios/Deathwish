@@ -7,7 +7,7 @@ public class Grass : ObjectMonoBehaviour
 	SpriteRenderer spriteRenderer;
 	GroundChecker groundChecker;
 	Player player;
-	
+
 	public override void StartByParent ()
 	{
 		spriteRenderer = GetComponent<SpriteRenderer> ();

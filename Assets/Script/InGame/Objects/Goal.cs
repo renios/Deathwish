@@ -19,7 +19,9 @@ public class Goal : MonoBehaviour, IRestartable
 		isGround = GameObject.FindObjectOfType<GroundChecker> ().IsGrounded ();
 		if (Input.GetKeyDown(KeyCode.UpArrow) && playerInZone && isGround)
 		{
-			GameObject.FindObjectOfType<Player>().soundEffectController.Play(Enums.SoundType.OpenDoor);
+			SoundEffectController soundEffectController
+				= GameObject.FindObjectOfType(typeof(SoundEffectController)) as SoundEffectController;
+			soundEffectController.Play(Enums.SoundType.OpenDoor);
 			LoadLevel();
 		}
 	}

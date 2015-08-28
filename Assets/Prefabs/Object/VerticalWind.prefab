@@ -33,6 +33,23 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &168544
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 410222}
+  - 61: {fileID: 6151428}
+  - 114: {fileID: 11423842}
+  m_Layer: 0
+  m_Name: WindSoundArea
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &188238
 GameObject:
   m_ObjectHideFlags: 0
@@ -50,6 +67,18 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!4 &410222
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 168544}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -7, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 476040}
+  m_RootOrder: 2
 --- !u!4 &460110
 Transform:
   m_ObjectHideFlags: 1
@@ -86,6 +115,7 @@ Transform:
   m_Children:
   - {fileID: 471938}
   - {fileID: 460110}
+  - {fileID: 410222}
   m_Father: {fileID: 0}
   m_RootOrder: 0
 --- !u!61 &6116394
@@ -101,6 +131,31 @@ BoxCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Size: {x: 15, y: 1}
+--- !u!61 &6151428
+BoxCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 168544}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Size: {x: 1, y: 3}
+--- !u!114 &11423842
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 168544}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d07bdb04960a2f44b924b2272a97a47, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soundAreaModifier: 1.20000005
 --- !u!114 &11424264
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -112,7 +167,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ff94c353ee259e48a3e98575a4b38f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Effect_Light: {fileID: 130802, guid: 3b816d86658ce44d393e3094eb1b9f69, type: 2}
+  Effect_Light: {fileID: 188238}
   Effect_Dark: {fileID: 173976, guid: 3783bdfefec4cad45b756958b3ca07bd, type: 2}
 --- !u!114 &11438120
 MonoBehaviour:
@@ -1234,6 +1289,10 @@ Prefab:
       propertyPath: Effect_Light
       value: 
       objectReference: {fileID: 130802, guid: 3b816d86658ce44d393e3094eb1b9f69, type: 2}
+    - target: {fileID: 0}
+      propertyPath: soundAreaModifier
+      value: 1.20000005
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 118634}

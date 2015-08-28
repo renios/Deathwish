@@ -50,7 +50,11 @@ public class Lighting: MonoBehaviour, IRestartable
 	{
 		isLighting = true;
 		GetComponent<SpriteRenderer> ().sprite = light;
+		SoundEffectController soundEffectController 
+			= GameObject.FindObjectOfType(typeof(SoundEffectController)) as SoundEffectController;
+		soundEffectController.Play (SoundType.Lightning);
 	}
+
 	void changeDark()
 	{
 		isLighting = false;

@@ -14,10 +14,11 @@ public class SpriteSwitch : MonoBehaviour
 		spriteRenderer = GetComponent<SpriteRenderer> ();
 	}
 
-	//fatal problem. Need to solve.
+	private IsDark isDarkDebug;
 	void Update ()
 	{
 		IsDark isDarkNow = Global.ingame.GetIsDarkInPosition(gameObject);
+		this.isDarkDebug = isDarkNow;
 		if(isDarkNow == IsDark.Light)
 		{
 			spriteRenderer.sprite = light;

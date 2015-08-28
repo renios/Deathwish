@@ -12,21 +12,24 @@ namespace Enums
 
 	public enum SoundType
 	{
-		None,//
-		Walk,//
-		Jump,//
-		Land,//
-		GrassPassing,//
+		None,
+		Walk,
+		Jump,
+		Land,
+		GrassPassing,
 		Swim,
-		BoxPush,//
-		FireDeath,//
-		SpikeDeath,//
+		ClimbingLadder,
+		BoxPush,
+		FireDeath,
+		SpikeDeath,
 		DustDeath,
-		OpenDoor,//
+		OpenDoor,
 		Mirror,
-		Decay,//
+		Decay,
 		BoxFalling,
-		Lightning
+		Lightning,
+		WindIsClose,
+		FireIsClose
 	}
 
 	//FIXME : need better name
