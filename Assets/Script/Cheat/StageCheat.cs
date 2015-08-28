@@ -3,6 +3,11 @@ using System.Collections;
 
 public class StageCheat : MonoBehaviour {
 	void Update () {
+		if (Input.GetKey(KeyCode.Escape))
+		{
+			Scene.Load("Menu", Scene.SceneType.MainScene);
+		}
+
 		if (Input.GetKeyUp(KeyCode.N))
 		{
 			var allLevelTags = Scene.GetAllLevelTags();
