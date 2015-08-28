@@ -241,6 +241,64 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4a7f71a54485cb54887cc583c05bdbc1, type: 2}
   m_IsPrefabParent: 0
+--- !u!1001 &66780372
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 440128, guid: 0427c24af8e304691bcc5bd39a66334d, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: .300000012
+      objectReference: {fileID: 0}
+    - target: {fileID: 440128, guid: 0427c24af8e304691bcc5bd39a66334d, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 4.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 440128, guid: 0427c24af8e304691bcc5bd39a66334d, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 440128, guid: 0427c24af8e304691bcc5bd39a66334d, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 440128, guid: 0427c24af8e304691bcc5bd39a66334d, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 440128, guid: 0427c24af8e304691bcc5bd39a66334d, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 440128, guid: 0427c24af8e304691bcc5bd39a66334d, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 440128, guid: 0427c24af8e304691bcc5bd39a66334d, type: 2}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 440128, guid: 0427c24af8e304691bcc5bd39a66334d, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 11433688, guid: 0427c24af8e304691bcc5bd39a66334d, type: 2}
+      propertyPath: LightMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11433688, guid: 0427c24af8e304691bcc5bd39a66334d, type: 2}
+      propertyPath: DarkMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11433688, guid: 0427c24af8e304691bcc5bd39a66334d, type: 2}
+      propertyPath: theText
+      value: 
+      objectReference: {fileID: 4900000, guid: 54b384efeab814dcc80a4ca3ebf44d29, type: 3}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 0427c24af8e304691bcc5bd39a66334d, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1001 &88563298
 Prefab:
   m_ObjectHideFlags: 0
