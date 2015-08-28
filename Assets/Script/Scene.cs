@@ -36,7 +36,7 @@ public class Scene
 		try
 		{
 			var levelTag = mapNameToLevelTag[currentSceneName];
-			PlayerPrefs.SetInt(levelTag.ToString(), 1);
+			SaveLoad.SaveClear(levelTag, Global.ingame.isDark);
 			var nextLevelTag = GetNextLevelTag();
 
 			if (nextLevelTag == null)

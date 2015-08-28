@@ -61,7 +61,7 @@ namespace UI
 				return false;
 			}
 			var previousLevelTag = Scene.GetPreviousLevelTag(parsedLevelTag);
-			return PlayerPrefs.GetInt(previousLevelTag.ToString()) == 0;
+			return SaveLoad.IsCleared(previousLevelTag.Value) == false;
 		}
 
 		public void Lock()
