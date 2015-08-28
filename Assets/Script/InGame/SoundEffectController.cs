@@ -35,10 +35,12 @@ public class SoundEffectController : MonoBehaviour, IRestartable
 
 	private SoundContainer moveSoundContainer = new SoundContainer();
 	private SoundContainer pushSoundContainer = new SoundContainer();
+	private SoundContainer fireSoundContainer =new SoundContainer();
 	void Start()
 	{
 		moveSoundContainer.Start("MoveSoundSource");
 		pushSoundContainer.Start("PushSoundContainer");
+		fireSoundContainer.Start("FireSoundContainer");
 
 		audioSource = GetComponent<AudioSource> ();
 
@@ -75,6 +77,7 @@ public class SoundEffectController : MonoBehaviour, IRestartable
 		
 		moveSoundContainer.Update();
 		pushSoundContainer.Update();
+		fireSoundContainer.Update();
 	}
 
 	public void Play(SoundType soundType)
@@ -109,18 +112,7 @@ public class SoundEffectController : MonoBehaviour, IRestartable
 
 		if(soundType == SoundType.FireIsClose)
 		{
-			if(dicRecentlyPlayed["Fire"]){}
-			else
-			{
-				dicTimeAfterPlay["Fire"] = 0;
-				dicRecentlyPlayed["Fire"] = true;
-				audioSource.PlayOneShot(fireIsCloseSound);
-			}
-		}
-		else
-		{
-			dicTimeAfterPlay["Fire"] = 0;
-			dicRecentlyPlayed["Fire"] = false;
+			fireSoundContainer.Play(fireIsCloseSound);
 		}
 
 		/*if(soundType == SoundType.WindIsClose)
