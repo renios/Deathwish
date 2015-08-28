@@ -10,7 +10,7 @@ public class TextBoxManagerForNormalEnding : TextBoxManager {
 	
 	void Awake()
 	{
-		blackImage.color -= new Color(0, 0, 0, 1);
+		blackImage.color = new Color(1, 1, 1, 0);
 	}
 	protected override void Start()
 	{

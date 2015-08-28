@@ -65,3 +65,5 @@ EditorBuildSettings:
     path: Assets/Scenes/Complete/NormalEnding.unity
   - enabled: 1
     path: Assets/Scenes/Complete/Chapter5/5-1.unity
+  - enabled: 1
+    path: Assets/Scenes/Complete/LightEnding.unity
