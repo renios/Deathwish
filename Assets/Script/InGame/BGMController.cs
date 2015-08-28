@@ -15,6 +15,8 @@ public class BGMController : MonoBehaviour
 	{
 		audioSource = GetComponent<AudioSource> ();
 		SetBGM ();
+		audioSource.Stop ();
+		audioSource.Play ();
 		clips.Add (Chapter1Sound);
 		clips.Add (Chapter2Sound);
 		clips.Add (IntroSound);
