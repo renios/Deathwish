@@ -167,7 +167,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ff94c353ee259e48a3e98575a4b38f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Effect_Light: {fileID: 130802, guid: 3b816d86658ce44d393e3094eb1b9f69, type: 2}
+  Effect_Light: {fileID: 108082}
   Effect_Dark: {fileID: 173976, guid: 3783bdfefec4cad45b756958b3ca07bd, type: 2}
 --- !u!114 &11457836
 MonoBehaviour:
@@ -1288,11 +1288,15 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: Effect_Light
       value: 
+<<<<<<< HEAD
       objectReference: {fileID: 130802, guid: 3b816d86658ce44d393e3094eb1b9f69, type: 2}
     - target: {fileID: 0}
       propertyPath: soundAreaModifier
       value: 1.20000005
       objectReference: {fileID: 0}
+=======
+      objectReference: {fileID: 108082}
+>>>>>>> 3c15dd33aa1b81cc1c4cb01c5a953544bfb6f76a
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 196684}

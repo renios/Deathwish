@@ -140,10 +140,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd5f3d29f25d24695bd8b617de571430, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelTag: 0-1
-  mapName: 
   lockImage: {fileID: 180630}
   button: {fileID: 11459630}
+  mapImage: {fileID: 11405336}
 --- !u!114 &11433006
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -182,7 +181,7 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 2
+  m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: .632352948, g: .627703309, b: .627703309, a: 1}
@@ -321,6 +320,14 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_MinHeight
       value: 150
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: mapImage
+      value: 
+      objectReference: {fileID: 11405336}
+    - target: {fileID: 0}
+      propertyPath: m_Transition
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
