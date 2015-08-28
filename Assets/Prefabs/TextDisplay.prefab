@@ -184,15 +184,15 @@ MonoBehaviour:
   m_Color: {r: .196078435, g: .196078435, b: .196078435, a: 1}
   m_FontData:
     m_Font: {fileID: 12800000, guid: 47a424678c7c9405791fdf3f6be76129, type: 3}
-    m_FontSize: 14
+    m_FontSize: 30
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 10
     m_MaxSize: 40
     m_Alignment: 4
     m_RichText: 1
-    m_HorizontalOverflow: 1
-    m_VerticalOverflow: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: New Text
 --- !u!222 &22210910
@@ -255,9 +255,9 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 22485086}
   m_RootOrder: 0
-  m_AnchorMin: {x: .5, y: .892728209}
-  m_AnchorMax: {x: .5, y: .892728209}
-  m_AnchoredPosition: {x: 0, y: -40}
+  m_AnchorMin: {x: .5, y: .859728158}
+  m_AnchorMax: {x: .5, y: .859728158}
+  m_AnchoredPosition: {x: 0, y: -26}
   m_SizeDelta: {x: 376, y: 121}
   m_Pivot: {x: .5, y: .5}
 --- !u!224 &22485086
@@ -291,12 +291,8 @@ Prefab:
       objectReference: {fileID: 12800000, guid: 47a424678c7c9405791fdf3f6be76129,
         type: 3}
     - target: {fileID: 0}
-      propertyPath: m_FontData.m_HorizontalOverflow
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_FontData.m_VerticalOverflow
-      value: 1
+      propertyPath: m_FontData.m_FontSize
+      value: 30
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
