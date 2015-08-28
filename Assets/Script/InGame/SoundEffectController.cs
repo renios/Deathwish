@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using Enums;
+using System;
 
 public class SoundEffectController : MonoBehaviour, IRestartable
 {
@@ -32,8 +33,15 @@ public class SoundEffectController : MonoBehaviour, IRestartable
 	public Dictionary<string, float> dicTimeAfterPlay = new Dictionary<string, float>();
 	public Dictionary<string, bool> dicRecentlyPlayed = new Dictionary<string, bool>();
 
+	private SoundContainer moveSoundContainer = new SoundContainer();
+	private SoundContainer pushSoundContainer = new SoundContainer();
+	private SoundContainer fireSoundContainer =new SoundContainer();
 	void Start()
 	{
+		moveSoundContainer.Start("MoveSoundSource");
+		pushSoundContainer.Start("PushSoundContainer");
+		fireSoundContainer.Start("FireSoundContainer");
+
 		audioSource = GetComponent<AudioSource> ();
 
 		dicTimeAfterPlay.Add ("Move", 0);
@@ -66,6 +74,10 @@ public class SoundEffectController : MonoBehaviour, IRestartable
 		{
 			if(dicTimeAfterPlay[key] > dicSoundDelay[key]) dicRecentlyPlayed[key] = false;
 		}
+		
+		moveSoundContainer.Update();
+		pushSoundContainer.Update();
+		fireSoundContainer.Update();
 	}
 
 	public void Play(SoundType soundType)
@@ -91,70 +103,16 @@ public class SoundEffectController : MonoBehaviour, IRestartable
 			return;
 		}
 
-		if(soundType == SoundType.Walk || soundType == SoundType.GrassPassing
-		   || soundType == SoundType.Swim || soundType == SoundType.ClimbingLadder)
-		{
-			if (dicRecentlyPlayed ["Move"]){}
-			else
-			{
-				dicTimeAfterPlay["Move"] = 0;
-				dicRecentlyPlayed["Move"] = true;
-				
-				switch(soundType)
-				{
-					case SoundType.Walk:
-						audioSource.PlayOneShot(walkSound);
-						break;
-					case SoundType.GrassPassing:
-						audioSource.PlayOneShot(grassPassingSound);
-						break;
-					case SoundType.Swim:
-						audioSource.PlayOneShot(swimSound);
-						break;
-					case SoundType.ClimbingLadder:
-						audioSource.PlayOneShot(ladderClimbingSound);
-						break;
-					default:
-						break;
-				}
-			}
-		}
-		else
-		{
-			dicTimeAfterPlay["Move"] = 0;
-			dicRecentlyPlayed["Move"] = false;
-		}
+		PlayMoveSound(soundType);
 
 		if(soundType == SoundType.BoxPush)
 		{
-			if(dicRecentlyPlayed["Push"]){}
-			else
-			{
-				dicTimeAfterPlay["Push"] = 0;
-				dicRecentlyPlayed["Push"] = true;
-				audioSource.PlayOneShot(boxPushSound);
-			}
-		}
-		else
-		{
-			dicTimeAfterPlay["Push"] = 0;
-			dicRecentlyPlayed["Push"] = false;
+			pushSoundContainer.Play(boxPushSound);
 		}
 
 		if(soundType == SoundType.FireIsClose)
 		{
-			if(dicRecentlyPlayed["Fire"]){}
-			else
-			{
-				dicTimeAfterPlay["Fire"] = 0;
-				dicRecentlyPlayed["Fire"] = true;
-				audioSource.PlayOneShot(fireIsCloseSound);
-			}
-		}
-		else
-		{
-			dicTimeAfterPlay["Fire"] = 0;
-			dicRecentlyPlayed["Fire"] = false;
+			fireSoundContainer.Play(fireIsCloseSound);
 		}
 
 		/*if(soundType == SoundType.WindIsClose)
@@ -188,8 +146,67 @@ public class SoundEffectController : MonoBehaviour, IRestartable
 
 		return;
 	}
+	
+	public class SoundContainer
+	{
+		private AudioSource container;
+		public void Start(string name)
+		{
+			var gameObject = new GameObject(name);
+			gameObject.AddComponent<AudioSource>();
+			container = gameObject.GetComponent<AudioSource>();
+		}
+		
+		private float previousSoundTime;
+		
+		public void Play(AudioClip clip)
+		{
+			if (!container.isPlaying)
+			{
+				container.clip = clip;
+				container.Play();
+			}
+			previousSoundTime = Time.time;
+		}
+		
+		public void Update()
+		{
+			if (previousSoundTime < Time.time - (Time.deltaTime * 2))
+			{
+				container.Stop();
+			}
+		}
+	}
 
-	void IRestartable.Restart()
+    private void PlayMoveSound(SoundType soundType)
+    {
+		if(soundType == SoundType.Walk || soundType == SoundType.GrassPassing
+		   || soundType == SoundType.Swim || soundType == SoundType.ClimbingLadder)
+		{
+			dicTimeAfterPlay["Move"] = 0;
+			dicRecentlyPlayed["Move"] = true;
+			
+			switch(soundType)
+			{
+				case SoundType.Walk:
+					moveSoundContainer.Play(walkSound);
+					break;
+				case SoundType.GrassPassing:
+					moveSoundContainer.Play(grassPassingSound);
+					break;
+				case SoundType.Swim:
+					moveSoundContainer.Play(swimSound);
+					break;
+				case SoundType.ClimbingLadder:
+					moveSoundContainer.Play(ladderClimbingSound);
+					break;
+				default:
+					break;
+			}
+		}
+    }
+
+    void IRestartable.Restart()
 	{
 		var keys1 = new List<string>(dicTimeAfterPlay.Keys);
 		foreach(var key in keys1)
