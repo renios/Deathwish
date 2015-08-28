@@ -17,6 +17,7 @@ TagManager:
   - Lamp
   - Box
   - Water
+  - PlayerParticle
   layers:
   - Default
   - TransparentFX

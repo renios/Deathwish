@@ -52,8 +52,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Complete/Chapter3/3-7.unity
   - enabled: 1
-    path: Assets/Scenes/Complete/Chapter4/4-1.unity
-  - enabled: 1
     path: Assets/Scenes/Complete/Chapter4/4-2.unity
+  - enabled: 1
+    path: Assets/Scenes/Complete/Chapter4/4-3.unity
   - enabled: 1
     path: Assets/Scenes/Complete/Chapter5/5-1.unity
