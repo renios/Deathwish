@@ -13,6 +13,7 @@ public class ChapterStartTextViewer : MonoBehaviour {
 		
 		yield return StartCoroutine(FadeInBackground());
 
+		// Player CANNOT move when prologue is playing.
 		GameObject.FindObjectOfType<Player>().canMove = false;
 
 		yield return StartCoroutine(ViewText(chapterTitleText.GetComponent<TextMesh>()));
