@@ -55,6 +55,11 @@ namespace UI
 		
 		public void OnButtonClicked()
 		{
+			if (parsedLevelTag.Chapter == 0)
+			{
+				Scene.Load("Prologue", Scene.SceneType.MainScene);
+				return;
+			}
 			Scene.Load(mapName, Scene.SceneType.Stage);
 		}
 
