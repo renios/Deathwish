@@ -45,6 +45,7 @@ public class Grass : ObjectMonoBehaviour
 		if (other.gameObject.GetComponent<GroundChecker> () != null)
 			if(other.gameObject.GetComponentInParent<Player> () != null)
 			{
+				player = other.gameObject.GetComponentInParent<Player> ();
 				player.withGrass = false;
 				groundChecker = null;
 				player = null;

@@ -18,22 +18,18 @@ AnimationClip:
   m_PPtrCurves:
   - curve:
     - time: 0
-      value: {fileID: 21300000, guid: d08abf7d2ea454c1b8fd137edaa5ddb2, type: 3}
-    - time: .166666672
-      value: {fileID: 21300002, guid: d08abf7d2ea454c1b8fd137edaa5ddb2, type: 3}
-    - time: .333333343
-      value: {fileID: 21300004, guid: d08abf7d2ea454c1b8fd137edaa5ddb2, type: 3}
+      value: {fileID: 21300000, guid: 4205f0b6bf956421ab8c258f55020fcd, type: 3}
+    - time: .25
+      value: {fileID: 21300002, guid: 4205f0b6bf956421ab8c258f55020fcd, type: 3}
     - time: .5
-      value: {fileID: 21300006, guid: d08abf7d2ea454c1b8fd137edaa5ddb2, type: 3}
-    - time: .666666687
-      value: {fileID: 21300008, guid: d08abf7d2ea454c1b8fd137edaa5ddb2, type: 3}
-    - time: .833333313
-      value: {fileID: 21300010, guid: d08abf7d2ea454c1b8fd137edaa5ddb2, type: 3}
+      value: {fileID: 21300004, guid: 4205f0b6bf956421ab8c258f55020fcd, type: 3}
+    - time: .75
+      value: {fileID: 21300006, guid: 4205f0b6bf956421ab8c258f55020fcd, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
     script: {fileID: 0}
-  m_SampleRate: 6
+  m_SampleRate: 4
   m_WrapMode: 0
   m_Bounds:
     m_Center: {x: 0, y: 0, z: 0}
@@ -47,12 +43,10 @@ AnimationClip:
       customType: 23
       isPPtrCurve: 1
     pptrCurveMapping:
-    - {fileID: 21300000, guid: d08abf7d2ea454c1b8fd137edaa5ddb2, type: 3}
-    - {fileID: 21300002, guid: d08abf7d2ea454c1b8fd137edaa5ddb2, type: 3}
-    - {fileID: 21300004, guid: d08abf7d2ea454c1b8fd137edaa5ddb2, type: 3}
-    - {fileID: 21300006, guid: d08abf7d2ea454c1b8fd137edaa5ddb2, type: 3}
-    - {fileID: 21300008, guid: d08abf7d2ea454c1b8fd137edaa5ddb2, type: 3}
-    - {fileID: 21300010, guid: d08abf7d2ea454c1b8fd137edaa5ddb2, type: 3}
+    - {fileID: 21300000, guid: 4205f0b6bf956421ab8c258f55020fcd, type: 3}
+    - {fileID: 21300002, guid: 4205f0b6bf956421ab8c258f55020fcd, type: 3}
+    - {fileID: 21300004, guid: 4205f0b6bf956421ab8c258f55020fcd, type: 3}
+    - {fileID: 21300006, guid: 4205f0b6bf956421ab8c258f55020fcd, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_StartTime: 0
