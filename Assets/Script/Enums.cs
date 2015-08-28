@@ -18,6 +18,7 @@ namespace Enums
 		Land,
 		GrassPassing,
 		Swim,
+		ClimbingLadder,
 		BoxPush,
 		FireDeath,
 		SpikeDeath,
@@ -27,6 +28,7 @@ namespace Enums
 		Decay,
 		BoxFalling,
 		Lightning,
+		WindIsClose,
 		FireIsClose
 	}
 

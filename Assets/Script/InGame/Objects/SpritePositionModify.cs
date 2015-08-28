@@ -9,8 +9,6 @@ public class SpritePositionModify : MonoBehaviour
 	void Start()
 	{
 		spriteReverse = GetComponent<SpriteReverse> ();
-
-		Debug.Log ("Before " + transform.position.y);
 		Vector3 vec = new Vector3 (0, positionModifier, 0);
 		if (spriteReverse.gravityDirection == Enums.GravityDirection.Normal)
 		{
@@ -20,7 +18,5 @@ public class SpritePositionModify : MonoBehaviour
 		{
 			gameObject.transform.position += vec;
 		}
-		
-		Debug.Log ("Aftr " + transform.position.y);
 	}
 }

@@ -34,6 +34,23 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &192034
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 460656}
+  - 61: {fileID: 6150856}
+  - 114: {fileID: 11408978}
+  m_Layer: 0
+  m_Name: WindSoundArea
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &196684
 GameObject:
   m_ObjectHideFlags: 0
@@ -69,13 +86,26 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 196684}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1.5, z: 1}
   m_Children:
   - {fileID: 404632}
   - {fileID: 468152}
+  - {fileID: 460656}
   m_Father: {fileID: 0}
   m_RootOrder: 0
+--- !u!4 &460656
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 192034}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -10, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 422068}
+  m_RootOrder: 2
 --- !u!4 &468152
 Transform:
   m_ObjectHideFlags: 1
@@ -88,6 +118,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 422068}
   m_RootOrder: 1
+--- !u!61 &6150856
+BoxCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 192034}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Size: {x: 1, y: 2}
 --- !u!61 &6189560
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -101,6 +144,18 @@ BoxCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Size: {x: 20, y: .100000001}
+--- !u!114 &11408978
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 192034}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d07bdb04960a2f44b924b2272a97a47, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soundAreaModifier: 1.20000005
 --- !u!114 &11452400
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -125,7 +180,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c728842c75299da469218b4d7b75be73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  windDirection: 1
+  windDirection: 0
 --- !u!198 &19896874
 ParticleSystem:
   m_ObjectHideFlags: 1
@@ -1234,6 +1289,10 @@ Prefab:
       propertyPath: Effect_Light
       value: 
       objectReference: {fileID: 130802, guid: 3b816d86658ce44d393e3094eb1b9f69, type: 2}
+    - target: {fileID: 0}
+      propertyPath: soundAreaModifier
+      value: 1.20000005
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 196684}

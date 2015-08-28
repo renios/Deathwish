@@ -10,6 +10,7 @@ public class SoundEffectController : MonoBehaviour, IRestartable
 	public AudioClip JumpSound;
 	public AudioClip grassPassingSound;
 	public AudioClip swimSound;
+	public AudioClip ladderClimbingSound;
 	public AudioClip boxFallingSound;
 	public AudioClip boxPushSound;
 	public AudioClip openDoorSound;
@@ -20,21 +21,36 @@ public class SoundEffectController : MonoBehaviour, IRestartable
 	public AudioClip spikeDeathSound;
 	public AudioClip dustDeathSound;
 	public AudioClip fireIsCloseSound;
+	//public AudioClip windSound;
 
 	public AudioSource audioSource;
-	public float delay;
+	public float moveSoundDelay;
+	public float pushSoundDelay;
+	public float fireSoundDelay;
+	//public float windSoundDelay;
+	public Dictionary<string, float> dicSoundDelay = new Dictionary<string, float>();
 	public Dictionary<string, float> dicTimeAfterPlay = new Dictionary<string, float>();
 	public Dictionary<string, bool> dicRecentlyPlayed = new Dictionary<string, bool>();
-	float timeAfterPlay;
-	bool recentlyPlayed;
 
 	void Start()
 	{
 		audioSource = GetComponent<AudioSource> ();
+
 		dicTimeAfterPlay.Add ("Move", 0);
-		dicTimeAfterPlay.Add ("Push", 0);
 		dicRecentlyPlayed.Add ("Move", false);
+		dicSoundDelay.Add ("Move", moveSoundDelay);
+
+		dicTimeAfterPlay.Add ("Push", 0);
 		dicRecentlyPlayed.Add ("Push", false);
+		dicSoundDelay.Add ("Push", pushSoundDelay);
+
+		dicTimeAfterPlay.Add ("Fire", 0);
+		dicRecentlyPlayed.Add ("Fire", false);
+		dicSoundDelay.Add ("Fire", fireSoundDelay);
+
+		/*dicTimeAfterPlay.Add ("Wind", 0);
+		dicRecentlyPlayed.Add ("Wind", false);
+		dicSoundDelay.Add ("Wind", windSoundDelay);*/
 	}
 
 	void Update()
@@ -48,7 +64,7 @@ public class SoundEffectController : MonoBehaviour, IRestartable
 		var keys2 = new List<string>(dicRecentlyPlayed.Keys);
 		foreach(string key in keys2)
 		{
-			if(dicTimeAfterPlay[key] > delay) dicRecentlyPlayed[key] = false;
+			if(dicTimeAfterPlay[key] > dicSoundDelay[key]) dicRecentlyPlayed[key] = false;
 		}
 	}
 
@@ -76,7 +92,7 @@ public class SoundEffectController : MonoBehaviour, IRestartable
 		}
 
 		if(soundType == SoundType.Walk || soundType == SoundType.GrassPassing
-		   || soundType == SoundType.Swim)
+		   || soundType == SoundType.Swim || soundType == SoundType.ClimbingLadder)
 		{
 			if (dicRecentlyPlayed ["Move"]){}
 			else
@@ -86,17 +102,20 @@ public class SoundEffectController : MonoBehaviour, IRestartable
 				
 				switch(soundType)
 				{
-				case SoundType.Walk:
-					audioSource.PlayOneShot(walkSound);
-					break;
-				case SoundType.GrassPassing:
-					audioSource.PlayOneShot(grassPassingSound);
-					break;
-				case SoundType.Swim:
-					audioSource.PlayOneShot(swimSound);
-					break;
-				default:
-					break;
+					case SoundType.Walk:
+						audioSource.PlayOneShot(walkSound);
+						break;
+					case SoundType.GrassPassing:
+						audioSource.PlayOneShot(grassPassingSound);
+						break;
+					case SoundType.Swim:
+						audioSource.PlayOneShot(swimSound);
+						break;
+					case SoundType.ClimbingLadder:
+						audioSource.PlayOneShot(ladderClimbingSound);
+						break;
+					default:
+						break;
 				}
 			}
 		}
@@ -106,7 +125,6 @@ public class SoundEffectController : MonoBehaviour, IRestartable
 			dicRecentlyPlayed["Move"] = false;
 		}
 
-		//It Should use another variables.
 		if(soundType == SoundType.BoxPush)
 		{
 			if(dicRecentlyPlayed["Push"]){}
@@ -114,7 +132,7 @@ public class SoundEffectController : MonoBehaviour, IRestartable
 			{
 				dicTimeAfterPlay["Push"] = 0;
 				dicRecentlyPlayed["Push"] = true;
-				//audioSource.PlayOneShot(boxPushSound);
+				audioSource.PlayOneShot(boxPushSound);
 			}
 		}
 		else
@@ -122,6 +140,39 @@ public class SoundEffectController : MonoBehaviour, IRestartable
 			dicTimeAfterPlay["Push"] = 0;
 			dicRecentlyPlayed["Push"] = false;
 		}
+
+		if(soundType == SoundType.FireIsClose)
+		{
+			if(dicRecentlyPlayed["Fire"]){}
+			else
+			{
+				dicTimeAfterPlay["Fire"] = 0;
+				dicRecentlyPlayed["Fire"] = true;
+				audioSource.PlayOneShot(fireIsCloseSound);
+			}
+		}
+		else
+		{
+			dicTimeAfterPlay["Fire"] = 0;
+			dicRecentlyPlayed["Fire"] = false;
+		}
+
+		/*if(soundType == SoundType.WindIsClose)
+		{
+			if(dicRecentlyPlayed["Wind"]){}
+			else
+			{
+				//Debug.Log("Also Pass at " + t.ToString("F4") + " with " + dicRecentlyPlayed["Wind"].ToString());
+				dicTimeAfterPlay["Wind"] = 0;
+				dicRecentlyPlayed["Wind"] = true;
+				audioSource.PlayOneShot(windSound);
+			}
+		}
+		else
+		{
+			dicTimeAfterPlay["Wind"] = 0;
+			dicRecentlyPlayed["Wind"] = false;
+		}*/
 
 		if(soundType == SoundType.None) return;
 		if(soundType == SoundType.Jump) audioSource.PlayOneShot(JumpSound);
@@ -131,7 +182,6 @@ public class SoundEffectController : MonoBehaviour, IRestartable
 		if(soundType == SoundType.Mirror) audioSource.PlayOneShot(mirrorSound);
 
 		if(soundType == SoundType.Decay) audioSource.PlayOneShot(decaySound);
-		if(soundType == SoundType.FireIsClose) audioSource.PlayOneShot(fireIsCloseSound);
 		if(soundType == SoundType.Lightning) audioSource.PlayOneShot(lightningSound);
 
 		if(soundType == SoundType.BoxFalling) audioSource.PlayOneShot(boxFallingSound);

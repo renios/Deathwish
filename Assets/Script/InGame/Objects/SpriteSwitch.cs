@@ -15,7 +15,6 @@ public class SpriteSwitch : MonoBehaviour
 	}
 
 	private IsDark isDarkDebug;
-	//fatal problem. Need to solve.
 	void Update ()
 	{
 		IsDark isDarkNow = Global.ingame.GetIsDarkInPosition(gameObject);

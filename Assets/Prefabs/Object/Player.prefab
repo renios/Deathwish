@@ -630,6 +630,7 @@ MonoBehaviour:
   JumpSound: {fileID: 8300000, guid: f0d1faa619e7a0b46bdefb29dd2f0ce3, type: 3}
   grassPassingSound: {fileID: 8300000, guid: d45fc08bfb551eb4da5cc659fba258fa, type: 3}
   swimSound: {fileID: 8300000, guid: 43ac3fc15f91a764bb55239b6f149be6, type: 3}
+  ladderClimbingSound: {fileID: 8300000, guid: 40442b9acfdaffd45af1710b42d09550, type: 3}
   boxFallingSound: {fileID: 8300000, guid: 7a70e6cfbd78987419699dc1505a7a6d, type: 3}
   boxPushSound: {fileID: 8300000, guid: 9fe0ca1c38b48d245b92a0fa982bc328, type: 3}
   openDoorSound: {fileID: 8300000, guid: 7fcb0a7e9c989b14d9a0cae859577b3f, type: 3}
@@ -640,8 +641,12 @@ MonoBehaviour:
   spikeDeathSound: {fileID: 8300000, guid: a77f9cd0a8a7a1b48b67fea3b30ff8e9, type: 3}
   dustDeathSound: {fileID: 8300000, guid: e51ae66c4f8449a4980417fe67da1789, type: 3}
   fireIsCloseSound: {fileID: 8300000, guid: 156ccb132c08f234aaa77a31714803a2, type: 3}
+  windSound: {fileID: 8300000, guid: 14036da7951b87d4280d84635ff98083, type: 3}
   audioSource: {fileID: 0}
-  delay: .5
+  moveSoundDelay: .5
+  pushSoundDelay: .5
+  fireSoundDelay: .5
+  windSoundDelay: .5
 --- !u!114 &11476734
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1095,6 +1100,30 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_Name
       value: TemporarySoundEffectSource
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: windSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 14036da7951b87d4280d84635ff98083, type: 3}
+    - target: {fileID: 0}
+      propertyPath: ladderClimbingSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 40442b9acfdaffd45af1710b42d09550, type: 3}
+    - target: {fileID: 0}
+      propertyPath: moveSoundDelay
+      value: .5
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: pushSoundDelay
+      value: .5
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: fireSoundDelay
+      value: .5
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: windSoundDelay
+      value: .5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
