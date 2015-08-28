@@ -29,6 +29,11 @@ public class UIButtonEventManager : MonoBehaviour
 	{
 		Scene.Load("Option", Scene.SceneType.Stage);
 	}
+	
+	public void ToCredits()
+	{
+		Scene.Load("Credits", Scene.SceneType.Stage);
+	}
 
 	public void Restart()
 	{
