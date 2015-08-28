@@ -143,6 +143,9 @@ public class Player : MonoBehaviour, IRestartable
 
 	void ReverseSpriteDirection()
 	{
+		// Temporary fix rotating die animatino.
+		// Die animation direction is reversed with character animation.
+		// Teporarily rotate it in code.
 		float rotationY = playerSpriteObject.transform.rotation.eulerAngles.y;
 		playerSpriteObject.transform.rotation = Quaternion.Euler(0, 180 - rotationY, 0);
 	}
