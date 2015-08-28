@@ -8,11 +8,15 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/ui/Title.unity
   - enabled: 1
+    path: Assets/Scenes/ui/Menu.unity
+  - enabled: 1
     path: Assets/Scenes/ui/SelectStage.unity
   - enabled: 1
     path: Assets/Scenes/ui/Option.unity
   - enabled: 1
     path: Assets/Scenes/Test.unity
+  - enabled: 1
+    path: Assets/Scenes/Complete/Prologue.unity
   - enabled: 1
     path: Assets/Scenes/Complete/0-1.unity
   - enabled: 1
@@ -55,5 +59,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Complete/Chapter4/4-1.unity
   - enabled: 1
     path: Assets/Scenes/Complete/Chapter4/4-2.unity
+  - enabled: 1
+    path: Assets/Scenes/Complete/Chapter4/4-3.unity
+  - enabled: 1
+    path: Assets/Scenes/Complete/NormalEnding.unity
   - enabled: 1
     path: Assets/Scenes/Complete/Chapter5/5-1.unity

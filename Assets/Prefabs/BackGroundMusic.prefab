@@ -109,15 +109,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9088a336a6181c3498ddd3dd574691e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BGMList:
-  - {fileID: 8300000, guid: 6d3614e0a3e39254a915d75579690dd0, type: 3}
+  IntroSound: {fileID: 8300000, guid: 6d3614e0a3e39254a915d75579690dd0, type: 3}
+  CutSceneSound: {fileID: 8300000, guid: 4bb971c7a8001b143967aa8864c66301, type: 3}
+  Chapter1Sound: {fileID: 8300000, guid: 7d8a15e6c3508d14f8afe4fb8d81c79f, type: 3}
+  Chapter2Sound: {fileID: 8300000, guid: 6f95a65a643241948b94767bdb5e41c2, type: 3}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: Chapter2Sound
+      value: 
+      objectReference: {fileID: 8300000, guid: 6f95a65a643241948b94767bdb5e41c2, type: 3}
+    - target: {fileID: 0}
+      propertyPath: Chapter1Sound
+      value: 
+      objectReference: {fileID: 8300000, guid: 7d8a15e6c3508d14f8afe4fb8d81c79f, type: 3}
+    - target: {fileID: 0}
+      propertyPath: IntroSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 6d3614e0a3e39254a915d75579690dd0, type: 3}
+    - target: {fileID: 0}
+      propertyPath: CutSceneSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 4bb971c7a8001b143967aa8864c66301, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 105552}

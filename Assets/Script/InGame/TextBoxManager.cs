@@ -23,7 +23,7 @@ public class TextBoxManager : MonoBehaviour {
 	public float WaitTime;
 
 	// Use this for initialization
-	void Start () 
+	protected virtual void Start () 
 	{
 
 	
@@ -88,7 +88,7 @@ public class TextBoxManager : MonoBehaviour {
 			player.canMove = false;
 		}
 	}
-	public void DisableTextBox()
+	public virtual void DisableTextBox()
 	{
 		textBox.SetActive (false);
 		isActive = false;

@@ -24,6 +24,9 @@ namespace UI
 
 		private LevelTag parsedLevelTag;
 		public Image mapImage;
+		public Image boundary;
+		public Sprite lightBoundary;
+		public Sprite darkBoundary;
 
 		void Awake()
 		{
@@ -37,6 +40,7 @@ namespace UI
 			{
 				mapImage.sprite = spriteImage;	
 			}
+			boundary.sprite = null;
 		}
 
 		public LevelTag GetLevelTag()
@@ -51,6 +55,11 @@ namespace UI
 		
 		public void OnButtonClicked()
 		{
+			if (parsedLevelTag.Chapter == 0)
+			{
+				Scene.Load("Prologue", Scene.SceneType.MainScene);
+				return;
+			}
 			Scene.Load(mapName, Scene.SceneType.Stage);
 		}
 
@@ -61,7 +70,7 @@ namespace UI
 				return false;
 			}
 			var previousLevelTag = Scene.GetPreviousLevelTag(parsedLevelTag);
-			return PlayerPrefs.GetInt(previousLevelTag.ToString()) == 0;
+			return SaveLoad.IsCleared(previousLevelTag.Value) == false;
 		}
 
 		public void Lock()
@@ -74,6 +83,16 @@ namespace UI
 		{
 			lockImage.SetActive(false);
 			button.interactable = true;
+			
+			var isDark = SaveLoad.GetClearedMode(parsedLevelTag);
+			if (isDark == Enums.IsDark.Dark)
+			{
+				boundary.sprite = darkBoundary;
+			}
+			else
+			{
+				boundary.sprite = lightBoundary;
+			}
 		}
 	}
 
