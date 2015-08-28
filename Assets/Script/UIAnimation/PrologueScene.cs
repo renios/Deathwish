@@ -42,5 +42,7 @@ public class PrologueScene : MonoBehaviour {
 				yield return null;
 			}
 		}
+		
+		Scene.Load("0-1", Scene.SceneType.Stage);
 	}
 }
