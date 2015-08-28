@@ -1332,6 +1332,7 @@ GameObject:
   - 224: {fileID: 1620893968}
   - 222: {fileID: 1620893970}
   - 114: {fileID: 1620893969}
+  - 114: {fileID: 1620893971}
   m_Layer: 5
   m_Name: Title
   m_TagString: Untagged
@@ -1381,13 +1382,25 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Deathwish
+  m_Text: Wish
 --- !u!222 &1620893970
 CanvasRenderer:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1620893967}
+--- !u!114 &1620893971
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1620893967}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71524fbe4231e4bb8a6dc0934e4b4733, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  deathwishTitle: {fileID: 0}
 --- !u!1001 &1647785223
 Prefab:
   m_ObjectHideFlags: 0
