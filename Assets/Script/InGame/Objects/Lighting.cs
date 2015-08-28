@@ -7,6 +7,7 @@ using Enums;
 
 public class Lighting: MonoBehaviour, IRestartable
 {
+	public int startDelay;
 	public int lightTerm;
 	public int darkTerm;
 	public new Sprite light;
@@ -24,7 +25,7 @@ public class Lighting: MonoBehaviour, IRestartable
 	{
 		isLighting = false;
 		Global.ingame.LightsInMap.Add(this);
-		repeat ();
+		Invoke("repeat", startDelay);
 	}
 
 	public HashSet<GameObject> GetGameObjectsInLighting()
