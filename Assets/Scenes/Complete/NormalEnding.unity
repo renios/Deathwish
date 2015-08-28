@@ -5492,6 +5492,7 @@ Prefab:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 11425884, guid: 6c6f11a231c704251a1749967149ee46, type: 2}
+    - {fileID: 11493590, guid: 6c6f11a231c704251a1749967149ee46, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 6c6f11a231c704251a1749967149ee46, type: 2}
   m_IsPrefabParent: 0
 --- !u!1001 &872282566
@@ -7901,6 +7902,7 @@ MonoBehaviour:
   player: {fileID: 0}
   isActive: 0
   stopPlayerMovement: 1
+  WaitTime: 0
   blackImage: {fileID: 582679864}
 --- !u!1001 &1254222266
 Prefab:
