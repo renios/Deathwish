@@ -42,6 +42,6 @@ public class UIButtonEventManager : MonoBehaviour
 
 	public void NewGame()
 	{
-		PlayerPrefs.DeleteAll();
+		SaveLoad.DeleteAll();
 	}
 }

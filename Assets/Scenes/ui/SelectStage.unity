@@ -189,12 +189,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 886942}
---- !u!114 &3726094 stripped
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 11432724, guid: c05202b64616b4e54a784411ce383903,
-    type: 2}
-  m_PrefabInternal: {fileID: 1442837997}
-  m_Script: {fileID: 11500000, guid: bd5f3d29f25d24695bd8b617de571430, type: 3}
 --- !u!1 &12899895
 GameObject:
   m_ObjectHideFlags: 0
@@ -3669,26 +3663,6 @@ Prefab:
     - target: {fileID: 22423302, guid: c05202b64616b4e54a784411ce383903, type: 2}
       propertyPath: m_Pivot.y
       value: .5
-      objectReference: {fileID: 0}
-    - target: {fileID: 11459630, guid: c05202b64616b4e54a784411ce383903, type: 2}
-      propertyPath: m_Navigation.m_SelectOnDown
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 11459630, guid: c05202b64616b4e54a784411ce383903, type: 2}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 3726094}
-    - target: {fileID: 11459630, guid: c05202b64616b4e54a784411ce383903, type: 2}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: OnButtonClicked
-      objectReference: {fileID: 0}
-    - target: {fileID: 11459630, guid: c05202b64616b4e54a784411ce383903, type: 2}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 11432724, guid: c05202b64616b4e54a784411ce383903, type: 2}
-      propertyPath: mapName
-      value: Chapter0
       objectReference: {fileID: 0}
     - target: {fileID: 170562, guid: c05202b64616b4e54a784411ce383903, type: 2}
       propertyPath: m_Name
