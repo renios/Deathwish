@@ -128,6 +128,7 @@ public class Player : MonoBehaviour, IRestartable
 		yield return new WaitForSeconds(playTimeOfAnim);
 		canMove = true;
 		animator.SetTrigger("Revive");
+		ReverseSpriteDirection();
 		Restarter.RestartAll();
 	}
 
@@ -147,7 +148,9 @@ public class Player : MonoBehaviour, IRestartable
 		// Die animation direction is reversed with character animation.
 		// Teporarily rotate it in code.
 		float rotationY = playerSpriteObject.transform.rotation.eulerAngles.y;
-		playerSpriteObject.transform.rotation = Quaternion.Euler(0, 180 - rotationY, 0);
+		float rotationX = playerSpriteObject.transform.rotation.eulerAngles.x;
+		float rotationZ = playerSpriteObject.transform.rotation.eulerAngles.z;
+		playerSpriteObject.transform.rotation = Quaternion.Euler(rotationX, 180 - rotationY, rotationZ);
 	}
 
 	float GetDrag(Direction direction)
