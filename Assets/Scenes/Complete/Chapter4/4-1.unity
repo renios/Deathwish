@@ -87,6 +87,63 @@ NavMeshSettings:
     cellSize: .166666672
     manualCellSize: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1001 &35802989
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 466594, guid: 4f7fdaddb1eee4dd19fc37c9a09ba90d, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 466594, guid: 4f7fdaddb1eee4dd19fc37c9a09ba90d, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -3.12528706
+      objectReference: {fileID: 0}
+    - target: {fileID: 466594, guid: 4f7fdaddb1eee4dd19fc37c9a09ba90d, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 466594, guid: 4f7fdaddb1eee4dd19fc37c9a09ba90d, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 466594, guid: 4f7fdaddb1eee4dd19fc37c9a09ba90d, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 466594, guid: 4f7fdaddb1eee4dd19fc37c9a09ba90d, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 466594, guid: 4f7fdaddb1eee4dd19fc37c9a09ba90d, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 466594, guid: 4f7fdaddb1eee4dd19fc37c9a09ba90d, type: 2}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 10216500, guid: 4f7fdaddb1eee4dd19fc37c9a09ba90d, type: 2}
+      propertyPath: m_Text
+      value: Chapter 4.   Solitude
+      objectReference: {fileID: 0}
+    - target: {fileID: 10277532, guid: 4f7fdaddb1eee4dd19fc37c9a09ba90d, type: 2}
+      propertyPath: m_Text
+      value: "\uB2E4\uC2DC\uB294 \uD76C\uB9DD\uC744 \uD488\uC9C0 \uC54A\uACA0\uB2E4\uACE0,
+        \n\n\uB2E4\uC2DC\uB294 \uB204\uAD70\uAC00\uB97C \uBBFF\uC9C0 \uC54A\uACA0\uB2E4\uACE0,
+        \n\n\n\uB2E4\uC2DC\uB294 \uC774 \uC138\uC0C1\uC5D0 \uD0DC\uC5B4\uB098\uC9C0
+        \uC54A\uACA0\uB2E4\uACE0."
+      objectReference: {fileID: 0}
+    - target: {fileID: 2386128, guid: 4f7fdaddb1eee4dd19fc37c9a09ba90d, type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 10100, guid: 0000000000000000e000000000000000, type: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 4f7fdaddb1eee4dd19fc37c9a09ba90d, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1001 &39832813
 Prefab:
   m_ObjectHideFlags: 0

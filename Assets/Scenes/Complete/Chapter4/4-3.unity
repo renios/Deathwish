@@ -5780,6 +5780,10 @@ Prefab:
       propertyPath: light
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 21277050, guid: 8bdb0c42b7a5b61419845e9e46c74700, type: 2}
+      propertyPath: m_SortingOrder
+      value: -5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8bdb0c42b7a5b61419845e9e46c74700, type: 2}
   m_IsPrefabParent: 0
