@@ -23,10 +23,20 @@ namespace UI
 		public Button button;
 
 		private LevelTag parsedLevelTag;
+		public Image mapImage;
 
 		void Awake()
 		{
 			parsedLevelTag = new LevelTag(levelTag);
+			var spriteImage = Resources.Load<Sprite>("icons/" + levelTag);
+			if (spriteImage == null)
+			{
+				spriteImage = Resources.Load<Sprite>("icons/default");
+			}
+			if (spriteImage != null)
+			{
+				mapImage.sprite = spriteImage;	
+			}
 		}
 
 		public LevelTag GetLevelTag()
