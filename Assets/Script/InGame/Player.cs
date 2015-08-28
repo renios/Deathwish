@@ -110,6 +110,11 @@ public class Player : MonoBehaviour, IRestartable
 		{
 			Scene.LoadNextStageAndSave();
 		}
+		if (Input.GetKeyUp(KeyCode.X))
+		{
+			Global.ingame.ChangeDarkLight();
+			Scene.LoadNextStageAndSave();
+		}
 	}
 	
 	public void PlayDieAnimSoundAndRestart(SoundType soundType)
@@ -202,32 +207,42 @@ public class Player : MonoBehaviour, IRestartable
 			
 			if (Input.GetKey (KeyCode.RightArrow))
 			{
-				GetComponent<Rigidbody2D> ().velocity = new Vector2 (moveSpeed * GetDrag (Direction.Horizontal), GetComponent<Rigidbody2D> ().velocity.y);
-				if(!onAir)
-				{
-					if(withGrass) soundType = SoundType.GrassPassing;
-					else soundType = SoundType.Walk;
-				}
-				if(IsUnderwater())
-				{
-					soundType = SoundType.Swim;
-				}
+				MoveRight1Frame();
 			}
 			else if (Input.GetKey (KeyCode.LeftArrow))
 			{
-				GetComponent<Rigidbody2D> ().velocity = new Vector2 (-moveSpeed * GetDrag (Direction.Horizontal), GetComponent<Rigidbody2D> ().velocity.y);
-				if(!onAir)
-				{
-					if(withGrass) soundType = SoundType.GrassPassing;
-					else soundType = SoundType.Walk;
-				}
-				if(IsUnderwater())
-				{
-					soundType = SoundType.Swim;
-				}
+				MoveLeft1Frame();
 			}
 			else
 				GetComponent<Rigidbody2D>().velocity = new Vector2(0, GetComponent<Rigidbody2D>().velocity.y);
+		}
+	}
+
+	public void MoveRight1Frame()
+	{
+		GetComponent<Rigidbody2D> ().velocity = new Vector2 (moveSpeed * GetDrag (Direction.Horizontal), GetComponent<Rigidbody2D> ().velocity.y);
+		if(!onAir)
+		{
+			if(withGrass) soundType = SoundType.GrassPassing;
+			else soundType = SoundType.Walk;
+		}
+		if(IsUnderwater())
+		{
+			soundType = SoundType.Swim;
+		}
+	}
+
+	public void MoveLeft1Frame()
+	{
+		GetComponent<Rigidbody2D> ().velocity = new Vector2 (-moveSpeed * GetDrag (Direction.Horizontal), GetComponent<Rigidbody2D> ().velocity.y);
+		if(!onAir)
+		{
+			if(withGrass) soundType = SoundType.GrassPassing;
+			else soundType = SoundType.Walk;
+		}
+		if(IsUnderwater())
+		{
+			soundType = SoundType.Swim;
 		}
 	}
 

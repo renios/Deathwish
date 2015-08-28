@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using UI;
+using System;
 
 public class Scene
 {
@@ -12,9 +13,14 @@ public class Scene
 		Stage
 	}
 
-	//FIXME : set default value as main scene after problem solved
-	//set default value as stage for test
-	public static MapName currentSceneName = new MapName("WorkShop");
+    public static List<LevelTag> GetAllLevelTags()
+    {
+        return levelTagToMapName.Keys.ToList();
+    }
+
+    //FIXME : set default value as main scene after problem solved
+    //set default value as stage for test
+    public static MapName currentSceneName = new MapName("WorkShop");
 	public static SceneType currentSceneType = SceneType.Stage;
 
 	static Scene()
@@ -47,8 +53,7 @@ public class Scene
 			}
 			else
 			{
-				var nextSceneLevel = levelTagToMapName[nextLevelTag.Value];
-				Load(nextSceneLevel.ToString(), SceneType.Stage);
+				InterceptInLoadNextScene(nextLevelTag.Value);
 			}
 		}
 		catch (KeyNotFoundException e)
@@ -57,6 +62,48 @@ public class Scene
 			Debug.LogError("You can go next scene only start from select stage. : " + currentSceneName);
 			throw;
 		}
+    }
+
+    private static void InterceptInLoadNextScene(LevelTag nextLevelTag)
+    {
+		if (nextLevelTag.Chapter == 5 && nextLevelTag.Stage == 1)
+		{
+			if (IsNormalEnding())
+			{
+				SaveLoad.AllClear();
+				Load("NormalEnding", SceneType.Stage);
+				return;
+			}
+		}
+		var nextSceneLevel = levelTagToMapName[nextLevelTag];
+		Load(nextSceneLevel.ToString(), SceneType.Stage);
+    }
+
+    private static bool IsNormalEnding()
+    {
+		var ratio = GetClearRatio();
+		return ratio > 0.2f && ratio < 0.8f;
+    }
+
+    private static float GetClearRatio()
+    {
+		var levelTags = levelTagToMapName.Keys;
+		var totalCount = 0;
+		var lightClearCount = 0;
+		foreach (var levelTag in levelTags)
+		{
+			if (SaveLoad.IsCleared(levelTag))
+			{
+				totalCount += 1;
+				if (SaveLoad.GetClearedMode(levelTag) == Enums.IsDark.Light)
+				{
+					lightClearCount += 1;
+				}
+			}
+		}
+		
+		var ratio = (float)lightClearCount / totalCount;
+		return ratio;
     }
 
     private static LevelTag? GetNextLevelTag()
