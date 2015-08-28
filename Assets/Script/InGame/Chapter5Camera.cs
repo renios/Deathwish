@@ -5,9 +5,14 @@ using System.Collections.Generic;
 public class Chapter5Camera : MonoBehaviour {
 	
 	private Dictionary<Player, Vector3> previousPosition = new Dictionary<Player, Vector3>();
-	
+	private Background background;
+	private float backgroundFirstY;
+
 	void Start()
 	{
+		background = FindObjectOfType<Background>();
+		backgroundFirstY = background.transform.position.y;
+
 		Player[] players = GameObject.FindObjectsOfType<Player>();
 		foreach (var player in players)
 		{
@@ -41,6 +46,9 @@ public class Chapter5Camera : MonoBehaviour {
 		
 		float averageX = totalX / players.Length;
 		float averageY = totalY / players.Length;
+		
+		//FIXME: temporary scrol chapter 5 background y position.
+		background.transform.position = new Vector3(background.transform.position.x, backgroundFirstY - averageY, background.transform.position.z);
 		
 		transform.position = new Vector3(averageX, averageY, transform.position.z);
 	}
