@@ -5,8 +5,20 @@ using UnityEngine.UI;
 namespace UI
 {
 	public class StageButton : MonoBehaviour {
-		public string levelTag;
-		public string mapName;
+		private string levelTag
+		{
+			get {
+				return gameObject.name;
+			}
+		}
+
+		private string mapName
+		{
+			get {
+				return mapName;
+			}
+		}
+
 		public GameObject lockImage;
 		public Button button;
 
