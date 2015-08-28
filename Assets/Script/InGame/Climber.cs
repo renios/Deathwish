@@ -52,6 +52,11 @@ class Climber
 					isClimbing = false;
 			}
 		}
+		else
+		{
+			isClimbing = false;
+			playerRigidbody.gravityScale = gravityScale;
+		}
 	}
 	
 	void UpdateIsClimb ()
