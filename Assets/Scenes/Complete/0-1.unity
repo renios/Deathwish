@@ -14253,7 +14253,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22403000, guid: 6c6f11a231c704251a1749967149ee46, type: 2}
       propertyPath: m_RootOrder
-      value: 8
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 22403000, guid: 6c6f11a231c704251a1749967149ee46, type: 2}
       propertyPath: m_AnchoredPosition.x
@@ -14294,30 +14294,6 @@ Prefab:
     - target: {fileID: 22403000, guid: 6c6f11a231c704251a1749967149ee46, type: 2}
       propertyPath: m_Pivot.y
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 22407432, guid: 6c6f11a231c704251a1749967149ee46, type: 2}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 22407432, guid: 6c6f11a231c704251a1749967149ee46, type: 2}
-      propertyPath: m_AnchoredPosition.y
-      value: 250
-      objectReference: {fileID: 0}
-    - target: {fileID: 11474148, guid: 6c6f11a231c704251a1749967149ee46, type: 2}
-      propertyPath: m_FontData.m_Alignment
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 11474148, guid: 6c6f11a231c704251a1749967149ee46, type: 2}
-      propertyPath: m_FontData.m_FontSize
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 11474148, guid: 6c6f11a231c704251a1749967149ee46, type: 2}
-      propertyPath: m_FontData.m_HorizontalOverflow
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 11474148, guid: 6c6f11a231c704251a1749967149ee46, type: 2}
-      propertyPath: m_FontData.m_VerticalOverflow
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6c6f11a231c704251a1749967149ee46, type: 2}

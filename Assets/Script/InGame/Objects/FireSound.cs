@@ -5,7 +5,7 @@ public class FireSound : MonoBehaviour
 {
 	void Start()
 	{
-		GetComponentInChildren<PlayerDetector> ().SetCallBack (PlayFireIsCloseSound);
+		GetComponentInChildren<PlayerDetector> ().SetCallBack (PlayFireIsCloseSound, alsoIncludeStay: true);
 	}
 
 	public void PlayFireIsCloseSound()
