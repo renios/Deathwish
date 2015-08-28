@@ -49,6 +49,16 @@ public class SaveLoad
 		}
     }
 
+    public static void AllClear()
+    {
+        PlayerPrefs.SetString("Clear", "Clear");
+    }
+
+	public static bool IsAllCleared()
+	{
+		return PlayerPrefs.GetString("Clear") == "Clear";
+	}
+
     public static void DeleteAll()
     {
         PlayerPrefs.DeleteAll();

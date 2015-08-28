@@ -42,6 +42,7 @@ public class Scene
 			if (nextLevelTag == null)
 			{
 				Debug.Log("Clear all stage!");
+				SaveLoad.AllClear();
 				Load("Title", SceneType.MainScene);
 			}
 			else

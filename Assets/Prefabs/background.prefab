@@ -132,6 +132,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cameraTransform: {fileID: 460638}
+  scrollY: 1
 --- !u!114 &11435528
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -144,7 +145,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   light: {fileID: 21300000, guid: 0e1bc7bf072fabe41a8de3bffee452e5, type: 3}
-  dark: {fileID: 21300000, guid: d428123cf457ff9439347e7bc1167529, type: 3}
+  dark: {fileID: 21300000, guid: 7bacc89ea7b8d904c80aea8bb49b1e6e, type: 3}
 --- !u!212 &21266278
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -169,7 +170,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: -4
-  m_Sprite: {fileID: 21300000, guid: d428123cf457ff9439347e7bc1167529, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7bacc89ea7b8d904c80aea8bb49b1e6e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &100100000
 Prefab:
@@ -177,7 +178,17 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 7bacc89ea7b8d904c80aea8bb49b1e6e,
+        type: 3}
+    - target: {fileID: 0}
+      propertyPath: dark
+      value: 
+      objectReference: {fileID: 21300000, guid: 7bacc89ea7b8d904c80aea8bb49b1e6e,
+        type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 125226}
