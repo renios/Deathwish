@@ -637,6 +637,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b2121ee0b8aedc4dbc6649e397d2a3b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  penetrate: 0
 --- !u!114 &61548191
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3265,6 +3266,16 @@ Prefab:
       propertyPath: m_LocalScale.y
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 11436648, guid: e7a8a2dbbc71848ccab14baab803bf5f, type: 2}
+      propertyPath: light
+      value: 
+      objectReference: {fileID: 21300000, guid: 0571990fd07ca46e3ad42a385b69d2bf,
+        type: 3}
+    - target: {fileID: 21229300, guid: e7a8a2dbbc71848ccab14baab803bf5f, type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 0571990fd07ca46e3ad42a385b69d2bf,
+        type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e7a8a2dbbc71848ccab14baab803bf5f, type: 2}
   m_IsPrefabParent: 0
@@ -3738,6 +3749,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b2121ee0b8aedc4dbc6649e397d2a3b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  penetrate: 0
 --- !u!114 &546272092
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4973,6 +4985,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b2121ee0b8aedc4dbc6649e397d2a3b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  penetrate: 0
 --- !u!114 &693020358
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8061,6 +8074,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b2121ee0b8aedc4dbc6649e397d2a3b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  penetrate: 0
 --- !u!114 &1096221307
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13057,7 +13071,7 @@ Transform:
   - {fileID: 1676216612}
   - {fileID: 1395867878}
   m_Father: {fileID: 0}
-  m_RootOrder: 38
+  m_RootOrder: 39
 --- !u!1001 &1780407916
 Prefab:
   m_ObjectHideFlags: 0
