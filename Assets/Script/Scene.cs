@@ -13,9 +13,14 @@ public class Scene
 		Stage
 	}
 
-	//FIXME : set default value as main scene after problem solved
-	//set default value as stage for test
-	public static MapName currentSceneName = new MapName("WorkShop");
+    public static List<LevelTag> GetAllLevelTags()
+    {
+        return levelTagToMapName.Keys.ToList();
+    }
+
+    //FIXME : set default value as main scene after problem solved
+    //set default value as stage for test
+    public static MapName currentSceneName = new MapName("WorkShop");
 	public static SceneType currentSceneType = SceneType.Stage;
 
 	static Scene()
