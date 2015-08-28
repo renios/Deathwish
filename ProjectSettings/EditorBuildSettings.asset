@@ -8,6 +8,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/ui/Title.unity
   - enabled: 1
+    path: Assets/Scenes/ui/Menu.unity
+  - enabled: 1
     path: Assets/Scenes/ui/SelectStage.unity
   - enabled: 1
     path: Assets/Scenes/ui/Option.unity
