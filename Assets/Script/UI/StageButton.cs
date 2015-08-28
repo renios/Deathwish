@@ -15,7 +15,7 @@ namespace UI
 		private string mapName
 		{
 			get {
-				return mapName;
+				return gameObject.name;
 			}
 		}
 

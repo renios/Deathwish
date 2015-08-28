@@ -53,7 +53,7 @@ public class Scene
 		catch (KeyNotFoundException e)
 		{
 			Debug.LogException(e);
-			Debug.LogError("You can go next scene only start from select stage.");
+			Debug.LogError("You can go next scene only start from select stage. : " + currentSceneName);
 			throw;
 		}
     }

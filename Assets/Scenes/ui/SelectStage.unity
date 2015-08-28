@@ -937,8 +937,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 625427896}
   m_HandleRect: {fileID: 625427895}
   m_Direction: 2
-  m_Value: .701729119
-  m_Size: .333546728
+  m_Value: .761503041
+  m_Size: .285479456
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -4687,8 +4687,8 @@ RectTransform:
   m_RootOrder: 0
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: -6.43729982e-06, y: -210}
-  m_SizeDelta: {x: 1016, y: 1562}
+  m_AnchoredPosition: {x: -6.43729982e-06, y: -341}
+  m_SizeDelta: {x: 1016, y: 1825}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &1917062524
 MonoBehaviour:
