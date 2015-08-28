@@ -26,7 +26,7 @@ public class BGMController : MonoBehaviour
 		}
 		if(Scene.currentSceneType == Scene.SceneType.Stage)
 		{
-			audioSource.clip = BGMList[0];
+			audioSource.clip = BGMList[1];
 			//need another clip
 		}
 
