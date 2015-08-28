@@ -2789,7 +2789,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 275
+  m_RootOrder: 273
 --- !u!1001 &412137361
 Prefab:
   m_ObjectHideFlags: 0
@@ -4847,7 +4847,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 162
+  m_RootOrder: 161
 --- !u!1001 &774914156
 Prefab:
   m_ObjectHideFlags: 0
@@ -5602,6 +5602,10 @@ Prefab:
     - target: {fileID: 22355620, guid: 6c6f11a231c704251a1749967149ee46, type: 2}
       propertyPath: m_RenderMode
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11474148, guid: 6c6f11a231c704251a1749967149ee46, type: 2}
+      propertyPath: m_FontData.m_VerticalOverflow
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 11425884, guid: 6c6f11a231c704251a1749967149ee46, type: 2}
@@ -7675,7 +7679,7 @@ Transform:
   m_LocalScale: {x: 1.10000002, y: 1.10000002, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 277
+  m_RootOrder: 276
 --- !u!1001 &1231731035
 Prefab:
   m_ObjectHideFlags: 0
