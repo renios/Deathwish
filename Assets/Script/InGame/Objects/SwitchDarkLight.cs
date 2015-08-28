@@ -11,7 +11,7 @@ public class SwitchDarkLight : MonoBehaviour
 	{
 		isGround = GameObject.FindObjectOfType<GroundChecker> ().IsGrounded ();
 
-		if (isPlayer && Input.GetKeyDown(KeyCode.UpArrow) && isGround)
+		if (isPlayer && Input.GetKeyDown(KeyCode.UpArrow) && isGround && !FindObjectOfType<TextBoxManager>().isActive) //changed for mirror disabling purposes when reading dialogue.
 		{
 			Global.ingame.ChangeDarkLight();
 			SoundEffectController soundEffectController
