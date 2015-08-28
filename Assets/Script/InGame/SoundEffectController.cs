@@ -107,6 +107,7 @@ public class SoundEffectController : MonoBehaviour, IRestartable
 
 		if(soundType == SoundType.BoxPush)
 		{
+			pushSoundContainer.ChangeVolume(0.4f);
 			pushSoundContainer.Play(boxPushSound);
 		}
 
@@ -142,7 +143,7 @@ public class SoundEffectController : MonoBehaviour, IRestartable
 		if(soundType == SoundType.Decay) audioSource.PlayOneShot(decaySound);
 		if(soundType == SoundType.Lightning) audioSource.PlayOneShot(lightningSound);
 
-		if(soundType == SoundType.BoxFalling) audioSource.PlayOneShot(boxFallingSound);
+		if(soundType == SoundType.BoxFalling) audioSource.PlayOneShot(boxFallingSound, 0.2f);
 
 		return;
 	}
@@ -158,6 +159,11 @@ public class SoundEffectController : MonoBehaviour, IRestartable
 		}
 		
 		private float previousSoundTime;
+		
+		public void ChangeVolume(float volume)
+		{
+			container.volume = volume;
+		}
 		
 		public void Play(AudioClip clip)
 		{
