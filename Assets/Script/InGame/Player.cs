@@ -136,6 +136,10 @@ public class Player : MonoBehaviour, IRestartable
 			Global.ingame.ChangeDarkLight();
 			Scene.LoadNextStageAndSave();
 		}
+		if (Input.GetKeyUp(KeyCode.Escape))
+		{
+			Scene.Load("SelectStage", Scene.SceneType.StageSelect);
+		}
 	}
 	
 	public void PlayDieAnimSoundAndRestart(SoundType soundType)
