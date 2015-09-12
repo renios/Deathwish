@@ -29,10 +29,8 @@ public class InGame
 		foreach (Lighting light in LightsInMap)
 		{
 			Debug.Assert(light != null);
-			if (light.GetGameObjectsInLighting().Contains(gameObject))
-			{
-				return DecorateByDarkSplitter(IsDark.Light, gameObject.transform.position);
-			}
+			if (light.isLighting)
+				return IsDark.Light;
 		}
 		return GetIsDarkInPosition(gameObject.transform.position);
 	}
