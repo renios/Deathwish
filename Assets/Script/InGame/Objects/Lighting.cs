@@ -13,6 +13,7 @@ public class Lighting: MonoBehaviour, IRestartable
 	public new Sprite light;
 	public Sprite dark;
 	public LightingChecker lightingChecker;
+	public GameObject lightningEffect;
 
 	private int length;
 	
@@ -20,6 +21,7 @@ public class Lighting: MonoBehaviour, IRestartable
 
 	public bool isLighting;
 	bool isEffectLighting;
+	GameObject effect;
 
 	void Start()
 	{
@@ -54,6 +56,7 @@ public class Lighting: MonoBehaviour, IRestartable
 		SoundEffectController soundEffectController 
 			= GameObject.FindObjectOfType(typeof(SoundEffectController)) as SoundEffectController;
 		soundEffectController.Play (SoundType.Lightning);
+		effect = Instantiate(lightningEffect);
 	}
 
 	void changeDark()
@@ -71,6 +74,7 @@ public class Lighting: MonoBehaviour, IRestartable
 	void IRestartable.Restart()
 	{
 		Global.ingame.isDark = IsDark.Light;
+		Destroy(effect);
 	}
 
 }

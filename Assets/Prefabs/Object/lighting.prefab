@@ -94,11 +94,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c313fdbc34a56d24bac185e74dedb273, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  startDelay: 0
   lightTerm: 5
   darkTerm: 10
   light: {fileID: 21300000, guid: 42d56944b4b946946926307e86eaa975, type: 3}
   dark: {fileID: 0}
   lightingChecker: {fileID: 11426552}
+  lightningEffect: {fileID: 115068, guid: d393d0c9a49214932bd535dc393a9e4e, type: 2}
+  isLighting: 0
 --- !u!212 &21277050
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -140,6 +143,10 @@ Prefab:
       propertyPath: darkTerm
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: lightningEffect
+      value: 
+      objectReference: {fileID: 115068, guid: d393d0c9a49214932bd535dc393a9e4e, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 153086}
