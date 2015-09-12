@@ -150,8 +150,6 @@ public class Player : MonoBehaviour, IRestartable
 	IEnumerator PlayDieAnimSoundAndRestartCoroutine(SoundType soundType)
 	{
 		canMove = false;
-		// Prevent playing die animation when already playing die animation.
-		GetComponent<Collider2D>().enabled = false;
 		soundEffectController.Play (soundType);
 		ReverseSpriteDirection();
 		animator.SetTrigger("Die");
@@ -476,7 +474,6 @@ public class Player : MonoBehaviour, IRestartable
 	void IRestartable.Restart()
 	{
 		GetComponent<Rigidbody2D>().velocity = Vector2.zero;
-		GetComponent<Collider2D>().enabled = true;
 		gameObject.transform.position = startPoint;
 		climber = new Climber (gameObject, ladderCheckerUp, ladderCheckerDown, groundChecker, climbSpeed, gravityScaleOfStartTime);
 		GetComponent<Rigidbody2D> ().gravityScale = gravityScaleOfStartTime;
