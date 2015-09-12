@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using Enums;
 
 public class AllAboutO2 : MonoBehaviour, IRestartable {
 
@@ -42,7 +43,7 @@ public class AllAboutO2 : MonoBehaviour, IRestartable {
 			UpdateO2Bar();
 		}
 		if (currentAmountO2 <= 0)
-			Restarter.RestartAll();	
+			FindObjectOfType<Player>().PlayDieAnimSoundAndRestart(SoundType.None);
 	}
 	
 	public bool IsActive()

@@ -56,6 +56,7 @@ public class Player : MonoBehaviour, IRestartable
 	public bool withGrass = false;
 	bool onAir = true;
 	bool leavingGround = true;
+	bool isDead = false;
 
 	//used for Text display purposes.
 
@@ -144,11 +145,13 @@ public class Player : MonoBehaviour, IRestartable
 	
 	public void PlayDieAnimSoundAndRestart(SoundType soundType)
 	{
+		if (isDead) return;
 		StartCoroutine(PlayDieAnimSoundAndRestartCoroutine(soundType));
 	}
 
 	IEnumerator PlayDieAnimSoundAndRestartCoroutine(SoundType soundType)
 	{
+		isDead = true;
 		canMove = false;
 		soundEffectController.Play (soundType);
 		ReverseSpriteDirection();
@@ -475,6 +478,7 @@ public class Player : MonoBehaviour, IRestartable
 	{
 		GetComponent<Rigidbody2D>().velocity = Vector2.zero;
 		gameObject.transform.position = startPoint;
+		isDead = false;
 		climber = new Climber (gameObject, ladderCheckerUp, ladderCheckerDown, groundChecker, climbSpeed, gravityScaleOfStartTime);
 		GetComponent<Rigidbody2D> ().gravityScale = gravityScaleOfStartTime;
 		pushableObjectsNearbyPlayer = new HashSet<GameObject>();
