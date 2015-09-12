@@ -150,6 +150,8 @@ public class Player : MonoBehaviour, IRestartable
 	IEnumerator PlayDieAnimSoundAndRestartCoroutine(SoundType soundType)
 	{
 		canMove = false;
+		// Prevent playing die animation when already playing die animation.
+		GetComponent<Collider2D>().enabled = false;
 		soundEffectController.Play (soundType);
 		ReverseSpriteDirection();
 		animator.SetTrigger("Die");
@@ -224,10 +226,10 @@ public class Player : MonoBehaviour, IRestartable
 	{
 		if(Global.ingame.inWind == false)
 		{
-			if ((IsUnderwater ()) && (overMaxFallingSpeed(GetComponent<Rigidbody2D> ().velocity.y, maxSpeedInWater, GravityCoefficient(gravityDirection))))
+			if ((IsUnderwater ()) && (OverMaxFallingSpeed(GetComponent<Rigidbody2D> ().velocity.y, maxSpeedInWater, GravityCoefficient(gravityDirection))))
 				GetComponent<Rigidbody2D> ().velocity = new Vector2 (GetComponent<Rigidbody2D> ().velocity.x, -1 * maxSpeedInWater * GravityCoefficient(gravityDirection));
 			
-			if ((!groundChecker.IsGrounded ()) && (overMaxFallingSpeed(GetComponent<Rigidbody2D> ().velocity.y, maxSpeedInAir, GravityCoefficient(gravityDirection))))
+			if ((!groundChecker.IsGrounded ()) && (OverMaxFallingSpeed(GetComponent<Rigidbody2D> ().velocity.y, maxSpeedInAir, GravityCoefficient(gravityDirection))))
 				GetComponent<Rigidbody2D> ().velocity = new Vector2 (GetComponent<Rigidbody2D> ().velocity.x, -1 * maxSpeedInAir * GravityCoefficient(gravityDirection));
 			
 			if (Input.GetKey (KeyCode.RightArrow))
@@ -271,7 +273,7 @@ public class Player : MonoBehaviour, IRestartable
 		}
 	}
 
-	bool overMaxFallingSpeed(float currentSpeed, float maxFallingSpeed, int gravityCoefficient)
+	bool OverMaxFallingSpeed(float currentSpeed, float maxFallingSpeed, int gravityCoefficient)
 	{
 		if(gravityCoefficient > 0)
 		{
@@ -470,6 +472,7 @@ public class Player : MonoBehaviour, IRestartable
 	void IRestartable.Restart()
 	{
 		GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+		GetComponent<Collider2D>().enabled = true;
 		gameObject.transform.position = startPoint;
 		climber = new Climber (gameObject, ladderCheckerUp, ladderCheckerDown, groundChecker, climbSpeed, gravityScaleOfStartTime);
 		GetComponent<Rigidbody2D> ().gravityScale = gravityScaleOfStartTime;
