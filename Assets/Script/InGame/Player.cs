@@ -307,7 +307,8 @@ public class Player : MonoBehaviour, IRestartable
 	{
 		Global.ingame.inWind = false;
 
-		if ((coll.gameObject.tag == "Box") || (coll.gameObject.tag == "Lamp"))
+		if (((Global.ingame.GetIsDarkInPosition(this.gameObject) == IsDark.Light) && (coll.gameObject.tag == "Box"))
+			 || (coll.gameObject.tag == "Lamp"))
 		{
 			GameObject newPushableObject = coll.gameObject;
 			pushableObjectsNearbyPlayer.Add(newPushableObject);
@@ -392,6 +393,9 @@ public class Player : MonoBehaviour, IRestartable
 
 	bool IsPlayerPushingObject()
 	{
+		if (Mathf.Abs(GetComponent<Rigidbody2D>().velocity.x) == 0)
+			return false;
+
 		foreach (GameObject pushableObject in pushableObjectsNearbyPlayer)
 		{
 			// It prevent playing 'push' animation when Player is over or under the box (or lamp).
