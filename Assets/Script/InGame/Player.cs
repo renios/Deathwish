@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Enums;
 using System.Linq;
+using System;
 
 public class Player : MonoBehaviour, IRestartable
 {
@@ -128,6 +129,7 @@ public class Player : MonoBehaviour, IRestartable
 		if (Input.GetKeyUp(KeyCode.C))
 		{
 			Scene.LoadNextStageAndSave();
+			TrackClearCheat();
 		}
 		if (Input.GetKeyUp(KeyCode.X))
 		{
@@ -139,8 +141,18 @@ public class Player : MonoBehaviour, IRestartable
 			Scene.Load("SelectStage", Scene.SceneType.StageSelect);
 		}
 	}
-	
-	public void PlayDieAnimSoundAndRestart(SoundType soundType)
+
+    private void TrackClearCheat()
+    {
+        if (GoogleAnalyticsV3.getInstance() == null)
+		{
+			return;
+		}
+
+		GoogleAnalyticsV3.getInstance().LogEvent("cheat", "clear", Scene.currentSceneName.ToString(), 1);
+    }
+
+    public void PlayDieAnimSoundAndRestart(SoundType soundType)
 	{
 		if (isDead) return;
 		StartCoroutine(PlayDieAnimSoundAndRestartCoroutine(soundType));
