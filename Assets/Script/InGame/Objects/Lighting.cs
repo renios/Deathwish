@@ -24,6 +24,12 @@ public class Lighting: MonoBehaviour, IRestartable
 		Invoke("repeat", startDelay);
 	}
 
+	void repeat()
+	{
+		InvokeRepeating ("changeDark", 0, lightTerm + darkTerm);
+		InvokeRepeating ("changeLight", darkTerm, lightTerm + darkTerm);
+	}
+
 	void changeLight()
 	{
 		isLighting = true;
@@ -38,12 +44,6 @@ public class Lighting: MonoBehaviour, IRestartable
 	{
 		isLighting = false;
 		GetComponent<SpriteRenderer> ().sprite = dark;
-	}
-
-	void repeat()
-	{
-		InvokeRepeating ("changeDark", 0, lightTerm + darkTerm);
-		InvokeRepeating ("changeLight", darkTerm, lightTerm + darkTerm);
 	}
 
 	void IRestartable.Restart()

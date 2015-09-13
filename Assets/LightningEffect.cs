@@ -6,14 +6,12 @@ public class LightningEffect : MonoBehaviour {
 	public float playEffectTime;
 
 	Camera mainCamera;
-	new SpriteRenderer renderer;
 
 	// Use this for initialization
 	void Start () {
 		mainCamera = Camera.main;
-		renderer = GetComponent<SpriteRenderer>();
 		iTween.FadeTo(gameObject, 0, playEffectTime);
-		Destroy(gameObject, playEffectTime++);
+		Destroy(gameObject, playEffectTime+1);
 	}
 	
 	// Update is called once per frame
