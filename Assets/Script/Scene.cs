@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UI;
 using System;
+using Enums;
 
 public class Scene
 {
@@ -32,6 +33,7 @@ public class Scene
 	{
 		currentSceneName = new MapName(sceneName);
 		currentSceneType = sceneType;
+		TrackSceneLoad(currentSceneName);
 		Application.LoadLevel (sceneName);
 		BeforeLoad (); // global.ingame should be null after loading scene.
 		AfterLoad ();
@@ -43,6 +45,7 @@ public class Scene
 		{
 			var levelTag = mapNameToLevelTag[currentSceneName];
 			SaveLoad.SaveClear(levelTag, Global.ingame.isDark);
+			TrackClearEvent(levelTag, Global.ingame.isDark);
 			var nextLevelTag = GetNextLevelTag();
 
 			if (nextLevelTag == null)
@@ -69,6 +72,33 @@ public class Scene
 			Debug.LogException(e);
 			Debug.LogError("You can go next scene only start from select stage. : " + currentSceneName);
 			throw;
+		}
+    }
+
+    private static void TrackSceneLoad(MapName currentSceneName)
+    {
+        if (GoogleAnalyticsV3.getInstance() == null)
+		{
+			return;
+		}
+
+		GoogleAnalyticsV3.getInstance().LogScreen(currentSceneName.ToString());
+    }
+
+    private static void TrackClearEvent(LevelTag levelTag, IsDark isDark)
+    {
+        if (GoogleAnalyticsV3.getInstance() == null)
+		{
+			return;
+		}
+
+		if (Global.ingame.isDark == Enums.IsDark.Light)
+		{
+			GoogleAnalyticsV3.getInstance().LogEvent("stage", "clear-light", levelTag.ToString(), 1);
+		}
+		else if (Global.ingame.isDark == Enums.IsDark.Dark)
+		{
+			GoogleAnalyticsV3.getInstance().LogEvent("stage", "clear-dark", levelTag.ToString(), 1);
 		}
     }
 
