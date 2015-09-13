@@ -46,7 +46,8 @@ public class Lighting: MonoBehaviour, IRestartable
 	{
 		// It strange that changing global value here.
 		Global.ingame.isDark = IsDark.Light;
-		Destroy(effect);
+		if (effect != null)
+			Destroy(effect);
 	}
 
 }
