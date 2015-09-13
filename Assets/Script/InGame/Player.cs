@@ -52,7 +52,7 @@ public class Player : MonoBehaviour, IRestartable
 
 	public GravityDirection gravityDirection;
 
-	public SoundType soundType;
+	public SoundType soundTypePlayedAtCurrentFrame;
 	public bool withGrass = false;
 	bool onAir = true;
 	bool leavingGround = true;
@@ -106,7 +106,7 @@ public class Player : MonoBehaviour, IRestartable
 			Restarter.RestartAll();
 		}
 
-		soundType = SoundType.None;
+		soundTypePlayedAtCurrentFrame = SoundType.None;
 
 		Wind ();
 		Move ();
@@ -122,9 +122,9 @@ public class Player : MonoBehaviour, IRestartable
 		animator.SetBool("isPushing", IsPlayerPushingObject());
 		animator.SetBool("isObjectSmall", WhatIsPlayerPushingObject() == ObjectSize.Small);
 
-		if(IsPlayerPushingObject() && !IsUnderwater()) soundType = SoundType.BoxPush;
+		if(IsPlayerPushingObject() && !IsUnderwater()) soundTypePlayedAtCurrentFrame = SoundType.BoxPush;
 
-		soundEffectController.Play (soundType);
+		soundEffectController.Play (soundTypePlayedAtCurrentFrame);
 
 		IsItDark ();
 		
@@ -251,12 +251,12 @@ public class Player : MonoBehaviour, IRestartable
 		GetComponent<Rigidbody2D> ().velocity = new Vector2 (moveSpeed * GetDrag (Direction.Horizontal), GetComponent<Rigidbody2D> ().velocity.y);
 		if(!onAir)
 		{
-			if(withGrass) soundType = SoundType.GrassPassing;
-			else soundType = SoundType.Walk;
+			if(withGrass) soundTypePlayedAtCurrentFrame = SoundType.GrassPassing;
+			else soundTypePlayedAtCurrentFrame = SoundType.Walk;
 		}
 		if(IsUnderwater())
 		{
-			soundType = SoundType.Swim;
+			soundTypePlayedAtCurrentFrame = SoundType.Swim;
 		}
 	}
 
@@ -265,12 +265,12 @@ public class Player : MonoBehaviour, IRestartable
 		GetComponent<Rigidbody2D> ().velocity = new Vector2 (-moveSpeed * GetDrag (Direction.Horizontal), GetComponent<Rigidbody2D> ().velocity.y);
 		if(!onAir)
 		{
-			if(withGrass) soundType = SoundType.GrassPassing;
-			else soundType = SoundType.Walk;
+			if(withGrass) soundTypePlayedAtCurrentFrame = SoundType.GrassPassing;
+			else soundTypePlayedAtCurrentFrame = SoundType.Walk;
 		}
 		if(IsUnderwater())
 		{
-			soundType = SoundType.Swim;
+			soundTypePlayedAtCurrentFrame = SoundType.Swim;
 		}
 	}
 
@@ -300,7 +300,7 @@ public class Player : MonoBehaviour, IRestartable
 		}
 		else {return;}
 
-		soundType = SoundType.Jump;
+		soundTypePlayedAtCurrentFrame = SoundType.Jump;
 		onAir = true;
 	}
 
@@ -362,7 +362,7 @@ public class Player : MonoBehaviour, IRestartable
 		{
 			if(groundChecker.IsGrounded())
 			{
-				soundType = SoundType.Land;
+				soundTypePlayedAtCurrentFrame = SoundType.Land;
 				onAir = false;
 				leavingGround = false;
 			}
