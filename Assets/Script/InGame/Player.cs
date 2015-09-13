@@ -124,9 +124,6 @@ public class Player : MonoBehaviour, IRestartable
 
 		soundEffectController.Play (soundTypePlayedAtCurrentFrame);
 		soundTypePlayedAtCurrentFrame = SoundType.None;
-
-
-		IsItDark ();
 		
 		if (Input.GetKeyUp(KeyCode.C))
 		{
