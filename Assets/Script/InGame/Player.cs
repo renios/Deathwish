@@ -52,7 +52,7 @@ public class Player : MonoBehaviour, IRestartable
 
 	public GravityDirection gravityDirection;
 
-	public SoundType soundTypePlayedAtCurrentFrame;
+	public SoundType soundTypePlayedAtCurrentFrame = SoundType.None;
 	public bool withGrass = false;
 	bool onAir = true;
 	bool leavingGround = true;
@@ -106,8 +106,6 @@ public class Player : MonoBehaviour, IRestartable
 			Restarter.RestartAll();
 		}
 
-		soundTypePlayedAtCurrentFrame = SoundType.None;
-
 		Wind ();
 		Move ();
 		ApplyDirectionToSprite();
@@ -125,6 +123,8 @@ public class Player : MonoBehaviour, IRestartable
 		if(IsPlayerPushingObject() && !IsUnderwater()) soundTypePlayedAtCurrentFrame = SoundType.BoxPush;
 
 		soundEffectController.Play (soundTypePlayedAtCurrentFrame);
+		soundTypePlayedAtCurrentFrame = SoundType.None;
+
 
 		IsItDark ();
 		
