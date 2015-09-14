@@ -89,13 +89,13 @@ class Climber
 		if (Input.GetKey (KeyCode.UpArrow))
 		{
 			playerRigidbody.velocity = new Vector2 (0, climbSpeed);
-			playerRigidbody.gameObject.GetComponent<Player>().soundType = SoundType.ClimbingLadder;
+			playerRigidbody.gameObject.GetComponent<Player>().soundTypePlayedAtCurrentFrame = SoundType.ClimbingLadder;
 			return true;
 		}
 		else if (Input.GetKey (KeyCode.DownArrow))
 		{
 			playerRigidbody.velocity = new Vector2 (0, -climbSpeed);
-			playerRigidbody.gameObject.GetComponent<Player>().soundType = SoundType.ClimbingLadder;
+			playerRigidbody.gameObject.GetComponent<Player>().soundTypePlayedAtCurrentFrame = SoundType.ClimbingLadder;
 			return true;
 		}
 		return false;
