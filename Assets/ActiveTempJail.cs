@@ -24,7 +24,7 @@ public class ActiveTempJail : MonoBehaviour {
 		if ((tempJail.activeInHierarchy == true) && (disappearIn == Global.ingame.isDark))
 		{
 			tempJail.SetActive(false);	
-			Destroy(mirror.GetComponent<SwitchDarkLight>());
+			Destroy(mirror.GetComponent<SwitchDarkLight>(), 1f);
 		}
 	}
 }

@@ -75,7 +75,14 @@ public class SwitchDarkLight : MonoBehaviour, IRestartable
 			isPlayer = false;
 		}
 	}
-	
+
+	void OnDestroy()
+	{
+		if (mirrorEffectCoroutine != null)
+			StopCoroutine(mirrorEffectCoroutine);
+		blurEffectCamera.enabled = false;
+	}
+
 	void IRestartable.Restart()
 	{
 		if (mirrorEffectCoroutine != null)
