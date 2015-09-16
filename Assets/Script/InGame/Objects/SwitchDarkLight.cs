@@ -80,7 +80,8 @@ public class SwitchDarkLight : MonoBehaviour, IRestartable
 	{
 		if (mirrorEffectCoroutine != null)
 			StopCoroutine(mirrorEffectCoroutine);
-		blurEffectCamera.enabled = false;
+		if (blurEffectCamera != null)
+			blurEffectCamera.enabled = false;
 	}
 
 	void IRestartable.Restart()

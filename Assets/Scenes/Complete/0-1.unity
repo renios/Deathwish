@@ -1372,7 +1372,7 @@ BoxCollider2D:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 134399987}
   m_Enabled: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: b170f10ddd4f0b947a2c09099661fea7, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_Offset: {x: -1.79999995, y: -2}
@@ -1385,7 +1385,7 @@ BoxCollider2D:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 134399987}
   m_Enabled: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: b170f10ddd4f0b947a2c09099661fea7, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_Offset: {x: 1.79999995, y: -2}
@@ -4175,7 +4175,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 24
 --- !u!1001 &384404613
 Prefab:
   m_ObjectHideFlags: 0
@@ -5638,7 +5638,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 19
+  m_RootOrder: 34
 --- !u!1001 &503217358
 Prefab:
   m_ObjectHideFlags: 0
@@ -6762,7 +6762,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &632285755
 Transform:
   m_ObjectHideFlags: 0
@@ -6777,7 +6777,7 @@ Transform:
   - {fileID: 927637106}
   - {fileID: 401957039}
   m_Father: {fileID: 0}
-  m_RootOrder: 43
+  m_RootOrder: 58
 --- !u!114 &632285756
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8734,7 +8734,7 @@ BoxCollider2D:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 809966409}
   m_Enabled: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: b170f10ddd4f0b947a2c09099661fea7, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_Offset: {x: -1.79999995, y: -2}
@@ -8747,7 +8747,7 @@ BoxCollider2D:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 809966409}
   m_Enabled: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: b170f10ddd4f0b947a2c09099661fea7, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_Offset: {x: 1.79999995, y: -2}
@@ -9537,7 +9537,7 @@ RectTransform:
   - {fileID: 771020350}
   - {fileID: 1114783664}
   m_Father: {fileID: 0}
-  m_RootOrder: 65
+  m_RootOrder: 80
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
@@ -18805,11 +18805,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3b889daa52ed42eaa74d4a718b6ff2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  activeTrigger: 1
   tempJail: {fileID: 809966409}
-  shoutZone: {fileID: 1450823070}
+  triggerShoutZone: {fileID: 1450823070}
+  triggerCollider: {fileID: 0}
   nextShoutZone: {fileID: 2021837742}
   disappearIn: 1
-  mirror: {fileID: 1231270012}
+  triggerMirror: {fileID: 1231270012}
 --- !u!4 &1747744248
 Transform:
   m_ObjectHideFlags: 0
@@ -19823,7 +19825,7 @@ BoxCollider2D:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1878320569}
   m_Enabled: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: b170f10ddd4f0b947a2c09099661fea7, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
@@ -19840,7 +19842,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 452
+  m_RootOrder: 459
 --- !u!1001 &1893211181
 Prefab:
   m_ObjectHideFlags: 0
@@ -20861,8 +20863,8 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 2008926000}
-  - 114: {fileID: 2008926001}
   - 61: {fileID: 2008925999}
+  - 114: {fileID: 2008926002}
   m_Layer: 0
   m_Name: MirrorGuide (1)
   m_TagString: Untagged
@@ -20895,7 +20897,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2
---- !u!114 &2008926001
+--- !u!114 &2008926002
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
@@ -20903,14 +20905,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 2008925998}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 87adb200e31e74c1b952f80142f90a18, type: 3}
+  m_Script: {fileID: 11500000, guid: e3b889daa52ed42eaa74d4a718b6ff2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  activeTrigger: 2
   tempJail: {fileID: 134399987}
-  collider: {fileID: 2008925999}
+  triggerShoutZone: {fileID: 0}
+  triggerCollider: {fileID: 2008925999}
   nextShoutZone: {fileID: 506378875}
   disappearIn: 0
-  mirror: {fileID: 1130641845}
+  triggerMirror: {fileID: 1130641845}
 --- !u!1001 &2013204778
 Prefab:
   m_ObjectHideFlags: 0
