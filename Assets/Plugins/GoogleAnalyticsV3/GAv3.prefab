@@ -44,7 +44,7 @@ MonoBehaviour:
   otherTrackingCode: UA-67835240-1
   productName: deathwish
   bundleIdentifier: 
-  bundleVersion: 0.2.0
+  bundleVersion: developing
   dispatchPeriod: 5
   sampleFrequency: 100
   logLevel: 3
@@ -82,7 +82,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: bundleVersion
-      value: 0.2.0
+      value: developing
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: logLevel
