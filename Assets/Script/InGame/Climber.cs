@@ -26,6 +26,16 @@ class Climber
 		this.climbSpeed = climbSpeed;
 		this.gravityScale = playerRigidbody.gravityScale;
 	}
+	
+	public LadderCheckerUp GetLadderCheckerUp()
+	{
+		return ladderCheckerUp;
+	}
+
+	public LadderCheckerDown GetLadderCheckerDown()
+	{
+		return ladderCheckerDown;
+	}
 
 	public bool IsClimbing()
 	{

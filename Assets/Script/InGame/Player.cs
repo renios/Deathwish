@@ -58,11 +58,14 @@ public class Player : MonoBehaviour, IRestartable
 	bool onAir = true;
 	bool leavingGround = true;
 	bool isDead = false;
+	private CameraController mainCameraController;
+	Vector3 pastPosition;
 
 	//used for Text display purposes.
 
 	void Start ()
 	{
+		mainCameraController = Camera.main.gameObject.GetComponent<CameraController>();
 		pushableObjectsNearbyPlayer = new HashSet<GameObject>();
 		allAboutO2 = FindObjectOfType<AllAboutO2>();
 		animator = GetComponentInChildren<Animator>();
@@ -72,6 +75,7 @@ public class Player : MonoBehaviour, IRestartable
 		yOfLowestObject = ObjectFinder.FindLowest ().position.y;
 		climber = new Climber (gameObject, ladderCheckerUp, ladderCheckerDown, groundChecker, climbSpeed, gravityScaleOfStartTime);
 		soundEffectController = GameObject.FindObjectOfType (typeof(SoundEffectController)) as SoundEffectController;
+		pastPosition = startPoint;
 
 		if(gravityDirection == GravityDirection.Reverse)
 		{
@@ -125,6 +129,9 @@ public class Player : MonoBehaviour, IRestartable
 
 		soundEffectController.Play (soundTypePlayedAtCurrentFrame);
 		soundTypePlayedAtCurrentFrame = SoundType.None;
+
+		MoveMainCamera();
+		pastPosition = transform.position;
 		
 		if (Input.GetKeyUp(KeyCode.C))
 		{
@@ -140,6 +147,44 @@ public class Player : MonoBehaviour, IRestartable
 		{
 			Scene.Load("SelectStage", Scene.SceneType.StageSelect);
 		}
+	}
+
+	void MoveMainCamera()
+	{
+		if (Input.GetKeyUp(KeyCode.UpArrow) || Input.GetKeyUp(KeyCode.DownArrow) ||
+			Input.GetKeyUp(KeyCode.LeftArrow) || Input.GetKeyUp(KeyCode.RightArrow) ||
+			climber.IsClimbing() || !groundChecker.IsGrounded() || pastPosition != transform.position ||
+			climber.GetLadderCheckerUp().IsUpLaddered() || climber.GetLadderCheckerDown().IsDownLaddered() ||
+			IsOverlappedWithMirror())
+		{
+			mainCameraController.ReturnToCenter();
+			return;
+		}
+		
+		if (Input.GetKey(KeyCode.UpArrow))
+		{
+			mainCameraController.MoveUp();
+		}
+		else if (Input.GetKey(KeyCode.DownArrow))
+		{
+			mainCameraController.MoveDown();
+		}
+		else if (Input.GetKey(KeyCode.LeftArrow))
+		{
+			mainCameraController.MoveLeft();
+		}
+		else if (Input.GetKey(KeyCode.RightArrow))
+		{
+			mainCameraController.MoveRight();
+		}
+	}
+
+	bool IsOverlappedWithMirror()
+	{
+		Collider2D coll = GetComponent<Collider2D>();
+		var otherColliders = Physics2D.OverlapAreaAll(coll.bounds.max, coll.bounds.min);
+
+		return otherColliders.Any(k => k.GetComponent<SwitchDarkLight>() != null);
 	}
 
     private void TrackClearCheat()
