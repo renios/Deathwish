@@ -81,8 +81,12 @@ class Climber
 				isClimbing = false;
 				OnStopClimb();
 			}
-		}
-	}
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                isClimbing = false;
+            }
+        }
+    }
 	
 	bool MoveUpDown ()
 	{
