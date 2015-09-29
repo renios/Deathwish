@@ -94,11 +94,11 @@ public class Scene
 
 		if (Global.ingame.isDark == Enums.IsDark.Light)
 		{
-			GoogleAnalyticsV3.getInstance().LogEvent("stage", "clear-light", levelTag.ToString(), 1);
+			GoogleAnalyticsV3.getInstance().LogEvent("stage", "clear-light-" + levelTag.ToString(), levelTag.ToString(), 1);
 		}
 		else if (Global.ingame.isDark == Enums.IsDark.Dark)
 		{
-			GoogleAnalyticsV3.getInstance().LogEvent("stage", "clear-dark", levelTag.ToString(), 1);
+			GoogleAnalyticsV3.getInstance().LogEvent("stage", "clear-dark-" + levelTag.ToString(), levelTag.ToString(), 1);
 		}
     }
 

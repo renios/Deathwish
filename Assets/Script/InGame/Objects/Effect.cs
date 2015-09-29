@@ -6,7 +6,7 @@ public class Effect : MonoBehaviour, IRestartable
 {
 	public GameObject Effect_Light;
 	public GameObject Effect_Dark;
-	
+
 	void Start ()
 	{
 		Effect_Light.SetActive(true);

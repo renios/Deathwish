@@ -41,7 +41,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   androidTrackingCode: 
   IOSTrackingCode: 
-  otherTrackingCode: UA-67531524-1
+  otherTrackingCode: UA-67835240-1
   productName: deathwish
   bundleIdentifier: 
   bundleVersion: developing
@@ -74,7 +74,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: otherTrackingCode
-      value: UA-67531524-1
+      value: UA-67835240-1
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: productName
