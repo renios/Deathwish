@@ -171,11 +171,11 @@ public class Player : MonoBehaviour, IRestartable
 		}
 		else if (Input.GetKey(KeyCode.LeftArrow))
 		{
-			mainCameraController.MoveLeft();
+			//  mainCameraController.MoveLeft();
 		}
 		else if (Input.GetKey(KeyCode.RightArrow))
 		{
-			mainCameraController.MoveRight();
+			//  mainCameraController.MoveRight();
 		}
 	}
 
