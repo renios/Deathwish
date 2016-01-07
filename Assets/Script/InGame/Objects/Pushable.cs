@@ -7,13 +7,14 @@ public class Pushable : MonoBehaviour, IRestartable
 	private Vector3 originalPosition;
 	public bool isLamp;
 	bool onAir = true;
-	
+	int fallenCount = 0;
+
 	// Use this for initialization
 	void Start()
 	{
 		originalPosition = gameObject.transform.position;
 	}
-	
+
 	// Update is called once per frame
 	void Update ()
 	{
@@ -42,10 +43,14 @@ public class Pushable : MonoBehaviour, IRestartable
 	{
 		if(collision.gameObject.tag == "Ground" && onAir)
 		{
-			SoundEffectController soundEffectController
-				= GameObject.FindObjectOfType(typeof(SoundEffectController)) as SoundEffectController;
-			soundEffectController.Play(SoundType.BoxFalling);
+			// does not play sound when map starts.
+			if (fallenCount != 0) {
+				SoundEffectController soundEffectController
+					= GameObject.FindObjectOfType(typeof(SoundEffectController)) as SoundEffectController;
+				soundEffectController.Play(SoundType.BoxFalling);
+			}
 			onAir = false;
+			fallenCount += 1;
 		}
 	}
 
@@ -62,6 +67,7 @@ public class Pushable : MonoBehaviour, IRestartable
 		gameObject.GetComponent<Rigidbody2D>().isKinematic = false;
 		onAir = true;
 		SpriteSwitch spriteSwitch = gameObject.GetComponent<SpriteSwitch>();
+		fallenCount = 0;
 		if(spriteSwitch != null)
 			gameObject.GetComponent<SpriteRenderer>().sprite = spriteSwitch.light;
 	}
