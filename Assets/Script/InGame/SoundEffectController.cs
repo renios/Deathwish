@@ -36,6 +36,8 @@ public class SoundEffectController : MonoBehaviour, IRestartable
 	private SoundContainer moveSoundContainer = new SoundContainer();
 	private SoundContainer pushSoundContainer = new SoundContainer();
 	private SoundContainer fireSoundContainer =new SoundContainer();
+	private bool boxFallenSoundPlayedThisFrame = false;
+
 	void Start()
 	{
 		moveSoundContainer.Start("MoveSoundSource");
@@ -78,6 +80,7 @@ public class SoundEffectController : MonoBehaviour, IRestartable
 		moveSoundContainer.Update();
 		pushSoundContainer.Update();
 		fireSoundContainer.Update();
+		boxFallenSoundPlayedThisFrame = false;
 	}
 
 	public void Play(SoundType soundType)
@@ -143,7 +146,10 @@ public class SoundEffectController : MonoBehaviour, IRestartable
 		if(soundType == SoundType.Decay) audioSource.PlayOneShot(decaySound);
 		if(soundType == SoundType.Lightning) audioSource.PlayOneShot(lightningSound);
 
-		if(soundType == SoundType.BoxFalling) audioSource.PlayOneShot(boxFallingSound, 0.2f);
+		if(soundType == SoundType.BoxFalling && boxFallenSoundPlayedThisFrame == false) {
+			audioSource.PlayOneShot(boxFallingSound, 0.2f);
+			boxFallenSoundPlayedThisFrame = true;
+		}
 
 		return;
 	}
