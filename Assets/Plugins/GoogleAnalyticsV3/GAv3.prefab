@@ -49,7 +49,7 @@ MonoBehaviour:
   sampleFrequency: 100
   logLevel: 3
   anonymizeIP: 0
-  UncaughtExceptionReporting: 1
+  UncaughtExceptionReporting: 0
   sendLaunchEvent: 1
   dryRun: 0
   sessionTimeout: 1800
