@@ -108,9 +108,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0}
-  m_Sprite: {fileID: 21300000, guid: 5c911cd2bad02744ba37a227cdf4b85d, type: 3}
-  m_Type: 1
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 611c2275a82a949b89a35acb1108757d, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -128,10 +128,10 @@ MonoBehaviour:
   m_Script: {fileID: 1980459831, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1600, y: 1000}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -150,7 +150,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: .196078435, g: .196078435, b: .196078435, a: 1}
+  m_Color: {r: .926470578, g: .926470578, b: .926470578, a: 1}
   m_FontData:
     m_Font: {fileID: 12800000, guid: 47a424678c7c9405791fdf3f6be76129, type: 3}
     m_FontSize: 30
@@ -163,7 +163,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: 
+  m_Text: "\uC608\uC2DC\uC6A9 \uD14D\uC2A4\uD2B8"
 --- !u!114 &11493590
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -245,10 +245,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 22485086}
   m_RootOrder: 0
-  m_AnchorMin: {x: .5, y: .859728158}
-  m_AnchorMax: {x: .5, y: .859728158}
-  m_AnchoredPosition: {x: 0, y: -26}
-  m_SizeDelta: {x: 500, y: 121}
+  m_AnchorMin: {x: .5, y: .5}
+  m_AnchorMax: {x: .5, y: .5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 800, y: 160}
   m_Pivot: {x: .5, y: .5}
 --- !u!224 &22485086
 RectTransform:
@@ -263,10 +263,10 @@ RectTransform:
   - {fileID: 22407432}
   m_Father: {fileID: 22403000}
   m_RootOrder: 1
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: .5, y: .5}
+  m_AnchorMax: {x: .5, y: .5}
+  m_AnchoredPosition: {x: 0, y: 300}
+  m_SizeDelta: {x: 1000, y: 200}
   m_Pivot: {x: .5, y: .5}
 --- !u!1001 &100100000
 Prefab:
