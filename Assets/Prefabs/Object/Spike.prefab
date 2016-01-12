@@ -10,10 +10,10 @@ GameObject:
   - 4: {fileID: 474246}
   - 212: {fileID: 21241512}
   - 114: {fileID: 11479862}
-  - 61: {fileID: 6109270}
   - 114: {fileID: 11415050}
   - 114: {fileID: 11452206}
   - 114: {fileID: 11462686}
+  - 60: {fileID: 6033796}
   m_Layer: 0
   m_Name: Spike
   m_TagString: Spike
@@ -33,19 +33,32 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!61 &6109270
-BoxCollider2D:
+--- !u!60 &6033796
+PolygonCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 119630}
   m_Enabled: 1
+  m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Size: {x: 1, y: 2}
+  m_Points:
+    m_Paths:
+    - - {x: 0.3026867, y: 0.34306526}
+      - {x: 0.24530411, y: 0.7136135}
+      - {x: 0.15587425, y: 0.51425743}
+      - {x: -0.01061821, y: 0.9718914}
+      - {x: -0.037736893, y: -0.00390625}
+      - {x: -0.18701935, y: 0.565958}
+      - {x: -0.28042603, y: -0.25170898}
+      - {x: -0.45999998, y: -0.099999994}
+      - {x: -0.32702065, y: -0.5465946}
+      - {x: -0.44, y: -1}
+      - {x: 0.5, y: -1}
+      - {x: 0.368742, y: 0.5025158}
 --- !u!114 &11415050
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -114,14 +127,18 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_AutoUVMaxDistance: .5
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: bc59d112af3114944a01654b9d6d6c5b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
